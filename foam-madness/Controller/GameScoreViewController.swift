@@ -10,10 +10,29 @@ import UIKit
 
 class GameScoreViewController: UIViewController {
     
+    // MARK: IBOutlets
+    @IBOutlet weak var team1Name: UILabel!
+    @IBOutlet weak var team2Name: UILabel!
+    @IBOutlet weak var team1Score: UILabel!
+    @IBOutlet weak var team2Score: UILabel!
+    
+    // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // TODO: Get team names and scores from a different view and replace below
+        team1Name.text = "Kansas"
+        team2Name.text = "Duke"
+        team1Score.text = "100"
+        team2Score.text = "55"
     }
     
+    // MARK: IBActions
+    @IBAction func seeStatsButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "showGameStats", sender: nil)
+    }
     
+    @IBAction func backToGamesButtonPressed(_ sender: Any) {
+        // TODO: Segue should eventually go back to all games view instead of play game
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }

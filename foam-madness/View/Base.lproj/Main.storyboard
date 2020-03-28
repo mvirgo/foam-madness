@@ -325,7 +325,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="VS2-Ar-9no" kind="presentation" id="dWM-qK-oiF"/>
+                                            <action selector="seeStatsButtonPressed:" destination="dIJ-Id-27O" eventType="touchUpInside" id="Vld-i5-0Gz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-0V-Ecl">
@@ -336,6 +336,9 @@
                                         <state key="normal" title="Back to Games">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backToGamesButtonPressed:" destination="dIJ-Id-27O" eventType="touchUpInside" id="jYR-Te-XnJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -347,6 +350,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DDV-gL-fmn"/>
                     </view>
+                    <connections>
+                        <outlet property="team1Name" destination="b70-no-0aw" id="sB6-8Y-WcU"/>
+                        <outlet property="team1Score" destination="BLz-un-KxG" id="vrd-uH-GwS"/>
+                        <outlet property="team2Name" destination="nPF-CH-pVu" id="yYf-aH-vMp"/>
+                        <outlet property="team2Score" destination="Znx-40-n1h" id="gYl-bX-n4F"/>
+                        <segue destination="VS2-Ar-9no" kind="show" identifier="showGameStats" id="Fxq-jx-Nce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LV-av-4J2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
