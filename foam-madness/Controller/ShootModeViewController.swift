@@ -17,6 +17,10 @@ class ShootModeViewController: UIViewController {
     // Thanks https://stackoverflow.com/questions/50068413/array-of-uibuttons-in-swift-4
     @IBOutlet var boxes : [UIButton]!
     
+    // MARK: Other variables
+    // TODO: Get the proper score multiplier for the shot type
+    var scoreMultiplier = 3
+    
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,11 @@ class ShootModeViewController: UIViewController {
             $0.setBackgroundImage(UIImage(named: "basketball-gray"), for: .normal)
             $0.setBackgroundImage(UIImage(named: "basketball"), for: .selected)
         }
+        
+        // TODO: Feed in information on team name, shot type and hand side
+        teamName.text = "Kansas"
+        shotType.text = "3-points"
+        handSide.text = "Right"
     }
     
     // MARK: Other functions
@@ -35,7 +44,20 @@ class ShootModeViewController: UIViewController {
     @IBAction func ballButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
+    
     @IBAction func finishedButtonPressed(_ sender: Any) {
+        // TODO: Change below to feed total count to stats and score
+        var count = 0
+        boxes.forEach {
+            if $0.isSelected {
+                count += 1
+            }
+        }
+        print(count)
+        print(count * scoreMultiplier)
+        
+        // TODO: Either continue game or finish to game score
+        performSegue(withIdentifier: "finishGame", sender: nil)
     }
     
 }

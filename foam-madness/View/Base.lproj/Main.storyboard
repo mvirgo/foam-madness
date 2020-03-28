@@ -232,7 +232,6 @@
                                         </state>
                                         <connections>
                                             <action selector="finishedButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="PKm-wU-rdO"/>
-                                            <segue destination="dIJ-Id-27O" kind="presentation" id="lPu-3A-noS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -259,6 +258,7 @@
                         <outletCollection property="boxes" destination="89q-vx-cKy" collectionClass="NSMutableArray" id="WAe-7i-8Xu"/>
                         <outletCollection property="boxes" destination="NW4-Rz-7D5" collectionClass="NSMutableArray" id="La8-ce-KBy"/>
                         <outletCollection property="boxes" destination="2cZ-l4-bf5" collectionClass="NSMutableArray" id="uH9-Ha-GAf"/>
+                        <segue destination="dIJ-Id-27O" kind="show" identifier="finishGame" id="kCW-eb-a6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QT-xG-ZE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
