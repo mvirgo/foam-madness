@@ -120,6 +120,9 @@
                                                         <state key="normal" title="1" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="ZTq-WH-mCg"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-yN-HGN">
                                                         <rect key="frame" x="65" y="0.0" width="60" height="60"/>
@@ -127,6 +130,9 @@
                                                         <state key="normal" title="2" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ple-t1-dgk"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXd-YA-4Nv">
                                                         <rect key="frame" x="130" y="0.0" width="60" height="60"/>
@@ -134,6 +140,9 @@
                                                         <state key="normal" title="3" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="lEp-1k-RmV"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSo-Ao-4nz">
                                                         <rect key="frame" x="195" y="0.0" width="60" height="60"/>
@@ -141,6 +150,9 @@
                                                         <state key="normal" title="4" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="i1Z-E4-VD6"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf3-Ub-ARG">
                                                         <rect key="frame" x="260" y="0.0" width="60" height="60"/>
@@ -148,6 +160,9 @@
                                                         <state key="normal" title="5" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="NMs-Ht-qre"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -160,6 +175,9 @@
                                                         <state key="normal" title="6" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Zdi-Qt-Rcm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-fG-UIY">
                                                         <rect key="frame" x="65" y="0.0" width="60" height="60"/>
@@ -167,6 +185,9 @@
                                                         <state key="normal" title="7" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Hl0-pa-AK6"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89q-vx-cKy">
                                                         <rect key="frame" x="130" y="0.0" width="60" height="60"/>
@@ -174,6 +195,9 @@
                                                         <state key="normal" title="8" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="5Oo-MB-xhl"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW4-Rz-7D5">
                                                         <rect key="frame" x="195" y="0.0" width="60" height="60"/>
@@ -181,6 +205,9 @@
                                                         <state key="normal" title="9" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ltq-r0-fMf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-l4-bf5">
                                                         <rect key="frame" x="260" y="0.0" width="60" height="60"/>
@@ -188,6 +215,9 @@
                                                         <state key="normal" title="10" backgroundImage="basketball-gray">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="wmc-Mn-vFb"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -201,6 +231,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="finishedButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="PKm-wU-rdO"/>
                                             <segue destination="dIJ-Id-27O" kind="presentation" id="lPu-3A-noS"/>
                                         </connections>
                                     </button>
@@ -214,6 +245,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MAx-IQ-eoE"/>
                     </view>
+                    <connections>
+                        <outlet property="handSide" destination="aVD-aC-F0N" id="8hx-po-lus"/>
+                        <outlet property="shotType" destination="BMh-Li-yAH" id="Vtq-ns-nUu"/>
+                        <outlet property="teamName" destination="RI7-G5-We5" id="M9U-xq-T69"/>
+                        <outletCollection property="boxes" destination="M42-7q-MJp" collectionClass="NSMutableArray" id="Fdg-iI-0m5"/>
+                        <outletCollection property="boxes" destination="2bD-yN-HGN" collectionClass="NSMutableArray" id="1WG-9e-IJO"/>
+                        <outletCollection property="boxes" destination="iXd-YA-4Nv" collectionClass="NSMutableArray" id="7oX-z0-8m4"/>
+                        <outletCollection property="boxes" destination="CSo-Ao-4nz" collectionClass="NSMutableArray" id="ore-Ce-0La"/>
+                        <outletCollection property="boxes" destination="Uf3-Ub-ARG" collectionClass="NSMutableArray" id="K3d-2g-kEm"/>
+                        <outletCollection property="boxes" destination="cGO-01-E8d" collectionClass="NSMutableArray" id="Y2K-1x-LEb"/>
+                        <outletCollection property="boxes" destination="Gd1-fG-UIY" collectionClass="NSMutableArray" id="nZ8-Fj-g7G"/>
+                        <outletCollection property="boxes" destination="89q-vx-cKy" collectionClass="NSMutableArray" id="WAe-7i-8Xu"/>
+                        <outletCollection property="boxes" destination="NW4-Rz-7D5" collectionClass="NSMutableArray" id="La8-ce-KBy"/>
+                        <outletCollection property="boxes" destination="2cZ-l4-bf5" collectionClass="NSMutableArray" id="uH9-Ha-GAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QT-xG-ZE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
