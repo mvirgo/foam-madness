@@ -545,6 +545,9 @@
                                         <state key="normal" title="Back to Games">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backToGamesButtonPressed:" destination="VS2-Ar-9no" eventType="touchUpInside" id="Lfl-0z-T2L"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -556,6 +559,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z4T-h1-hLq"/>
                     </view>
+                    <connections>
+                        <outletCollection property="team1Stats" destination="ANL-Id-g8I" collectionClass="NSMutableArray" id="asL-yG-2cD"/>
+                        <outletCollection property="team1Stats" destination="PdD-ms-faC" collectionClass="NSMutableArray" id="b40-Wc-iBf"/>
+                        <outletCollection property="team1Stats" destination="A9n-gz-Kr1" collectionClass="NSMutableArray" id="UQU-z6-569"/>
+                        <outletCollection property="team1Stats" destination="Xh6-mF-hJR" collectionClass="NSMutableArray" id="oi8-IV-6Sf"/>
+                        <outletCollection property="team1Stats" destination="vcQ-vA-6YU" collectionClass="NSMutableArray" id="rCb-5R-igy"/>
+                        <outletCollection property="team1Stats" destination="1Ko-iT-Qr8" collectionClass="NSMutableArray" id="Ic7-YE-tSe"/>
+                        <outletCollection property="team1Stats" destination="4K5-c5-raG" collectionClass="NSMutableArray" id="pCm-9q-OLU"/>
+                        <outletCollection property="team1Stats" destination="Vbv-1T-AoF" collectionClass="NSMutableArray" id="aIm-vC-OBm"/>
+                        <outletCollection property="team2Stats" destination="2bm-9j-ON5" collectionClass="NSMutableArray" id="Pgv-pu-2B0"/>
+                        <outletCollection property="team2Stats" destination="lkv-Uc-oQM" collectionClass="NSMutableArray" id="xWe-Pn-fWx"/>
+                        <outletCollection property="team2Stats" destination="sXC-QM-bwl" collectionClass="NSMutableArray" id="fdk-pP-wIt"/>
+                        <outletCollection property="team2Stats" destination="RgZ-6L-avL" collectionClass="NSMutableArray" id="yIR-sL-dDP"/>
+                        <outletCollection property="team2Stats" destination="xp4-8v-nKR" collectionClass="NSMutableArray" id="hlr-Vg-lOF"/>
+                        <outletCollection property="team2Stats" destination="h71-yN-uV4" collectionClass="NSMutableArray" id="R0r-FB-po1"/>
+                        <outletCollection property="team2Stats" destination="9HQ-6H-ZPD" collectionClass="NSMutableArray" id="Skm-Ne-YvA"/>
+                        <outletCollection property="team2Stats" destination="vth-I0-WRY" collectionClass="NSMutableArray" id="Ms8-U3-kHb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNM-B6-UVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
