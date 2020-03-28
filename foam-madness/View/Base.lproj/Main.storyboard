@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Play Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayGameViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-50-wyo">
-                                <rect key="frame" x="102.5" y="184.5" width="170.5" height="318"/>
+                                <rect key="frame" x="102.5" y="190.5" width="170.5" height="306"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwZ-n8-JYl">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="60"/>
@@ -27,28 +27,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-Hf-PL8">
-                                        <rect key="frame" x="0.0" y="90" width="170.5" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-Hf-PL8">
+                                        <rect key="frame" x="0.0" y="90" width="170.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F46-oY-anc">
-                                        <rect key="frame" x="0.0" y="180" width="170.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="168" width="170.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-7o-uuz">
-                                        <rect key="frame" x="0.0" y="270" width="170.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="258" width="170.5" height="48"/>
                                         <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170.5" id="MFm-J6-FHp"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                         <state key="normal" title="Play Game">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bCH-qt-KGr" kind="presentation" id="DT7-pL-3wj"/>
+                                            <action selector="playGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8i-Ri-Gvi"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,15 +64,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="team1" destination="JwZ-n8-JYl" id="fwQ-3l-loq"/>
+                        <outlet property="team2" destination="F46-oY-anc" id="Go8-qk-uXt"/>
+                        <segue destination="bCH-qt-KGr" kind="show" identifier="playGame" id="hyQ-uU-6fU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Shoot Mode View Controller-->
         <scene sceneID="OWS-Bz-n6w">
             <objects>
-                <viewController id="bCH-qt-KGr" sceneMemberID="viewController">
+                <viewController id="bCH-qt-KGr" customClass="ShootModeViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jSE-sD-anA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="1018" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Score View Controller-->
         <scene sceneID="gOA-fn-URf">
             <objects>
-                <viewController id="dIJ-Id-27O" sceneMemberID="viewController">
+                <viewController id="dIJ-Id-27O" customClass="GameScoreViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tv7-Ud-iz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="1826" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Stats View Controller-->
         <scene sceneID="hSO-tI-NhP">
             <objects>
-                <viewController id="VS2-Ar-9no" sceneMemberID="viewController">
+                <viewController id="VS2-Ar-9no" customClass="GameStatsViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8KP-oO-w8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

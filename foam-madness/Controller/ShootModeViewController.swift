@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ShootModeViewController.swift
 //  foam-madness
 //
 //  Created by Michael Virgo on 3/27/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ShootModeViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    
 }
-
