@@ -43,7 +43,7 @@
     </entity>
     <elements>
         <element name="Bracket" positionX="-402.32421875" positionY="4.75" width="128" height="88"/>
-        <element name="Game" positionX="-32.51953125" positionY="0.8515625" width="128" height="313"/>
+        <element name="Game" positionX="-32.51953125" positionY="0.8515625" width="128" height="315"/>
         <element name="Region" positionX="-217.5859375" positionY="5.04296875" width="128" height="88"/>
         <element name="Team" positionX="138.6640625" positionY="4.7421875" width="128" height="103"/>
         <element name="Tournament" positionX="-594.21875" positionY="20.67578125" width="128" height="88"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PlayGameViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class PlayGameViewController: UIViewController {
     
     // MARK: Other variables
     var dataController: DataController!
+    var game: Game!
 
     // MARK: View functions
     override func viewDidLoad() {
@@ -25,9 +27,9 @@ class PlayGameViewController: UIViewController {
     
     // MARK: Other functions
     func setTeamNames() {
-        // TODO: Get team names from a different view and replace below
-        team1.text = "Kansas"
-        team2.text = "Duke"
+        let teams = game.teams?.allObjects as! [Team]
+        team1.text = teams[0].name
+        team2.text = teams[1].name
     }
 
     // MARK: IBActions

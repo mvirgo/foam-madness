@@ -18,10 +18,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         dataController.load()
+        let managedObjectContext = dataController.viewContext
+        
+        // TODO: Remove test data below from full app
+        // Create a tournament
+        let tournament = Tournament(context: managedObjectContext)
+        // Configure tournament
+        tournament.name = "Test Tourney"
+        // Create a bracket
+        let bracket = Bracket(context: managedObjectContext)
+        // Configure bracket
+        bracket.name =  "Test Bracket"
+        bracket.addToTournaments(tournament)
+        // Create a region
+        let region = Region(context: managedObjectContext)
+        // Configure region
+        region.name = "Test Region"
+        region.addToBrackets(bracket)
+        // Create two teams
+        let team1 = Team(context: managedObjectContext)
+        let team2 = Team(context: managedObjectContext)
+        // Configure the teams
+        team1.name = "Kansas"
+        team1.abbreviation = "KU"
+        team1.seed = 1
+        team2.name = "Duke"
+        team2.abbreviation = "DU"
+        team2.seed = 2
+        // Create a game
+        let game = Game(context: managedObjectContext)
+        // Configure the game
+        game.completion = false
+        game.datePlayed = Date()
+        game.round = 1
+        game.team1Hand = true
+        game.team2Hand = false
+        game.addToTeams(team1)
+        game.addToTeams(team2)
+        // Add region to game
+        region.addToGames(game)
+        // Add game to tournament
+        tournament.addToGames(game)
+        // Save everything
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Failed to save.")
+        }
         
         // TODO: Use appropriate root view controller for whole tournament
         let playGameViewController = window?.rootViewController as! PlayGameViewController
         playGameViewController.dataController = dataController
+        playGameViewController.game = game
         
         return true
     }
