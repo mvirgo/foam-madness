@@ -23,7 +23,7 @@ class ShootModeViewController: UIViewController {
     var team1: Team!
     var team2: Team!
     var teamFlag = true // True = Team 1 shooting, False = Team 2 shooting
-    var scoreMultiplier = 1 // Increment by 1 per shot type
+    var scoreMultiplier: Int16 = 1 // Increment by 1 per shot type
     
     // MARK: View functions
     override func viewDidLoad() {
@@ -63,9 +63,9 @@ class ShootModeViewController: UIViewController {
         shotType.text = "\(scoreMultiplier)-points"
     }
     
-    func endRound() {
+    func endRound(continueGame: Bool) {
         // Add up how many balls are selected
-        var count = 0
+        var count: Int16 = 0
         boxes.forEach {
             if $0.isSelected {
                 count += 1
@@ -73,14 +73,20 @@ class ShootModeViewController: UIViewController {
         }
         // Add `count` into related team stat
         saveRoundScore(count)
-        // Increment the scoreMultiplier if both teams have gone
-        if !teamFlag { // team2 just finished
-            scoreMultiplier += 1
+        // Continue game if not finished
+        if continueGame {
+            // Increment the scoreMultiplier if both teams have gone
+            if !teamFlag { // team2 just finished
+                scoreMultiplier += 1
+            }
+            // Flip the team flag
+            teamFlag = !teamFlag
+            // Play the next round
+            playRound()
+        } else {
+            // Set game to complete
+            game.completion = true
         }
-        // Flip the team flag
-        teamFlag = !teamFlag
-        // Play the next round
-        playRound()
     }
     
     func getHandSideString(_ hand: Bool) -> String {
@@ -93,8 +99,36 @@ class ShootModeViewController: UIViewController {
         return out
     }
     
-    func saveRoundScore(_ count: Int) {
-        // TODO: Save count to right stat
+    func saveRoundScore(_ count: Int16) {
+        if teamFlag { // team1
+            // Add to the score
+            game.team1Score += count * scoreMultiplier
+            // Use scoreMultiplier to set right stat
+            switch scoreMultiplier {
+            case 1:
+                game.team1Ones = count
+            case 2:
+                game.team1Twos = count
+            case 3:
+                game.team1Threes = count
+            default: // 4
+                game.team1Fours = count
+            }
+        } else { // team2
+            // Add to the score
+            game.team2Score += count * scoreMultiplier
+            // Use scoreMultiplier to set right stat
+            switch scoreMultiplier {
+            case 1:
+                game.team2Ones = count
+            case 2:
+                game.team2Twos = count
+            case 3:
+                game.team2Threes = count
+            default: // 4
+                game.team2Fours = count
+            }
+        }
         // Save the view context
         do {
             try dataController.viewContext.save()
@@ -109,23 +143,12 @@ class ShootModeViewController: UIViewController {
     }
     
     @IBAction func finishedButtonPressed(_ sender: Any) {
-        // TODO: Change below to feed total count to stats and score
-        var count = 0
-        boxes.forEach {
-            if $0.isSelected {
-                count += 1
-            }
-        }
-        print(count)
-        print(count * scoreMultiplier)
-        
         // Either continue game or finish to game score
         if !teamFlag && scoreMultiplier == 4 { // game is over
-            game.completion = true
-            // TODO: Set score of each team
+            endRound(continueGame: false)
             performSegue(withIdentifier: "finishGame", sender: nil)
         } else {
-            endRound()
+            endRound(continueGame: true)
         }
     }
     
