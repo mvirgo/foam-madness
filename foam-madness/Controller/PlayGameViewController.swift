@@ -33,8 +33,8 @@ class PlayGameViewController: UIViewController {
     // MARK: Other functions
     func setTeamNames() {
         teams = game.teams?.allObjects as? [Team]
-        team1.text = teams[0].name
-        team2.text = teams[1].name
+        team1.text = String(teams[0].seed) + " - " + teams[0].name!
+        team2.text = String(teams[1].seed) + " - " + teams[1].name!
     }
     
     func setRegion() {
