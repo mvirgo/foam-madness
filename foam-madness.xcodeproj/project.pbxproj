@@ -17,6 +17,7 @@
 		7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */; };
 		7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */; };
 		7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */; };
+		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootModeViewController.swift; sourceTree = "<group>"; };
 		7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreViewController.swift; sourceTree = "<group>"; };
 		7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsViewController.swift; sourceTree = "<group>"; };
+		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */,
 				7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */,
 				7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */,
+				7AF31A852431267400DF1605 /* GameHelper.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
 				7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */,
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
+				7AF31A862431267400DF1605 /* GameHelper.swift in Sources */,
 				7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */,
 				7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */,
 			);

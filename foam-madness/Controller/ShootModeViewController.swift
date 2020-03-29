@@ -55,10 +55,10 @@ class ShootModeViewController: UIViewController {
         // Set other display information
         if teamFlag { // first team is playing
             teamName.text = team1.name
-            handSide.text = getHandSideString(game.team1Hand)
+            handSide.text = GameHelper.getHandSideString(game.team1Hand)
         } else {
             teamName.text = team2.name
-            handSide.text = getHandSideString(game.team2Hand)
+            handSide.text = GameHelper.getHandSideString(game.team2Hand)
         }
         shotType.text = "\(scoreMultiplier)-points"
     }
@@ -87,16 +87,6 @@ class ShootModeViewController: UIViewController {
             // Set game to complete
             game.completion = true
         }
-    }
-    
-    func getHandSideString(_ hand: Bool) -> String {
-        let out: String
-        if hand {
-            out = "Right"
-        } else {
-            out = "Left"
-        }
-        return out
     }
     
     func saveRoundScore(_ count: Int16) {
