@@ -16,6 +16,9 @@ class GameScoreViewController: UIViewController {
     @IBOutlet weak var team1Score: UILabel!
     @IBOutlet weak var team2Score: UILabel!
     
+    // MARK: Other variables
+    var dataController: DataController!
+    
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,4 +38,13 @@ class GameScoreViewController: UIViewController {
         // TODO: Segue should eventually go back to all games view instead of play game
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send data controller to GameStatsViewController
+        if let vc = segue.destination as? GameStatsViewController {
+            vc.dataController = dataController
+        }
+    }
+
 }

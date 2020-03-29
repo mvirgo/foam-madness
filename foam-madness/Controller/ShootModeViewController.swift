@@ -18,6 +18,7 @@ class ShootModeViewController: UIViewController {
     @IBOutlet var boxes : [UIButton]!
     
     // MARK: Other variables
+    var dataController: DataController!
     // TODO: Get the proper score multiplier for the shot type
     var scoreMultiplier = 3
     
@@ -60,4 +61,13 @@ class ShootModeViewController: UIViewController {
         performSegue(withIdentifier: "finishGame", sender: nil)
     }
     
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: Add any other necessary processing before game score shown
+        // Send data controller to GameScoreViewController if that's destination
+        if let vc = segue.destination as? GameScoreViewController {
+            vc.dataController = dataController
+        }
+    }
+
 }

@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         dataController.load()
         
+        // TODO: Use appropriate root view controller for whole tournament
+        let playGameViewController = window?.rootViewController as! PlayGameViewController
+        playGameViewController.dataController = dataController
+        
         return true
     }
 

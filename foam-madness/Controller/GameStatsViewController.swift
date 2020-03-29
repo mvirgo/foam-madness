@@ -14,6 +14,9 @@ class GameStatsViewController: UIViewController {
     @IBOutlet var team1Stats : [UILabel]!
     @IBOutlet var team2Stats : [UILabel]!
     
+    // MARK: Other variables
+    var dataController: DataController!
+    
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()

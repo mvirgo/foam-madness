@@ -13,6 +13,9 @@ class PlayGameViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var team1: UILabel!
     @IBOutlet weak var team2: UILabel!
+    
+    // MARK: Other variables
+    var dataController: DataController!
 
     // MARK: View functions
     override func viewDidLoad() {
@@ -30,6 +33,15 @@ class PlayGameViewController: UIViewController {
     // MARK: IBActions
     @IBAction func playGamePressed(_ sender: Any) {
         performSegue(withIdentifier: "playGame", sender: nil)
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: Add any other necessary processing before shoot mode, like hand selection
+        // Send data controller to ShootModeViewController
+        if let vc = segue.destination as? ShootModeViewController {
+            vc.dataController = dataController
+        }
     }
     
 }
