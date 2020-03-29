@@ -19,6 +19,9 @@ class ShootModeViewController: UIViewController {
     
     // MARK: Other variables
     var dataController: DataController!
+    var game: Game!
+    var team1: Team!
+    var team2: Team!
     // TODO: Get the proper score multiplier for the shot type
     var scoreMultiplier = 3
     

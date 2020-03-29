@@ -18,6 +18,7 @@ class PlayGameViewController: UIViewController {
     // MARK: Other variables
     var dataController: DataController!
     var game: Game!
+    var teams: [Team]!
 
     // MARK: View functions
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class PlayGameViewController: UIViewController {
     
     // MARK: Other functions
     func setTeamNames() {
-        let teams = game.teams?.allObjects as! [Team]
+        teams = game.teams?.allObjects as? [Team]
         team1.text = teams[0].name
         team2.text = teams[1].name
     }
@@ -43,6 +44,9 @@ class PlayGameViewController: UIViewController {
         // Send data controller to ShootModeViewController
         if let vc = segue.destination as? ShootModeViewController {
             vc.dataController = dataController
+            vc.game = game
+            vc.team1 = teams[0]
+            vc.team2 = teams[1]
         }
     }
     
