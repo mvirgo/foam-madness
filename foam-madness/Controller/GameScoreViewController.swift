@@ -18,11 +18,18 @@ class GameScoreViewController: UIViewController {
     
     // MARK: Other variables
     var dataController: DataController!
+    var game: Game!
+    var team1: Team!
+    var team2: Team!
     
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Get team names and scores from a different view and replace below
+        setGameScoreDisplay()
+    }
+    
+    // MARK: Other functions
+    func setGameScoreDisplay() {
         team1Name.text = "Kansas"
         team2Name.text = "Duke"
         team1Score.text = "100"

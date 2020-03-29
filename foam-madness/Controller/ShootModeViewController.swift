@@ -154,10 +154,12 @@ class ShootModeViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Add any other necessary processing before game score shown
         // Send data controller to GameScoreViewController if that's destination
         if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
+            vc.game = game
+            vc.team1 = team1
+            vc.team2 = team2
         }
     }
 
