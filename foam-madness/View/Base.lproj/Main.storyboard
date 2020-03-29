@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-50-wyo">
-                                <rect key="frame" x="102.5" y="160.5" width="170.5" height="366"/>
+                                <rect key="frame" x="102.5" y="133.5" width="170.5" height="420"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-SG-f8W">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="30"/>
@@ -27,26 +27,32 @@
                                         <color key="textColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRF-py-4X5">
+                                        <rect key="frame" x="0.0" y="60" width="170.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwZ-n8-JYl">
-                                        <rect key="frame" x="0.0" y="60" width="170.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="114" width="170.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAa-Hf-PL8">
-                                        <rect key="frame" x="0.0" y="150" width="170.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="204" width="170.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F46-oY-anc">
-                                        <rect key="frame" x="0.0" y="228" width="170.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="282" width="170.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-7o-uuz">
-                                        <rect key="frame" x="0.0" y="318" width="170.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="372" width="170.5" height="48"/>
                                         <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170.5" id="MFm-J6-FHp"/>
@@ -72,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="region" destination="ziC-SG-f8W" id="R4e-TY-Cgy"/>
+                        <outlet property="round" destination="vRF-py-4X5" id="6RJ-qd-xLd"/>
                         <outlet property="team1" destination="JwZ-n8-JYl" id="fwQ-3l-loq"/>
                         <outlet property="team2" destination="F46-oY-anc" id="Go8-qk-uXt"/>
                         <segue destination="bCH-qt-KGr" kind="show" identifier="playGame" id="hyQ-uU-6fU"/>

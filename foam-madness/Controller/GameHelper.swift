@@ -18,4 +18,23 @@ class GameHelper {
         }
         return out
     }
+    
+    static func getRoundString(_ round: Int16) -> String {
+        let out: String
+        switch round {
+        case 0:
+            out = "First Four"
+        case 1:
+            out = "First Round"
+        case 2:
+            out = "Second Round"
+        case 3:
+            out = "Sweet Sixteen"
+        case 4:
+            out = "Elite Eight"
+        default:
+            out = ""
+        }
+        return out
+    }
 }

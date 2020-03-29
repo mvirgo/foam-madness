@@ -15,6 +15,7 @@ class PlayGameViewController: UIViewController {
     @IBOutlet weak var team1: UILabel!
     @IBOutlet weak var team2: UILabel!
     @IBOutlet weak var region: UILabel!
+    @IBOutlet weak var round: UILabel!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -26,6 +27,7 @@ class PlayGameViewController: UIViewController {
         super.viewDidLoad()
         setTeamNames()
         setRegion()
+        setRound()
     }
     
     // MARK: Other functions
@@ -37,6 +39,10 @@ class PlayGameViewController: UIViewController {
     
     func setRegion() {
         region.text = game.region?.name
+    }
+    
+    func setRound() {
+        round.text = GameHelper.getRoundString(game.round)
     }
 
     // MARK: IBActions
