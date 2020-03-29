@@ -49,10 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let game = Game(context: managedObjectContext)
         // Configure the game
         game.completion = false
-        game.datePlayed = Date()
         game.round = 1
-        game.team1Hand = true
-        game.team2Hand = false
         game.addToTeams(team1)
         game.addToTeams(team2)
         // Add region to game

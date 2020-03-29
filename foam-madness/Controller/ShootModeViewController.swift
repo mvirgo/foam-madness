@@ -22,8 +22,8 @@ class ShootModeViewController: UIViewController {
     var game: Game!
     var team1: Team!
     var team2: Team!
-    // TODO: Get the proper score multiplier for the shot type
-    var scoreMultiplier = 3
+    var teamFlag = true // True = Team 1 shooting, False = Team 2 shooting
+    var scoreMultiplier = 1 // Increment by 1 per shot type
     
     // MARK: View functions
     override func viewDidLoad() {
@@ -35,14 +35,73 @@ class ShootModeViewController: UIViewController {
             $0.setBackgroundImage(UIImage(named: "basketball"), for: .selected)
         }
         
-        // TODO: Feed in information on team name, shot type and hand side
-        teamName.text = "Kansas"
-        shotType.text = "3-points"
-        handSide.text = "Right"
+        // TODO: Get shooting hand for each team and replace below
+        game.team1Hand = true // right-hand
+        game.team2Hand = false // left-hand
+        
+        // Add game date
+        game.datePlayed = Date()
+        
+        // Start the gameplay round
+        playRound()
     }
     
     // MARK: Other functions
+    func playRound() {
+        // Make sure all basketballs are unselected
+        boxes.forEach {
+            $0.isSelected = false
+        }
+        // Set other display information
+        if teamFlag { // first team is playing
+            teamName.text = team1.name
+            handSide.text = getHandSideString(game.team1Hand)
+        } else {
+            teamName.text = team2.name
+            handSide.text = getHandSideString(game.team2Hand)
+        }
+        shotType.text = "\(scoreMultiplier)-points"
+    }
     
+    func endRound() {
+        // Add up how many balls are selected
+        var count = 0
+        boxes.forEach {
+            if $0.isSelected {
+                count += 1
+            }
+        }
+        // Add `count` into related team stat
+        saveRoundScore(count)
+        // Increment the scoreMultiplier if both teams have gone
+        if !teamFlag { // team2 just finished
+            scoreMultiplier += 1
+        }
+        // Flip the team flag
+        teamFlag = !teamFlag
+        // Play the next round
+        playRound()
+    }
+    
+    func getHandSideString(_ hand: Bool) -> String {
+        let out: String
+        if hand {
+            out = "Right"
+        } else {
+            out = "Left"
+        }
+        return out
+    }
+    
+    func saveRoundScore(_ count: Int) {
+        // TODO: Save count to right stat
+        // Save the view context
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            print("Failed to save round score.")
+        }
+    }
     
     // MARK: IBActions
     @IBAction func ballButtonPressed(_ sender: UIButton) {
@@ -60,8 +119,14 @@ class ShootModeViewController: UIViewController {
         print(count)
         print(count * scoreMultiplier)
         
-        // TODO: Either continue game or finish to game score
-        performSegue(withIdentifier: "finishGame", sender: nil)
+        // Either continue game or finish to game score
+        if !teamFlag && scoreMultiplier == 4 { // game is over
+            game.completion = true
+            // TODO: Set score of each team
+            performSegue(withIdentifier: "finishGame", sender: nil)
+        } else {
+            endRound()
+        }
     }
     
     // MARK: Navigation
