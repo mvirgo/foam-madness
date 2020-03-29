@@ -14,6 +14,7 @@ class PlayGameViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var team1: UILabel!
     @IBOutlet weak var team2: UILabel!
+    @IBOutlet weak var region: UILabel!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -24,6 +25,7 @@ class PlayGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTeamNames()
+        setRegion()
     }
     
     // MARK: Other functions
@@ -31,6 +33,10 @@ class PlayGameViewController: UIViewController {
         teams = game.teams?.allObjects as? [Team]
         team1.text = teams[0].name
         team2.text = teams[1].name
+    }
+    
+    func setRegion() {
+        region.text = game.region?.name
     }
 
     // MARK: IBActions
