@@ -51,6 +51,9 @@ class GameScoreViewController: UIViewController {
         // Send data controller to GameStatsViewController
         if let vc = segue.destination as? GameStatsViewController {
             vc.dataController = dataController
+            vc.game = game
+            vc.team1 = team1
+            vc.team2 = team2
         }
     }
 

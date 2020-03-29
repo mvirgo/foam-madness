@@ -16,6 +16,9 @@ class GameStatsViewController: UIViewController {
     
     // MARK: Other variables
     var dataController: DataController!
+    var game: Game!
+    var team1: Team!
+    var team2: Team!
     
     // MARK: View functions
     override func viewDidLoad() {
