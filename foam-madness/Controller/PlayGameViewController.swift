@@ -46,7 +46,6 @@ class PlayGameViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Add any other necessary processing before shoot mode, like hand selection
         // Send data controller to ShootModeViewController
         if let vc = segue.destination as? ShootModeViewController {
             vc.dataController = dataController

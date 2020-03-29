@@ -35,6 +35,10 @@ class ShootModeViewController: UIViewController {
             $0.setBackgroundImage(UIImage(named: "basketball"), for: .selected)
         }
         
+        // TODO: Remove below when using unique games
+        game.team1Score = 0
+        game.team2Score = 0
+        
         // TODO: Get shooting hand for each team and replace below
         game.team1Hand = true // right-hand
         game.team2Hand = false // left-hand
