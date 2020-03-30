@@ -30,8 +30,8 @@ class GameScoreViewController: UIViewController {
     
     // MARK: Other functions
     func setGameScoreDisplay() {
-        team1Name.text = team1.name
-        team2Name.text = team2.name
+        team1Name.text = String(team1.seed) + " - " + team1.name!
+        team2Name.text = String(team2.seed) + " - " + team2.name!
         team1Score.text = String(game.team1Score)
         team2Score.text = String(game.team2Score)
     }
