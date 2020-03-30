@@ -39,9 +39,8 @@ class ShootModeViewController: UIViewController {
         game.team1Score = 0
         game.team2Score = 0
         
-        // TODO: Get shooting hand for each team and replace below
-        game.team1Hand = true // right-hand
-        game.team2Hand = false // left-hand
+        // Get shooting hand for each team based on historical results
+        getShootingHands()
         
         // Add game date
         game.datePlayed = Date()
@@ -51,6 +50,52 @@ class ShootModeViewController: UIViewController {
     }
     
     // MARK: Other functions
+    func getGameProbability() -> Float {
+        // TODO: Load this elsewhere so don't need to re-load every game?
+        let path = Bundle.main.path(forResource: "historicalProbabilities",
+                                    ofType: "plist")!
+        let dict = NSDictionary(contentsOfFile: path)
+        
+        // Use the team seeds to get the right historical probabilities
+        let bestSeed = min(team1.seed, team2.seed)
+        let worstSeed = max(team1.seed, team2.seed)
+        let bestSeedProbabilities = dict!.object(forKey: "\(bestSeed)") as! NSDictionary
+        let gameProbability = bestSeedProbabilities.object(forKey: "\(worstSeed)") as! NSNumber
+        
+        return gameProbability.floatValue
+    }
+    
+    func randomShootingHandProbability(_ probability: Float) -> Bool {
+        var hand: Bool
+        let adjustedProbability = Int(probability * 1000)
+        // Thanks https://stackoverflow.com/questions/26092977/swift-probability-of-random-number-being-selected
+        let randomNumber = Int(arc4random_uniform(1000))
+        if adjustedProbability >= randomNumber {
+            hand = true // true corresponds to right hand
+        } else {
+            hand = false // false is left hand
+        }
+        
+        return hand
+    }
+    
+    func getShootingHands() {
+        var team1Probability, team2Probability: Float
+        // Get the game's probability (historical win rate for better seed)
+        let gameProbability = getGameProbability()
+        // Set team's individual probabilities for use in random number function
+        if team1.seed < team2.seed { // Team 1 is better seed
+            team1Probability = gameProbability
+            team2Probability = 1 - gameProbability
+        } else { // Team 2 is better seed
+            team1Probability = 1 - gameProbability
+            team2Probability = gameProbability
+        }
+        // Set the team's output based on a random number generator, separately
+        game.team1Hand = randomShootingHandProbability(team1Probability)
+        game.team2Hand = randomShootingHandProbability(team2Probability)
+    }
+    
     func playRound() {
         // Make sure all basketballs are unselected
         boxes.forEach {
