@@ -18,6 +18,7 @@ class ShootModeViewController: UIViewController {
     @IBOutlet var boxes : [UIButton]!
     
     // MARK: Other variables
+    let overtimeShots: Int16 = 10 // hard-coded number of shots per OT
     var dataController: DataController!
     var game: Game!
     var team1: Team!
@@ -70,9 +71,9 @@ class ShootModeViewController: UIViewController {
         var hand: Bool
         // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
         if probability == 1 {
-            probability -= 0.007
+            probability -= 0.007 // hard-coded probability
         } else if probability == 0 {
-            probability += 0.007
+            probability += 0.007 // hard-coded probability
         }
         // Adjust probability to be out of 1000
         let adjustedProbability = Int(probability * 1000)
@@ -215,11 +216,16 @@ class ShootModeViewController: UIViewController {
     }
     
     func endOvertimeRound() {
-        // Add round points directly to score
+        // Add round points directly to score and update OT stats
+        let madeShots = countShots()
         if teamFlag {
-            game.team1Score += countShots()
+            game.team1Score += madeShots
+            game.team1OTMade += madeShots
+            game.team1OTTaken += overtimeShots
         } else {
-            game.team2Score += countShots()
+            game.team2Score += madeShots
+            game.team2OTMade += madeShots
+            game.team2OTTaken += overtimeShots
             if !overtimeCheck() { // End the game if no longer tied
                 saveData()
                 performSegue(withIdentifier: "finishGame", sender: nil)
