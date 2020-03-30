@@ -239,6 +239,8 @@ class ShootModeViewController: UIViewController {
             if !overtimeCheck() { // End the game if no longer tied
                 saveData()
                 performSegue(withIdentifier: "finishGame", sender: nil)
+            } else {
+                alertUser(title: "More OT", message: "Still Tied! More OT coming.")
             }
         }
         // Play another round if segue wasn't called (i.e. still tied)
@@ -265,6 +267,7 @@ class ShootModeViewController: UIViewController {
             // Check whether game needs to continue for overtime
             overtimeFlag = overtimeCheck()
             if overtimeFlag {
+                alertUser(title: "Overtime", message: "Tied Up! Going to OT.")
                 playOvertime()
             } else { // full game is over
                 performSegue(withIdentifier: "finishGame", sender: nil)
