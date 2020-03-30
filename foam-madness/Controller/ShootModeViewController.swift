@@ -51,6 +51,19 @@ class ShootModeViewController: UIViewController {
         playRound()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Notify user of hand selections
+        if !game.completion {
+            let handMessage = "\(team1.name!) shoots " +
+                "\(GameHelper.getHandSideString(game.team1Hand))-handed, " +
+                "\(team2.name!) shoots " +
+            "\(GameHelper.getHandSideString(game.team2Hand))-handed."
+            let title = "Shooting Hand"
+            alertUser(title: title, message: handMessage)
+        }
+    }
+    
     // MARK: Other functions
     func getGameProbability() -> Float {
         // TODO: Load this elsewhere so don't need to re-load every game?
@@ -233,6 +246,12 @@ class ShootModeViewController: UIViewController {
         }
         // Play another round if segue wasn't called (i.e. still tied)
         playOvertime()
+    }
+    
+    func alertUser(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     // MARK: IBActions
