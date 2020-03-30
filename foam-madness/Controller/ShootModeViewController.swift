@@ -152,6 +152,15 @@ class ShootModeViewController: UIViewController {
         }
     }
     
+    func saveData() {
+        // Save the view context
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            print("Failed to save round score.")
+        }
+    }
+    
     func saveRoundScore(_ count: Int16) {
         if teamFlag { // team1
             // Add to the score
@@ -182,12 +191,8 @@ class ShootModeViewController: UIViewController {
                 game.team2Fours = count
             }
         }
-        // Save the view context
-        do {
-            try dataController.viewContext.save()
-        } catch {
-            print("Failed to save round score.")
-        }
+        // Save the round data
+        saveData()
     }
     
     // MARK: IBActions
