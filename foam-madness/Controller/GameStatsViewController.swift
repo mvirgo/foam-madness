@@ -13,6 +13,12 @@ class GameStatsViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet var team1Stats : [UILabel]!
     @IBOutlet var team2Stats : [UILabel]!
+    @IBOutlet weak var overtimePointsLabel: UILabel!
+    @IBOutlet weak var overtimeFGPercentageLabel: UILabel!
+    @IBOutlet weak var team1OTPoints: UILabel!
+    @IBOutlet weak var team1OTPercentage: UILabel!
+    @IBOutlet weak var team2OTPoints: UILabel!
+    @IBOutlet weak var team2OTPercentage: UILabel!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -43,6 +49,25 @@ class GameStatsViewController: UIViewController {
         for i in 0...team1Stats!.count-1 {
             team1Stats[i].text = exTeam1[i]
             team2Stats[i].text = exTeam2[i]
+        }
+        
+        // Add overtime stats if necessary, or else hide
+        if game.team1OTTaken > 0 {
+            // Add OT information to labels
+            team1OTPoints.text = String(game.team1OTMade)
+            team2OTPoints.text = String(game.team2OTMade)
+            let percentageTeam1 = Float(game.team1OTMade) / Float(game.team1OTTaken)
+            let percentageTeam2 = Float(game.team2OTMade) / Float(game.team2OTTaken)
+            team1OTPercentage.text = String(Int(percentageTeam1 * 100)) + "%"
+            team2OTPercentage.text = String(Int(percentageTeam2 * 100)) + "%"
+        } else { // no OT
+            // Hide the related labels
+            overtimePointsLabel.isHidden = true
+            overtimeFGPercentageLabel.isHidden = true
+            team1OTPoints.isHidden = true
+            team1OTPercentage.isHidden = true
+            team2OTPoints.isHidden = true
+            team2OTPercentage.isHidden = true
         }
     }
     
