@@ -65,8 +65,15 @@ class ShootModeViewController: UIViewController {
         return gameProbability.floatValue
     }
     
-    func randomShootingHandProbability(_ probability: Float) -> Bool {
+    func randomShootingHandProbability(_ probability: inout Float) -> Bool {
         var hand: Bool
+        // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
+        if probability == 1 {
+            probability -= 0.007
+        } else if probability == 0 {
+            probability += 0.007
+        }
+        // Adjust probability to be out of 1000
         let adjustedProbability = Int(probability * 1000)
         // Thanks https://stackoverflow.com/questions/26092977/swift-probability-of-random-number-being-selected
         let randomNumber = Int(arc4random_uniform(1000))
@@ -92,8 +99,8 @@ class ShootModeViewController: UIViewController {
             team2Probability = gameProbability
         }
         // Set the team's output based on a random number generator, separately
-        game.team1Hand = randomShootingHandProbability(team1Probability)
-        game.team2Hand = randomShootingHandProbability(team2Probability)
+        game.team1Hand = randomShootingHandProbability(&team1Probability)
+        game.team2Hand = randomShootingHandProbability(&team2Probability)
     }
     
     func playRound() {
