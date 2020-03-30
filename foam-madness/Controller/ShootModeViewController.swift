@@ -116,7 +116,14 @@ class ShootModeViewController: UIViewController {
             teamName.text = team2.name
             handSide.text = GameHelper.getHandSideString(game.team2Hand)
         }
-        shotType.text = "\(scoreMultiplier)-points"
+        // Set shot type text based on which point shot is being done
+        if scoreMultiplier == 0 {
+            shotType.text = "Overtime"
+        } else if scoreMultiplier == 1 {
+            shotType.text = "\(scoreMultiplier)-point"
+        } else {
+            shotType.text = "\(scoreMultiplier)-points"
+        }
     }
     
     func endRound(continueGame: Bool) {
