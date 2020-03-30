@@ -168,9 +168,6 @@ class ShootModeViewController: UIViewController {
             teamFlag = !teamFlag
             // Play the next round
             playRound()
-        } else {
-            // Set game to complete
-            game.completion = true
         }
     }
     
@@ -279,6 +276,8 @@ class ShootModeViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Set game to complete
+        game.completion = true
         // Send data controller to GameScoreViewController if that's destination
         if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
