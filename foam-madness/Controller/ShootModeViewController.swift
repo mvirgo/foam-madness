@@ -23,6 +23,7 @@ class ShootModeViewController: UIViewController {
     var team1: Team!
     var team2: Team!
     var teamFlag = true // True = Team 1 shooting, False = Team 2 shooting
+    var overtimeFlag = false
     var scoreMultiplier: Int16 = 1 // Increment by 1 per shot type
     
     // MARK: View functions
@@ -117,7 +118,7 @@ class ShootModeViewController: UIViewController {
             handSide.text = GameHelper.getHandSideString(game.team2Hand)
         }
         // Set shot type text based on which point shot is being done
-        if scoreMultiplier == 0 {
+        if overtimeFlag {
             shotType.text = "Overtime"
         } else if scoreMultiplier == 1 {
             shotType.text = "\(scoreMultiplier)-point"
@@ -126,7 +127,7 @@ class ShootModeViewController: UIViewController {
         }
     }
     
-    func endRound(continueGame: Bool) {
+    func countShots() -> Int16 {
         // Add up how many balls are selected
         var count: Int16 = 0
         boxes.forEach {
@@ -134,6 +135,13 @@ class ShootModeViewController: UIViewController {
                 count += 1
             }
         }
+        
+        return count
+    }
+    
+    func endRound(continueGame: Bool) {
+        // Count made shots
+        let count = countShots()
         // Add `count` into related team stat
         saveRoundScore(count)
         // Continue game if not finished
@@ -195,6 +203,32 @@ class ShootModeViewController: UIViewController {
         saveData()
     }
     
+    func overtimeCheck() -> Bool {
+        return game.team1Score == game.team2Score
+    }
+    
+    func playOvertime() {
+        // Flip teamFlag
+        teamFlag = !teamFlag
+        // Play a round
+        playRound()
+    }
+    
+    func endOvertimeRound() {
+        // Add round points directly to score
+        if teamFlag {
+            game.team1Score += countShots()
+        } else {
+            game.team2Score += countShots()
+            if !overtimeCheck() { // End the game if no longer tied
+                saveData()
+                performSegue(withIdentifier: "finishGame", sender: nil)
+            }
+        }
+        // Play another round if segue wasn't called (i.e. still tied)
+        playOvertime()
+    }
+    
     // MARK: IBActions
     @IBAction func ballButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -202,9 +236,17 @@ class ShootModeViewController: UIViewController {
     
     @IBAction func finishedButtonPressed(_ sender: Any) {
         // Either continue game or finish to game score
-        if !teamFlag && scoreMultiplier == 4 { // game is over
+        if overtimeFlag {
+            endOvertimeRound()
+        } else if !teamFlag && scoreMultiplier == 4 { // main game is over
             endRound(continueGame: false)
-            performSegue(withIdentifier: "finishGame", sender: nil)
+            // Check whether game needs to continue for overtime
+            overtimeFlag = overtimeCheck()
+            if overtimeFlag {
+                playOvertime()
+            } else { // full game is over
+                performSegue(withIdentifier: "finishGame", sender: nil)
+            }
         } else {
             endRound(continueGame: true)
         }
