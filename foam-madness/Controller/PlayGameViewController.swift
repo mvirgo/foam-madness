@@ -28,6 +28,7 @@ class PlayGameViewController: UIViewController {
         setTeamNames()
         setRegion()
         setRound()
+        print(teams[0].objectID, teams[1].objectID)
     }
     
     // MARK: Other functions
