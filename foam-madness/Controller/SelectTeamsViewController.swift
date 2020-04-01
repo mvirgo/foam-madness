@@ -51,6 +51,18 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         teams = [tempTeams, tempTeams]
     }
     
+    func lookupOrCreateTeam(teamName: String, context: NSManagedObjectContext) -> Team {
+        let teamId = Int16((reverseTeamDict[teamName]?["id"])!) ?? 0
+        // TODO: Check if teams already exist before creating
+        let team = Team(context: context)
+        team.name = teamName
+        team.abbreviation = reverseTeamDict[teamName]?["abbreviation"]
+        team.id = teamId
+        
+        return team
+    }
+    
+    // MARK: PickerView functions
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return teams[0].count
     }
@@ -68,7 +80,6 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         performSegue(withIdentifier: "viewGame", sender: sender)
     }
     
-    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get view context
@@ -81,15 +92,11 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // TODO: Hide seeds?
         game.team1Seed = 1
         game.team2Seed = 1
-        // TODO: Check if teams already exist before creating
-        // Create teams
-        let team1 = Team(context: managedObjectContext)
-        let team2 = Team(context: managedObjectContext)
-        team1.name = teams[0][pickerView.selectedRow(inComponent: 0)]
-        team2.name = teams[1][pickerView.selectedRow(inComponent: 1)]
-        // Get abbreviations
-        team1.abbreviation = reverseTeamDict[team1.name!]?["abbreviation"]
-        team2.abbreviation = reverseTeamDict[team2.name!]?["abbreviation"]
+        // Lookup or create teams
+        let team1 = lookupOrCreateTeam(teamName: teams[0][pickerView.selectedRow(inComponent: 0)],
+                                       context: managedObjectContext)
+        let team2 = lookupOrCreateTeam(teamName: teams[1][pickerView.selectedRow(inComponent: 1)],
+                                       context: managedObjectContext)
         // Add teams to game
         team1.addToGames(game)
         team2.addToGames(game)
