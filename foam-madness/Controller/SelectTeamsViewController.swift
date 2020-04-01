@@ -53,11 +53,22 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func lookupOrCreateTeam(teamName: String, context: NSManagedObjectContext) -> Team {
         let teamId = Int16((reverseTeamDict[teamName]?["id"])!) ?? 0
-        // TODO: Check if teams already exist before creating
-        let team = Team(context: context)
-        team.name = teamName
-        team.abbreviation = reverseTeamDict[teamName]?["abbreviation"]
-        team.id = teamId
+        let team: Team
+        // Use a fetch request to see if teamId already in data
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        let predicate = NSPredicate(format: "id == %@", NSNumber(value: teamId))
+        fetchRequest.predicate = predicate
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        // If results contains anything, just set the team as the result
+        if results.count > 0 {
+            team = results[0] as! Team
+        } else { // create the team
+            team = Team(context: context)
+            team.name = teamName
+            team.abbreviation = reverseTeamDict[teamName]?["abbreviation"]
+            team.id = teamId
+        }
         
         return team
     }
