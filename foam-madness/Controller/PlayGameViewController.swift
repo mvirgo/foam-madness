@@ -58,6 +58,10 @@ class PlayGameViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Change navbar text during game to "Exit Game" instead of "Back"
+        // Thanks https://stackoverflow.com/questions/28471164/how-to-set-back-button-text-in-swift/52968625
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "Exit Game", style: .plain, target: nil, action: nil)
         // Send data controller to ShootModeViewController
         if let vc = segue.destination as? ShootModeViewController {
             vc.dataController = dataController
