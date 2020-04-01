@@ -104,8 +104,8 @@ class GameStatsViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func backToGamesButtonPressed(_ sender: Any) {
-        // TODO: Segue should eventually go back to all games view instead of play game
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        // TODO: Segue should depend on whether in tourney or single game
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
