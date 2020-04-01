@@ -27,9 +27,21 @@ class GameStatsViewController: UIViewController {
     var team2: Team!
     
     // MARK: View functions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide the navbar
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadStats()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Re-show the navbar so it's there for other views
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // MARK: Other functions
