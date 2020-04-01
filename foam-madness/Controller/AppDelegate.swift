@@ -18,49 +18,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         dataController.load()
-        let managedObjectContext = dataController.viewContext
-        
-        // TODO: Remove test data below from full app
-        // Create a tournament
-        let tournament = Tournament(context: managedObjectContext)
-        // Configure tournament
-        tournament.name = "Test Tourney"
-        // Create two teams
-        let team1 = Team(context: managedObjectContext)
-        let team2 = Team(context: managedObjectContext)
-        // Configure the teams
-        team1.name = "Kansas"
-        team1.abbreviation = "KU"
-        team1.id = 1
-        team2.name = "Duke"
-        team2.abbreviation = "DU"
-        team2.id = 2
-        // Create a game
-        let game = Game(context: managedObjectContext)
-        // Configure the game
-        game.round = 1
-        game.region = "Midwest"
-        game.team1Id = team1.id
-        game.team2Id = team2.id
-        game.team1Seed = 1
-        game.team2Seed = 2
-        game.addToTeams(team1)
-        game.addToTeams(team2)
-        team1.addToGames(game)
-        team2.addToGames(game)
-        // Add game to tournament
-        tournament.addToGames(game)
-        // Save everything
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Failed to save.")
-        }
-        
-        // TODO: Use appropriate root view controller for whole tournament
-        let playGameViewController = window?.rootViewController as! PlayGameViewController
-        playGameViewController.dataController = dataController
-        playGameViewController.game = game
+        // Set data controller to initial selection screen
+        let navController = window?.rootViewController as! UINavigationController
+        let selectScreenViewController = navController.topViewController as! SelectScreenViewController
+        selectScreenViewController.dataController = dataController
+//        let managedObjectContext = dataController.viewContext
+//
+//        // TODO: Remove test data below from full app
+//        // Create a tournament
+//        let tournament = Tournament(context: managedObjectContext)
+//        // Configure tournament
+//        tournament.name = "Test Tourney"
+//        // Create two teams
+//        let team1 = Team(context: managedObjectContext)
+//        let team2 = Team(context: managedObjectContext)
+//        // Configure the teams
+//        team1.name = "Kansas"
+//        team1.abbreviation = "KU"
+//        team1.id = 1
+//        team2.name = "Duke"
+//        team2.abbreviation = "DU"
+//        team2.id = 2
+//        // Create a game
+//        let game = Game(context: managedObjectContext)
+//        // Configure the game
+//        game.round = 1
+//        game.region = "Midwest"
+//        game.team1Id = team1.id
+//        game.team2Id = team2.id
+//        game.team1Seed = 1
+//        game.team2Seed = 2
+//        game.addToTeams(team1)
+//        game.addToTeams(team2)
+//        // Add game to tournament
+//        tournament.addToGames(game)
+//        // Save everything
+//        do {
+//            try managedObjectContext.save()
+//        } catch {
+//            print("Failed to save.")
+//        }
+//
+//        // TODO: Use appropriate root view controller for whole tournament
+//        let playGameViewController = window?.rootViewController as! PlayGameViewController
+//        playGameViewController.dataController = dataController
+//        playGameViewController.game = game
         
         return true
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -124,11 +124,79 @@
                         <outlet property="resumeTournamentButton" destination="HSH-Ya-D6N" id="nDY-0h-tOd"/>
                         <outlet property="singleGameLabel" destination="tL2-Zh-fSz" id="MeI-Vj-AKL"/>
                         <outlet property="viewCompletedTournamentButton" destination="b4e-4O-vdX" id="x7h-L7-p27"/>
+                        <segue destination="jBT-I2-GqF" kind="show" identifier="pickTeams" id="sQO-1D-Ing"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2134" y="-594"/>
+        </scene>
+        <!--Select Teams View Controller-->
+        <scene sceneID="mb4-yk-hmV">
+            <objects>
+                <viewController id="jBT-I2-GqF" customClass="SelectTeamsViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NuJ-YV-MUq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-UP-mwU">
+                                <rect key="frame" x="27.5" y="182.5" width="320" height="366"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Teams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIo-ug-bYe">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                        <color key="textColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hPX-GZ-tZh">
+                                        <rect key="frame" x="0.0" y="52" width="320" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phY-TF-Emk">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdY-5P-KfO">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cn-xV-OGN">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-wh-vyA">
+                                        <rect key="frame" x="0.0" y="318" width="320" height="48"/>
+                                        <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueButtonPressed:" destination="jBT-I2-GqF" eventType="touchUpInside" id="geW-CN-Opj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vOr-UP-mwU" firstAttribute="centerY" secondItem="u3i-jy-zOF" secondAttribute="centerY" id="dgq-qU-XgL"/>
+                            <constraint firstItem="vOr-UP-mwU" firstAttribute="centerX" secondItem="u3i-jy-zOF" secondAttribute="centerX" id="hpV-5h-ecN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u3i-jy-zOF"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="9Cn-xV-OGN" id="xgB-RY-VgV"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="viewGame" id="CQ3-l7-pKF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDv-rq-jC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1231" y="-593"/>
         </scene>
         <!--Play Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -139,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-50-wyo">
-                                <rect key="frame" x="102.5" y="133.5" width="170.5" height="420"/>
+                                <rect key="frame" x="102.5" y="155.5" width="170.5" height="420"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-SG-f8W">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="30"/>
@@ -217,7 +285,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-XC-RMK">
-                                <rect key="frame" x="27.5" y="141.5" width="320" height="404"/>
+                                <rect key="frame" x="27.5" y="163.5" width="320" height="404"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8w9-GA-UyH">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
@@ -411,7 +479,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-ey-2CO">
-                                <rect key="frame" x="62" y="157.5" width="251.5" height="372"/>
+                                <rect key="frame" x="62" y="179.5" width="251.5" height="372"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Final Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgj-Yy-SyJ">
                                         <rect key="frame" x="0.0" y="0.0" width="251.5" height="36"/>
@@ -514,7 +582,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A30-7A-X0N">
-                                <rect key="frame" x="20" y="148.5" width="335" height="390"/>
+                                <rect key="frame" x="20" y="170.5" width="335" height="390"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fPC-f7-SxA">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="312"/>

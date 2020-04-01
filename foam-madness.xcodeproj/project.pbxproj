@@ -18,6 +18,7 @@
 		7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */; };
 		7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */; };
 		7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE5243432F600315752 /* SelectScreenViewController.swift */; };
+		7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */; };
 		7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */; };
 		7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB8092433086C009E7CC1 /* teams.plist */; };
 		7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */; };
@@ -38,6 +39,7 @@
 		7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreViewController.swift; sourceTree = "<group>"; };
 		7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsViewController.swift; sourceTree = "<group>"; };
 		7A86CDE5243432F600315752 /* SelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreenViewController.swift; sourceTree = "<group>"; };
+		7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamsViewController.swift; sourceTree = "<group>"; };
 		7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = historicalProbabilities.plist; sourceTree = "<group>"; };
 		7AEAB8092433086C009E7CC1 /* teams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = teams.plist; sourceTree = "<group>"; };
 		7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bracketology2020.plist; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */,
 				7AF31A852431267400DF1605 /* GameHelper.swift */,
 				7A86CDE5243432F600315752 /* SelectScreenViewController.swift */,
+				7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */,
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
 				7AF31A862431267400DF1605 /* GameHelper.swift in Sources */,
+				7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */,
 				7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */,
 				7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */,
 			);

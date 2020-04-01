@@ -16,6 +16,9 @@ class SelectScreenViewController: UIViewController {
     @IBOutlet weak var playGameButton: UIButton!
     @IBOutlet weak var singleGameLabel: UILabel!
     
+    // MARK: Other variables
+    var dataController: DataController!
+    
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +30,23 @@ class SelectScreenViewController: UIViewController {
     // MARK: IBActions
     @IBAction func resumeTournamentButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func newTournamentButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func viewCompletedTournamentButtonPressed(_ sender: Any) {
     }
+    
     @IBAction func playGameButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "pickTeams", sender: sender)
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: Update below as needed for different segues?
+        // Send data controller to next view controller
+        if let vc = segue.destination as? SelectTeamsViewController {
+            vc.dataController = dataController
+        }
     }
 }
