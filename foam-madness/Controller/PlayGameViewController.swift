@@ -28,18 +28,23 @@ class PlayGameViewController: UIViewController {
         setTeamNames()
         setRegion()
         setRound()
-        print(teams[0].objectID, teams[1].objectID)
     }
     
     // MARK: Other functions
     func setTeamNames() {
-        teams = game.teams?.allObjects as? [Team]
-        team1.text = String(teams[0].seed) + " - " + teams[0].name!
-        team2.text = String(teams[1].seed) + " - " + teams[1].name!
+        let gameTeams = game.teams?.allObjects as! [Team]
+        // Ensure proper order of teams
+        if gameTeams[0].id == game.team1Id {
+            teams = gameTeams
+        } else {
+            teams = [gameTeams[1], gameTeams[0]]
+        }
+        team1.text = String(game.team1Seed) + " - " + teams[0].name!
+        team2.text = String(game.team2Seed) + " - " + teams[1].name!
     }
     
     func setRegion() {
-        region.text = game.region?.name
+        region.text = game.region
     }
     
     func setRound() {

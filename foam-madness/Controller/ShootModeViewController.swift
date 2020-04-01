@@ -76,8 +76,8 @@ class ShootModeViewController: UIViewController {
         let dict = NSDictionary(contentsOfFile: path)
         
         // Use the team seeds to get the right historical probabilities
-        let bestSeed = min(team1.seed, team2.seed)
-        let worstSeed = max(team1.seed, team2.seed)
+        let bestSeed = min(game.team1Seed, game.team2Seed)
+        let worstSeed = max(game.team1Seed, game.team2Seed)
         let bestSeedProbabilities = dict!.object(forKey: "\(bestSeed)") as! NSDictionary
         let gameProbability = bestSeedProbabilities.object(forKey: "\(worstSeed)") as! NSNumber
         
@@ -110,7 +110,7 @@ class ShootModeViewController: UIViewController {
         // Get the game's probability (historical win rate for better seed)
         let gameProbability = getGameProbability()
         // Set team's individual probabilities for use in random number function
-        if team1.seed < team2.seed { // Team 1 is better seed
+        if game.team1Seed < game.team2Seed { // Team 1 is better seed
             team1Probability = gameProbability
             team2Probability = 1 - gameProbability
         } else { // Team 2 is better seed
