@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create a game
         let game = Game(context: managedObjectContext)
         // Configure the game
-        game.completion = false
         game.round = 1
         game.region = "Midwest"
         game.team1Id = team1.id
