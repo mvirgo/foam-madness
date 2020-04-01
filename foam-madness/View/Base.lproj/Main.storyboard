@@ -24,12 +24,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsy-hA-POt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1857" y="134"/>
+            <point key="canvasLocation" x="-3014" y="-593"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Screen View Controller-->
         <scene sceneID="0P5-Ej-iLk">
             <objects>
-                <viewController id="VEB-mH-mmc" sceneMemberID="viewController">
+                <viewController id="VEB-mH-mmc" customClass="SelectScreenViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DTe-Hm-4EW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,9 @@
                                                 <state key="normal" title="Resume Tournament">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="resumeTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="N19-RK-o4c"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-MF-EAQ">
                                                 <rect key="frame" x="54" y="112" width="267" height="46"/>
@@ -63,6 +66,9 @@
                                                 <state key="normal" title="New Tournament">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="newTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="MKt-TZ-9zj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
                                                 <rect key="frame" x="17" y="168" width="341" height="46"/>
@@ -72,6 +78,9 @@
                                                 <state key="normal" title="View Finished Tournament">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="viewCompletedTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="1jg-Od-hOE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -92,6 +101,9 @@
                                                 <state key="normal" title="Play Game">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="playGameButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="ewM-6q-PwE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -107,10 +119,16 @@
                         <viewLayoutGuide key="safeArea" id="r7o-JM-Lkk"/>
                     </view>
                     <navigationItem key="navigationItem" id="9rq-vp-d3S"/>
+                    <connections>
+                        <outlet property="playGameButton" destination="QJt-vF-R5B" id="BAp-Hm-GGE"/>
+                        <outlet property="resumeTournamentButton" destination="HSH-Ya-D6N" id="nDY-0h-tOd"/>
+                        <outlet property="singleGameLabel" destination="tL2-Zh-fSz" id="MeI-Vj-AKL"/>
+                        <outlet property="viewCompletedTournamentButton" destination="b4e-4O-vdX" id="x7h-L7-p27"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-2134" y="-594"/>
         </scene>
         <!--Play Game View Controller-->
         <scene sceneID="tne-QT-ifu">
