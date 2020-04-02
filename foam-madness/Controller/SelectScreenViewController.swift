@@ -43,10 +43,16 @@ class SelectScreenViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Update below as needed for different segues?
         // Send data controller to next view controller
-        if let vc = segue.destination as? SelectTeamsViewController {
-            vc.dataController = dataController
+        // Thanks https://stackoverflow.com/questions/31457300/swift-prepareforsegue-with-two-different-segues
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "pickTeams":
+                let vc = segue.destination as! SelectTeamsViewController
+                vc.dataController = dataController
+            default:
+                print("Unsupported segue.")
+            }
         }
     }
 }
