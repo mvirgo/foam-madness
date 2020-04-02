@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-class CreateTournamentViewController: UITableViewController {
+class SelectInitialBracketViewController: UITableViewController {
     // MARK: Variables
     var dataController: DataController!
+    var chosenBracketFile = ""
     let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020"]
     
     // MARK: View functions
@@ -37,6 +38,19 @@ class CreateTournamentViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Create the tournament, segue to the initial bracket
+        let bracket = Array(brackets.keys)[(indexPath as NSIndexPath).section]
+        chosenBracketFile = brackets[bracket]!
+        // Segue to bracket creation screen
+        performSegue(withIdentifier: "createBracket", sender: nil)
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? BracketCreationViewController {
+            // Send bracket file location to Bracket Creation View
+            vc.bracketLocation = chosenBracketFile
+            // Send data controller as well
+            vc.dataController = dataController
+        }
     }
 }

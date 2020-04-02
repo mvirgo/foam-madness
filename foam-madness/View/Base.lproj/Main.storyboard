@@ -125,17 +125,17 @@
                         <outlet property="singleGameLabel" destination="tL2-Zh-fSz" id="MeI-Vj-AKL"/>
                         <outlet property="viewCompletedTournamentButton" destination="b4e-4O-vdX" id="x7h-L7-p27"/>
                         <segue destination="jBT-I2-GqF" kind="show" identifier="pickTeams" id="sQO-1D-Ing"/>
-                        <segue destination="sE1-qN-DJt" kind="show" identifier="createTournament" id="dr9-6Q-Daj"/>
+                        <segue destination="sE1-qN-DJt" kind="show" identifier="selectBracket" id="dr9-6Q-Daj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2134" y="-594"/>
         </scene>
-        <!--Create Tournament View Controller-->
+        <!--Select Initial Bracket View Controller-->
         <scene sceneID="E8E-v6-bjN">
             <objects>
-                <tableViewController id="sE1-qN-DJt" customClass="CreateTournamentViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="sE1-qN-DJt" customClass="SelectInitialBracketViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="urC-Ns-IUp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,10 +164,62 @@
                             <outlet property="delegate" destination="sE1-qN-DJt" id="VDM-io-nzj"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="8kk-Cf-pJQ" kind="show" identifier="createBracket" id="R5V-wg-rT4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="732-qE-P7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1242" y="-645"/>
+        </scene>
+        <!--Bracket Creation View Controller-->
+        <scene sceneID="aos-p2-9IR">
+            <objects>
+                <viewController id="8kk-Cf-pJQ" customClass="BracketCreationViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eyn-V2-KVy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-0H-Mw4">
+                                <rect key="frame" x="96.5" y="292.5" width="182.5" height="146"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SYl-YZ-6uo">
+                                        <rect key="frame" x="81" y="0.0" width="20" height="20"/>
+                                        <color key="color" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Creating Tournament" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-si-HEh">
+                                        <rect key="frame" x="0.0" y="70" width="182.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="TNJ-Wn-ApO">
+                                        <rect key="frame" x="31" y="144" width="120" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="s6G-jL-Pe5"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerX" secondItem="UYx-AB-yzz" secondAttribute="centerX" id="CjI-Yy-LK3"/>
+                            <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerY" secondItem="UYx-AB-yzz" secondAttribute="centerY" id="X0K-GQ-MkK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UYx-AB-yzz"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SYl-YZ-6uo" id="33v-UR-qBE"/>
+                        <outlet property="progressBar" destination="TNJ-Wn-ApO" id="fH0-s9-xTu"/>
+                        <outlet property="taskLabel" destination="vhU-si-HEh" id="Nhg-PY-JE1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpU-QT-z6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="-647"/>
         </scene>
         <!--Select Teams View Controller-->
         <scene sceneID="mb4-yk-hmV">

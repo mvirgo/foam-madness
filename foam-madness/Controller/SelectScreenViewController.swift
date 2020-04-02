@@ -32,7 +32,7 @@ class SelectScreenViewController: UIViewController {
     }
     
     @IBAction func newTournamentButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "createTournament", sender: sender)
+        performSegue(withIdentifier: "selectBracket", sender: sender)
     }
     
     @IBAction func viewCompletedTournamentButtonPressed(_ sender: Any) {
@@ -51,8 +51,8 @@ class SelectScreenViewController: UIViewController {
             case "pickTeams":
                 let vc = segue.destination as! SelectTeamsViewController
                 vc.dataController = dataController
-            case "createTournament":
-                let vc = segue.destination as! CreateTournamentViewController
+            case "selectBracket":
+                let vc = segue.destination as! SelectInitialBracketViewController
                 vc.dataController = dataController
             default:
                 print("Unsupported segue.")
