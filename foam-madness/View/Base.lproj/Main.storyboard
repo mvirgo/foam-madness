@@ -181,20 +181,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-0H-Mw4">
-                                <rect key="frame" x="96.5" y="292.5" width="182.5" height="146"/>
+                                <rect key="frame" x="83" y="210.5" width="209.5" height="310"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SYl-YZ-6uo">
-                                        <rect key="frame" x="81" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="94.5" y="0.0" width="20" height="20"/>
                                         <color key="color" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Creating Tournament" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-si-HEh">
-                                        <rect key="frame" x="0.0" y="70" width="182.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Enter Tournament Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-si-HEh">
+                                        <rect key="frame" x="0.0" y="70" width="209.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tournament Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I03-oM-0cI">
+                                        <rect key="frame" x="14.5" y="144" width="180.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-gk-GRI">
+                                        <rect key="frame" x="0.0" y="224" width="209" height="34"/>
+                                        <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Create Tournament">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createTournamentButtonPressed:" destination="8kk-Cf-pJQ" eventType="touchUpInside" id="IdR-te-QWp"/>
+                                        </connections>
+                                    </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="TNJ-Wn-ApO">
-                                        <rect key="frame" x="31" y="144" width="120" height="2"/>
+                                        <rect key="frame" x="44.5" y="308" width="120" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="s6G-jL-Pe5"/>
                                         </constraints>
@@ -213,8 +231,10 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="SYl-YZ-6uo" id="33v-UR-qBE"/>
+                        <outlet property="createTournamentButton" destination="5zQ-gk-GRI" id="h97-YK-JqE"/>
                         <outlet property="progressBar" destination="TNJ-Wn-ApO" id="fH0-s9-xTu"/>
                         <outlet property="taskLabel" destination="vhU-si-HEh" id="Nhg-PY-JE1"/>
+                        <outlet property="tourneyNameTextField" destination="I03-oM-0cI" id="rrh-Xs-GEH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpU-QT-z6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
