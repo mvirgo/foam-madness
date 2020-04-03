@@ -22,9 +22,32 @@ class SelectScreenViewController: UIViewController {
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Show below based on logic of existing tournaments
-        resumeTournamentButton.isHidden = true
-        viewCompletedTournamentButton.isHidden = true
+        // Show below based on logic of existing tournaments
+        resumeTournamentButton.isHidden = checkCurrentTournaments()
+        viewCompletedTournamentButton.isHidden = checkCompletedTournaments()
+    }
+    
+    // MARK: Other functions
+    func fetchTournaments(_ predicate: NSPredicate) -> [Any] {
+        // Get view context
+        let context = dataController.viewContext
+        // Get tournaments from Core Data
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tournament")
+        fetchRequest.predicate = predicate
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        
+        return results
+    }
+    
+    func checkCurrentTournaments() -> Bool {
+        let predicate = NSPredicate(format: "completion == NO")
+        return fetchTournaments(predicate).count == 0
+    }
+    
+    func checkCompletedTournaments() -> Bool {
+        let predicate = NSPredicate(format: "completion == YES")
+        return fetchTournaments(predicate).count == 0
     }
     
     // MARK: IBActions
