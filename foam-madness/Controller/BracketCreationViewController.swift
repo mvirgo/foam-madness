@@ -194,10 +194,45 @@ class BracketCreationViewController: UIViewController {
                 saveData()
             }
         }
-        
+    }
+    
+    func createLaterRounds() {
+        let gamesPerRoundPerRegion = [4, 2, 1, 2, 1]
+        // Loop through rounds
+        for i in 2...6 {
+            if i < 5 { // Before final four
+                // Loop through regions
+                for region in regionSeedTeams.keys {
+                    for _ in 1...gamesPerRoundPerRegion[i-2] {
+                        let game = Game(context: context)
+                        game.round = Int16(i)
+                        game.region = region
+                        // Add the game to the tournament
+                        tournament.addToGames(game)
+                        // Save the data
+                        saveData()
+                    }
+                }
+            } else { // Final Four or Championship
+                for _ in 1...gamesPerRoundPerRegion[i-2] {
+                    let game = Game(context: context)
+                    game.round = Int16(i)
+                    if i == 5 {
+                        game.region = "Final Four"
+                    } else {
+                        game.region = "Championship"
+                    }
+                    // Add the game to the tournament
+                    tournament.addToGames(game)
+                    // Save the data
+                    saveData()
+                }
+            }
+        }
     }
         
     func createTournamentGames() {
+        taskLabel.text = "Creating tournament games..."
         // Note: This function is essentially hard-coded for 2020 bracket style
         // Create First Four
         createFirstFour()
@@ -205,7 +240,11 @@ class BracketCreationViewController: UIViewController {
         // Create Round 1 with initial teams
         createFirstRound()
         progressBar.progress += 0.40
-        // TODO: Create Round 2-Championship with no teams
+        // Create Round 2-Championship with no teams
+        createLaterRounds()
+        progressBar.progress += 0.30
+        // Save the data
+        saveData()
     }
     
     // MARK: IBActions
