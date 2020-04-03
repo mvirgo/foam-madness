@@ -20,6 +20,12 @@ class SelectScreenViewController: UIViewController {
     var dataController: DataController!
     
     // MARK: View functions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Make sure navbar appears
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Show below based on logic of existing tournaments
