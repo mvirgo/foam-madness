@@ -39,8 +39,14 @@ class PlayGameViewController: UIViewController {
         } else {
             teams = [gameTeams[1], gameTeams[0]]
         }
-        team1.text = String(game.team1Seed) + " - " + teams[0].name!
-        team2.text = String(game.team2Seed) + " - " + teams[1].name!
+        // Show seed depending on if game is in a tourney
+        if let _ = game.tournament {
+            team1.text = String(game.team1Seed) + " - " + teams[0].name!
+            team2.text = String(game.team2Seed) + " - " + teams[1].name!
+        } else {
+            team1.text = teams[0].name!
+            team2.text = teams[1].name!
+        }
     }
     
     func setRegion() {

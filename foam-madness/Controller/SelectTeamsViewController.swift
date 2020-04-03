@@ -100,9 +100,6 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // Hide the region and round from Play Game view
         game.region = ""
         game.round = -1
-        // TODO: Hide seeds?
-        game.team1Seed = 1
-        game.team2Seed = 1
         // Lookup or create teams
         let team1 = lookupOrCreateTeam(teamName: teams[0][pickerView.selectedRow(inComponent: 0)],
                                        context: managedObjectContext)

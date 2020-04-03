@@ -42,8 +42,14 @@ class GameScoreViewController: UIViewController {
     
     // MARK: Other functions
     func setGameScoreDisplay() {
-        team1Name.text = String(game.team1Seed) + " - " + team1.name!
-        team2Name.text = String(game.team2Seed) + " - " + team2.name!
+        // Show seed depending on if game is in a tourney
+        if let _ = game.tournament {
+            team1Name.text = String(game.team1Seed) + " - " + team1.name!
+            team2Name.text = String(game.team2Seed) + " - " + team2.name!
+        } else {
+            team1Name.text = team1.name!
+            team2Name.text = team2.name!
+        }
         team1Score.text = String(game.team1Score)
         team2Score.text = String(game.team2Score)
     }
