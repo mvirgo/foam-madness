@@ -17,6 +17,7 @@ class BracketCreationViewController: UIViewController {
     
     // MARK: Other variables
     var dataController: DataController!
+    var context: NSManagedObjectContext!
     var bracketLocation: String!
     var regionSeedTeams = [String: [String: Int16]]()
     
@@ -31,9 +32,13 @@ class BracketCreationViewController: UIViewController {
         super.viewDidLoad()
         // Start motion on activity indicator
         activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        // Get view context
+        context = dataController.viewContext
         // Load the bracket
         loadBracket()
-        // TODO: Create any teams that aren't created yet
+        // Create any teams that aren't created yet
+        createAnyNewTeams()
         // TODO: Create all games and add to tourney
         // TODO: Ask user for name of the tournament
         // TODO: Segue to table view of all playable games
@@ -56,5 +61,53 @@ class BracketCreationViewController: UIViewController {
         regionSeedTeams = NSDictionary(contentsOfFile: path)!.value(forKey: "Regions") as! Dictionary<String, [String: Int16]>
         // Update progress bar to 5%
         progressBar.progress = 0.05
+    }
+    
+    func getExistingTeams() -> [Int16] {
+        var existingsIds: [Int16] = []
+        // Use a fetch request to get all existing teams
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        // Add any existing ids to the array
+        for team in results {
+            existingsIds.append((team as! Team).id)
+        }
+        
+        return existingsIds
+    }
+    
+    func loadTeams() -> NSDictionary {
+        // Load in teams list
+        let path = Bundle.main.path(forResource: "teams", ofType: "plist")!
+        let dict = NSDictionary(contentsOfFile: path)!
+        
+        return dict
+    }
+    
+    func createAnyNewTeams() {
+        // Update the taskLabel
+        taskLabel.text = "Adding any new teams..."
+        // Start by getting all existing team ids
+        let existingIds = getExistingTeams()
+        // Add 5% to progress bar
+        progressBar.progress += 0.05
+        // Load in all teams from teams dict
+        let allTeams = loadTeams()
+        // Create any teams in bracket not in existingIds
+        for key in allTeams.allKeys {
+            let stringKey = String(describing: key)
+            let teamId = Int16(stringKey)!
+            if !existingIds.contains(teamId) {
+                // Create the team
+                let teamDict = allTeams.value(forKey: stringKey)! as! Dictionary<String, String>
+                let team = Team(context: context)
+                team.name = teamDict["name"]
+                team.abbreviation = teamDict["abbreviation"]
+                team.id = teamId
+            }
+        }
+        // Add 10% to progress bar
+        progressBar.progress += 0.10
     }
 }
