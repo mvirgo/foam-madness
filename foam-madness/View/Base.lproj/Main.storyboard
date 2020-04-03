@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-3014" y="-593"/>
         </scene>
-        <!--Select Screen View Controller-->
+        <!--Main Menu-->
         <scene sceneID="0P5-Ej-iLk">
             <objects>
                 <viewController id="VEB-mH-mmc" customClass="SelectScreenViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,7 +118,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r7o-JM-Lkk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9rq-vp-d3S"/>
+                    <navigationItem key="navigationItem" title="Main Menu" id="9rq-vp-d3S"/>
                     <connections>
                         <outlet property="playGameButton" destination="QJt-vF-R5B" id="BAp-Hm-GGE"/>
                         <outlet property="resumeTournamentButton" destination="HSH-Ya-D6N" id="nDY-0h-tOd"/>
