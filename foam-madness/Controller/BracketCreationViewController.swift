@@ -112,14 +112,66 @@ class BracketCreationViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
+    func saveData() {
+        // Save the view context
+        do {
+            try context.save()
+        } catch {
+            print("Failed to save.")
+        }
+    }
+    
     func createTournamentObject() {
         // Update the taskLabel
         taskLabel.text = "Creating tournament object..."
         // Create the tournament
         tournament = Tournament(context: context)
         tournament.name = tournamentName!
+        saveData()
         // Add 5% to progress bar
         progressBar.progress += 0.05
+    }
+    
+    func createFirstFour() {
+        let regions = ["East","East","East","West"]
+        let seeds = [["111", "112"],["121", "122"],
+                     ["161", "162"],["161", "162"]]
+        // Create all four games
+        for i in 0...3 {
+            let game = Game(context: context)
+            game.round = 0
+            game.region = regions[i]
+            // Add both team ids and seeds
+            game.team1Id = regionSeedTeams[regions[i]]![seeds[i][0]]!
+            game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
+            game.team1Seed = Int16(Int(seeds[i][0])! / 10)
+            game.team2Seed = Int16(Int(seeds[i][1])! / 10)
+            // TODO: Refactor below to not have to query each individual team
+            // Get both teams from Core Data and add to game
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+            let predicate = NSPredicate(format: "id IN %@",
+                                        [game.team1Id, game.team2Id])
+            fetchRequest.predicate = predicate
+            // Fetch the results
+            let results = try! context.fetch(fetchRequest)
+            // Add teams to the game
+            for team in results {
+                (team as! Team).addToGames(game)
+            }
+            // Add the game to the tournament
+            tournament.addToGames(game)
+            // Save the data
+            saveData()
+        }
+    }
+        
+    func createTournamentGames() {
+        // Note: This function is essentially hard-coded for 2020 bracket style
+        // Create First Four
+        createFirstFour()
+        progressBar.progress += 0.05
+        // TODO: Create Round 1 with initial teams
+        // TODO: Create Round 2-Championship with no teams
     }
     
     // MARK: IBActions
@@ -146,7 +198,8 @@ class BracketCreationViewController: UIViewController {
         createAnyNewTeams()
         // Create the tournament
         createTournamentObject()
-        // TODO: Create all games and add to tourney
+        // Create all games and add to tourney
+        createTournamentGames()
         // End activity indicator motion
         activityIndicator.stopAnimating()
         // TODO: Segue to table view of all playable games
