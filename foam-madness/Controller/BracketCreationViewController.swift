@@ -132,6 +132,17 @@ class BracketCreationViewController: UIViewController {
         progressBar.progress += 0.05
     }
     
+    func fetchTeamById(_ teamIds: [Int16]) -> [Any] {
+        // Get both teams from Core Data and add to game
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        let predicate = NSPredicate(format: "id IN %@", teamIds)
+        fetchRequest.predicate = predicate
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        
+        return results
+    }
+    
     func createFirstFour() {
         let regions = ["East","East","East","West"]
         let seeds = [["111", "112"],["121", "122"],
@@ -146,14 +157,8 @@ class BracketCreationViewController: UIViewController {
             game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
             game.team1Seed = Int16(Int(seeds[i][0])! / 10)
             game.team2Seed = Int16(Int(seeds[i][1])! / 10)
-            // TODO: Refactor below to not have to query each individual team
-            // Get both teams from Core Data and add to game
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
-            let predicate = NSPredicate(format: "id IN %@",
-                                        [game.team1Id, game.team2Id])
-            fetchRequest.predicate = predicate
-            // Fetch the results
-            let results = try! context.fetch(fetchRequest)
+            // Fetch the teams by id
+            let results = fetchTeamById([game.team1Id, game.team2Id])
             // Add teams to the game
             for team in results {
                 (team as! Team).addToGames(game)
@@ -164,13 +169,42 @@ class BracketCreationViewController: UIViewController {
             saveData()
         }
     }
+    
+    func createFirstRound() {
+        // Create all 32 first round games, region by region & seed by seed
+        for region in regionSeedTeams.keys {
+            for i in 1...8 {
+                let game = Game(context: context)
+                game.round = 1
+                game.region = region
+                game.team1Seed = Int16(i)
+                game.team2Seed = Int16(17-i)
+                // Team 2 may not actually exist yet due to First Four
+                game.team1Id = regionSeedTeams[region]![String(i)] ?? -1
+                game.team2Id = regionSeedTeams[region]![String(17-i)] ?? -1
+                // Fetch the teams by id
+                let results = fetchTeamById([game.team1Id, game.team2Id])
+                // Add teams to the game
+                for team in results {
+                    (team as! Team).addToGames(game)
+                }
+                // Add the game to the tournament
+                tournament.addToGames(game)
+                // Save the data
+                saveData()
+            }
+        }
+        
+    }
         
     func createTournamentGames() {
         // Note: This function is essentially hard-coded for 2020 bracket style
         // Create First Four
         createFirstFour()
         progressBar.progress += 0.05
-        // TODO: Create Round 1 with initial teams
+        // Create Round 1 with initial teams
+        createFirstRound()
+        progressBar.progress += 0.40
         // TODO: Create Round 2-Championship with no teams
     }
     
