@@ -73,6 +73,12 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return team
     }
     
+    func alertUser(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     // MARK: PickerView functions
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return teams[0].count
@@ -88,7 +94,12 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     // IBActions
     @IBAction func continueButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "viewGame", sender: sender)
+        // Only segue if different teams are selected
+        if pickerView.selectedRow(inComponent: 0) != pickerView.selectedRow(inComponent: 1) {
+            performSegue(withIdentifier: "viewGame", sender: sender)
+        } else {
+            alertUser(title: "Invalid Teams", message: "Selected teams must be different.")
+        }
     }
     
     // MARK: Navigation
