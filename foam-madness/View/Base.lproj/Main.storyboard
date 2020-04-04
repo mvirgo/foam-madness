@@ -334,6 +334,9 @@
                             <outlet property="delegate" destination="vL1-LW-sxu" id="BJa-IT-05u"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="W2t-HN-F36" kind="show" identifier="showExistingTourneyGames" id="3mw-OV-SCx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IG-6j-xGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1052,5 +1055,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ncl-rA-kNL"/>
+        <segue reference="3mw-OV-SCx"/>
     </inferredMetricsTieBreakers>
 </document>

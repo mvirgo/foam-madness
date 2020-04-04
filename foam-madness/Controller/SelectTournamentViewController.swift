@@ -14,12 +14,9 @@ class SelectTournamentViewController: UITableViewController {
     var dataController: DataController!
     var completedTournaments: Bool!
     var tournamentsFetched: [Tournament]!
+    var selectedTournament: Tournament!
     
     // MARK: View functions
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add a page title
@@ -56,7 +53,17 @@ class SelectTournamentViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tournament = tournamentsFetched[(indexPath as NSIndexPath).row]
-        // TODO: Segue to tournament games view
+        selectedTournament = tournamentsFetched[(indexPath as NSIndexPath).row]
+        // Segue to tournament games view
+        performSegue(withIdentifier: "showExistingTourneyGames", sender: nil)
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send data controller & tourney to Tournament Games Controller
+        if let vc = segue.destination as? TournamentGamesViewController {
+            vc.dataController = dataController
+            vc.tournament = selectedTournament
+        }
     }
 }
