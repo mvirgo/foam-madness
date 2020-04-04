@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */; };
+		7A10A5F524383F970070302F /* SelectTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F424383F970070302F /* SelectTournamentViewController.swift */; };
 		7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEE8242EDE920065E369 /* AppDelegate.swift */; };
 		7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */; };
 		7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEC242EDE920065E369 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGamesViewController.swift; sourceTree = "<group>"; };
+		7A10A5F424383F970070302F /* SelectTournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTournamentViewController.swift; sourceTree = "<group>"; };
 		7A2ECEE5242EDE920065E369 /* foam-madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foam-madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ECEE8242EDE920065E369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				7AE130E9243591B900D30A21 /* SelectInitialBracketViewController.swift */,
 				7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */,
 				7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */,
+				7A10A5F424383F970070302F /* SelectTournamentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
 				7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */,
 				7AE130EA243591B900D30A21 /* SelectInitialBracketViewController.swift in Sources */,
+				7A10A5F524383F970070302F /* SelectTournamentViewController.swift in Sources */,
 				7AF31A862431267400DF1605 /* GameHelper.swift in Sources */,
 				7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */,
 				7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */,

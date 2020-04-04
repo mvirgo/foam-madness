@@ -126,6 +126,8 @@
                         <outlet property="viewCompletedTournamentButton" destination="b4e-4O-vdX" id="x7h-L7-p27"/>
                         <segue destination="jBT-I2-GqF" kind="show" identifier="pickTeams" id="sQO-1D-Ing"/>
                         <segue destination="sE1-qN-DJt" kind="show" identifier="selectBracket" id="dr9-6Q-Daj"/>
+                        <segue destination="vL1-LW-sxu" kind="show" identifier="chooseExistingTournament" id="rJY-3v-B6B"/>
+                        <segue destination="vL1-LW-sxu" kind="show" identifier="chooseCompletedTournament" id="ncl-rA-kNL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,6 +301,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRv-Iy-KfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="486" y="-893"/>
+        </scene>
+        <!--Select Tournament View Controller-->
+        <scene sceneID="NBT-cG-tTx">
+            <objects>
+                <tableViewController id="vL1-LW-sxu" customClass="SelectTournamentViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Glj-CT-bUk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tournaments" textLabel="zvq-cB-G5W" style="IBUITableViewCellStyleDefault" id="Bdl-Wa-WnG">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bdl-Wa-WnG" id="gnO-Pb-Y6W">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zvq-cB-G5W">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vL1-LW-sxu" id="Rbr-pC-wuG"/>
+                            <outlet property="delegate" destination="vL1-LW-sxu" id="BJa-IT-05u"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2IG-6j-xGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-841" y="-670"/>
         </scene>
         <!--Select Teams View Controller-->
         <scene sceneID="mb4-yk-hmV">
@@ -1011,4 +1050,7 @@
     <resources>
         <image name="basketball-gray" width="60" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ncl-rA-kNL"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -58,6 +58,7 @@ class SelectScreenViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func resumeTournamentButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "chooseExistingTournament", sender: sender)
     }
     
     @IBAction func newTournamentButtonPressed(_ sender: Any) {
@@ -65,6 +66,7 @@ class SelectScreenViewController: UIViewController {
     }
     
     @IBAction func viewCompletedTournamentButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "chooseCompletedTournament", sender: sender)
     }
     
     @IBAction func playGameButtonPressed(_ sender: Any) {
@@ -83,6 +85,14 @@ class SelectScreenViewController: UIViewController {
             case "selectBracket":
                 let vc = segue.destination as! SelectInitialBracketViewController
                 vc.dataController = dataController
+            case "chooseExistingTournament":
+                let vc = segue.destination as! SelectTournamentViewController
+                vc.dataController = dataController
+                vc.completedTournaments = false
+            case "chooseCompletedTournament":
+                let vc = segue.destination as! SelectTournamentViewController
+                vc.dataController = dataController
+                vc.completedTournaments = true
             default:
                 print("Unsupported segue.")
             }
