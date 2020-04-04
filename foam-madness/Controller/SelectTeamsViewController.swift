@@ -116,6 +116,9 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
                                        context: managedObjectContext)
         let team2 = lookupOrCreateTeam(teamName: teams[1][pickerView.selectedRow(inComponent: 1)],
                                        context: managedObjectContext)
+        // Add team ids to game to ensure proper order of score/stats
+        game.team1Id = team1.id
+        game.team2Id = team2.id
         // Add teams to game
         team1.addToGames(game)
         team2.addToGames(game)
