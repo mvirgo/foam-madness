@@ -23,6 +23,16 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     var selectedGame: Game!
     
     // MARK: View functions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Make sure to show the navbar
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        // If games isn't empty, get games
+        if games.count > 0 {
+            getGamesForRound()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add a page title

@@ -65,8 +65,17 @@ class GameScoreViewController: UIViewController {
     }
     
     @IBAction func backToGamesButtonPressed(_ sender: Any) {
-        // TODO: Segue should depend on whether in tourney or single game
-        navigationController?.popToRootViewController(animated: true)
+        // Pop view controllers based on whether in tourney or single game
+        // Thanks https://stackoverflow.com/questions/30003814/how-can-i-pop-specific-view-controller-in-swift
+        if let _ = game.tournament {
+            for controller in self.navigationController!.viewControllers as Array {
+                if controller.isKind(of: TournamentGamesViewController.self) {
+                    self.navigationController!.popToViewController(controller, animated: true)
+                }
+            }
+        } else {
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     // MARK: Navigation
