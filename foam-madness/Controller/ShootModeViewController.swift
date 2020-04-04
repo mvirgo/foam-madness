@@ -258,7 +258,8 @@ class ShootModeViewController: UIViewController {
     }
     
     func addNextGame(_ tournament: Tournament) {
-        if game.nextGame == -1 {
+        if game.nextGame == -1 { // Championship game
+            tournament.completion = true
             // TODO: Handle Championship game
             // Likely to add UIAlert on winner and maybe a page on tourney?
             // Then segue from there back to main menu
@@ -291,6 +292,8 @@ class ShootModeViewController: UIViewController {
             // Then add the team to the game object
             winner.addToGames(nextGame)
         }
+        // Make sure to save
+        saveData()
     }
     
     // MARK: IBActions
