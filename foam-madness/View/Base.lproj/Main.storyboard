@@ -326,6 +326,7 @@
                         <outlet property="roundLabel" destination="H7s-9G-d7j" id="E9q-jk-ZTn"/>
                         <outlet property="roundStepper" destination="GQv-Tz-wYG" id="uJl-Rx-Chg"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="playTourneyGame" id="FBW-d3-wiS"/>
+                        <segue destination="dIJ-Id-27O" kind="show" identifier="showCompletedTourneyGame" id="1st-iB-00j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRv-Iy-KfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1084,6 +1085,7 @@
         <image name="basketball-gray" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1st-iB-00j"/>
         <segue reference="FBW-d3-wiS"/>
         <segue reference="ncl-rA-kNL"/>
         <segue reference="3mw-OV-SCx"/>

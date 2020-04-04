@@ -65,9 +65,6 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO: Sections for regions and/or completed games?
-        // Hold two teams for use later
-        let team1: Team
-        let team2: Team
         // Get the cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "tourneyGameCell", for: indexPath)
         // Get the correct game for the cell
@@ -76,14 +73,9 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         // TODO: Add the score if the game was already played
         // Set the cell details if game is ready to play
         if game.teams?.count == 2 {
-            let checkTeam = game.teams?.allObjects[0] as! Team
-            if checkTeam.id == game.team1Id {
-                team1 = checkTeam
-                team2 = game.teams?.allObjects[1] as! Team
-            } else {
-                team1 = game.teams?.allObjects[1] as! Team
-                team2 = checkTeam
-            }
+            let teams = GameHelper.getOrderedTeams(game)
+            let team1 = teams[0]
+            let team2 = teams[1]
             cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
         } else {
             cell.textLabel?.text = "Game Pending Both Participants"
@@ -97,7 +89,8 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         selectedGame = games[(indexPath as NSIndexPath).row]
         // Do segues or not based on if game is completed or ready to play
         if selectedGame.completion {
-            // TODO: Segue to game stats instead of game play
+            // Segue to game stats instead of game play
+            performSegue(withIdentifier: "showCompletedTourneyGame", sender: nil)
         } else if selectedGame.teams?.count == 2 {
             // Game is ready to play, segue to play game view
             performSegue(withIdentifier: "playTourneyGame", sender: nil)
@@ -114,6 +107,11 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Send data controller to Play Game View Controller
         if let vc = segue.destination as? PlayGameViewController {
+            vc.dataController = dataController
+            vc.game = selectedGame
+        }
+        // Or send data to Game Score View Controller
+        if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
             vc.game = selectedGame
         }
