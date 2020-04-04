@@ -31,6 +31,11 @@ class GameScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make sure teams match original order
+        let teams = GameHelper.getOrderedTeams(game)
+        team1 = teams[0]
+        team2 = teams[1]
+        // Set the game score display
         setGameScoreDisplay()
     }
     
@@ -70,8 +75,6 @@ class GameScoreViewController: UIViewController {
         if let vc = segue.destination as? GameStatsViewController {
             vc.dataController = dataController
             vc.game = game
-            vc.team1 = team1
-            vc.team2 = team2
         }
     }
 

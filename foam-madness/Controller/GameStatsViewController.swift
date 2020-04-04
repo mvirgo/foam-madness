@@ -35,6 +35,11 @@ class GameStatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make sure teams match original order
+        let teams = GameHelper.getOrderedTeams(game)
+        team1 = teams[0]
+        team2 = teams[1]
+        // Load in the game stats
         loadStats()
     }
     

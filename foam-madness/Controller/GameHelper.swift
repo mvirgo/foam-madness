@@ -37,4 +37,21 @@ class GameHelper {
         }
         return out
     }
+    
+    static func getOrderedTeams(_ game: Game) -> [Team] {
+        // Hold two teams for use later
+        let team1: Team
+        let team2: Team
+        // Match teams to team ids in game
+        let checkTeam = game.teams?.allObjects[0] as! Team
+        if checkTeam.id == game.team1Id {
+            team1 = checkTeam
+            team2 = game.teams?.allObjects[1] as! Team
+        } else {
+            team1 = game.teams?.allObjects[1] as! Team
+            team2 = checkTeam
+        }
+        
+        return [team1, team2]
+    }
 }
