@@ -64,6 +64,7 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO: Sections for regions and/or completed games?
         // Hold two teams for use later
         let team1: Team
         let team2: Team
@@ -72,6 +73,7 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         // Get the correct game for the cell
         let game = games[(indexPath as NSIndexPath).row]
         
+        // TODO: Add the score if the game was already played
         // Set the cell details if game is ready to play
         if game.teams?.count == 2 {
             let checkTeam = game.teams?.allObjects[0] as! Team
@@ -83,22 +85,37 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
                 team2 = checkTeam
             }
             cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
-            cell.detailTextLabel?.text = game.region! + " Region"
         } else {
             cell.textLabel?.text = "Game Pending Both Participants"
-            cell.detailTextLabel?.text = game.region! + " Region"
         }
+        cell.detailTextLabel?.text = game.region!
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedGame = games[(indexPath as NSIndexPath).row]
-        // TODO: Segue to play game view
+        // Do segues or not based on if game is completed or ready to play
+        if selectedGame.completion {
+            // TODO: Segue to game stats instead of game play
+        } else if selectedGame.teams?.count == 2 {
+            // Game is ready to play, segue to play game view
+            performSegue(withIdentifier: "playTourneyGame", sender: nil)
+        }
     }
     
+    // MARK: IBActions
     @IBAction func roundStepperPressed(_ sender: Any) {
         // Update the round view
         getGamesForRound()
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send data controller to Play Game View Controller
+        if let vc = segue.destination as? PlayGameViewController {
+            vc.dataController = dataController
+            vc.game = selectedGame
+        }
     }
 }
