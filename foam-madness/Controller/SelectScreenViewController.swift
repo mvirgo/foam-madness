@@ -34,26 +34,14 @@ class SelectScreenViewController: UIViewController {
     }
     
     // MARK: Other functions
-    func fetchTournaments(_ predicate: NSPredicate) -> [Any] {
-        // Get view context
-        let context = dataController.viewContext
-        // Get tournaments from Core Data
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tournament")
-        fetchRequest.predicate = predicate
-        // Fetch the results
-        let results = try! context.fetch(fetchRequest)
-        
-        return results
-    }
-    
     func checkCurrentTournaments() -> Bool {
         let predicate = NSPredicate(format: "completion == NO")
-        return fetchTournaments(predicate).count == 0
+        return TourneyHelper.fetchTournaments(dataController, predicate).count == 0
     }
     
     func checkCompletedTournaments() -> Bool {
         let predicate = NSPredicate(format: "completion == YES")
-        return fetchTournaments(predicate).count == 0
+        return TourneyHelper.fetchTournaments(dataController, predicate).count == 0
     }
     
     // MARK: IBActions
