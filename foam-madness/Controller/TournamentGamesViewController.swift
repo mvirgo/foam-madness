@@ -46,6 +46,8 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
                 games.append(game)
             }
         }
+        // Sort games by tourney game id
+        games = games.sorted() { $0.tourneyGameId < $1.tourneyGameId }
         // Reload the table view
         gameTableView.reloadData()
         // Set the top label name
