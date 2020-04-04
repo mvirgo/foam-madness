@@ -70,15 +70,26 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         // Get the correct game for the cell
         let game = games[(indexPath as NSIndexPath).row]
         
-        // TODO: Add the score if the game was already played
-        // Set the cell details if game is ready to play
+        // Set the cell details based on game status
         if game.teams?.count == 2 {
             let teams = GameHelper.getOrderedTeams(game)
             let team1 = teams[0]
             let team2 = teams[1]
-            cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
+            if game.completion { // game over, show score
+                // Make sure winner is shown first
+                if game.team1Score > game.team2Score {
+                    cell.textLabel?.text = "\(game.team1Seed) \(team1.name!):  \(game.team1Score), \(game.team2Seed) \(team2.name!):  \(game.team2Score)"
+                } else {
+                    cell.textLabel?.text = "\(game.team2Seed) \(team2.name!):  \(game.team2Score), \(game.team1Seed) \(team1.name!):  \(game.team1Score)"
+                }
+                cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.1)
+            } else { // Game is ready to play
+                cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
+                cell.backgroundColor = UIColor.white
+            }
         } else {
             cell.textLabel?.text = "Game Pending Both Participants"
+            cell.backgroundColor = UIColor.gray
         }
         cell.detailTextLabel?.text = game.region!
         
