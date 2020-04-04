@@ -24,10 +24,6 @@ class SelectScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         // Make sure navbar appears
         navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         // Show below based on logic of existing tournaments
         resumeTournamentButton.isHidden = checkCurrentTournaments()
         viewCompletedTournamentButton.isHidden = checkCompletedTournaments()
