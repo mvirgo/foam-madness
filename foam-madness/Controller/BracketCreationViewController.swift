@@ -270,11 +270,24 @@ class BracketCreationViewController: UIViewController {
         saveData()
     }
     
+    func checkExistingNames(_ name: String) -> Bool {
+        // Return true if no other tournaments named the same
+        let predicate = NSPredicate(format: "name == %@", name)
+        return TourneyHelper.fetchData(dataController, predicate, "Tournament").count == 0
+    }
+    
     // MARK: IBActions
     @IBAction func createTournamentButtonPressed(_ sender: Any) {
         // Set the tournament name based on user input
-        if tourneyNameTextField.text != "" {
-            tournamentName = tourneyNameTextField.text
+        let name = tourneyNameTextField.text
+        if name != "" {
+            if checkExistingNames(name!) { // New tourney name
+                tournamentName = tourneyNameTextField.text
+            } else {
+                // Tell user to find a new name
+                alertUser(title: "Invalid Name", message: "Tournament name already taken.")
+                return
+            }
         } else {
             // Tell user to input a name
             alertUser(title: "Invalid Name", message: "Tournament name cannot be blank.")
