@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */; };
 		7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEE8242EDE920065E369 /* AppDelegate.swift */; };
 		7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */; };
 		7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEC242EDE920065E369 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGamesViewController.swift; sourceTree = "<group>"; };
 		7A2ECEE5242EDE920065E369 /* foam-madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foam-madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ECEE8242EDE920065E369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */,
 				7AE130E9243591B900D30A21 /* SelectInitialBracketViewController.swift */,
 				7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */,
+				7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A494BC5243046A50042173A /* DataController.swift in Sources */,
+				7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */,
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
 				7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */,

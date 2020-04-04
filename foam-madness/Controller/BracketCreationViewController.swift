@@ -275,6 +275,16 @@ class BracketCreationViewController: UIViewController {
         createTournamentGames()
         // End activity indicator motion
         activityIndicator.stopAnimating()
-        // TODO: Segue to table view of all playable games
+        // Segue to table view of all playable games
+        performSegue(withIdentifier: "showNewTourneyGames", sender: nil)
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Send data controller to Tournament Games Controller
+        if let vc = segue.destination as? TournamentGamesViewController {
+            vc.dataController = dataController
+            vc.tournament = tournament
+        }
     }
 }

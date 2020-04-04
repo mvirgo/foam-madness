@@ -170,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="732-qE-P7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1242" y="-645"/>
+            <point key="canvasLocation" x="-1249" y="-1416"/>
         </scene>
         <!--Bracket Creation View Controller-->
         <scene sceneID="aos-p2-9IR">
@@ -235,22 +235,23 @@
                         <outlet property="progressBar" destination="TNJ-Wn-ApO" id="fH0-s9-xTu"/>
                         <outlet property="taskLabel" destination="vhU-si-HEh" id="Nhg-PY-JE1"/>
                         <outlet property="tourneyNameTextField" destination="I03-oM-0cI" id="rrh-Xs-GEH"/>
+                        <segue destination="W2t-HN-F36" kind="show" identifier="showNewTourneyGames" id="PbE-LF-brK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpU-QT-z6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="-647"/>
+            <point key="canvasLocation" x="-441" y="-1416"/>
         </scene>
-        <!--View Controller-->
+        <!--Tournament Games View Controller-->
         <scene sceneID="4EP-de-7Ya">
             <objects>
-                <viewController id="W2t-HN-F36" sceneMemberID="viewController">
+                <viewController id="W2t-HN-F36" customClass="TournamentGamesViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ss-6f-Vin">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7s-9G-d7j">
-                                <rect key="frame" x="16" y="20" width="343" height="50"/>
+                                <rect key="frame" x="16" y="64" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eo2-kQ-3mq"/>
                                 </constraints>
@@ -259,7 +260,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-2A-atw">
-                                <rect key="frame" x="16" y="78" width="343" height="500"/>
+                                <rect key="frame" x="16" y="122" width="343" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd8-zS-UuM">
@@ -269,13 +270,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-Tz-wYG">
-                                <rect key="frame" x="140" y="618" width="94" height="29"/>
+                                <rect key="frame" x="140.5" y="618" width="94" height="29"/>
                                 <color key="tintColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GQv-Tz-wYG" firstAttribute="leading" secondItem="7de-Vz-Nu6" secondAttribute="leading" constant="140" id="33J-1e-dfk"/>
                             <constraint firstItem="GQv-Tz-wYG" firstAttribute="top" secondItem="fd8-zS-UuM" secondAttribute="bottom" constant="8" symbolic="YES" id="8Vg-fj-aBR"/>
                             <constraint firstAttribute="bottom" secondItem="GQv-Tz-wYG" secondAttribute="bottom" constant="20" symbolic="YES" id="AQr-2S-WJP"/>
                             <constraint firstItem="fd8-zS-UuM" firstAttribute="top" secondItem="jbc-2A-atw" secondAttribute="bottom" constant="8" symbolic="YES" id="EX9-lj-sY0"/>
@@ -290,10 +290,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7de-Vz-Nu6"/>
                     </view>
+                    <connections>
+                        <outlet property="gameTableView" destination="jbc-2A-atw" id="pvt-Cd-nDr"/>
+                        <outlet property="roundLabel" destination="H7s-9G-d7j" id="E9q-jk-ZTn"/>
+                        <outlet property="roundStepper" destination="GQv-Tz-wYG" id="uJl-Rx-Chg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRv-Iy-KfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="486" y="-893"/>
         </scene>
         <!--Select Teams View Controller-->
         <scene sceneID="mb4-yk-hmV">
