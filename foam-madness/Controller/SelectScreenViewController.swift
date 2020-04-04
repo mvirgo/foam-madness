@@ -36,12 +36,12 @@ class SelectScreenViewController: UIViewController {
     // MARK: Other functions
     func checkCurrentTournaments() -> Bool {
         let predicate = NSPredicate(format: "completion == NO")
-        return TourneyHelper.fetchTournaments(dataController, predicate).count == 0
+        return TourneyHelper.fetchData(dataController, predicate, "Tournament").count == 0
     }
     
     func checkCompletedTournaments() -> Bool {
         let predicate = NSPredicate(format: "completion == YES")
-        return TourneyHelper.fetchTournaments(dataController, predicate).count == 0
+        return TourneyHelper.fetchData(dataController, predicate, "Tournament").count == 0
     }
     
     // MARK: IBActions

@@ -29,10 +29,10 @@ class SelectTournamentViewController: UITableViewController {
         let results: [Any]
         if completedTournaments {
             let predicate = NSPredicate(format: "completion == YES")
-            results = TourneyHelper.fetchTournaments(dataController, predicate)
+            results = TourneyHelper.fetchData(dataController, predicate, "Tournament")
         } else {
             let predicate = NSPredicate(format: "completion == NO")
-            results = TourneyHelper.fetchTournaments(dataController, predicate)
+            results = TourneyHelper.fetchData(dataController, predicate, "Tournament")
         }
         tournamentsFetched = (results as! [Tournament])
     }

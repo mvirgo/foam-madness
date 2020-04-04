@@ -9,11 +9,11 @@
 import CoreData
 
 class TourneyHelper {
-    static func fetchTournaments(_ dataControl: DataController, _ predicate: NSPredicate) -> [Any] {
+    static func fetchData(_ dataController: DataController, _ predicate: NSPredicate, _ entity: String) -> [Any] {
         // Get view context
-        let context = dataControl.viewContext
+        let context = dataController.viewContext
         // Get tournaments from Core Data
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tournament")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         fetchRequest.predicate = predicate
         // Fetch the results
         let results = try! context.fetch(fetchRequest)
