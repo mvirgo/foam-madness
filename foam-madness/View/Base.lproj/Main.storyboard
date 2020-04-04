@@ -300,6 +300,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-Tz-wYG">
                                 <rect key="frame" x="140.5" y="618" width="94" height="29"/>
                                 <color key="tintColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="roundStepperPressed:" destination="W2t-HN-F36" eventType="valueChanged" id="qVN-TH-FOg"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

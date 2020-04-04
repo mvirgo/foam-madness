@@ -96,4 +96,9 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         selectedGame = games[(indexPath as NSIndexPath).row]
         // TODO: Segue to play game view
     }
+    
+    @IBAction func roundStepperPressed(_ sender: Any) {
+        // Update the round view
+        getGamesForRound()
+    }
 }
