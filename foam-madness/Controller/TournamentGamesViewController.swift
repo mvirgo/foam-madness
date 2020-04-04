@@ -27,6 +27,9 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         // Add a page title
         navigationItem.title = "\(tournament.name!) Games"
+        // Hide original back button to make one that only goes to Main Menu
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(self.backToMainMenu))
         // Set delegate and datasource for the game table view
         self.gameTableView.delegate = self
         self.gameTableView.dataSource = self
@@ -117,6 +120,10 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     // MARK: Navigation
+    @objc func backToMainMenu() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Send data controller to Play Game View Controller
         if let vc = segue.destination as? PlayGameViewController {
