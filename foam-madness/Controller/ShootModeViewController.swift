@@ -258,11 +258,21 @@ class ShootModeViewController: UIViewController {
     }
     
     func addNextGame(_ tournament: Tournament) {
-        if game.nextGame == -1 { // Championship game
+        // Get the winner of this game
+        let winner: Team
+        let winningSeed: Int16
+        if game.team1Score > game.team2Score {
+            winner = team1
+            winningSeed = game.team1Seed
+        } else {
+            winner = team2
+            winningSeed = game.team2Seed
+        }
+        // Add the next game, if applicable
+        if game.nextGame == -1 {
+            // Championship game - the tournament is over!
             tournament.completion = true
-            // TODO: Handle Championship game
-            // Likely to add UIAlert on winner and maybe a page on tourney?
-            // Then segue from there back to main menu
+            alertUser(title: "Tournament Complete", message: "\(winner.name!) wins the tournament!")
         } else {
             // Get the next game object
             // Thanks https://stackoverflow.com/questions/35265420/multiple-nspredicates-for-nsfetchrequest-in-swift
@@ -271,16 +281,6 @@ class ShootModeViewController: UIViewController {
             let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [idPredicate, tourneyPredicate])
             let results = TourneyHelper.fetchData(dataController, andPredicate, "Game")
             let nextGame = results[0] as! Game
-            // Get the winner of this game
-            let winner: Team
-            let winningSeed: Int16
-            if game.team1Score > game.team2Score {
-                winner = team1
-                winningSeed = game.team1Seed
-            } else {
-                winner = team2
-                winningSeed = game.team2Seed
-            }
             // Set team id in next game based on its count
             if nextGame.teams!.count == 0 {
                 nextGame.team1Id = winner.id
