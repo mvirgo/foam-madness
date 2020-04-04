@@ -128,6 +128,7 @@ class BracketCreationViewController: UIViewController {
         // Create the tournament
         tournament = Tournament(context: context)
         tournament.name = tournamentName!
+        tournament.createdDate = Date()
         saveData()
         // Add 5% to progress bar
         progressBar.progress += 0.05

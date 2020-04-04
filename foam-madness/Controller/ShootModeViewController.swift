@@ -272,6 +272,7 @@ class ShootModeViewController: UIViewController {
         if game.nextGame == -1 {
             // Championship game - the tournament is over!
             tournament.completion = true
+            tournament.completionDate = Date()
             alertUser(title: "Tournament Complete", message: "\(winner.name!) wins the tournament!")
         } else {
             // Get the next game object
