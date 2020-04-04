@@ -257,6 +257,42 @@ class ShootModeViewController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
+    func addNextGame(_ tournament: Tournament) {
+        if game.nextGame == -1 {
+            // TODO: Handle Championship game
+            // Likely to add UIAlert on winner and maybe a page on tourney?
+            // Then segue from there back to main menu
+        } else {
+            // Get the next game object
+            // Thanks https://stackoverflow.com/questions/35265420/multiple-nspredicates-for-nsfetchrequest-in-swift
+            let idPredicate = NSPredicate(format: "tourneyGameId == %@", NSNumber(value: game.nextGame))
+            let tourneyPredicate = NSPredicate(format: "tournament == %@", tournament)
+            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [idPredicate, tourneyPredicate])
+            let results = TourneyHelper.fetchData(dataController, andPredicate, "Game")
+            let nextGame = results[0] as! Game
+            // Get the winner of this game
+            let winner: Team
+            let winningSeed: Int16
+            if game.team1Score > game.team2Score {
+                winner = team1
+                winningSeed = game.team1Seed
+            } else {
+                winner = team2
+                winningSeed = game.team2Seed
+            }
+            // Set team id in next game based on its count
+            if nextGame.teams!.count == 0 {
+                nextGame.team1Id = winner.id
+                nextGame.team1Seed = winningSeed
+            } else {
+                nextGame.team2Id = winner.id
+                nextGame.team2Seed = winningSeed
+            }
+            // Then add the team to the game object
+            winner.addToGames(nextGame)
+        }
+    }
+    
     // MARK: IBActions
     @IBAction func ballButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -285,6 +321,10 @@ class ShootModeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Set game to complete
         game.completion = true
+        // Add the next tourney game, if applicable
+        if let tournament = game.tournament {
+            addNextGame(tournament)
+        }
         // Send data controller to GameScoreViewController if that's destination
         if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
