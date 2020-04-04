@@ -23,6 +23,7 @@ class BracketCreationViewController: UIViewController {
     var tournament: Tournament!
     var tournamentName: String!
     var bracketLocation: String!
+    let regionOrder = ["Midwest", "East", "West", "South"]
     var regionSeedTeams = [String: [String: Int16]]()
     
     // MARK: View functions
@@ -147,6 +148,7 @@ class BracketCreationViewController: UIViewController {
         let regions = ["East","East","East","West"]
         let seeds = [["111", "112"],["121", "122"],
                      ["161", "162"],["161", "162"]]
+        let nextGames = [16, 14, 12, 20]
         // Create all four games
         for i in 0...3 {
             let game = Game(context: context)
@@ -157,6 +159,10 @@ class BracketCreationViewController: UIViewController {
             game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
             game.team1Seed = Int16(Int(seeds[i][0])! / 10)
             game.team2Seed = Int16(Int(seeds[i][1])! / 10)
+            // Set tourney game id and next game
+            // NOTE: This is essentially hard-coded for current set-up
+            game.tourneyGameId = Int16(i)
+            game.nextGame = Int16(nextGames[i])
             // Fetch the teams by id
             let results = fetchTeamById([game.team1Id, game.team2Id])
             // Add teams to the game
@@ -171,9 +177,13 @@ class BracketCreationViewController: UIViewController {
     }
     
     func createFirstRound() {
+        // Hold top seeds in order of games to create (for use with ids)
+        let topSeeds = [1, 8, 5, 4, 6, 3, 7, 2]
+        // Make counter for tourney game id (start at 4 to avoid First Four)
+        var gameId = 4
         // Create all 32 first round games, region by region & seed by seed
-        for region in regionSeedTeams.keys {
-            for i in 1...8 {
+        for region in regionOrder {
+            for i in topSeeds {
                 let game = Game(context: context)
                 game.round = 1
                 game.region = region
@@ -182,6 +192,10 @@ class BracketCreationViewController: UIViewController {
                 // Team 2 may not actually exist yet due to First Four
                 game.team1Id = regionSeedTeams[region]![String(i)] ?? -1
                 game.team2Id = regionSeedTeams[region]![String(17-i)] ?? -1
+                // Set tourney game id and next game
+                game.tourneyGameId = Int16(gameId)
+                game.nextGame = Int16((gameId / 2) + 34)
+                gameId += 1
                 // Fetch the teams by id
                 let results = fetchTeamById([game.team1Id, game.team2Id])
                 // Add teams to the game
@@ -198,15 +212,21 @@ class BracketCreationViewController: UIViewController {
     
     func createLaterRounds() {
         let gamesPerRoundPerRegion = [4, 2, 1, 2, 1]
+        // Make counter for tourney game id (start at 36 to avoid early rounds)
+        var gameId = 36
         // Loop through rounds
         for i in 2...6 {
             if i < 5 { // Before final four
                 // Loop through regions
-                for region in regionSeedTeams.keys {
+                for region in regionOrder {
                     for _ in 1...gamesPerRoundPerRegion[i-2] {
                         let game = Game(context: context)
                         game.round = Int16(i)
                         game.region = region
+                        // Set tourney game id and next game
+                        game.tourneyGameId = Int16(gameId)
+                        game.nextGame = Int16((gameId / 2) + 34)
+                        gameId += 1
                         // Add the game to the tournament
                         tournament.addToGames(game)
                         // Save the data
@@ -214,13 +234,16 @@ class BracketCreationViewController: UIViewController {
                     }
                 }
             } else { // Final Four or Championship
-                for _ in 1...gamesPerRoundPerRegion[i-2] {
+                for j in 1...gamesPerRoundPerRegion[i-2] {
                     let game = Game(context: context)
                     game.round = Int16(i)
                     if i == 5 {
                         game.region = "Final Four"
+                        game.tourneyGameId = Int16(63 + j)
+                        game.nextGame = 66
                     } else {
                         game.region = "Championship"
+                        game.tourneyGameId = 66
                     }
                     // Add the game to the tournament
                     tournament.addToGames(game)
