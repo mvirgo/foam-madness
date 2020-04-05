@@ -15,6 +15,7 @@ class GameScoreViewController: UIViewController {
     @IBOutlet weak var team2Name: UILabel!
     @IBOutlet weak var team1Score: UILabel!
     @IBOutlet weak var team2Score: UILabel!
+    @IBOutlet weak var gameScoreHeader: UILabel!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -55,8 +56,15 @@ class GameScoreViewController: UIViewController {
             team1Name.text = team1.name!
             team2Name.text = team2.name!
         }
+        // Show scores
         team1Score.text = String(game.team1Score)
         team2Score.text = String(game.team2Score)
+        // Add OT to header, if applicable
+        if game.team1OTTaken > 0 {
+            gameScoreHeader.text = "Final Score - OT"
+        } else {
+            gameScoreHeader.text = "Final Score"
+        }
     }
     
     // MARK: IBActions
