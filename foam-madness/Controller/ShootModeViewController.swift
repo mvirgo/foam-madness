@@ -64,7 +64,7 @@ class ShootModeViewController: UIViewController {
                 "\(team2.name!) shoots " +
             "\(GameHelper.getHandSideString(game.team2Hand))-handed."
             let title = "Shooting Hand"
-            alertUser(title: title, message: handMessage)
+            alertUser(title: title, message: handMessage, endGame: false)
         }
     }
     
@@ -242,38 +242,33 @@ class ShootModeViewController: UIViewController {
             game.team2OTTaken += overtimeShots
             if !overtimeCheck() { // End the game if no longer tied
                 saveData()
-                performSegue(withIdentifier: "finishGame", sender: nil)
+                completeGame()
             } else {
-                alertUser(title: "More OT", message: "Still Tied! More OT coming.")
+                alertUser(title: "More OT", message: "Still Tied! More OT coming.", endGame: false)
             }
         }
         // Play another round if segue wasn't called (i.e. still tied)
         playOvertime()
     }
     
-    func alertUser(title: String, message: String) {
+    func alertUser(title: String, message: String, endGame: Bool) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        if endGame { // Segue after alert view closed
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.performSegue(withIdentifier: "finishGame", sender: nil)
+            }))
+        } else {
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    func addNextGame(_ tournament: Tournament) {
-        // Get the winner of this game
-        let winner: Team
-        let winningSeed: Int16
-        if game.team1Score > game.team2Score {
-            winner = team1
-            winningSeed = game.team1Seed
-        } else {
-            winner = team2
-            winningSeed = game.team2Seed
-        }
+    func addNextGame(_ tournament: Tournament, _ winner: Team, _ winningSeed: Int16) {
         // Add the next game, if applicable
         if game.nextGame == -1 {
             // Championship game - the tournament is over!
             tournament.completion = true
             tournament.completionDate = Date()
-            alertUser(title: "Tournament Complete", message: "\(winner.name!) wins the tournament!")
         } else {
             // Get the next game object
             // Thanks https://stackoverflow.com/questions/35265420/multiple-nspredicates-for-nsfetchrequest-in-swift
@@ -297,6 +292,41 @@ class ShootModeViewController: UIViewController {
         saveData()
     }
     
+    func endGameAlert(_ winner: Team) {
+        // Set default title and message
+        var title = "Game Complete"
+        var message = "\(winner.name!) wins the game!"
+        // Change the title and message if end of a tournament
+        if let tournament = game.tournament {
+            if tournament.completion {
+                title = "Tournament Complete"
+                message = "\(winner.name!) wins the tournament!"
+            }
+        }
+        alertUser(title: title, message: message, endGame: true)
+    }
+    
+    func completeGame() {
+        // Set game to complete
+        game.completion = true
+        // Get the winner of this game
+        let winner: Team
+        let winningSeed: Int16
+        if game.team1Score > game.team2Score {
+            winner = team1
+            winningSeed = game.team1Seed
+        } else {
+            winner = team2
+            winningSeed = game.team2Seed
+        }
+        // Add the next tourney game, if applicable
+        if let tournament = game.tournament {
+            addNextGame(tournament, winner, winningSeed)
+        }
+        // Let the user know the winner
+        endGameAlert(winner)
+    }
+    
     // MARK: IBActions
     @IBAction func ballButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -311,10 +341,10 @@ class ShootModeViewController: UIViewController {
             // Check whether game needs to continue for overtime
             overtimeFlag = overtimeCheck()
             if overtimeFlag {
-                alertUser(title: "Overtime", message: "Tied Up! Going to OT.")
+                alertUser(title: "Overtime", message: "Tied Up! Going to OT.", endGame: false)
                 playOvertime()
             } else { // full game is over
-                performSegue(withIdentifier: "finishGame", sender: nil)
+                completeGame()
             }
         } else {
             endRound(continueGame: true)
@@ -323,12 +353,6 @@ class ShootModeViewController: UIViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Set game to complete
-        game.completion = true
-        // Add the next tourney game, if applicable
-        if let tournament = game.tournament {
-            addNextGame(tournament)
-        }
         // Send data controller to GameScoreViewController if that's destination
         if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
