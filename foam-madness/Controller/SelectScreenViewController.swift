@@ -27,6 +27,9 @@ class SelectScreenViewController: UIViewController {
         // Show below based on logic of existing tournaments
         resumeTournamentButton.isHidden = checkCurrentTournaments()
         viewCompletedTournamentButton.isHidden = checkCompletedTournaments()
+        // Make sure tournament buttons fit
+        resumeTournamentButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        viewCompletedTournamentButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: Other functions
