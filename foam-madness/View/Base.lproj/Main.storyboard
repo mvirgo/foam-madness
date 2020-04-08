@@ -126,7 +126,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r7o-JM-Lkk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main Menu" id="9rq-vp-d3S"/>
+                    <navigationItem key="navigationItem" title="Main Menu" id="9rq-vp-d3S">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="Oal-3O-eLM">
+                            <connections>
+                                <segue destination="e4Y-7F-Sbk" kind="show" id="kYL-DZ-VCP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playGameButton" destination="QJt-vF-R5B" id="BAp-Hm-GGE"/>
                         <outlet property="resumeTournamentButton" destination="HSH-Ya-D6N" id="nDY-0h-tOd"/>
@@ -141,6 +147,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2134" y="-594"/>
+        </scene>
+        <!--About This App-->
+        <scene sceneID="YKz-7O-ulA">
+            <objects>
+                <viewController title="About This App" id="e4Y-7F-Sbk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hr5-DN-uiv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-Cf-Zcz">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Testing out a page to show information about the app, such as there being 4 different types of shot from different places, scored 1-4. Each team is given a random selection to shoot either right or left-handed, currently hard-coded so that the "better" team has a better chance to shoot right-handed. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments also operate this way.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1iI-Cf-Zcz" firstAttribute="top" secondItem="Tfn-Az-vw5" secondAttribute="top" id="1Bo-tW-HAp"/>
+                            <constraint firstItem="Tfn-Az-vw5" firstAttribute="bottom" secondItem="1iI-Cf-Zcz" secondAttribute="bottom" id="Pv6-Oo-raH"/>
+                            <constraint firstItem="1iI-Cf-Zcz" firstAttribute="centerX" secondItem="Tfn-Az-vw5" secondAttribute="centerX" id="VVg-YE-V46"/>
+                            <constraint firstItem="1iI-Cf-Zcz" firstAttribute="leading" secondItem="hr5-DN-uiv" secondAttribute="leadingMargin" id="kFK-vB-n84"/>
+                            <constraint firstItem="1iI-Cf-Zcz" firstAttribute="centerY" secondItem="Tfn-Az-vw5" secondAttribute="centerY" id="thy-zY-2zU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tfn-Az-vw5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMd-Yv-I4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2135.1999999999998" y="-1416.3418290854574"/>
         </scene>
         <!--Select Initial Bracket View Controller-->
         <scene sceneID="E8E-v6-bjN">
