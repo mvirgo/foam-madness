@@ -16,6 +16,8 @@ class BracketCreationViewController: UIViewController {
     @IBOutlet weak var tourneyNameTextField: UITextField!
     @IBOutlet weak var createTournamentButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var dominantHandLabel: UILabel!
+    @IBOutlet weak var handSwitch: UISwitch!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -145,6 +147,17 @@ class BracketCreationViewController: UIViewController {
         return results
     }
     
+    func checkLeftHand() -> Bool {
+        let leftHand: Bool
+        if handSwitch.isOn { // user is right-hand dominant
+            leftHand = false
+        } else { // user is left-hand dominant
+            leftHand = true
+        }
+        
+        return leftHand
+    }
+    
     func createFirstFour() {
         let regions = ["East","East","East","West"]
         let seeds = [["111", "112"],["121", "122"],
@@ -155,6 +168,7 @@ class BracketCreationViewController: UIViewController {
             let game = Game(context: context)
             game.round = 0
             game.region = regions[i]
+            game.useLeft = checkLeftHand()
             // Add both team ids and seeds
             game.team1Id = regionSeedTeams[regions[i]]![seeds[i][0]]!
             game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
@@ -188,6 +202,7 @@ class BracketCreationViewController: UIViewController {
                 let game = Game(context: context)
                 game.round = 1
                 game.region = region
+                game.useLeft = checkLeftHand()
                 game.team1Seed = Int16(i)
                 game.team2Seed = Int16(17-i)
                 // Team 2 may not actually exist yet due to First Four
@@ -224,6 +239,7 @@ class BracketCreationViewController: UIViewController {
                         let game = Game(context: context)
                         game.round = Int16(i)
                         game.region = region
+                        game.useLeft = checkLeftHand()
                         // Set tourney game id and next game
                         game.tourneyGameId = Int16(gameId)
                         game.nextGame = Int16((gameId / 2) + 34)
@@ -238,6 +254,7 @@ class BracketCreationViewController: UIViewController {
                 for j in 1...gamesPerRoundPerRegion[i-2] {
                     let game = Game(context: context)
                     game.round = Int16(i)
+                    game.useLeft = checkLeftHand()
                     if i == 5 {
                         game.region = "Final Four"
                         game.tourneyGameId = Int16(63 + j)
@@ -314,6 +331,14 @@ class BracketCreationViewController: UIViewController {
         activityIndicator.stopAnimating()
         // Segue to table view of all playable games
         performSegue(withIdentifier: "showNewTourneyGames", sender: nil)
+    }
+    
+    @IBAction func handSwitchClicked(_ sender: Any) {
+        if handSwitch.isOn { // right-hand
+            dominantHandLabel.text = "Right-Hand Dominant"
+        } else { // left-hand
+            dominantHandLabel.text = "Left-Hand Dominant"
+        }
     }
     
     // MARK: Navigation

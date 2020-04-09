@@ -102,6 +102,11 @@ class ShootModeViewController: UIViewController {
             hand = false // false is left hand
         }
         
+        // Flip the hand if game.useLeft is true (left-dominant hand)
+        if game.useLeft {
+            hand = !hand
+        }
+        
         return hand
     }
     
