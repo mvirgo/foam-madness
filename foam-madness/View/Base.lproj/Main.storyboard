@@ -156,11 +156,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-Cf-Zcz">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-Cf-Zcz">
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Testing out a page to show information about the app, such as there being 4 different types of shot from different places, scored 1-4. Each team is given a random selection to shoot either right or left-handed, currently hard-coded so that the "better" team has a better chance to shoot right-handed. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments also operate this way.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">This app was made as a fun way to pass the time with a basketball hoop and ball (whether mini or full-size) during shelter-in-place in Spring 2020, with a certain college tournament otherwise cancelled.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Game Rules">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".SFNSText"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.  Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
+
+If overtime is needed, an additional 10 shots is given per team, with each basket worth one point. An additional 10 shots is added per additional overtime period, as necessary.
+
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Shooting Hand">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+Each team is given a random selection to shoot either right or left-handed, currently hard-coded so that the "better" team has a better chance to shoot right-handed. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments operate as if the teams are equal seeds.
+
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Single Game">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
+
+Potential teams are currently only the teams also available in initial brackets in tournament mode.
+
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Tournament Mode">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
