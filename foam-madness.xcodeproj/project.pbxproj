@@ -46,6 +46,7 @@
 		7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootModeViewController.swift; sourceTree = "<group>"; };
 		7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreViewController.swift; sourceTree = "<group>"; };
 		7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsViewController.swift; sourceTree = "<group>"; };
+		7A73579E243ED4A800691B26 /* foam-madness-v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v2.xcdatamodel"; sourceTree = "<group>"; };
 		7A86CDE5243432F600315752 /* SelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreenViewController.swift; sourceTree = "<group>"; };
 		7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamsViewController.swift; sourceTree = "<group>"; };
 		7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = historicalProbabilities.plist; sourceTree = "<group>"; };
@@ -429,9 +430,10 @@
 		7A494BC1243041C20042173A /* foam-madness.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7A73579E243ED4A800691B26 /* foam-madness-v2.xcdatamodel */,
 				7A494BC2243041C20042173A /* foam-madness.xcdatamodel */,
 			);
-			currentVersion = 7A494BC2243041C20042173A /* foam-madness.xcdatamodel */;
+			currentVersion = 7A73579E243ED4A800691B26 /* foam-madness-v2.xcdatamodel */;
 			path = "foam-madness.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
