@@ -29,12 +29,6 @@ class BracketCreationViewController: UIViewController {
     var regionSeedTeams = [String: [String: Int16]]()
     
     // MARK: View functions
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Hide the navbar
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Hide unneeded progress indictators
@@ -314,6 +308,11 @@ class BracketCreationViewController: UIViewController {
         // Hide the text field and button
         tourneyNameTextField.isHidden = true
         createTournamentButton.isHidden = true
+        // Hide the hand switch and related label
+        handSwitch.isHidden = true
+        dominantHandLabel.isHidden = true
+        // Hide the navbar
+        navigationController?.setNavigationBarHidden(true, animated: true)
         // Show the activity indicator and progress bar
         activityIndicator.isHidden = false
         progressBar.isHidden = false
