@@ -176,13 +176,13 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.  Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
 
 If overtime is needed, an additional 10 shots is given per team, with each basket worth one point. An additional 10 shots is added per additional overtime period, as necessary.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="14"/>
@@ -195,11 +195,11 @@ If overtime is needed, an additional 10 shots is given per team, with each baske
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Each team is given a random selection to shoot either right or left-handed, set so that the "better" team has a better chance to shoot with their dominant hand. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments operate as if the teams are equal seeds.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="14"/>
@@ -212,11 +212,11 @@ Each team is given a random selection to shoot either right or left-handed, set 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
+                                        <string key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
 
 Potential teams are currently only the teams also available in initial brackets in tournament mode.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="14"/>
@@ -229,9 +229,9 @@ Potential teams are currently only the teams also available in initial brackets 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
-Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</mutableString>
+Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="14"/>
@@ -321,7 +321,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                         <rect key="frame" x="34.5" y="144" width="180.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-NH-mzL">
                                         <rect key="frame" x="0.0" y="224" width="249.5" height="31"/>

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class BracketCreationViewController: UIViewController {
+class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var taskLabel: UILabel!
@@ -36,12 +36,20 @@ class BracketCreationViewController: UIViewController {
         progressBar.isHidden = true
         // Get view context
         context = dataController.viewContext
+        // Set text field delegate so keyboard is handled appropriately
+        self.tourneyNameTextField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Re-show the navbar so it's there for other views
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Thanks https://stackoverflow.com/questions/24180954/how-to-hide-keyboard-in-swift-on-pressing-return-key
+        tourneyNameTextField.resignFirstResponder()
+        return false
     }
     
     // MARK: Other functions
