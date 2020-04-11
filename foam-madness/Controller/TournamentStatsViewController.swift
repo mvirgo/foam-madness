@@ -15,8 +15,20 @@ class TournamentStatsViewController: UIViewController {
     var tournament: Tournament!
     var games = [Game]()
     
-    // View functions
+    // MARK: View functions
     override func viewDidLoad() {
-        print(tournament.games?.count)
+        // Get tourney games completed so far
+        getCompletedGames()
+        // TODO: Calculate stats by total, left and right hands
+        // TODO: Display the calculated stats
+    }
+    
+    // MARK: Other functions
+    func getCompletedGames() {
+        // Get all completed games in this tournament
+        let completionPredicate = NSPredicate(format: "completion == YES")
+        let tourneyPredicate = NSPredicate(format: "tournament == %@", tournament)
+        let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [completionPredicate, tourneyPredicate])
+        games = TourneyHelper.fetchData(dataController, andPredicate, "Game") as! [Game]
     }
 }
