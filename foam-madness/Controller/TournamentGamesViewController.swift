@@ -40,6 +40,8 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         // Hide original back button to make one that only goes to Main Menu
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(self.backToMainMenu))
+        // Add right stats button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stats", style: .plain, target: self, action: #selector(self.statsButtonPressed))
         // Set delegate and datasource for the game table view
         self.gameTableView.delegate = self
         self.gameTableView.dataSource = self
@@ -131,6 +133,11 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func roundStepperPressed(_ sender: Any) {
         // Update the round view
         getGamesForRound()
+    }
+    
+    @objc func statsButtonPressed() {
+        print("Here!")
+        performSegue(withIdentifier: "showTourneyStats", sender: nil)
     }
     
     // MARK: Navigation

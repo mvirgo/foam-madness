@@ -469,11 +469,39 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <outlet property="roundStepper" destination="GQv-Tz-wYG" id="uJl-Rx-Chg"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="playTourneyGame" id="FBW-d3-wiS"/>
                         <segue destination="dIJ-Id-27O" kind="show" identifier="showCompletedTourneyGame" id="1st-iB-00j"/>
+                        <segue destination="A30-RX-CzH" kind="show" identifier="showTourneyStats" id="DCP-gk-WkK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRv-Iy-KfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="486" y="-893"/>
+        </scene>
+        <!--Tournament Stats-->
+        <scene sceneID="BPA-3i-AcR">
+            <objects>
+                <viewController title="Tournament Stats" id="A30-RX-CzH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zBf-rP-eux">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-tf-L3o">
+                                <rect key="frame" x="126" y="353.5" width="123.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4EX-tf-L3o" firstAttribute="centerY" secondItem="g0T-TY-Rnk" secondAttribute="centerY" id="iFf-Gc-vWE"/>
+                            <constraint firstItem="4EX-tf-L3o" firstAttribute="centerX" secondItem="g0T-TY-Rnk" secondAttribute="centerX" id="vjk-e2-r83"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g0T-TY-Rnk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdX-PA-nuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1433" y="-1416"/>
         </scene>
         <!--Select Tournament View Controller-->
         <scene sceneID="NBT-cG-tTx">
@@ -1264,8 +1292,8 @@ Tournament mode requires the user to select an initial bracket, and then can sel
         <image name="basketball-gray" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kCW-eb-a6I"/>
-        <segue reference="CQ3-l7-pKF"/>
+        <segue reference="1st-iB-00j"/>
+        <segue reference="FBW-d3-wiS"/>
         <segue reference="ncl-rA-kNL"/>
         <segue reference="PbE-LF-brK"/>
     </inferredMetricsTieBreakers>
