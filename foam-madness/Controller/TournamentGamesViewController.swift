@@ -136,7 +136,6 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @objc func statsButtonPressed() {
-        print("Here!")
         performSegue(withIdentifier: "showTourneyStats", sender: nil)
     }
     
@@ -151,10 +150,15 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
             vc.dataController = dataController
             vc.game = selectedGame
         }
-        // Or send data to Game Score View Controller
+        // Or send data to Game Score View Controller if already played
         if let vc = segue.destination as? GameScoreViewController {
             vc.dataController = dataController
             vc.game = selectedGame
+        }
+        // Send data controller and tournament to stats view
+        if let vc = segue.destination as? TournamentStatsViewController {
+            vc.dataController = dataController
+            vc.tournament = tournament
         }
     }
 }
