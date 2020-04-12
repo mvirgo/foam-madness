@@ -127,7 +127,7 @@ class TournamentStatsViewController: UIViewController {
         totalStatsArray[0] = games.count // Total games
         totalStatsArray[1] = totalUpsets // Total upsets
         // Note: 2 and 3 are skipped - only relate to hands
-        totalStatsArray[4] = (leftPoints + rightPoints) / games.count // Pts per game
+        totalStatsArray[4] = (leftPoints + rightPoints) / (games.count * 2) // Pts per game
         // Add up all baskets for total FG%
         let totalLeftMade = leftOnesMade + leftTwosMade + leftThreesMade + leftFoursMade + leftOTMade
         let totalRightMade = rightOnesMade + rightTwosMade + rightThreesMade + rightFoursMade + rightOTMade
@@ -143,7 +143,7 @@ class TournamentStatsViewController: UIViewController {
     }
     
     func setLeftStatsArray() {
-        let leftGames = leftVsRight + leftVsLeft
+        let leftGames = leftVsRight + (2 * leftVsLeft)
         if leftGames == 0 {return} // No need to calculate
         leftStatsArray[0] = leftVsRight // Games vs. Opposite
         leftStatsArray[1] = leftOverRightUpsets // Upsets vs. Opposite
@@ -166,7 +166,7 @@ class TournamentStatsViewController: UIViewController {
     }
     
     func setRightStatsArray() {
-        let rightGames = leftVsRight + rightVsRight
+        let rightGames = leftVsRight + (2 * rightVsRight)
         if rightGames == 0 {return} // No need to calculate
         rightStatsArray[0] = leftVsRight // Games vs. Opposite
         rightStatsArray[1] = rightOverLeftUpsets // Upsets vs. Opposite
