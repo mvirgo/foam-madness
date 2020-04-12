@@ -10,6 +10,16 @@ import UIKit
 import CoreData
 
 class TournamentStatsViewController: UIViewController {
+    // MARK: IBOutlets
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var gamesVsOppLabel: UILabel!
+    @IBOutlet weak var upsetsVsOppLabel: UILabel!
+    @IBOutlet weak var winPercentageLabel: UILabel!
+    @IBOutlet weak var gamesVsSameLabel: UILabel!
+    @IBOutlet weak var overtimeFGLabel: UILabel!
+    @IBOutlet var allStats : [UILabel]!
+    @IBOutlet weak var statControl: UISegmentedControl!
+    
     // MARK: Variables
     var dataController: DataController!
     var tournament: Tournament!
@@ -35,10 +45,8 @@ class TournamentStatsViewController: UIViewController {
         if games.count > 0 { // Leave stats at zero if nothing played yet
             calculateAllStats()
         }
-        // TODO: Display the calculated stats
-        print(totalStatsArray)
-        print(leftStatsArray)
-        print(rightStatsArray)
+        // Display the calculated stats
+        setDisplay()
     }
     
     // MARK: Other functions
@@ -225,5 +233,63 @@ class TournamentStatsViewController: UIViewController {
         } // End games for loop
         // Set the calculated stats into their arrays
         setStatsArrays()
+    }
+    
+    func setDisplay() {
+        // Set labels using correct stats for selected segment
+        if statControl.selectedSegmentIndex == 0 { // Total
+            headerLabel.text = "Total Stats"
+            gamesVsOppLabel.text = "Games"
+            upsetsVsOppLabel.text = "Upsets"
+            winPercentageLabel.isHidden = true // not applicable
+            allStats[2].isHidden = true
+            gamesVsSameLabel.isHidden = true // not applicable
+            allStats[3].isHidden = true
+            // Set all stats labels
+            for i in 0...allStats!.count-1 {
+                allStats[i].text = String(totalStatsArray[i])
+            }
+        } else if statControl.selectedSegmentIndex == 1 { // Left
+            headerLabel.text = "Left Hand Stats"
+            gamesVsOppLabel.text = "Games vs R"
+            upsetsVsOppLabel.text = "Upsets vs R"
+            winPercentageLabel.isHidden = false
+            allStats[2].isHidden = false
+            winPercentageLabel.text = "Win % vs R"
+            gamesVsSameLabel.isHidden = false
+            allStats[3].isHidden = false
+            gamesVsSameLabel.text = "Games vs L"
+            // Set all stats labels
+            for i in 0...allStats!.count-1 {
+                allStats[i].text = String(leftStatsArray[i])
+            }
+        } else { // Right
+            headerLabel.text = "Right Hand Stats"
+            gamesVsOppLabel.text = "Games vs L"
+            upsetsVsOppLabel.text = "Upsets vs L"
+            winPercentageLabel.isHidden = false
+            allStats[2].isHidden = false
+            winPercentageLabel.text = "Win % vs L"
+            gamesVsSameLabel.isHidden = false
+            allStats[3].isHidden = false
+            gamesVsSameLabel.text = "Games vs R"
+            // Set all stats labels
+            for i in 0...allStats!.count-1 {
+                allStats[i].text = String(rightStatsArray[i])
+            }
+        }
+        // Hide overtime if not applicable
+        if leftOTTaken + rightOTTaken == 0 {
+            overtimeFGLabel.isHidden = true
+            allStats[10].isHidden = true
+        } else {
+            overtimeFGLabel.isHidden = false
+            allStats[10].isHidden = false
+        }
+    }
+    
+    // IBActions
+    @IBAction func statControlPressed(_ sender: Any) {
+        setDisplay()
     }
 }
