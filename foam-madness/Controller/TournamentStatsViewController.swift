@@ -129,14 +129,19 @@ class TournamentStatsViewController: UIViewController {
         totalStatsArray[7] = Int((Float(leftTwosMade + rightTwosMade) / Float(games.count * 2 * 10)) * 100) // 2pt%
         totalStatsArray[8] = Int((Float(leftThreesMade + rightThreesMade) / Float(games.count * 2 * 10)) * 100) // 3pt%
         totalStatsArray[9] = Int((Float(leftFoursMade + rightFoursMade) / Float(games.count * 2 * 10)) * 100) // 4pt%
-        totalStatsArray[10] = Int((Float(leftOTMade + rightOTMade) / Float(leftOTTaken + rightOTTaken)) * 100) // OT%
+        if leftOTTaken + rightOTTaken > 0 { // avoid division by zero
+            totalStatsArray[10] = Int((Float(leftOTMade + rightOTMade) / Float(leftOTTaken + rightOTTaken)) * 100) // OT%
+        }
     }
     
     func setLeftStatsArray() {
         let leftGames = leftVsRight + leftVsLeft
+        if leftGames == 0 {return} // No need to calculate
         leftStatsArray[0] = leftVsRight // Games vs. Opposite
         leftStatsArray[1] = leftOverRightUpsets // Upsets vs. Opposite
-        leftStatsArray[2] = Int((Float(leftBeatsRight) / Float(leftVsRight)) * 100) // Win % vs. Opposite
+        if leftVsRight > 0 { // avoid division by zero
+            leftStatsArray[2] = Int((Float(leftBeatsRight) / Float(leftVsRight)) * 100) // Win % vs. Opposite
+        }
         leftStatsArray[3] = leftVsLeft // Games vs. Same
         leftStatsArray[4] = leftPoints / leftGames // Pts per game
         // Add up all baskets for total FG%
@@ -147,14 +152,19 @@ class TournamentStatsViewController: UIViewController {
         leftStatsArray[7] = Int((Float(leftTwosMade) / Float(leftGames * 10)) * 100) // 2pt%
         leftStatsArray[8] = Int((Float(leftThreesMade) / Float(leftGames * 10)) * 100) // 3pt%
         leftStatsArray[9] = Int((Float(leftFoursMade) / Float(leftGames * 10)) * 100) // 4pt%
-        leftStatsArray[10] = Int((Float(leftOTMade) / Float(leftOTTaken)) * 100) // OT%
+        if leftOTTaken > 0 { // avoid division by zero
+            leftStatsArray[10] = Int((Float(leftOTMade) / Float(leftOTTaken)) * 100) // OT%
+        }
     }
     
     func setRightStatsArray() {
         let rightGames = leftVsRight + rightVsRight
+        if rightGames == 0 {return} // No need to calculate
         rightStatsArray[0] = leftVsRight // Games vs. Opposite
         rightStatsArray[1] = rightOverLeftUpsets // Upsets vs. Opposite
-        rightStatsArray[2] = Int((Float(rightBeatsLeft) / Float(leftVsRight)) * 100) // Win % vs. Opposite
+        if leftVsRight > 0 { // avoid division by zero
+            rightStatsArray[2] = Int((Float(rightBeatsLeft) / Float(leftVsRight)) * 100) // Win % vs. Opposite
+        }
         rightStatsArray[3] = rightVsRight // Games vs. Same
         rightStatsArray[4] = rightPoints / rightGames // Pts per game
         // Add up all baskets for total FG%
@@ -165,7 +175,9 @@ class TournamentStatsViewController: UIViewController {
         rightStatsArray[7] = Int((Float(rightTwosMade) / Float(rightGames * 10)) * 100) // 2pt%
         rightStatsArray[8] = Int((Float(rightThreesMade) / Float(rightGames * 10)) * 100) // 3pt%
         rightStatsArray[9] = Int((Float(rightFoursMade) / Float(rightGames * 10)) * 100) // 4pt%
-        rightStatsArray[10] = Int((Float(rightOTMade) / Float(rightOTTaken)) * 100) // OT%
+        if rightOTTaken > 0 { // avoid division by zero
+            rightStatsArray[10] = Int((Float(rightOTMade) / Float(rightOTTaken)) * 100) // OT%
+        }
     }
     
     func setStatsArrays() {
