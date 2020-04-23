@@ -1,4 +1,10 @@
 window.onload = function() {
+	// Set to color style
+	document.body.style.backgroundColor = "#17408B";
+	document.body.style.color = "#fff";
+	document.alinkColor = "#e37221";
+	document.linkColor = "#e37221";
+    document.vlinkColor = "#e37221";
 	// Get URL with search parameters
 	// Thanks https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 	let params = (new URL(window.location)).searchParams;
@@ -62,8 +68,9 @@ function getRoundString(round) {
 
 function setGameStats(json, game) {
 	var table = document.createElement("TABLE");
+	table.setAttribute("style", "border: 3px double;")
 	document.body.appendChild(table)
-	let fields = ["Name", "Seed", "Hand", "Score", "Ones", "Twos", "Threes", "Fours"]
+	let fields = ["Name", "Score", "Seed", "Hand", "Ones", "Twos", "Threes", "Fours"]
 	for (i = 0; i < fields.length; i++) {
 		setTableRow(json, game, table, fields[i])
 	}
@@ -82,8 +89,8 @@ function setTableRow(json, game, table, field) {
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
 	var cell3 = row.insertCell(2);
-	cell2.setAttribute("style", "text-align: center;")
-	cell3.setAttribute("style", "text-align: center;")
+	cell2.setAttribute("style", "text-align: center; border: 1px solid;")
+	cell3.setAttribute("style", "text-align: center; border: 1px solid;")
 	// Add related stats
 	if (field === "Name") {
 		cell2.innerHTML = json["games"][game]["Team1"];
