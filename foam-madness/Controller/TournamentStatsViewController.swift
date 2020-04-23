@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
-class TournamentStatsViewController: UIViewController {
+class TournamentStatsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var gamesVsOppLabel: UILabel!
@@ -47,6 +48,8 @@ class TournamentStatsViewController: UIViewController {
         }
         // Display the calculated stats
         setDisplay()
+        // Add right export button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Export", style: .plain, target: self, action: #selector(self.exportButtonPressed))
     }
     
     // MARK: Other functions
@@ -291,5 +294,43 @@ class TournamentStatsViewController: UIViewController {
     // IBActions
     @IBAction func statControlPressed(_ sender: Any) {
         setDisplay()
+    }
+    
+    @objc func exportButtonPressed() {
+        // Export all games in the tournament to JSON
+        var exportGames = [[String: String]]()
+        for game in tournament.games! {
+            exportGames.append(GameHelper.createGameExportData(game as! Game))
+        }
+        // Thanks https://stackoverflow.com/questions/28325268/convert-array-to-json-string-in-swift
+        do {
+            let jsonExport = try JSONSerialization.data(withJSONObject: exportGames, options: JSONSerialization.WritingOptions.prettyPrinted)
+            // Let user email it to themselves
+            // From Apple documentation: https://developer.apple.com/documentation/messageui/mfmailcomposeviewcontroller
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                
+                // Configure the fields of the interface.
+                composeVC.addAttachmentData(jsonExport, mimeType: "application/json", fileName: "\(tournament.name!)-export.json")
+                composeVC.setSubject("My Foam Madness Export")
+                composeVC.setMessageBody("Attached is my tournament data in JSON!", isHTML: false)
+                
+                // Present the view controller modally.
+                self.present(composeVC, animated: true, completion: nil)
+            } else {
+                print("Mail services are not available.")
+                return
+            }
+        } catch {
+            print("Data export failed.")
+        }
+    }
+    
+    // Mail delegate functions
+    // From Apple documentation: https://developer.apple.com/documentation/messageui/mfmailcomposeviewcontroller
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
     }
 }
