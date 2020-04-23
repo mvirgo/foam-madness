@@ -55,13 +55,12 @@ class GameHelper {
         return [team1, team2]
     }
     
-    static func createGameExportData(_ game: Game) -> [String: String] {
+    static func createGameExportData(_ game: Game) -> [String: [String: String]] {
         // Create export dictionary for a single game
         var singleGame = [String: String]()
         singleGame = ["Round": String(game.round),
                       "Region": game.region!,
-                      "NextGame": String(game.nextGame),
-                      "TourneyGameId": String(game.tourneyGameId)]
+                      "NextGame": String(game.nextGame)]
         if game.completion {
             let newTeams = GameHelper.getOrderedTeams(game)
             singleGame["Team1"] = newTeams[0].name
@@ -86,6 +85,6 @@ class GameHelper {
             singleGame["Team2OTTaken"] = String(game.team2OTTaken)
         }
         
-        return singleGame
+        return [String(game.tourneyGameId): singleGame]
     }
 }

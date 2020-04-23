@@ -291,20 +291,22 @@ class TournamentStatsViewController: UIViewController, MFMailComposeViewControll
         }
     }
     
-    // IBActions
+    // MARK: IBActions
     @IBAction func statControlPressed(_ sender: Any) {
         setDisplay()
     }
     
     @objc func exportButtonPressed() {
         // Export all games in the tournament to JSON
-        var exportGames = [[String: String]]()
+        var exportGames = [String: [String: String]]()
         for game in tournament.games! {
-            exportGames.append(GameHelper.createGameExportData(game as! Game))
+            let singleGame = GameHelper.createGameExportData(game as! Game)
+            let key = singleGame.keys.first!
+            exportGames[key] = singleGame[key]
         }
         // Thanks https://stackoverflow.com/questions/28325268/convert-array-to-json-string-in-swift
         do {
-            let jsonExport = try JSONSerialization.data(withJSONObject: exportGames, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let jsonExport = try JSONSerialization.data(withJSONObject: ["games": exportGames], options: JSONSerialization.WritingOptions.prettyPrinted)
             // Let user email it to themselves
             // From Apple documentation: https://developer.apple.com/documentation/messageui/mfmailcomposeviewcontroller
             if MFMailComposeViewController.canSendMail() {
@@ -327,7 +329,7 @@ class TournamentStatsViewController: UIViewController, MFMailComposeViewControll
         }
     }
     
-    // Mail delegate functions
+    // MARK: Mail delegate functions
     // From Apple documentation: https://developer.apple.com/documentation/messageui/mfmailcomposeviewcontroller
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         // Dismiss the mail compose view controller.
