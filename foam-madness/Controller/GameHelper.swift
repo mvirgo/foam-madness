@@ -58,10 +58,15 @@ class GameHelper {
     static func createGameExportData(_ game: Game) -> [String: [String: String]] {
         // Create export dictionary for a single game
         var singleGame = [String: String]()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        // All games have round, region and next game
         singleGame = ["Round": String(game.round),
                       "Region": game.region!,
                       "NextGame": String(game.nextGame)]
+        // Only add other game stats if complete
         if game.completion {
+            singleGame["DatePlayed"] = formatter.string(from: game.datePlayed!)
             let newTeams = GameHelper.getOrderedTeams(game)
             singleGame["Team1"] = newTeams[0].name
             singleGame["Team2"] = newTeams[1].name
