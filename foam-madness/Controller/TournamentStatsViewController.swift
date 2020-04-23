@@ -291,6 +291,12 @@ class TournamentStatsViewController: UIViewController, MFMailComposeViewControll
         }
     }
     
+    func alertUser(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     // MARK: IBActions
     @IBAction func statControlPressed(_ sender: Any) {
         setDisplay()
@@ -321,11 +327,11 @@ class TournamentStatsViewController: UIViewController, MFMailComposeViewControll
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
             } else {
-                print("Mail services are not available.")
-                return
+                alertUser(title: "Mail Unavailable",
+                          message: "Mail services are not available; cannot export.")
             }
         } catch {
-            print("Data export failed.")
+            alertUser(title: "Export Issue", message: "Data export failed.")
         }
     }
     
