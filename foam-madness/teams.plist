@@ -23,12 +23,152 @@
 		<key>name</key>
 		<string>Duke</string>
 	</dict>
+	<key>100</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>COLG</string>
+		<key>name</key>
+		<string>Colgate</string>
+	</dict>
+	<key>101</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSUSC</string>
+		<key>name</key>
+		<string>Charleston S.C.</string>
+	</dict>
+	<key>102</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HC</string>
+		<key>name</key>
+		<string>Holy Cross</string>
+	</dict>
+	<key>103</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>W&amp;M</string>
+		<key>name</key>
+		<string>William &amp; Mary</string>
+	</dict>
+	<key>104</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSU</string>
+		<key>name</key>
+		<string>Colorado St</string>
+	</dict>
+	<key>105</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>COBA</string>
+		<key>name</key>
+		<string>Columbia-Barnard</string>
+	</dict>
+	<key>106</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>COPP</string>
+		<key>name</key>
+		<string>Coppin St</string>
+	</dict>
+	<key>107</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CORN</string>
+		<key>name</key>
+		<string>Cornell</string>
+	</dict>
+	<key>108</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DART</string>
+		<key>name</key>
+		<string>Dartmouth</string>
+	</dict>
+	<key>109</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DAV</string>
+		<key>name</key>
+		<string>Davidson</string>
+	</dict>
 	<key>11</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>BEL</string>
 		<key>name</key>
 		<string>Belmont</string>
+	</dict>
+	<key>110</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DST</string>
+		<key>name</key>
+		<string>Delaware St</string>
+	</dict>
+	<key>111</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DEP</string>
+		<key>name</key>
+		<string>DePaul</string>
+	</dict>
+	<key>112</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DRA</string>
+		<key>name</key>
+		<string>Drake</string>
+	</dict>
+	<key>113</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DREX</string>
+		<key>name</key>
+		<string>Drexel</string>
+	</dict>
+	<key>114</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DUQ</string>
+		<key>name</key>
+		<string>Duquesne</string>
+	</dict>
+	<key>115</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ECU</string>
+		<key>name</key>
+		<string>E Carolina</string>
+	</dict>
+	<key>116</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>EIU</string>
+		<key>name</key>
+		<string>E Illinois</string>
+	</dict>
+	<key>117</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>EKU</string>
+		<key>name</key>
+		<string>E Kentucky</string>
+	</dict>
+	<key>118</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>EMU</string>
+		<key>name</key>
+		<string>E Michigan</string>
+	</dict>
+	<key>119</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ELON</string>
+		<key>name</key>
+		<string>Elon University</string>
 	</dict>
 	<key>12</key>
 	<dict>
@@ -37,12 +177,152 @@
 		<key>name</key>
 		<string>Providence</string>
 	</dict>
+	<key>120</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FAIR</string>
+		<key>name</key>
+		<string>Fairfield</string>
+	</dict>
+	<key>121</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FDU</string>
+		<key>name</key>
+		<string>Fairleigh Dickinson</string>
+	</dict>
+	<key>122</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FAMU</string>
+		<key>name</key>
+		<string>Florida A&amp;M</string>
+	</dict>
+	<key>123</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FAU</string>
+		<key>name</key>
+		<string>Florida Atlantic</string>
+	</dict>
+	<key>124</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FGCU</string>
+		<key>name</key>
+		<string>Florida Gulf Coast</string>
+	</dict>
+	<key>125</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FIU</string>
+		<key>name</key>
+		<string>Florida Intl</string>
+	</dict>
+	<key>126</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FORD</string>
+		<key>name</key>
+		<string>Fordham</string>
+	</dict>
+	<key>127</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>FUR</string>
+		<key>name</key>
+		<string>Furman</string>
+	</dict>
+	<key>128</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GWU</string>
+		<key>name</key>
+		<string>Gardner-Webb</string>
+	</dict>
+	<key>129</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GMU</string>
+		<key>name</key>
+		<string>George Mason</string>
+	</dict>
 	<key>13</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>ASU</string>
 		<key>name</key>
 		<string>Arizona St</string>
+	</dict>
+	<key>130</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GWASH</string>
+		<key>name</key>
+		<string>George Washington</string>
+	</dict>
+	<key>131</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GTOWN</string>
+		<key>name</key>
+		<string>Georgetown</string>
+	</dict>
+	<key>132</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GT</string>
+		<key>name</key>
+		<string>Georgia Tech</string>
+	</dict>
+	<key>133</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GS</string>
+		<key>name</key>
+		<string>Georgia Southern</string>
+	</dict>
+	<key>134</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GSU</string>
+		<key>name</key>
+		<string>Georgia St</string>
+	</dict>
+	<key>135</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GRAM</string>
+		<key>name</key>
+		<string>Grambling St</string>
+	</dict>
+	<key>136</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>GCU</string>
+		<key>name</key>
+		<string>Grand Canyon</string>
+	</dict>
+	<key>137</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HAMP</string>
+		<key>name</key>
+		<string>Hampton</string>
+	</dict>
+	<key>138</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HARV</string>
+		<key>name</key>
+		<string>Harvard</string>
+	</dict>
+	<key>139</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HPU</string>
+		<key>name</key>
+		<string>High Point</string>
 	</dict>
 	<key>14</key>
 	<dict>
@@ -51,12 +331,152 @@
 		<key>name</key>
 		<string>Kentucky</string>
 	</dict>
+	<key>140</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HBU</string>
+		<key>name</key>
+		<string>Houston Baptist</string>
+	</dict>
+	<key>141</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HU</string>
+		<key>name</key>
+		<string>Howard</string>
+	</dict>
+	<key>142</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IDST</string>
+		<key>name</key>
+		<string>Idaho St</string>
+	</dict>
+	<key>143</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ILST</string>
+		<key>name</key>
+		<string>Illinois St</string>
+	</dict>
+	<key>144</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>INDST</string>
+		<key>name</key>
+		<string>Indiana St</string>
+	</dict>
+	<key>145</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IUPUI</string>
+		<key>name</key>
+		<string>Indiana-Purdue</string>
+	</dict>
+	<key>146</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IONA</string>
+		<key>name</key>
+		<string>Iona</string>
+	</dict>
+	<key>147</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ISU</string>
+		<key>name</key>
+		<string>Iowa St</string>
+	</dict>
+	<key>148</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>JKST</string>
+		<key>name</key>
+		<string>Jackson St</string>
+	</dict>
+	<key>149</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>JKVST</string>
+		<key>name</key>
+		<string>Jacksonville St</string>
+	</dict>
 	<key>15</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>NDSU</string>
 		<key>name</key>
 		<string>N Dakota St</string>
+	</dict>
+	<key>150</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>JU</string>
+		<key>name</key>
+		<string>Jacksonville</string>
+	</dict>
+	<key>151</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>JMU</string>
+		<key>name</key>
+		<string>James Madison</string>
+	</dict>
+	<key>152</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>KSU</string>
+		<key>name</key>
+		<string>Kansas St</string>
+	</dict>
+	<key>153</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>KENNST</string>
+		<key>name</key>
+		<string>Kennesaw St</string>
+	</dict>
+	<key>154</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>KENTST</string>
+		<key>name</key>
+		<string>Kent St</string>
+	</dict>
+	<key>155</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SALLE</string>
+		<key>name</key>
+		<string>La Salle</string>
+	</dict>
+	<key>156</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LC</string>
+		<key>name</key>
+		<string>Lafayette College</string>
+	</dict>
+	<key>157</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LAMAR</string>
+		<key>name</key>
+		<string>Lamar</string>
+	</dict>
+	<key>158</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LU</string>
+		<key>name</key>
+		<string>Lehigh</string>
+	</dict>
+	<key>159</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LIPS</string>
+		<key>name</key>
+		<string>Lipscomb</string>
 	</dict>
 	<key>16</key>
 	<dict>
@@ -65,12 +485,152 @@
 		<key>name</key>
 		<string>Dayton</string>
 	</dict>
+	<key>160</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSULB</string>
+		<key>name</key>
+		<string>Long Beach St</string>
+	</dict>
+	<key>161</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LIU</string>
+		<key>name</key>
+		<string>Long Island</string>
+	</dict>
+	<key>162</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LWU</string>
+		<key>name</key>
+		<string>Longwood</string>
+	</dict>
+	<key>163</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LATECH</string>
+		<key>name</key>
+		<string>Louisiana Tech</string>
+	</dict>
+	<key>164</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LMU</string>
+		<key>name</key>
+		<string>Loyola Marymount</string>
+	</dict>
+	<key>165</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LUC</string>
+		<key>name</key>
+		<string>Loyola-Chicago</string>
+	</dict>
+	<key>166</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LUM</string>
+		<key>name</key>
+		<string>Loyola-Maryland</string>
+	</dict>
+	<key>167</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MC</string>
+		<key>name</key>
+		<string>Manhattan College</string>
+	</dict>
+	<key>168</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MARC</string>
+		<key>name</key>
+		<string>Marist College</string>
+	</dict>
+	<key>169</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MU</string>
+		<key>name</key>
+		<string>Marshall</string>
+	</dict>
 	<key>17</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>BU</string>
 		<key>name</key>
 		<string>Boston</string>
+	</dict>
+	<key>170</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MSU</string>
+		<key>name</key>
+		<string>McNeese St</string>
+	</dict>
+	<key>171</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MER</string>
+		<key>name</key>
+		<string>Mercer</string>
+	</dict>
+	<key>172</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MIA-OH</string>
+		<key>name</key>
+		<string>Miami-Ohio</string>
+	</dict>
+	<key>173</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MTSU</string>
+		<key>name</key>
+		<string>Mid Tennessee St</string>
+	</dict>
+	<key>174</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MSU</string>
+		<key>name</key>
+		<string>Mississippi St</string>
+	</dict>
+	<key>175</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MVSU</string>
+		<key>name</key>
+		<string>Mississippi Valley St</string>
+	</dict>
+	<key>176</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MSST</string>
+		<key>name</key>
+		<string>Missouri St</string>
+	</dict>
+	<key>177</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MON</string>
+		<key>name</key>
+		<string>Monmouth</string>
+	</dict>
+	<key>178</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MONTST</string>
+		<key>name</key>
+		<string>Montana St</string>
+	</dict>
+	<key>179</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MOREH</string>
+		<key>name</key>
+		<string>Morehead St</string>
 	</dict>
 	<key>18</key>
 	<dict>
@@ -79,12 +639,152 @@
 		<key>name</key>
 		<string>Robert Morris</string>
 	</dict>
+	<key>180</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MORGST</string>
+		<key>name</key>
+		<string>Morgan St</string>
+	</dict>
+	<key>181</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MSMU</string>
+		<key>name</key>
+		<string>Mount St. Mary's</string>
+	</dict>
+	<key>182</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MSU</string>
+		<key>name</key>
+		<string>Murray St</string>
+	</dict>
+	<key>183</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NJIT</string>
+		<key>name</key>
+		<string>New Jersey Tech</string>
+	</dict>
+	<key>184</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NU</string>
+		<key>name</key>
+		<string>Niagara</string>
+	</dict>
+	<key>185</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NICHST</string>
+		<key>name</key>
+		<string>Nicholls St</string>
+	</dict>
+	<key>186</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NORST</string>
+		<key>name</key>
+		<string>Norfolk St</string>
+	</dict>
+	<key>187</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NC A&amp;T</string>
+		<key>name</key>
+		<string>North Carolina A&amp;T</string>
+	</dict>
+	<key>188</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NEU</string>
+		<key>name</key>
+		<string>Northeastern</string>
+	</dict>
+	<key>189</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NAU</string>
+		<key>name</key>
+		<string>Northern Arizona</string>
+	</dict>
 	<key>19</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>COLO</string>
 		<key>name</key>
 		<string>Colorado</string>
+	</dict>
+	<key>190</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NIU</string>
+		<key>name</key>
+		<string>Northern Illinois</string>
+	</dict>
+	<key>191</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NSU</string>
+		<key>name</key>
+		<string>Northwestern St</string>
+	</dict>
+	<key>192</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NU</string>
+		<key>name</key>
+		<string>Northwestern</string>
+	</dict>
+	<key>193</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>OU</string>
+		<key>name</key>
+		<string>Oakland</string>
+	</dict>
+	<key>194</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>OHIO</string>
+		<key>name</key>
+		<string>Ohio</string>
+	</dict>
+	<key>195</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>OKST</string>
+		<key>name</key>
+		<string>Oklahoma State</string>
+	</dict>
+	<key>196</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ODU</string>
+		<key>name</key>
+		<string>Old Dominion</string>
+	</dict>
+	<key>197</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ORU</string>
+		<key>name</key>
+		<string>Oral Roberts</string>
+	</dict>
+	<key>198</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ORST</string>
+		<key>name</key>
+		<string>Oregon St</string>
+	</dict>
+	<key>199</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PEPP</string>
+		<key>name</key>
+		<string>Pepperdine</string>
 	</dict>
 	<key>2</key>
 	<dict>
@@ -100,12 +800,152 @@
 		<key>name</key>
 		<string>Florida</string>
 	</dict>
+	<key>200</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PSU</string>
+		<key>name</key>
+		<string>Portland St</string>
+	</dict>
+	<key>201</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PC</string>
+		<key>name</key>
+		<string>Presbyterian</string>
+	</dict>
+	<key>202</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PRIN</string>
+		<key>name</key>
+		<string>Princeton</string>
+	</dict>
+	<key>203</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PU</string>
+		<key>name</key>
+		<string>Purdue</string>
+	</dict>
+	<key>204</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IPFW</string>
+		<key>name</key>
+		<string>Purdue-Ft Wayne</string>
+	</dict>
+	<key>205</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>QUIN</string>
+		<key>name</key>
+		<string>Quinnipiac</string>
+	</dict>
+	<key>206</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>RAD</string>
+		<key>name</key>
+		<string>Radford</string>
+	</dict>
+	<key>207</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>RICE</string>
+		<key>name</key>
+		<string>Rice</string>
+	</dict>
+	<key>208</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>RIDER</string>
+		<key>name</key>
+		<string>Rider</string>
+	</dict>
+	<key>209</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SHU</string>
+		<key>name</key>
+		<string>Sacred Heart</string>
+	</dict>
 	<key>21</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>BUT</string>
 		<key>name</key>
 		<string>Butler</string>
+	</dict>
+	<key>210</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SFU</string>
+		<key>name</key>
+		<string>St Francis-Penn</string>
+	</dict>
+	<key>211</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SJU</string>
+		<key>name</key>
+		<string>St Joseph's</string>
+	</dict>
+	<key>212</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SLU</string>
+		<key>name</key>
+		<string>St Louis</string>
+	</dict>
+	<key>213</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SPU</string>
+		<key>name</key>
+		<string>St Peter's</string>
+	</dict>
+	<key>214</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SHSU</string>
+		<key>name</key>
+		<string>Sam Houston St</string>
+	</dict>
+	<key>215</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SAMF</string>
+		<key>name</key>
+		<string>Samford</string>
+	</dict>
+	<key>216</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SJSU</string>
+		<key>name</key>
+		<string>San Jose St</string>
+	</dict>
+	<key>217</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SCU</string>
+		<key>name</key>
+		<string>Santa Clara</string>
+	</dict>
+	<key>218</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SAV</string>
+		<key>name</key>
+		<string>Savannah St</string>
+	</dict>
+	<key>219</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SEA</string>
+		<key>name</key>
+		<string>Seattle</string>
 	</dict>
 	<key>22</key>
 	<dict>
@@ -114,12 +954,152 @@
 		<key>name</key>
 		<string>Texas</string>
 	</dict>
+	<key>220</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SCSU</string>
+		<key>name</key>
+		<string>South Carolina St</string>
+	</dict>
+	<key>221</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SDSU</string>
+		<key>name</key>
+		<string>South Dakota St</string>
+	</dict>
+	<key>222</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SEMO</string>
+		<key>name</key>
+		<string>SE Missouri St</string>
+	</dict>
+	<key>223</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SELA</string>
+		<key>name</key>
+		<string>SE Louisiana</string>
+	</dict>
+	<key>224</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SIUC</string>
+		<key>name</key>
+		<string>S Illinois-Carbondale</string>
+	</dict>
+	<key>225</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SIUE</string>
+		<key>name</key>
+		<string>S Illinois-Edwardsville</string>
+	</dict>
+	<key>226</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SMU</string>
+		<key>name</key>
+		<string>Southern Methodist</string>
+	</dict>
+	<key>227</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SUBR</string>
+		<key>name</key>
+		<string>Southern-Baton Rouge</string>
+	</dict>
+	<key>228</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SUU</string>
+		<key>name</key>
+		<string>Southern Utah</string>
+	</dict>
+	<key>229</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SBU</string>
+		<key>name</key>
+		<string>St. Bonaventure</string>
+	</dict>
 	<key>23</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>RICH</string>
 		<key>name</key>
 		<string>Richmond</string>
+	</dict>
+	<key>230</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SFC</string>
+		<key>name</key>
+		<string>St. Francis-Brooklyn</string>
+	</dict>
+	<key>231</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SJU</string>
+		<key>name</key>
+		<string>St. John’s-NY</string>
+	</dict>
+	<key>232</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>STAN</string>
+		<key>name</key>
+		<string>Stanford</string>
+	</dict>
+	<key>233</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>STET</string>
+		<key>name</key>
+		<string>Stetson</string>
+	</dict>
+	<key>234</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>STON</string>
+		<key>name</key>
+		<string>Stony Brook</string>
+	</dict>
+	<key>235</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SYR</string>
+		<key>name</key>
+		<string>Syracuse</string>
+	</dict>
+	<key>236</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TEM</string>
+		<key>name</key>
+		<string>Temple</string>
+	</dict>
+	<key>237</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TNST</string>
+		<key>name</key>
+		<string>Tennessee St</string>
+	</dict>
+	<key>238</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TNTC</string>
+		<key>name</key>
+		<string>Tennessee Tech</string>
+	</dict>
+	<key>239</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TAMU</string>
+		<key>name</key>
+		<string>Texas A&amp;M</string>
 	</dict>
 	<key>24</key>
 	<dict>
@@ -128,12 +1108,152 @@
 		<key>name</key>
 		<string>Maryland</string>
 	</dict>
+	<key>240</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TAMCC</string>
+		<key>name</key>
+		<string>Texas A&amp;M-Corpus Christi</string>
+	</dict>
+	<key>241</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TCU</string>
+		<key>name</key>
+		<string>Texas Christian</string>
+	</dict>
+	<key>242</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TXSO</string>
+		<key>name</key>
+		<string>Texas Southern</string>
+	</dict>
+	<key>243</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TXST</string>
+		<key>name</key>
+		<string>Texas St</string>
+	</dict>
+	<key>244</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CIT</string>
+		<key>name</key>
+		<string>The Citadel</string>
+	</dict>
+	<key>245</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNCC</string>
+		<key>name</key>
+		<string>N Carolina-Charlotte</string>
+	</dict>
+	<key>246</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNCG</string>
+		<key>name</key>
+		<string>N Carolina-Greensboro</string>
+	</dict>
+	<key>247</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USM</string>
+		<key>name</key>
+		<string>Southern Miss</string>
+	</dict>
+	<key>248</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>URTGV</string>
+		<key>name</key>
+		<string>Texas-Rio Grande</string>
+	</dict>
+	<key>249</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TLSA</string>
+		<key>name</key>
+		<string>Tulsa</string>
+	</dict>
 	<key>25</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>AKR</string>
 		<key>name</key>
 		<string>Akron</string>
+	</dict>
+	<key>250</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TOWS</string>
+		<key>name</key>
+		<string>Towson</string>
+	</dict>
+	<key>251</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TROY</string>
+		<key>name</key>
+		<string>Troy</string>
+	</dict>
+	<key>252</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TULN</string>
+		<key>name</key>
+		<string>Tulane</string>
+	</dict>
+	<key>253</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>AFA</string>
+		<key>name</key>
+		<string>Air Force</string>
+	</dict>
+	<key>254</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ARMY</string>
+		<key>name</key>
+		<string>Army</string>
+	</dict>
+	<key>255</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NAVY</string>
+		<key>name</key>
+		<string>Navy</string>
+	</dict>
+	<key>256</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ALBY</string>
+		<key>name</key>
+		<string>SUNY Albany</string>
+	</dict>
+	<key>257</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BUFF</string>
+		<key>name</key>
+		<string>SUNY Buffalo</string>
+	</dict>
+	<key>258</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BAMA</string>
+		<key>name</key>
+		<string>Alabama</string>
+	</dict>
+	<key>259</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UAB</string>
+		<key>name</key>
+		<string>Alabama-Birmingham</string>
 	</dict>
 	<key>26</key>
 	<dict>
@@ -142,12 +1262,152 @@
 		<key>name</key>
 		<string>Penn St</string>
 	</dict>
+	<key>260</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ARK</string>
+		<key>name</key>
+		<string>Arkansas</string>
+	</dict>
+	<key>261</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ARPB</string>
+		<key>name</key>
+		<string>Arkansas-Pine Bluff</string>
+	</dict>
+	<key>262</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CAL</string>
+		<key>name</key>
+		<string>California</string>
+	</dict>
+	<key>263</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCD</string>
+		<key>name</key>
+		<string>UC Davis</string>
+	</dict>
+	<key>264</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCR</string>
+		<key>name</key>
+		<string>UC Riverside</string>
+	</dict>
+	<key>265</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCSB</string>
+		<key>name</key>
+		<string>UC Santa Barbara</string>
+	</dict>
+	<key>266</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCA</string>
+		<key>name</key>
+		<string>Central Arkansas</string>
+	</dict>
+	<key>267</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCF</string>
+		<key>name</key>
+		<string>Central Florida</string>
+	</dict>
+	<key>268</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCONN</string>
+		<key>name</key>
+		<string>Connecticut</string>
+	</dict>
+	<key>269</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DEL</string>
+		<key>name</key>
+		<string>Delaware</string>
+	</dict>
 	<key>27</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>NCST</string>
 		<key>name</key>
 		<string>NC St</string>
+	</dict>
+	<key>270</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>DEN</string>
+		<key>name</key>
+		<string>Denver</string>
+	</dict>
+	<key>271</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UDM</string>
+		<key>name</key>
+		<string>Detroit Mercy</string>
+	</dict>
+	<key>272</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UE</string>
+		<key>name</key>
+		<string>Evansville</string>
+	</dict>
+	<key>273</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UGA</string>
+		<key>name</key>
+		<string>Georgia</string>
+	</dict>
+	<key>274</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HART</string>
+		<key>name</key>
+		<string>Hartford</string>
+	</dict>
+	<key>275</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>HAW</string>
+		<key>name</key>
+		<string>Hawaii</string>
+	</dict>
+	<key>276</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IDHO</string>
+		<key>name</key>
+		<string>Idaho</string>
+	</dict>
+	<key>277</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UIC</string>
+		<key>name</key>
+		<string>Illinois-Chicago</string>
+	</dict>
+	<key>278</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ULL</string>
+		<key>name</key>
+		<string>Louisiana-Lafayette</string>
+	</dict>
+	<key>279</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ULM</string>
+		<key>name</key>
+		<string>Louisiana-Monroe</string>
 	</dict>
 	<key>28</key>
 	<dict>
@@ -156,12 +1416,152 @@
 		<key>name</key>
 		<string>UCLA</string>
 	</dict>
+	<key>280</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MAINE</string>
+		<key>name</key>
+		<string>Maine</string>
+	</dict>
+	<key>281</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UMES</string>
+		<key>name</key>
+		<string>Maryland-E Shore</string>
+	</dict>
+	<key>282</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UMBC</string>
+		<key>name</key>
+		<string>Maryland-BC</string>
+	</dict>
+	<key>283</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UML</string>
+		<key>name</key>
+		<string>UMass-Lowell</string>
+	</dict>
+	<key>284</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UMASS</string>
+		<key>name</key>
+		<string>Massachusetts</string>
+	</dict>
+	<key>285</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MEM</string>
+		<key>name</key>
+		<string>Memphis</string>
+	</dict>
+	<key>286</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MIA</string>
+		<key>name</key>
+		<string>Miami-Florida</string>
+	</dict>
+	<key>287</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MINN</string>
+		<key>name</key>
+		<string>Minnesota</string>
+	</dict>
+	<key>288</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MISS</string>
+		<key>name</key>
+		<string>Mississippi</string>
+	</dict>
+	<key>289</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MU</string>
+		<key>name</key>
+		<string>Missouri</string>
+	</dict>
 	<key>29</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>NOVA</string>
 		<key>name</key>
 		<string>Villanova</string>
+	</dict>
+	<key>290</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UMKC</string>
+		<key>name</key>
+		<string>UMKC</string>
+	</dict>
+	<key>291</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MONT</string>
+		<key>name</key>
+		<string>Montana</string>
+	</dict>
+	<key>292</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNO</string>
+		<key>name</key>
+		<string>Nebraska-Omaha</string>
+	</dict>
+	<key>293</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NEB</string>
+		<key>name</key>
+		<string>Nebraska</string>
+	</dict>
+	<key>294</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNLV</string>
+		<key>name</key>
+		<string>Nevada-Las Vegas</string>
+	</dict>
+	<key>295</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>NEV</string>
+		<key>name</key>
+		<string>Nevada</string>
+	</dict>
+	<key>296</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNH</string>
+		<key>name</key>
+		<string>New Hampshire</string>
+	</dict>
+	<key>297</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNM</string>
+		<key>name</key>
+		<string>New Mexico</string>
+	</dict>
+	<key>298</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNO</string>
+		<key>name</key>
+		<string>New Orleans</string>
+	</dict>
+	<key>299</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNCA</string>
+		<key>name</key>
+		<string>UNC Asheville</string>
 	</dict>
 	<key>3</key>
 	<dict>
@@ -177,12 +1577,152 @@
 		<key>name</key>
 		<string>Hofstra</string>
 	</dict>
+	<key>300</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNCW</string>
+		<key>name</key>
+		<string>UNC Wilmington</string>
+	</dict>
+	<key>301</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNC</string>
+		<key>name</key>
+		<string>North Carolina</string>
+	</dict>
+	<key>302</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UND</string>
+		<key>name</key>
+		<string>North Dakota</string>
+	</dict>
+	<key>303</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNF</string>
+		<key>name</key>
+		<string>North Florida</string>
+	</dict>
+	<key>304</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNCO</string>
+		<key>name</key>
+		<string>Northern Colorado</string>
+	</dict>
+	<key>305</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNI</string>
+		<key>name</key>
+		<string>Northern Iowa</string>
+	</dict>
+	<key>306</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ND</string>
+		<key>name</key>
+		<string>Notre Dame</string>
+	</dict>
+	<key>307</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PENN</string>
+		<key>name</key>
+		<string>Pennsylvania</string>
+	</dict>
+	<key>308</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PITT</string>
+		<key>name</key>
+		<string>Pittsburgh</string>
+	</dict>
+	<key>309</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PORT</string>
+		<key>name</key>
+		<string>Portland</string>
+	</dict>
 	<key>31</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>WVU</string>
 		<key>name</key>
 		<string>W Virginia</string>
+	</dict>
+	<key>310</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>URI</string>
+		<key>name</key>
+		<string>Rhode Island</string>
+	</dict>
+	<key>311</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USD</string>
+		<key>name</key>
+		<string>San Diego</string>
+	</dict>
+	<key>312</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USF</string>
+		<key>name</key>
+		<string>San Francisco</string>
+	</dict>
+	<key>313</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USA</string>
+		<key>name</key>
+		<string>South Alabama</string>
+	</dict>
+	<key>314</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USCU</string>
+		<key>name</key>
+		<string>S Carolina-Upstate</string>
+	</dict>
+	<key>315</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SC</string>
+		<key>name</key>
+		<string>South Carolina</string>
+	</dict>
+	<key>316</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SDAK</string>
+		<key>name</key>
+		<string>South Dakota</string>
+	</dict>
+	<key>317</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USF</string>
+		<key>name</key>
+		<string>South Florida</string>
+	</dict>
+	<key>318</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTC</string>
+		<key>name</key>
+		<string>UT Chattanooga</string>
+	</dict>
+	<key>319</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTM</string>
+		<key>name</key>
+		<string>UT Martin</string>
 	</dict>
 	<key>32</key>
 	<dict>
@@ -191,12 +1731,152 @@
 		<key>name</key>
 		<string>Utah St</string>
 	</dict>
+	<key>320</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TENN</string>
+		<key>name</key>
+		<string>Tennessee</string>
+	</dict>
+	<key>321</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTA</string>
+		<key>name</key>
+		<string>Texas-Arlington</string>
+	</dict>
+	<key>322</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTEP</string>
+		<key>name</key>
+		<string>Texas-El Paso</string>
+	</dict>
+	<key>323</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTSA</string>
+		<key>name</key>
+		<string>Texas-San Antonio</string>
+	</dict>
+	<key>324</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>IW</string>
+		<key>name</key>
+		<string>Incarnate Word</string>
+	</dict>
+	<key>325</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>PAC</string>
+		<key>name</key>
+		<string>Pacific</string>
+	</dict>
+	<key>326</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TOL</string>
+		<key>name</key>
+		<string>Toledo</string>
+	</dict>
+	<key>327</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UTAH</string>
+		<key>name</key>
+		<string>Utah</string>
+	</dict>
+	<key>328</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WASH</string>
+		<key>name</key>
+		<string>Washington</string>
+	</dict>
+	<key>329</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UWGB</string>
+		<key>name</key>
+		<string>Wisconsin-Green Bay</string>
+	</dict>
 	<key>33</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>FSU</string>
 		<key>name</key>
 		<string>Florida St</string>
+	</dict>
+	<key>330</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UWM</string>
+		<key>name</key>
+		<string>Wisconsin-Milwaukee</string>
+	</dict>
+	<key>331</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WYO</string>
+		<key>name</key>
+		<string>Wyoming</string>
+	</dict>
+	<key>332</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UVU</string>
+		<key>name</key>
+		<string>Utah Valley</string>
+	</dict>
+	<key>333</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>VALP</string>
+		<key>name</key>
+		<string>Valparaiso</string>
+	</dict>
+	<key>334</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>VAN</string>
+		<key>name</key>
+		<string>Vanderbilt</string>
+	</dict>
+	<key>335</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>VCU</string>
+		<key>name</key>
+		<string>VCU</string>
+	</dict>
+	<key>336</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>VMI</string>
+		<key>name</key>
+		<string>Virginia Military</string>
+	</dict>
+	<key>337</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>VT</string>
+		<key>name</key>
+		<string>Virginia Tech</string>
+	</dict>
+	<key>338</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WAG</string>
+		<key>name</key>
+		<string>Wagner College</string>
+	</dict>
+	<key>339</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WAKE</string>
+		<key>name</key>
+		<string>Wake Forest</string>
 	</dict>
 	<key>34</key>
 	<dict>
@@ -205,12 +1885,89 @@
 		<key>name</key>
 		<string>N Kentucky</string>
 	</dict>
+	<key>340</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WSU</string>
+		<key>name</key>
+		<string>Washington St</string>
+	</dict>
+	<key>341</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WEB</string>
+		<key>name</key>
+		<string>Weber St</string>
+	</dict>
+	<key>342</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WCU</string>
+		<key>name</key>
+		<string>Western Carolina</string>
+	</dict>
+	<key>343</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WIU</string>
+		<key>name</key>
+		<string>Western Illinois</string>
+	</dict>
+	<key>344</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WKU</string>
+		<key>name</key>
+		<string>Western Kentucky</string>
+	</dict>
+	<key>345</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WMU</string>
+		<key>name</key>
+		<string>Western Michigan</string>
+	</dict>
+	<key>346</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WSU</string>
+		<key>name</key>
+		<string>Wichita St</string>
+	</dict>
+	<key>347</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WOF</string>
+		<key>name</key>
+		<string>Wofford College</string>
+	</dict>
+	<key>348</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>WRIGHT</string>
+		<key>name</key>
+		<string>Wright St</string>
+	</dict>
+	<key>349</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>XAV</string>
+		<key>name</key>
+		<string>Xavier</string>
+	</dict>
 	<key>35</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>GU</string>
 		<key>name</key>
 		<string>Gonzaga</string>
+	</dict>
+	<key>350</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>YSU</string>
+		<key>name</key>
+		<string>Youngstown St</string>
 	</dict>
 	<key>36</key>
 	<dict>
@@ -457,12 +2214,96 @@
 		<key>name</key>
 		<string>Little Rock</string>
 	</dict>
+	<key>68</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ACU</string>
+		<key>name</key>
+		<string>Abilene Christian</string>
+	</dict>
+	<key>69</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>AAMU</string>
+		<key>name</key>
+		<string>Alabama A&amp;M</string>
+	</dict>
 	<key>7</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>UNT</string>
 		<key>name</key>
 		<string>N Texas</string>
+	</dict>
+	<key>70</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ALST</string>
+		<key>name</key>
+		<string>Alabama St</string>
+	</dict>
+	<key>71</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ALCST</string>
+		<key>name</key>
+		<string>Alcorn St</string>
+	</dict>
+	<key>72</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>AMER</string>
+		<key>name</key>
+		<string>American Univ</string>
+	</dict>
+	<key>73</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>APPST</string>
+		<key>name</key>
+		<string>Appalachian St</string>
+	</dict>
+	<key>74</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>ARST</string>
+		<key>name</key>
+		<string>Arkansas St</string>
+	</dict>
+	<key>75</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>APSU</string>
+		<key>name</key>
+		<string>Austin Peay St</string>
+	</dict>
+	<key>76</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BALL</string>
+		<key>name</key>
+		<string>Ball St</string>
+	</dict>
+	<key>77</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>B-CU</string>
+		<key>name</key>
+		<string>Bethune-Cookman</string>
+	</dict>
+	<key>78</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SUNYB</string>
+		<key>name</key>
+		<string>Binghamton</string>
+	</dict>
+	<key>79</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BOISE</string>
+		<key>name</key>
+		<string>Boise St</string>
 	</dict>
 	<key>8</key>
 	<dict>
@@ -471,12 +2312,152 @@
 		<key>name</key>
 		<string>Iowa</string>
 	</dict>
+	<key>80</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BC</string>
+		<key>name</key>
+		<string>Boston College</string>
+	</dict>
+	<key>81</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BGSU</string>
+		<key>name</key>
+		<string>Bowling Green St</string>
+	</dict>
+	<key>82</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BROWN</string>
+		<key>name</key>
+		<string>Brown</string>
+	</dict>
+	<key>83</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BRY</string>
+		<key>name</key>
+		<string>Bryant</string>
+	</dict>
+	<key>84</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BUCK</string>
+		<key>name</key>
+		<string>Bucknell</string>
+	</dict>
+	<key>85</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CPOLY</string>
+		<key>name</key>
+		<string>Cal Poly St</string>
+	</dict>
+	<key>86</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSUB</string>
+		<key>name</key>
+		<string>Cal St-Bakersfield</string>
+	</dict>
+	<key>87</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CFRES</string>
+		<key>name</key>
+		<string>Cal St-Fresno</string>
+	</dict>
+	<key>88</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSUF</string>
+		<key>name</key>
+		<string>Cal St-Fullerton</string>
+	</dict>
+	<key>89</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSUN</string>
+		<key>name</key>
+		<string>Cal St-Northridge</string>
+	</dict>
 	<key>9</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>ETST</string>
 		<key>name</key>
 		<string>E Tennessee St</string>
+	</dict>
+	<key>90</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSAC</string>
+		<key>name</key>
+		<string>Cal St-Sacramento</string>
+	</dict>
+	<key>91</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CMBL</string>
+		<key>name</key>
+		<string>Campbell</string>
+	</dict>
+	<key>92</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CANI</string>
+		<key>name</key>
+		<string>Canisius College</string>
+	</dict>
+	<key>93</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CCSU</string>
+		<key>name</key>
+		<string>C Connecticut St</string>
+	</dict>
+	<key>94</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CMU</string>
+		<key>name</key>
+		<string>Central Michigan</string>
+	</dict>
+	<key>95</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CSU</string>
+		<key>name</key>
+		<string>Charleston Southern</string>
+	</dict>
+	<key>96</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CHIST</string>
+		<key>name</key>
+		<string>Chicago St</string>
+	</dict>
+	<key>97</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CLEM</string>
+		<key>name</key>
+		<string>Clemson</string>
+	</dict>
+	<key>98</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CLE</string>
+		<key>name</key>
+		<string>Cleveland St</string>
+	</dict>
+	<key>99</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CCU</string>
+		<key>name</key>
+		<string>Coastal Carolina</string>
 	</dict>
 </dict>
 </plist>
