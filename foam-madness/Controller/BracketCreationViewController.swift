@@ -290,8 +290,10 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     func createTournamentGames() {
         taskLabel.text = "Creating tournament games..."
         // Note: This function is essentially hard-coded for 2020 bracket style
-        // Create First Four
-        createFirstFour()
+        // Create First Four if Men's tournament
+        if !isWomens {
+            createFirstFour()
+        }
         progressBar.progress += 0.05
         // Create Round 1 with initial teams
         createFirstRound()
