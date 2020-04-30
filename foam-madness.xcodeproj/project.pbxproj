@@ -11,6 +11,7 @@
 		7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */; };
 		7A10A5F524383F970070302F /* SelectTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F424383F970070302F /* SelectTournamentViewController.swift */; };
 		7A10A5F7243847B10070302F /* TourneyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F6243847B10070302F /* TourneyHelper.swift */; };
+		7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */; };
 		7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEE8242EDE920065E369 /* AppDelegate.swift */; };
 		7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */; };
 		7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEC242EDE920065E369 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGamesViewController.swift; sourceTree = "<group>"; };
 		7A10A5F424383F970070302F /* SelectTournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTournamentViewController.swift; sourceTree = "<group>"; };
 		7A10A5F6243847B10070302F /* TourneyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHelper.swift; sourceTree = "<group>"; };
+		7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = historicalProbabilitiesWomen.plist; sourceTree = "<group>"; };
 		7A2ECEE5242EDE920065E369 /* foam-madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foam-madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ECEE8242EDE920065E369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				7A2ECEFB242EDEBF0065E369 /* View */,
 				7A2ECEF4242EDE930065E369 /* Info.plist */,
 				7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */,
+				7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */,
 				7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */,
 				7AEAB8092433086C009E7CC1 /* teams.plist */,
 			);
@@ -205,6 +208,7 @@
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,
 				7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */,
 				7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */,
+				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
