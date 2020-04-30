@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>RegionIDs</key>
+	<dict>
+		<key>0</key>
+		<string>Midwest</string>
+		<key>1</key>
+		<string>East</string>
+		<key>2</key>
+		<string>West</string>
+		<key>3</key>
+		<string>South</string>
+	</dict>
 	<key>Source</key>
 	<dict>
 		<key>Date Accessed</key>

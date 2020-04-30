@@ -25,7 +25,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     var tournament: Tournament!
     var tournamentName: String!
     var bracketLocation: String!
-    let regionOrder = ["Midwest", "East", "West", "South"]
+    var regionOrder = [String]()
     var regionSeedTeams = [String: [String: Int16]]()
     
     // MARK: View functions
@@ -59,6 +59,9 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         // Load in bracket
         let path = Bundle.main.path(forResource: bracketLocation, ofType: "plist")!
         regionSeedTeams = NSDictionary(contentsOfFile: path)!.value(forKey: "Regions") as! Dictionary<String, [String: Int16]>
+        // Set up regions in order
+        let regionIDs = NSDictionary(contentsOfFile: path)!.value(forKey: "RegionIDs") as! Dictionary<String, String>
+        regionOrder = [regionIDs["0"], regionIDs["1"], regionIDs["2"], regionIDs["3"]] as! [String]
         // Update progress bar to 5%
         progressBar.progress = 0.05
     }
