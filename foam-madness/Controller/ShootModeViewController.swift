@@ -70,9 +70,14 @@ class ShootModeViewController: UIViewController {
     
     // MARK: Other functions
     func getGameProbability() -> Float {
-        // TODO: Load this elsewhere so don't need to re-load every game?
-        let path = Bundle.main.path(forResource: "historicalProbabilities",
-                                    ofType: "plist")!
+        // Load appropriate probabilities based on Men or Women
+        let filename: String
+        if game.isWomens {
+            filename = "historicalProbabilitiesWomen"
+        } else {
+            filename = "historicalProbabilities"
+        }
+        let path = Bundle.main.path(forResource: filename, ofType: "plist")!
         let dict = NSDictionary(contentsOfFile: path)
         
         // Use the team seeds to get the right historical probabilities
