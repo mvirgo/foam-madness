@@ -24,6 +24,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     var context: NSManagedObjectContext!
     var tournament: Tournament!
     var tournamentName: String!
+    var isWomens = false
     var bracketLocation: String!
     var regionOrder = [String]()
     var regionSeedTeams = [String: [String: Int16]]()
@@ -58,10 +59,13 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         taskLabel.text = "Loading bracket..."
         // Load in bracket
         let path = Bundle.main.path(forResource: bracketLocation, ofType: "plist")!
-        regionSeedTeams = NSDictionary(contentsOfFile: path)!.value(forKey: "Regions") as! Dictionary<String, [String: Int16]>
+        let bracketDict = NSDictionary(contentsOfFile: path)!
+        regionSeedTeams = bracketDict.value(forKey: "Regions") as! Dictionary<String, [String: Int16]>
         // Set up regions in order
-        let regionIDs = NSDictionary(contentsOfFile: path)!.value(forKey: "RegionIDs") as! Dictionary<String, String>
+        let regionIDs = bracketDict.value(forKey: "RegionIDs") as! Dictionary<String, String>
         regionOrder = [regionIDs["0"], regionIDs["1"], regionIDs["2"], regionIDs["3"]] as! [String]
+        // Check if it's a Women's tournament for using correct probabilities
+        isWomens = bracketDict.value(forKey: "IsWomens") as! Bool
         // Update progress bar to 5%
         progressBar.progress = 0.05
     }
@@ -136,6 +140,8 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         tournament = Tournament(context: context)
         tournament.name = tournamentName!
         tournament.createdDate = Date()
+        tournament.isWomens = isWomens
+        // Make sure it is saved
         saveData()
         // Add 5% to progress bar
         progressBar.progress += 0.05
@@ -174,6 +180,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
             game.round = 0
             game.region = regions[i]
             game.useLeft = checkLeftHand()
+            game.isWomens = isWomens
             // Add both team ids and seeds
             game.team1Id = regionSeedTeams[regions[i]]![seeds[i][0]]!
             game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
@@ -208,6 +215,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
                 game.round = 1
                 game.region = region
                 game.useLeft = checkLeftHand()
+                game.isWomens = isWomens
                 game.team1Seed = Int16(i)
                 game.team2Seed = Int16(17-i)
                 // Team 2 may not actually exist yet due to First Four
@@ -245,6 +253,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
                         game.round = Int16(i)
                         game.region = region
                         game.useLeft = checkLeftHand()
+                        game.isWomens = isWomens
                         // Set tourney game id and next game
                         game.tourneyGameId = Int16(gameId)
                         game.nextGame = Int16((gameId / 2) + 34)
@@ -260,6 +269,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
                     let game = Game(context: context)
                     game.round = Int16(i)
                     game.useLeft = checkLeftHand()
+                    game.isWomens = isWomens
                     if i == 5 {
                         game.region = "Final Four"
                         game.tourneyGameId = Int16(63 + j)
