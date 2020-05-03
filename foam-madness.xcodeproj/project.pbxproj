@@ -29,6 +29,7 @@
 		7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */; };
 		7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB8092433086C009E7CC1 /* teams.plist */; };
 		7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */; };
+		7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */; };
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationViewController.swift; sourceTree = "<group>"; };
 		7AEAB8092433086C009E7CC1 /* teams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = teams.plist; sourceTree = "<group>"; };
 		7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bracketology2020.plist; sourceTree = "<group>"; };
+		7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracketology2020.plist; sourceTree = "<group>"; };
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */,
 				7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */,
 				7AEAB8092433086C009E7CC1 /* teams.plist */,
+				7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */,
 			);
 			path = "foam-madness";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */,
+				7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */,
 				7A2ECEF3242EDE930065E369 /* LaunchScreen.storyboard in Resources */,
 				7A2ECEF0242EDE930065E369 /* Assets.xcassets in Resources */,
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,

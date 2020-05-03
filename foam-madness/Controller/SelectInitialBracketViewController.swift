@@ -13,7 +13,8 @@ class SelectInitialBracketViewController: UITableViewController {
     // MARK: Variables
     var dataController: DataController!
     var chosenBracketFile = ""
-    let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020"]
+    let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020",
+                    "2020 Womens - Charlie Creme's Bracketology": "womensBracketology2020"]
     
     // MARK: View functions
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class SelectInitialBracketViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bracketCell", for: indexPath)
-        let bracket = Array(brackets.keys)[(indexPath as NSIndexPath).section]
+        let bracket = Array(brackets.keys)[(indexPath as NSIndexPath).row]
         
         // Set the cell details
         cell.textLabel?.text = bracket
@@ -38,7 +39,7 @@ class SelectInitialBracketViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let bracket = Array(brackets.keys)[(indexPath as NSIndexPath).section]
+        let bracket = Array(brackets.keys)[(indexPath as NSIndexPath).row]
         chosenBracketFile = brackets[bracket]!
         // Segue to bracket creation screen
         performSegue(withIdentifier: "createBracket", sender: nil)
