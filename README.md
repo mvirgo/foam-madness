@@ -14,8 +14,10 @@ You can find a full summary of the rules on the App Store:
 
 ### App Notes
 
-The current version of the app was compiled using Swift 4.2 and the iOS 12.1 SDK.
-I plan to update these to Swift 5 and iOS 13 in the next couple of months.
+The current version of the app was compiled using Swift 5 and the iOS 13 SDK,
+although v1 of the app originally used Swift 4.2 and the iOS 12.1 SDK.
+
+The app supports darks mode.
 
 ### Github Pages
 
