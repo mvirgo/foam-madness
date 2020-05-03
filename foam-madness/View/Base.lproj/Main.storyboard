@@ -164,32 +164,36 @@
 </string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Game Rules">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
                                         <mutableString key="content">
 
-Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.  Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
+Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.   Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
 
 If overtime is needed, an additional 10 shots is given per team, with each basket worth one point. An additional 10 shots is added per additional overtime period, as necessary.
 
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Shooting Hand">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -200,39 +204,47 @@ Each team is given a random selection to shoot either right or left-handed, set 
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Single Game">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
+                                        <mutableString key="content"> 
+A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
 
-Potential teams are currently only the teams also available in initial brackets in tournament mode.
+All teams in Division 1 are available to play with, not just tournament teams.
 
 </mutableString>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Tournament Mode">
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
                                         <mutableString key="content">
 
-Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</mutableString>
+Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).
+
+Both men's and women's tournament brackets are available.</mutableString>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="menu" size="14"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
