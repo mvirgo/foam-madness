@@ -114,7 +114,11 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
                 cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.1)
             } else { // Game is ready to play
                 cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
-                cell.backgroundColor = UIColor.white
+                if #available(iOS 13, *) {
+                    cell.backgroundColor = UIColor.systemBackground
+                } else {
+                    cell.backgroundColor = UIColor.white
+                }
             }
         } else {
             cell.textLabel?.text = "Game Pending Both Participants"

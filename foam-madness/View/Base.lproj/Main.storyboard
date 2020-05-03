@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +13,7 @@
             <objects>
                 <navigationController id="Fu8-hu-OR5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1r9-zx-XX6">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -35,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-xi-yUf">
-                                <rect key="frame" x="0.0" y="197.5" width="375" height="336"/>
+                                <rect key="frame" x="0.0" y="187.5" width="375" height="336"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nd-DQ-ZUW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
@@ -47,7 +45,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-Ya-D6N">
-                                                <rect key="frame" x="17" y="56" width="341" height="46"/>
+                                                <rect key="frame" x="16.5" y="56" width="342" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -59,7 +57,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-MF-EAQ">
-                                                <rect key="frame" x="17" y="112" width="341" height="46"/>
+                                                <rect key="frame" x="16.5" y="112" width="342" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -71,7 +69,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
-                                                <rect key="frame" x="17" y="168" width="341" height="46"/>
+                                                <rect key="frame" x="16.5" y="168" width="342" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -118,7 +116,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9fK-xi-yUf" firstAttribute="centerY" secondItem="r7o-JM-Lkk" secondAttribute="centerY" id="7qx-pr-sys"/>
                             <constraint firstItem="9fK-xi-yUf" firstAttribute="centerX" secondItem="r7o-JM-Lkk" secondAttribute="centerX" id="YvL-m8-8wj"/>
@@ -157,91 +155,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-Cf-Zcz">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="44" width="343" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">This app was made as a fun way to pass the time with a basketball hoop and ball (whether mini or full-size) during shelter-in-place in Spring 2020, with a certain college tournament otherwise cancelled.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Game Rules">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name=".SFNSText"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <mutableString key="content">
 
 Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.  Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
 
 If overtime is needed, an additional 10 shots is given per team, with each basket worth one point. An additional 10 shots is added per additional overtime period, as necessary.
 
-</string>
+</mutableString>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Shooting Hand">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <mutableString key="content">
 
 Each team is given a random selection to shoot either right or left-handed, set so that the "better" team has a better chance to shoot with their dominant hand. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments operate as if the teams are equal seeds.
 
-</string>
+</mutableString>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Single Game">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
+                                        <mutableString key="content">  A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
 
 Potential teams are currently only the teams also available in initial brackets in tournament mode.
 
-</string>
+</mutableString>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Tournament Mode">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <mutableString key="content">
 
-Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</string>
+Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).</mutableString>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1iI-Cf-Zcz" firstAttribute="top" secondItem="Tfn-Az-vw5" secondAttribute="top" id="1Bo-tW-HAp"/>
                             <constraint firstItem="Tfn-Az-vw5" firstAttribute="bottom" secondItem="1iI-Cf-Zcz" secondAttribute="bottom" id="Pv6-Oo-raH"/>
@@ -263,10 +261,10 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="urC-Ns-IUp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bracketCell" textLabel="lki-ET-WPW" style="IBUITableViewCellStyleDefault" id="0Fr-aq-hr2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Fr-aq-hr2" id="qNl-XQ-qPd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -305,7 +303,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-0H-Mw4">
-                                <rect key="frame" x="63" y="170" width="249.5" height="391"/>
+                                <rect key="frame" x="63" y="158" width="249.5" height="395"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SYl-YZ-6uo">
                                         <rect key="frame" x="114.5" y="0.0" width="20" height="20"/>
@@ -318,13 +316,12 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tournament Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I03-oM-0cI">
-                                        <rect key="frame" x="34.5" y="144" width="180.5" height="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="31" y="144" width="187.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-NH-mzL">
-                                        <rect key="frame" x="0.0" y="224" width="249.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="228" width="249.5" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right-Hand Dominant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="09B-C3-Rfz">
                                                 <rect key="frame" x="0.0" y="0.0" width="190.5" height="31"/>
@@ -342,7 +339,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-gk-GRI">
-                                        <rect key="frame" x="20" y="305" width="209" height="34"/>
+                                        <rect key="frame" x="20" y="309" width="209" height="34"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -354,7 +351,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="TNJ-Wn-ApO">
-                                        <rect key="frame" x="64.5" y="389" width="120" height="2"/>
+                                        <rect key="frame" x="64.5" y="393" width="120" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="s6G-jL-Pe5"/>
                                         </constraints>
@@ -364,7 +361,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerX" secondItem="UYx-AB-yzz" secondAttribute="centerX" id="CjI-Yy-LK3"/>
                             <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerY" secondItem="UYx-AB-yzz" secondAttribute="centerY" id="X0K-GQ-MkK"/>
@@ -395,7 +392,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7s-9G-d7j">
-                                <rect key="frame" x="16" y="64" width="343" height="50"/>
+                                <rect key="frame" x="16" y="44" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eo2-kQ-3mq"/>
                                 </constraints>
@@ -404,25 +401,25 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-2A-atw">
-                                <rect key="frame" x="16" y="122" width="343" height="456"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="102" width="343" height="473"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tourneyGameCell" textLabel="yGh-Kw-SFh" detailTextLabel="XdJ-qm-exQ" style="IBUITableViewCellStyleSubtitle" id="vAL-Rs-Ekk">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vAL-Rs-Ekk" id="3rW-pt-WlQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGh-Kw-SFh">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XdJ-qm-exQ">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -434,20 +431,20 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd8-zS-UuM">
-                                <rect key="frame" x="118" y="586" width="139" height="24"/>
+                                <rect key="frame" x="118" y="583" width="139" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-Tz-wYG">
-                                <rect key="frame" x="140.5" y="618" width="94" height="29"/>
+                                <rect key="frame" x="140.5" y="615" width="94" height="32"/>
                                 <color key="tintColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="roundStepperPressed:" destination="W2t-HN-F36" eventType="valueChanged" id="qVN-TH-FOg"/>
                                 </connections>
                             </stepper>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GQv-Tz-wYG" firstAttribute="top" secondItem="fd8-zS-UuM" secondAttribute="bottom" constant="8" symbolic="YES" id="8Vg-fj-aBR"/>
                             <constraint firstAttribute="bottom" secondItem="GQv-Tz-wYG" secondAttribute="bottom" constant="20" symbolic="YES" id="AQr-2S-WJP"/>
@@ -485,7 +482,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-Y8-QZj">
-                                <rect key="frame" x="49.5" y="135.5" width="276.5" height="460"/>
+                                <rect key="frame" x="49.5" y="124" width="276.5" height="463"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX Hand Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-tf-L3o">
                                         <rect key="frame" x="0.0" y="0.0" width="276.5" height="42"/>
@@ -641,7 +638,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="stx-Sl-YRM">
-                                        <rect key="frame" x="0.0" y="432" width="276.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="432" width="276.5" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="hNr-xI-YHO"/>
                                         </constraints>
@@ -658,7 +655,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="2xi-Y8-QZj" firstAttribute="centerX" secondItem="g0T-TY-Rnk" secondAttribute="centerX" id="HSG-7j-fMT"/>
                             <constraint firstItem="2xi-Y8-QZj" firstAttribute="centerY" secondItem="g0T-TY-Rnk" secondAttribute="centerY" id="xmr-16-TUC"/>
@@ -697,10 +694,10 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Glj-CT-bUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tournamentCell" textLabel="zvq-cB-G5W" style="IBUITableViewCellStyleDefault" id="Bdl-Wa-WnG">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bdl-Wa-WnG" id="gnO-Pb-Y6W">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -739,7 +736,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-UP-mwU">
-                                <rect key="frame" x="27.5" y="182.5" width="320" height="366"/>
+                                <rect key="frame" x="27.5" y="172.5" width="320" height="366"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Teams" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIo-ug-bYe">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
@@ -781,7 +778,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vOr-UP-mwU" firstAttribute="centerY" secondItem="u3i-jy-zOF" secondAttribute="centerY" id="dgq-qU-XgL"/>
                             <constraint firstItem="vOr-UP-mwU" firstAttribute="centerX" secondItem="u3i-jy-zOF" secondAttribute="centerX" id="hpV-5h-ecN"/>
@@ -806,7 +803,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-50-wyo">
-                                <rect key="frame" x="102.5" y="170.5" width="170.5" height="390"/>
+                                <rect key="frame" x="102.5" y="160.5" width="170.5" height="390"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-SG-f8W">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="30"/>
@@ -856,7 +853,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rJo-50-wyo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="46h-aG-t20"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rJo-50-wyo" secondAttribute="trailing" constant="10" id="SBg-z2-5d2"/>
@@ -886,7 +883,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-XC-RMK">
-                                <rect key="frame" x="27.5" y="163.5" width="320" height="404"/>
+                                <rect key="frame" x="27.5" y="153.5" width="320" height="404"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8w9-GA-UyH">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
@@ -924,7 +921,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="1" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="ZTq-WH-mCg"/>
@@ -937,7 +934,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="2" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ple-t1-dgk"/>
@@ -950,7 +947,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="3" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="lEp-1k-RmV"/>
@@ -963,7 +960,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="4" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="i1Z-E4-VD6"/>
@@ -976,7 +973,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="5" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="NMs-Ht-qre"/>
@@ -994,7 +991,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="6" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Zdi-Qt-Rcm"/>
@@ -1007,7 +1004,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="7" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Hl0-pa-AK6"/>
@@ -1020,7 +1017,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="8" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="5Oo-MB-xhl"/>
@@ -1033,7 +1030,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="9" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ltq-r0-fMf"/>
@@ -1043,7 +1040,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                                         <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="10" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="wmc-Mn-vFb"/>
@@ -1070,7 +1067,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xFV-XC-RMK" firstAttribute="centerX" secondItem="MAx-IQ-eoE" secondAttribute="centerX" id="q9r-lL-ZRp"/>
                             <constraint firstItem="xFV-XC-RMK" firstAttribute="centerY" secondItem="MAx-IQ-eoE" secondAttribute="centerY" id="u9l-ZD-J7e"/>
@@ -1107,7 +1104,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-ey-2CO">
-                                <rect key="frame" x="62" y="197.5" width="251.5" height="336"/>
+                                <rect key="frame" x="62" y="187.5" width="251.5" height="336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Final Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgj-Yy-SyJ">
                                         <rect key="frame" x="0.0" y="0.0" width="251.5" height="36"/>
@@ -1213,7 +1210,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A30-7A-X0N">
-                                <rect key="frame" x="20" y="170.5" width="335" height="390"/>
+                                <rect key="frame" x="20" y="160.5" width="335" height="390"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fPC-f7-SxA">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="312"/>
@@ -1436,7 +1433,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="A30-7A-X0N" firstAttribute="centerX" secondItem="Z4T-h1-hLq" secondAttribute="centerX" id="8fL-rh-89t"/>
                             <constraint firstItem="Z4T-h1-hLq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A30-7A-X0N" secondAttribute="trailing" constant="20" id="Tyn-Z1-hU5"/>
@@ -1475,13 +1472,13 @@ Tournament mode requires the user to select an initial bracket, and then can sel
             <point key="canvasLocation" x="2634" y="133"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="basketball-gray" width="60" height="60"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1st-iB-00j"/>
         <segue reference="FBW-d3-wiS"/>
         <segue reference="ncl-rA-kNL"/>
-        <segue reference="PbE-LF-brK"/>
+        <segue reference="3mw-OV-SCx"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="basketball-gray" width="60" height="60"/>
+    </resources>
 </document>
