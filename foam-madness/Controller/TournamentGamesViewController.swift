@@ -111,7 +111,7 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
                 if game.team1OTTaken > 0 {
                     cell.textLabel?.text = (cell.textLabel?.text)! + " - OT"
                 }
-                cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.1)
+                cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.3)
             } else { // Game is ready to play
                 cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
                 if #available(iOS 13, *) {
