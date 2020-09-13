@@ -26,6 +26,9 @@
 		7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */; };
 		7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE5243432F600315752 /* SelectScreenViewController.swift */; };
 		7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */; };
+		7ACBCB37250EC73900EBA5B1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB36250EC73900EBA5B1 /* APIClient.swift */; };
+		7ACBCB39250EC7DA00EBA5B1 /* LiveGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB38250EC7DA00EBA5B1 /* LiveGamesResponse.swift */; };
+		7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB3A250EC7FC00EBA5B1 /* ErrorResponse.swift */; };
 		7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */; };
 		7AE130EA243591B900D30A21 /* SelectInitialBracketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE130E9243591B900D30A21 /* SelectInitialBracketViewController.swift */; };
 		7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */; };
@@ -59,6 +62,9 @@
 		7A86CDE5243432F600315752 /* SelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreenViewController.swift; sourceTree = "<group>"; };
 		7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamsViewController.swift; sourceTree = "<group>"; };
 		7ABF40392456A55600A18B3F /* foam-madness-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v3.xcdatamodel"; sourceTree = "<group>"; };
+		7ACBCB36250EC73900EBA5B1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		7ACBCB38250EC7DA00EBA5B1 /* LiveGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGamesResponse.swift; sourceTree = "<group>"; };
+		7ACBCB3A250EC7FC00EBA5B1 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = historicalProbabilities.plist; sourceTree = "<group>"; };
 		7AE130E9243591B900D30A21 /* SelectInitialBracketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInitialBracketViewController.swift; sourceTree = "<group>"; };
 		7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		7A2ECEFA242EDEB00065E369 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7ACBCB35250EC71400EBA5B1 /* Live Games API */,
 				7A494BC1243041C20042173A /* foam-madness.xcdatamodeld */,
 				7A494BC4243046A50042173A /* DataController.swift */,
 			);
@@ -159,6 +166,16 @@
 				7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */,
 			);
 			path = "Live Games";
+			sourceTree = "<group>";
+		};
+		7ACBCB35250EC71400EBA5B1 /* Live Games API */ = {
+			isa = PBXGroup;
+			children = (
+				7ACBCB36250EC73900EBA5B1 /* APIClient.swift */,
+				7ACBCB38250EC7DA00EBA5B1 /* LiveGamesResponse.swift */,
+				7ACBCB3A250EC7FC00EBA5B1 /* ErrorResponse.swift */,
+			);
+			path = "Live Games API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +260,12 @@
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
 				7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */,
+				7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */,
+				7ACBCB37250EC73900EBA5B1 /* APIClient.swift in Sources */,
 				7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */,
 				7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */,
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
+				7ACBCB39250EC7DA00EBA5B1 /* LiveGamesResponse.swift in Sources */,
 				7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */,
 				7A10A5F7243847B10070302F /* TourneyHelper.swift in Sources */,
 				7AE130EA243591B900D30A21 /* SelectInitialBracketViewController.swift in Sources */,
