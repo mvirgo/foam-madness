@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-xi-yUf">
-                                <rect key="frame" x="0.0" y="187.5" width="375" height="336"/>
+                                <rect key="frame" x="0.0" y="126.5" width="375" height="458"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nd-DQ-ZUW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
@@ -101,7 +102,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-vF-R5B">
                                                 <rect key="frame" x="100.5" y="56" width="174" height="46"/>
-                                                <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                                 <state key="normal" title="Play Game">
@@ -109,6 +110,29 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="playGameButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="ewM-6q-PwE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-CP-9MA">
+                                        <rect key="frame" x="0.0" y="356" width="375" height="102"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRg-qm-V97">
+                                                <rect key="frame" x="113.5" y="0.0" width="148.5" height="46"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-Tc-adx">
+                                                <rect key="frame" x="54.5" y="56" width="266" height="46"/>
+                                                <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <state key="normal" title="View Live Scores">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="SSn-Xf-NTF" kind="show" identifier="viewLiveScores" id="Gc4-QW-Var"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -144,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2134" y="-594"/>
+            <point key="canvasLocation" x="-2135.1999999999998" y="-594.15292353823088"/>
         </scene>
         <!--About This App-->
         <scene sceneID="YKz-7O-ulA">
@@ -164,7 +188,7 @@
 </string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -176,16 +200,16 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Games are built with four rounds, made up of 10 shots of escalating value: 1 point, 2 points, 3 points, and 4 points. Clicking on an individual basketball to make it orange will count it as a made shot; leaving it gray will not be counted.   Points are only displayed at the end of all four rounds for each team, and then a statistics view is also available to show percentages by round.
 
 If overtime is needed, an additional 10 shots is given per team, with each basket worth one point. An additional 10 shots is added per additional overtime period, as necessary.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -197,14 +221,14 @@ If overtime is needed, an additional 10 shots is given per team, with each baske
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Each team is given a random selection to shoot either right or left-handed, set so that the "better" team has a better chance to shoot with their dominant hand. This chance is calculated separately for each team (i.e. both teams could end up shooting with the same hand) based on historical win probabilities in the tournament when those seeds face each other. Equal seeds, or seeds that have never faced each other, have a 50 percent chance of either hand. Single games outside of tournaments operate as if the teams are equal seeds.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -216,15 +240,15 @@ Each team is given a random selection to shoot either right or left-handed, set 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content"> 
+                                        <string key="content"> 
 A single game will consist of players selecting two teams, with a 50% chance for each team to shoot each right or left handed; as noted above, this is calculated separately, so each team could end up shooting with the same hand.
 
 All teams in Division 1 are available to play with, not just tournament teams.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -236,14 +260,14 @@ All teams in Division 1 are available to play with, not just tournament teams.
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Tournament mode requires the user to select an initial bracket, and then can select individual games to play by round. The currently viewed round can be changed with the +/- button from within a single tournament's menu, although games will be unplayable until both teams have been decided for a given game (typically applicable to later rounds).
 
-Both men's and women's tournament brackets are available.</mutableString>
+Both men's and women's tournament brackets are available.</string>
                                         <attributes>
                                             <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -343,7 +367,7 @@ Both men's and women's tournament brackets are available.</mutableString>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcx-7n-fmZ">
                                                 <rect key="frame" x="200.5" y="0.0" width="51" height="31"/>
-                                                <color key="onTintColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="onTintColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="handSwitchClicked:" destination="8kk-Cf-pJQ" eventType="valueChanged" id="wDJ-Sk-sNR"/>
                                                 </connections>
@@ -738,6 +762,110 @@ Both men's and women's tournament brackets are available.</mutableString>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IG-6j-xGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-841" y="-670"/>
+        </scene>
+        <!--Live Game Scores-->
+        <scene sceneID="Ds9-Zu-eDd">
+            <objects>
+                <collectionViewController title="Live Game Scores" id="SSn-Xf-NTF" customClass="LiveGameCollectionViewController" customModule="foam_madness" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="Yc2-Vw-sZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lFn-lx-emh">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="liveGames" id="qD5-e4-KXZ" customClass="LiveGameCollectionViewCell" customModule="foam_madness" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mz1-HE-GoJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x52-HR-plh">
+                                            <rect key="frame" x="8.5" y="15.5" width="111" height="97"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-dx-IJS">
+                                                    <rect key="frame" x="34.5" y="0.0" width="42.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-3x-urN">
+                                                    <rect key="frame" x="0.5" y="25.5" width="110" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-ZZ-vDE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" Score1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r2e-nU-NhC">
+                                                            <rect key="frame" x="53.5" y="0.0" width="56.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-dP-INT">
+                                                    <rect key="frame" x="0.0" y="51" width="111" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ave-qw-3Ks">
+                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P9A-w3-rVz">
+                                                            <rect key="frame" x="56.5" y="0.0" width="54.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fe0-mI-74I">
+                                                    <rect key="frame" x="36.5" y="76.5" width="38" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="x52-HR-plh" firstAttribute="centerY" secondItem="mz1-HE-GoJ" secondAttribute="centerY" id="BBv-WP-IxA"/>
+                                        <constraint firstItem="x52-HR-plh" firstAttribute="centerX" secondItem="mz1-HE-GoJ" secondAttribute="centerX" id="rtw-Ci-pGU"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="score1Label" destination="r2e-nU-NhC" id="lJh-Ef-fbm"/>
+                                    <outlet property="score2Label" destination="P9A-w3-rVz" id="ETI-ZA-QcG"/>
+                                    <outlet property="sportLabel" destination="IxH-dx-IJS" id="Hs4-Jk-PZi"/>
+                                    <outlet property="team1Label" destination="L1I-ZZ-vDE" id="C4d-FX-FYx"/>
+                                    <outlet property="team2Label" destination="Ave-qw-3Ks" id="aD6-5O-nnm"/>
+                                    <outlet property="timeLabel" destination="Fe0-mI-74I" id="nwN-ir-SlI"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="SSn-Xf-NTF" id="qPJ-Sh-QAz"/>
+                            <outlet property="delegate" destination="SSn-Xf-NTF" id="9oQ-Hy-0KG"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Live Game Scores" id="hQV-wg-VdC"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="lFn-lx-emh" id="Alk-xl-ni1"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9wk-XI-w2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2646" y="133"/>
         </scene>
         <!--Select Teams View Controller-->
         <scene sceneID="mb4-yk-hmV">
@@ -1485,10 +1613,10 @@ Both men's and women's tournament brackets are available.</mutableString>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1st-iB-00j"/>
-        <segue reference="FBW-d3-wiS"/>
+        <segue reference="kCW-eb-a6I"/>
+        <segue reference="CQ3-l7-pKF"/>
         <segue reference="ncl-rA-kNL"/>
-        <segue reference="3mw-OV-SCx"/>
+        <segue reference="PbE-LF-brK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="basketball-gray" width="60" height="60"/>

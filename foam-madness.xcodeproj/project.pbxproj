@@ -22,6 +22,8 @@
 		7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */; };
 		7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */; };
 		7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */; };
+		7A771E5B250D9BDD009FE9EA /* LiveGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A771E5A250D9BDD009FE9EA /* LiveGameCollectionViewCell.swift */; };
+		7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */; };
 		7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE5243432F600315752 /* SelectScreenViewController.swift */; };
 		7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */; };
 		7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD7BC1224315125006F0AF0 /* historicalProbabilities.plist */; };
@@ -52,6 +54,8 @@
 		7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreViewController.swift; sourceTree = "<group>"; };
 		7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsViewController.swift; sourceTree = "<group>"; };
 		7A73579E243ED4A800691B26 /* foam-madness-v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v2.xcdatamodel"; sourceTree = "<group>"; };
+		7A771E5A250D9BDD009FE9EA /* LiveGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameCollectionViewController.swift; sourceTree = "<group>"; };
 		7A86CDE5243432F600315752 /* SelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreenViewController.swift; sourceTree = "<group>"; };
 		7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamsViewController.swift; sourceTree = "<group>"; };
 		7ABF40392456A55600A18B3F /* foam-madness-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v3.xcdatamodel"; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		7A2ECEFC242EDED20065E369 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A771E59250D9B81009FE9EA /* Live Games */,
 				7A2ECEE8242EDE920065E369 /* AppDelegate.swift */,
 				7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */,
 				7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */,
@@ -145,6 +150,15 @@
 				7A0A424F2441A1C50096A7D6 /* TournamentStatsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A771E59250D9B81009FE9EA /* Live Games */ = {
+			isa = PBXGroup;
+			children = (
+				7A771E5A250D9BDD009FE9EA /* LiveGameCollectionViewCell.swift */,
+				7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */,
+			);
+			path = "Live Games";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,12 +243,14 @@
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
 				7A62CB7F242EFC5000880B33 /* GameScoreViewController.swift in Sources */,
+				7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */,
 				7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */,
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
 				7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */,
 				7A10A5F7243847B10070302F /* TourneyHelper.swift in Sources */,
 				7AE130EA243591B900D30A21 /* SelectInitialBracketViewController.swift in Sources */,
 				7A10A5F524383F970070302F /* SelectTournamentViewController.swift in Sources */,
+				7A771E5B250D9BDD009FE9EA /* LiveGameCollectionViewCell.swift in Sources */,
 				7AF31A862431267400DF1605 /* GameHelper.swift in Sources */,
 				7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */,
 				7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */,

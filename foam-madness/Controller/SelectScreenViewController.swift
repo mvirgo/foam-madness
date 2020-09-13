@@ -80,6 +80,8 @@ class SelectScreenViewController: UIViewController {
                 let vc = segue.destination as! SelectTournamentViewController
                 vc.dataController = dataController
                 vc.completedTournaments = true
+            case "viewLiveScores":
+                print("Viewing live scores.")
             default:
                 print("Unsupported segue.")
             }
