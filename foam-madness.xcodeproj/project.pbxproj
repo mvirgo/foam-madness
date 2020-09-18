@@ -35,6 +35,8 @@
 		7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB8092433086C009E7CC1 /* teams.plist */; };
 		7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */; };
 		7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */; };
+		7AEFD66025146629007BB16B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD65F25146629007BB16B /* AboutViewController.swift */; };
+		7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFD6662514704E007BB16B /* ABOUT.rtf */; };
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		7AEAB8092433086C009E7CC1 /* teams.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = teams.plist; sourceTree = "<group>"; };
 		7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bracketology2020.plist; sourceTree = "<group>"; };
 		7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracketology2020.plist; sourceTree = "<group>"; };
+		7AEFD65F25146629007BB16B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7AEFD6662514704E007BB16B /* ABOUT.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ABOUT.rtf; sourceTree = "<group>"; };
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,7 @@
 				7ACBCB35250EC71400EBA5B1 /* Live Games API */,
 				7A494BC1243041C20042173A /* foam-madness.xcdatamodeld */,
 				7A494BC4243046A50042173A /* DataController.swift */,
+				7AEFD6662514704E007BB16B /* ABOUT.rtf */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				7A10A5F2243838D80070302F /* TournamentGamesViewController.swift */,
 				7A10A5F424383F970070302F /* SelectTournamentViewController.swift */,
 				7A0A424F2441A1C50096A7D6 /* TournamentStatsViewController.swift */,
+				7AEFD65F25146629007BB16B /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,
 				7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */,
 				7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */,
+				7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */,
 				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +263,7 @@
 			files = (
 				7A494BC5243046A50042173A /* DataController.swift in Sources */,
 				7A0A42502441A1C50096A7D6 /* TournamentStatsViewController.swift in Sources */,
+				7AEFD66025146629007BB16B /* AboutViewController.swift in Sources */,
 				7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */,
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
@@ -425,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,7 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
