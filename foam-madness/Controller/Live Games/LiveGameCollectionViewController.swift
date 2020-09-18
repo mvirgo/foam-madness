@@ -15,6 +15,7 @@ class LiveGameCollectionViewController: UICollectionViewController {
     // MARK: Other variables
     var liveGames = [Event]()
     var leagueForGames = [Int: String]()
+    var containsCancelledNCAAW = false // Handle multiple NCAAW cancellations
     
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -96,8 +97,10 @@ class LiveGameCollectionViewController: UICollectionViewController {
     // MARK: API processing
     func loadGames() {
         handleBackgroundMessage(loading: true)
-        APIClient.getScores(url: APIClient.Endpoints.getNCAAScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getNCAAMScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getNCAAWScores.url, completion: handleLiveGameScores(response:error:))
         APIClient.getScores(url: APIClient.Endpoints.getNBAScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getWNBAScores.url, completion: handleLiveGameScores(response:error:))
     }
     
     func handleLiveGameScores(response: LiveGamesResponse?, error: Error?) {
@@ -106,11 +109,23 @@ class LiveGameCollectionViewController: UICollectionViewController {
         } else if let response = response {
             // Add events to liveGames array
             for game in response.events {
-                // Note that there will only be one league in NCAA or NBA API
+                // Note that there will only be one league in NCAA or (W)NBA APIs
+                // Need to handle irregular NCAAW cancellations first
+                // Avoids multiple "identical" cancelled games
+                if response.leagues[0].abbreviation == "NCAAW" {
+                    if containsCancelledNCAAW {
+                        continue
+                    } else {
+                        containsCancelledNCAAW = true
+                    }
+                }
+                // Add game
                 leagueForGames[liveGames.count] = response.leagues[0].abbreviation
                 liveGames.append(game)
             }
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
         handleBackgroundMessage(loading: false)
     }

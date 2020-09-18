@@ -12,17 +12,24 @@ class APIClient {
     // MARK: API Endpoints
     enum Endpoints {
         static let base = "https://site.api.espn.com/apis/site/v2/sports"
-        static let nbaBase = "/basketball/nba"
-        static let ncaaBase = "/basketball/mens-college-basketball"
+        static let basketballBase = "/basketball"
+        static let nbaBase = basketballBase + "/nba"
+        static let wnbaBase = basketballBase + "/wnba"
+        static let ncaamBase = basketballBase + "/mens-college-basketball"
+        static let ncaawBase = basketballBase + "/womens-college-basketball"
         static let scoresBase = "/scoreboard"
         
         case getNBAScores
-        case getNCAAScores
+        case getWNBAScores
+        case getNCAAMScores
+        case getNCAAWScores
         
         var stringValue: String {
             switch self {
             case .getNBAScores: return Endpoints.base + Endpoints.nbaBase + Endpoints.scoresBase
-            case .getNCAAScores: return Endpoints.base + Endpoints.ncaaBase + Endpoints.scoresBase
+            case .getWNBAScores: return Endpoints.base + Endpoints.wnbaBase + Endpoints.scoresBase
+            case .getNCAAMScores: return Endpoints.base + Endpoints.ncaamBase + Endpoints.scoresBase
+            case .getNCAAWScores: return Endpoints.base + Endpoints.ncaawBase + Endpoints.scoresBase
             }
         }
         
