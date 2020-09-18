@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fu8-hu-OR5">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,13 +41,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OX-Pg-wNU">
-                                                <rect key="frame" x="70.5" y="0.0" width="234.5" height="46"/>
+                                                <rect key="frame" x="70" y="0.0" width="235" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-Ya-D6N">
-                                                <rect key="frame" x="16.5" y="56" width="342" height="46"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-Ya-D6N">
+                                                <rect key="frame" x="17.5" y="56" width="340" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -57,8 +58,8 @@
                                                     <action selector="resumeTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="N19-RK-o4c"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-MF-EAQ">
-                                                <rect key="frame" x="16.5" y="112" width="342" height="46"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-MF-EAQ">
+                                                <rect key="frame" x="17.5" y="112" width="340" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -69,8 +70,8 @@
                                                     <action selector="newTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="MKt-TZ-9zj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
-                                                <rect key="frame" x="16.5" y="168" width="342" height="46"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
+                                                <rect key="frame" x="17.5" y="168" width="340" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -100,7 +101,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-vF-R5B">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-vF-R5B">
                                                 <rect key="frame" x="100.5" y="56" width="174" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
@@ -123,7 +124,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-Tc-adx">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXf-Tc-adx">
                                                 <rect key="frame" x="54.5" y="56" width="266" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
@@ -140,13 +141,13 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r7o-JM-Lkk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9fK-xi-yUf" firstAttribute="centerY" secondItem="r7o-JM-Lkk" secondAttribute="centerY" id="7qx-pr-sys"/>
                             <constraint firstItem="9fK-xi-yUf" firstAttribute="centerX" secondItem="r7o-JM-Lkk" secondAttribute="centerX" id="YvL-m8-8wj"/>
                             <constraint firstItem="9fK-xi-yUf" firstAttribute="leading" secondItem="DTe-Hm-4EW" secondAttribute="leading" id="nxt-9K-Ntg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="r7o-JM-Lkk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="9rq-vp-d3S">
                         <barButtonItem key="rightBarButtonItem" title="About" id="Oal-3O-eLM">
@@ -180,21 +181,21 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-Cf-Zcz">
                                 <rect key="frame" x="16" y="44" width="343" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">This app was made as a fun way to pass the time with a basketball hoop and ball (whether mini or full-size) during shelter-in-place in Spring 2020, with a certain college tournament otherwise cancelled.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Game Rules">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -208,14 +209,14 @@ If overtime is needed, an additional 10 shots is given per team, with each baske
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Shooting Hand">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -227,14 +228,14 @@ Each team is given a random selection to shoot either right or left-handed, set 
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Single Game">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -247,14 +248,14 @@ All teams in Division 1 are available to play with, not just tournament teams.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Tournament Mode">
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -266,7 +267,7 @@ Tournament mode requires the user to select an initial bracket, and then can sel
 
 Both men's and women's tournament brackets are available.</string>
                                         <attributes>
-                                            <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" systemColor="labelColor"/>
                                             <font key="NSFont" metaFont="menu" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -275,7 +276,8 @@ Both men's and women's tournament brackets are available.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Tfn-Az-vw5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1iI-Cf-Zcz" firstAttribute="top" secondItem="Tfn-Az-vw5" secondAttribute="top" id="1Bo-tW-HAp"/>
                             <constraint firstItem="Tfn-Az-vw5" firstAttribute="bottom" secondItem="1iI-Cf-Zcz" secondAttribute="bottom" id="Pv6-Oo-raH"/>
@@ -283,7 +285,6 @@ Both men's and women's tournament brackets are available.</string>
                             <constraint firstItem="1iI-Cf-Zcz" firstAttribute="leading" secondItem="hr5-DN-uiv" secondAttribute="leadingMargin" id="kFK-vB-n84"/>
                             <constraint firstItem="1iI-Cf-Zcz" firstAttribute="centerY" secondItem="Tfn-Az-vw5" secondAttribute="centerY" id="thy-zY-2zU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Tfn-Az-vw5"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMd-Yv-I4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,7 +298,7 @@ Both men's and women's tournament brackets are available.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="urC-Ns-IUp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bracketCell" textLabel="lki-ET-WPW" style="IBUITableViewCellStyleDefault" id="0Fr-aq-hr2">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -339,34 +340,34 @@ Both men's and women's tournament brackets are available.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-0H-Mw4">
-                                <rect key="frame" x="63" y="158" width="249.5" height="395"/>
+                                <rect key="frame" x="62.5" y="157" width="250" height="397"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SYl-YZ-6uo">
-                                        <rect key="frame" x="114.5" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="115" y="0.0" width="20" height="20"/>
                                         <color key="color" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Enter Tournament Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-si-HEh">
-                                        <rect key="frame" x="20" y="70" width="209.5" height="24"/>
+                                        <rect key="frame" x="19" y="70" width="212.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tournament Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I03-oM-0cI">
-                                        <rect key="frame" x="31" y="144" width="187.5" height="34"/>
+                                        <rect key="frame" x="30" y="144" width="190" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-NH-mzL">
-                                        <rect key="frame" x="0.0" y="228" width="249.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="228" width="250" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right-Hand Dominant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="09B-C3-Rfz">
-                                                <rect key="frame" x="0.0" y="0.0" width="190.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcx-7n-fmZ">
-                                                <rect key="frame" x="200.5" y="0.0" width="51" height="31"/>
+                                                <rect key="frame" x="201" y="0.0" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="handSwitchClicked:" destination="8kk-Cf-pJQ" eventType="valueChanged" id="wDJ-Sk-sNR"/>
@@ -374,8 +375,8 @@ Both men's and women's tournament brackets are available.</string>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-gk-GRI">
-                                        <rect key="frame" x="20" y="309" width="209" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-gk-GRI">
+                                        <rect key="frame" x="20.5" y="309" width="209" height="34"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -387,7 +388,7 @@ Both men's and women's tournament brackets are available.</string>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="TNJ-Wn-ApO">
-                                        <rect key="frame" x="64.5" y="393" width="120" height="2"/>
+                                        <rect key="frame" x="65" y="393" width="120" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="s6G-jL-Pe5"/>
                                         </constraints>
@@ -397,12 +398,12 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UYx-AB-yzz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerX" secondItem="UYx-AB-yzz" secondAttribute="centerX" id="CjI-Yy-LK3"/>
                             <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerY" secondItem="UYx-AB-yzz" secondAttribute="centerY" id="X0K-GQ-MkK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UYx-AB-yzz"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="SYl-YZ-6uo" id="33v-UR-qBE"/>
@@ -438,7 +439,7 @@ Both men's and women's tournament brackets are available.</string>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-2A-atw">
                                 <rect key="frame" x="16" y="102" width="343" height="473"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tourneyGameCell" textLabel="yGh-Kw-SFh" detailTextLabel="XdJ-qm-exQ" style="IBUITableViewCellStyleSubtitle" id="vAL-Rs-Ekk">
                                         <rect key="frame" x="0.0" y="28" width="343" height="55.5"/>
@@ -448,14 +449,14 @@ Both men's and women's tournament brackets are available.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGh-Kw-SFh">
-                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="10" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XdJ-qm-exQ">
-                                                    <rect key="frame" x="15" y="31.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="16" y="31.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -467,7 +468,7 @@ Both men's and women's tournament brackets are available.</string>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd8-zS-UuM">
-                                <rect key="frame" x="118" y="583" width="139" height="24"/>
+                                <rect key="frame" x="118.5" y="583" width="138" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -480,7 +481,8 @@ Both men's and women's tournament brackets are available.</string>
                                 </connections>
                             </stepper>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7de-Vz-Nu6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GQv-Tz-wYG" firstAttribute="top" secondItem="fd8-zS-UuM" secondAttribute="bottom" constant="8" symbolic="YES" id="8Vg-fj-aBR"/>
                             <constraint firstAttribute="bottom" secondItem="GQv-Tz-wYG" secondAttribute="bottom" constant="20" symbolic="YES" id="AQr-2S-WJP"/>
@@ -494,7 +496,6 @@ Both men's and women's tournament brackets are available.</string>
                             <constraint firstItem="H7s-9G-d7j" firstAttribute="centerX" secondItem="7de-Vz-Nu6" secondAttribute="centerX" id="oJK-dY-jCK"/>
                             <constraint firstItem="jbc-2A-atw" firstAttribute="centerX" secondItem="7de-Vz-Nu6" secondAttribute="centerX" id="ujX-eN-CP7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7de-Vz-Nu6"/>
                     </view>
                     <connections>
                         <outlet property="gameTableView" destination="jbc-2A-atw" id="pvt-Cd-nDr"/>
@@ -518,82 +519,82 @@ Both men's and women's tournament brackets are available.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-Y8-QZj">
-                                <rect key="frame" x="49.5" y="124" width="276.5" height="463"/>
+                                <rect key="frame" x="50" y="124" width="275" height="463"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXX Hand Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-tf-L3o">
-                                        <rect key="frame" x="0.0" y="0.0" width="276.5" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uMB-pK-Ogg">
-                                        <rect key="frame" x="0.0" y="72" width="276.5" height="330"/>
+                                        <rect key="frame" x="0.0" y="72" width="275" height="330"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OaE-Dz-i5J">
-                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="178" height="330"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games vs. Opp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n7L-uR-mQO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upsets vs. Opp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-oT-Tmr">
-                                                        <rect key="frame" x="0.0" y="30" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="30" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win % vs. Opp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jQa-A5-yyQ">
-                                                        <rect key="frame" x="0.0" y="60" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="60" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games vs. Same" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="C6j-xa-R7K">
-                                                        <rect key="frame" x="0.0" y="90" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="90" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pts per Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WCD-g4-Ycp">
-                                                        <rect key="frame" x="0.0" y="120" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="120" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-yD-Agf">
-                                                        <rect key="frame" x="0.0" y="150" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="150" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ptr FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-ZW-6cu">
-                                                        <rect key="frame" x="0.0" y="180" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="180" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 ptr FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rzO-DD-KDy">
-                                                        <rect key="frame" x="0.0" y="210" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="210" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 ptr FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OGq-gw-gaN">
-                                                        <rect key="frame" x="0.0" y="240" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="240" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 ptr FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iHv-Q2-ff1">
-                                                        <rect key="frame" x="0.0" y="270" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="270" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OT FG%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l0g-Tp-wZd">
-                                                        <rect key="frame" x="0.0" y="300" width="179.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="300" width="178" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -601,7 +602,7 @@ Both men's and women's tournament brackets are available.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Jp-i8-6JL">
-                                                <rect key="frame" x="199.5" y="0.0" width="77" height="330"/>
+                                                <rect key="frame" x="198" y="0.0" width="77" height="330"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="giF-Ig-vQ8">
                                                         <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
@@ -674,7 +675,7 @@ Both men's and women's tournament brackets are available.</string>
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="stx-Sl-YRM">
-                                        <rect key="frame" x="0.0" y="432" width="276.5" height="32"/>
+                                        <rect key="frame" x="0.0" y="432" width="275" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="hNr-xI-YHO"/>
                                         </constraints>
@@ -691,12 +692,12 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="g0T-TY-Rnk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2xi-Y8-QZj" firstAttribute="centerX" secondItem="g0T-TY-Rnk" secondAttribute="centerX" id="HSG-7j-fMT"/>
                             <constraint firstItem="2xi-Y8-QZj" firstAttribute="centerY" secondItem="g0T-TY-Rnk" secondAttribute="centerY" id="xmr-16-TUC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="g0T-TY-Rnk"/>
                     </view>
                     <connections>
                         <outlet property="gamesVsOppLabel" destination="n7L-uR-mQO" id="rTG-P6-71G"/>
@@ -730,7 +731,7 @@ Both men's and women's tournament brackets are available.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Glj-CT-bUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tournamentCell" textLabel="zvq-cB-G5W" style="IBUITableViewCellStyleDefault" id="Bdl-Wa-WnG">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -770,7 +771,7 @@ Both men's and women's tournament brackets are available.</string>
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="Yc2-Vw-sZ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lFn-lx-emh">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -786,25 +787,28 @@ Both men's and women's tournament brackets are available.</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x52-HR-plh">
-                                            <rect key="frame" x="8.5" y="15.5" width="111" height="97"/>
+                                            <rect key="frame" x="0.0" y="15.5" width="128" height="97"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-dx-IJS">
-                                                    <rect key="frame" x="34.5" y="0.0" width="42.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-dx-IJS">
+                                                    <rect key="frame" x="43" y="0.0" width="42.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-3x-urN">
-                                                    <rect key="frame" x="0.5" y="25.5" width="110" height="20.5"/>
+                                                    <rect key="frame" x="10" y="25.5" width="108" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-ZZ-vDE">
                                                             <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48.5" id="rsa-cg-HCb"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=" Score1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r2e-nU-NhC">
-                                                            <rect key="frame" x="53.5" y="0.0" width="56.5" height="20.5"/>
+                                                            <rect key="frame" x="53.5" y="0.0" width="54.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -812,24 +816,27 @@ Both men's and women's tournament brackets are available.</string>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-dP-INT">
-                                                    <rect key="frame" x="0.0" y="51" width="111" height="20.5"/>
+                                                    <rect key="frame" x="10" y="51" width="108" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ave-qw-3Ks">
                                                             <rect key="frame" x="0.0" y="0.0" width="51.5" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="Hn8-B2-Zug"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P9A-w3-rVz">
-                                                            <rect key="frame" x="56.5" y="0.0" width="54.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P9A-w3-rVz">
+                                                            <rect key="frame" x="56.5" y="0.0" width="51.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fe0-mI-74I">
-                                                    <rect key="frame" x="36.5" y="76.5" width="38" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fe0-mI-74I">
+                                                    <rect key="frame" x="0.0" y="76.5" width="128" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -837,10 +844,16 @@ Both men's and women's tournament brackets are available.</string>
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstItem="Fe0-mI-74I" firstAttribute="leading" secondItem="mz1-HE-GoJ" secondAttribute="leading" id="5V0-j6-99J"/>
                                         <constraint firstItem="x52-HR-plh" firstAttribute="centerY" secondItem="mz1-HE-GoJ" secondAttribute="centerY" id="BBv-WP-IxA"/>
+                                        <constraint firstAttribute="trailing" secondItem="r2e-nU-NhC" secondAttribute="trailing" constant="10" id="C41-g4-mZx"/>
+                                        <constraint firstItem="Ave-qw-3Ks" firstAttribute="leading" secondItem="mz1-HE-GoJ" secondAttribute="leading" constant="10" id="Fgj-Ow-zOr"/>
+                                        <constraint firstAttribute="trailing" secondItem="P9A-w3-rVz" secondAttribute="trailing" constant="10" id="WIQ-jG-Gx5"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fe0-mI-74I" secondAttribute="trailing" id="Wtk-c0-aKW"/>
                                         <constraint firstItem="x52-HR-plh" firstAttribute="centerX" secondItem="mz1-HE-GoJ" secondAttribute="centerX" id="rtw-Ci-pGU"/>
+                                        <constraint firstItem="L1I-ZZ-vDE" firstAttribute="leading" secondItem="mz1-HE-GoJ" secondAttribute="leading" constant="10" id="xa7-mG-eUB"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -904,7 +917,7 @@ Both men's and women's tournament brackets are available.</string>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cn-xV-OGN">
                                         <rect key="frame" x="0.0" y="92" width="320" height="216"/>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-wh-vyA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-wh-vyA">
                                         <rect key="frame" x="0.0" y="318" width="320" height="48"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
@@ -918,12 +931,12 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="u3i-jy-zOF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vOr-UP-mwU" firstAttribute="centerY" secondItem="u3i-jy-zOF" secondAttribute="centerY" id="dgq-qU-XgL"/>
                             <constraint firstItem="vOr-UP-mwU" firstAttribute="centerX" secondItem="u3i-jy-zOF" secondAttribute="centerX" id="hpV-5h-ecN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="u3i-jy-zOF"/>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="9Cn-xV-OGN" id="xgB-RY-VgV"/>
@@ -975,7 +988,7 @@ Both men's and women's tournament brackets are available.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-7o-uuz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-7o-uuz">
                                         <rect key="frame" x="0.0" y="342" width="170.5" height="48"/>
                                         <color key="backgroundColor" red="0.090196078431372548" green="0.25098039215686274" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -993,14 +1006,14 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rJo-50-wyo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="46h-aG-t20"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rJo-50-wyo" secondAttribute="trailing" constant="10" id="SBg-z2-5d2"/>
                             <constraint firstItem="rJo-50-wyo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="uYT-bF-laT"/>
                             <constraint firstItem="rJo-50-wyo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="x2z-FN-eMn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="region" destination="ziC-SG-f8W" id="R4e-TY-Cgy"/>
@@ -1061,7 +1074,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="1" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="ZTq-WH-mCg"/>
@@ -1074,7 +1087,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="2" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ple-t1-dgk"/>
@@ -1087,7 +1100,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="3" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="lEp-1k-RmV"/>
@@ -1100,7 +1113,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="4" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="i1Z-E4-VD6"/>
@@ -1113,7 +1126,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="5" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="NMs-Ht-qre"/>
@@ -1131,7 +1144,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="6" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Zdi-Qt-Rcm"/>
@@ -1144,7 +1157,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="7" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Hl0-pa-AK6"/>
@@ -1157,7 +1170,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="8" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="5Oo-MB-xhl"/>
@@ -1170,7 +1183,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="9" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="Ltq-r0-fMf"/>
@@ -1180,7 +1193,7 @@ Both men's and women's tournament brackets are available.</string>
                                                         <rect key="frame" x="260" y="0.0" width="60" height="60"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <state key="normal" title="10" backgroundImage="basketball-gray">
-                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="ballButtonPressed:" destination="bCH-qt-KGr" eventType="touchUpInside" id="wmc-Mn-vFb"/>
@@ -1190,7 +1203,7 @@ Both men's and women's tournament brackets are available.</string>
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czg-eT-94i">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czg-eT-94i">
                                         <rect key="frame" x="0.0" y="356" width="320" height="48"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1207,12 +1220,12 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MAx-IQ-eoE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xFV-XC-RMK" firstAttribute="centerX" secondItem="MAx-IQ-eoE" secondAttribute="centerX" id="q9r-lL-ZRp"/>
                             <constraint firstItem="xFV-XC-RMK" firstAttribute="centerY" secondItem="MAx-IQ-eoE" secondAttribute="centerY" id="u9l-ZD-J7e"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MAx-IQ-eoE"/>
                     </view>
                     <connections>
                         <outlet property="handSide" destination="aVD-aC-F0N" id="8hx-po-lus"/>
@@ -1286,7 +1299,7 @@ Both men's and women's tournament brackets are available.</string>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-Zd-0Is">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFN-Zd-0Is">
                                         <rect key="frame" x="0.0" y="210" width="251.5" height="48"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1301,7 +1314,7 @@ Both men's and women's tournament brackets are available.</string>
                                             <action selector="seeStatsButtonPressed:" destination="dIJ-Id-27O" eventType="touchUpInside" id="Vld-i5-0Gz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-0V-Ecl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-0V-Ecl">
                                         <rect key="frame" x="0.0" y="288" width="251.5" height="48"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1319,6 +1332,7 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DDV-gL-fmn"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OEC-ey-2CO" firstAttribute="centerX" secondItem="DDV-gL-fmn" secondAttribute="centerX" id="084-eU-VX3"/>
@@ -1326,7 +1340,6 @@ Both men's and women's tournament brackets are available.</string>
                             <constraint firstItem="OEC-ey-2CO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DDV-gL-fmn" secondAttribute="leading" constant="20" id="VJ4-2P-Mhc"/>
                             <constraint firstItem="DDV-gL-fmn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OEC-ey-2CO" secondAttribute="trailing" constant="20" id="nLI-ca-Bs4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DDV-gL-fmn"/>
                     </view>
                     <connections>
                         <outlet property="gameScoreHeader" destination="wgj-Yy-SyJ" id="QzO-Wf-1CV"/>
@@ -1356,64 +1369,64 @@ Both men's and women's tournament brackets are available.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="312"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aLT-cn-t9G">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="312"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="312"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rwt-SR-9Ji">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="42"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-36-Vnq">
-                                                        <rect key="frame" x="0.0" y="42" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="42" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KlS-gE-h8R">
-                                                        <rect key="frame" x="0.0" y="72" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="72" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total FG %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hby-Ie-087">
-                                                        <rect key="frame" x="0.0" y="102" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="102" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 PT %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-ZI-41o">
-                                                        <rect key="frame" x="0.0" y="132" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="132" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 PT %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FHo-hn-aex">
-                                                        <rect key="frame" x="0.0" y="162" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="162" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 PT %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l61-3B-qoX">
-                                                        <rect key="frame" x="0.0" y="192" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="192" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 PT %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wuo-s5-JPX">
-                                                        <rect key="frame" x="0.0" y="222" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="222" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OT PTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1uF-z1-qoc">
-                                                        <rect key="frame" x="0.0" y="252" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="252" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OT FG%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-bt-H5j">
-                                                        <rect key="frame" x="0.0" y="282" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="282" width="114.5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1421,7 +1434,7 @@ Both men's and women's tournament brackets are available.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lPh-Kz-X2r">
-                                                <rect key="frame" x="134" y="0.0" width="90.5" height="312"/>
+                                                <rect key="frame" x="134.5" y="0.0" width="90.5" height="312"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TM 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ANL-Id-g8I">
                                                         <rect key="frame" x="0.0" y="0.0" width="90.5" height="42"/>
@@ -1486,64 +1499,64 @@ Both men's and women's tournament brackets are available.</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6BQ-dw-uFj">
-                                                <rect key="frame" x="244.5" y="0.0" width="90.5" height="312"/>
+                                                <rect key="frame" x="245" y="0.0" width="90" height="312"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TM 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2bm-9j-ON5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="42"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lkv-Uc-oQM">
-                                                        <rect key="frame" x="0.0" y="42" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="42" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sXC-QM-bwl">
-                                                        <rect key="frame" x="0.0" y="72" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FG2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RgZ-6L-avL">
-                                                        <rect key="frame" x="0.0" y="102" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="102" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1PT2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xp4-8v-nKR">
-                                                        <rect key="frame" x="0.0" y="132" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="132" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2PT2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h71-yN-uV4">
-                                                        <rect key="frame" x="0.0" y="162" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="162" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3PT2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9HQ-6H-ZPD">
-                                                        <rect key="frame" x="0.0" y="192" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="192" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4PT2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vth-I0-WRY">
-                                                        <rect key="frame" x="0.0" y="222" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="222" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTPTS2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jm6-c5-qj0">
-                                                        <rect key="frame" x="0.0" y="252" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="252" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTPT2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-mz-mrW">
-                                                        <rect key="frame" x="0.0" y="282" width="90.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="282" width="90" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1555,7 +1568,7 @@ Both men's and women's tournament brackets are available.</string>
                                             <constraint firstItem="2bm-9j-ON5" firstAttribute="width" secondItem="ANL-Id-g8I" secondAttribute="width" id="wvq-sI-vyq"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwH-BJ-tNA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwH-BJ-tNA">
                                         <rect key="frame" x="0.0" y="342" width="335" height="48"/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1573,14 +1586,14 @@ Both men's and women's tournament brackets are available.</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Z4T-h1-hLq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="A30-7A-X0N" firstAttribute="centerX" secondItem="Z4T-h1-hLq" secondAttribute="centerX" id="8fL-rh-89t"/>
                             <constraint firstItem="Z4T-h1-hLq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A30-7A-X0N" secondAttribute="trailing" constant="20" id="Tyn-Z1-hU5"/>
                             <constraint firstItem="A30-7A-X0N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z4T-h1-hLq" secondAttribute="leading" constant="20" id="a98-SD-Bki"/>
                             <constraint firstItem="A30-7A-X0N" firstAttribute="centerY" secondItem="Z4T-h1-hLq" secondAttribute="centerY" id="lhI-JD-au6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Z4T-h1-hLq"/>
                     </view>
                     <connections>
                         <outlet property="overtimeFGPercentageLabel" destination="zJh-bt-H5j" id="yfF-0M-MA5"/>
@@ -1620,5 +1633,14 @@ Both men's and women's tournament brackets are available.</string>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="basketball-gray" width="60" height="60"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

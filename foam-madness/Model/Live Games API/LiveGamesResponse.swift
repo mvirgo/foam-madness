@@ -27,7 +27,6 @@ struct Competition: Codable {
 }
 
 struct Status: Codable {
-    let displayClock: String
     let type: Type
 }
 
@@ -37,7 +36,6 @@ struct Competitor: Codable {
 }
 
 struct Type: Codable {
-    let completed: Bool
     let shortDetail: String
 }
 

@@ -46,9 +46,6 @@ class LiveGameCollectionViewController: UICollectionViewController {
         cell.team2Label.text = teams[1].team.abbreviation
         cell.score2Label.text = teams[1].score
         cell.timeLabel.text = game.status.type.shortDetail
-        if !game.status.type.completed {
-            cell.timeLabel.text = game.status.displayClock + " " + cell.timeLabel.text!
-        }
         
         return cell
     }
