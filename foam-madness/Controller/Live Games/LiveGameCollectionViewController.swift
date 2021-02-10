@@ -15,7 +15,6 @@ class LiveGameCollectionViewController: UICollectionViewController {
     // MARK: Other variables
     var liveGames = [Event]()
     var leagueForGames = [Int: String]()
-    var containsCancelledNCAAW = false // Handle multiple NCAAW cancellations
     
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -110,15 +109,6 @@ class LiveGameCollectionViewController: UICollectionViewController {
             // Add events to liveGames array
             for game in response.events {
                 // Note that there will only be one league in NCAA or (W)NBA APIs
-                // Need to handle irregular NCAAW cancellations first
-                // Avoids multiple "identical" cancelled games
-                if response.leagues[0].abbreviation == "NCAAW" {
-                    if containsCancelledNCAAW {
-                        continue
-                    } else {
-                        containsCancelledNCAAW = true
-                    }
-                }
                 // Add game
                 leagueForGames[liveGames.count] = response.leagues[0].abbreviation
                 liveGames.append(game)
