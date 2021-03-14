@@ -58,6 +58,25 @@ class SelectTournamentViewController: UITableViewController {
         performSegue(withIdentifier: "showExistingTourneyGames", sender: nil)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Allow for deletion of a tournament, if desired
+        if editingStyle == .delete {
+            // First, grab tournament object
+            let tournament = tournamentsFetched[(indexPath as NSIndexPath).row]
+            // Remove from current data and table view
+            tournamentsFetched.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            // Delete from core data
+            dataController.viewContext.delete(tournament)
+            // Save the view context
+            do {
+                try dataController.viewContext.save()
+            } catch {
+                print("Failed to save.")
+            }
+        }
+    }
+    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Send data controller & tourney to Tournament Games Controller
