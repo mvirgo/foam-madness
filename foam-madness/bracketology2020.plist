@@ -2,8 +2,49 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Year</key>
+	<integer>2020</integer>
 	<key>IsWomens</key>
 	<false/>
+	<key>FirstFour</key>
+	<dict>
+		<key>0</key>
+		<dict>
+			<key>NextGame</key>
+			<string>16</string>
+			<key>Seed</key>
+			<string>11</string>
+			<key>Region</key>
+			<string>East</string>
+		</dict>
+		<key>1</key>
+		<dict>
+			<key>NextGame</key>
+			<string>14</string>
+			<key>Seed</key>
+			<string>12</string>
+			<key>Region</key>
+			<string>East</string>
+		</dict>
+		<key>2</key>
+		<dict>
+			<key>NextGame</key>
+			<string>12</string>
+			<key>Seed</key>
+			<string>16</string>
+			<key>Region</key>
+			<string>East</string>
+		</dict>
+		<key>3</key>
+		<dict>
+			<key>NextGame</key>
+			<string>20</string>
+			<key>Seed</key>
+			<string>16</string>
+			<key>Region</key>
+			<string>West</string>
+		</dict>
+	</dict>
 	<key>RegionIDs</key>
 	<dict>
 		<key>0</key>

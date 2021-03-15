@@ -28,6 +28,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     var bracketLocation: String!
     var regionOrder = [String]()
     var regionSeedTeams = [String: [String: Int16]]()
+    var firstFour = [String: [String: String]]()
     
     // MARK: View functions
     override func viewDidLoad() {
@@ -66,6 +67,10 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         regionOrder = [regionIDs["0"], regionIDs["1"], regionIDs["2"], regionIDs["3"]] as! [String]
         // Check if it's a Women's tournament for using correct probabilities
         isWomens = bracketDict.value(forKey: "IsWomens") as! Bool
+        // Get First Four data (if men's)
+        if !isWomens {
+            firstFour = bracketDict.value(forKey: "FirstFour") as! Dictionary<String, [String: String]>
+        }
         // Update progress bar to 5%
         progressBar.progress = 0.05
     }
@@ -170,26 +175,22 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createFirstFour() {
-        let regions = ["East","East","East","West"]
-        let seeds = [["111", "112"],["121", "122"],
-                     ["161", "162"],["161", "162"]]
-        let nextGames = [16, 14, 12, 20]
         // Create all four games
         for i in 0...3 {
             let game = Game(context: context)
+            let gameInfo = firstFour[String(i)]!
             game.round = 0
-            game.region = regions[i]
+            game.region = gameInfo["Region"]
             game.useLeft = checkLeftHand()
             game.isWomens = isWomens
             // Add both team ids and seeds
-            game.team1Id = regionSeedTeams[regions[i]]![seeds[i][0]]!
-            game.team2Id = regionSeedTeams[regions[i]]![seeds[i][1]]!
-            game.team1Seed = Int16(Int(seeds[i][0])! / 10)
-            game.team2Seed = Int16(Int(seeds[i][1])! / 10)
+            game.team1Seed = Int16(gameInfo["Seed"]!)!
+            game.team2Seed = Int16(gameInfo["Seed"]!)!
+            game.team1Id = regionSeedTeams[game.region!]![gameInfo["Seed"]! + "1"]!
+            game.team2Id = regionSeedTeams[game.region!]![gameInfo["Seed"]! + "2"]!
             // Set tourney game id and next game
-            // NOTE: This is essentially hard-coded for current set-up
             game.tourneyGameId = Int16(i)
-            game.nextGame = Int16(nextGames[i])
+            game.nextGame = Int16(gameInfo["NextGame"]!)!
             // Fetch the teams by id
             let results = fetchTeamById([game.team1Id, game.team2Id])
             // Add teams to the game
