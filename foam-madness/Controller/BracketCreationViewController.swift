@@ -175,8 +175,8 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func createFirstFour() {
-        // Create all four games
-        for i in 0...3 {
+        // Create all First Four games
+        for i in 0...firstFour.count - 1 {
             let game = Game(context: context)
             let gameInfo = firstFour[String(i)]!
             game.round = 0
