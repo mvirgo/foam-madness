@@ -26,6 +26,8 @@
 		7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */; };
 		7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE5243432F600315752 /* SelectScreenViewController.swift */; };
 		7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */; };
+		7A916BD825EDE5D5007E8714 /* womensBracket2021.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A916BD625EDE5D4007E8714 /* womensBracket2021.plist */; };
+		7A916BD925EDE5D5007E8714 /* mensBracket2021.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A916BD725EDE5D4007E8714 /* mensBracket2021.plist */; };
 		7ACBCB37250EC73900EBA5B1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB36250EC73900EBA5B1 /* APIClient.swift */; };
 		7ACBCB39250EC7DA00EBA5B1 /* LiveGamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB38250EC7DA00EBA5B1 /* LiveGamesResponse.swift */; };
 		7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACBCB3A250EC7FC00EBA5B1 /* ErrorResponse.swift */; };
@@ -63,6 +65,8 @@
 		7A771E5C250DA571009FE9EA /* LiveGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGameCollectionViewController.swift; sourceTree = "<group>"; };
 		7A86CDE5243432F600315752 /* SelectScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectScreenViewController.swift; sourceTree = "<group>"; };
 		7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamsViewController.swift; sourceTree = "<group>"; };
+		7A916BD625EDE5D4007E8714 /* womensBracket2021.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2021.plist; sourceTree = "<group>"; };
+		7A916BD725EDE5D4007E8714 /* mensBracket2021.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2021.plist; sourceTree = "<group>"; };
 		7ABF40392456A55600A18B3F /* foam-madness-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v3.xcdatamodel"; sourceTree = "<group>"; };
 		7ACBCB36250EC73900EBA5B1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7ACBCB38250EC7DA00EBA5B1 /* LiveGamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGamesResponse.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		7A2ECEE7242EDE920065E369 /* foam-madness */ = {
 			isa = PBXGroup;
 			children = (
+				7A916BD725EDE5D4007E8714 /* mensBracket2021.plist */,
+				7A916BD625EDE5D4007E8714 /* womensBracket2021.plist */,
 				7A2ECEFC242EDED20065E369 /* Controller */,
 				7A2ECEFA242EDEB00065E369 /* Model */,
 				7A2ECEFB242EDEBF0065E369 /* View */,
@@ -247,10 +253,12 @@
 				7A2ECEF3242EDE930065E369 /* LaunchScreen.storyboard in Resources */,
 				7A2ECEF0242EDE930065E369 /* Assets.xcassets in Resources */,
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,
+				7A916BD925EDE5D5007E8714 /* mensBracket2021.plist in Resources */,
 				7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */,
 				7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */,
 				7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */,
 				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
+				7A916BD825EDE5D5007E8714 /* womensBracket2021.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
