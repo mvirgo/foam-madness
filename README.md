@@ -14,7 +14,7 @@ You can find a full summary of the rules on the App Store:
 
 ### App Notes
 
-The current version of the app was compiled using Swift 5 and the iOS 13 SDK,
+The current version of the app was compiled using Swift 5 and the iOS 14 SDK,
 although v1 of the app originally used Swift 4.2 and the iOS 12.1 SDK.
 
 The app supports darks mode.
