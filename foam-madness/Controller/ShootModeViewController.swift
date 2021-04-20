@@ -68,27 +68,7 @@ class ShootModeViewController: UIViewController {
         }
     }
     
-    // MARK: Other functions
-    func getGameProbability() -> Float {
-        // Load appropriate probabilities based on Men or Women
-        let filename: String
-        if game.isWomens {
-            filename = "historicalProbabilitiesWomen"
-        } else {
-            filename = "historicalProbabilities"
-        }
-        let path = Bundle.main.path(forResource: filename, ofType: "plist")!
-        let dict = NSDictionary(contentsOfFile: path)
-        
-        // Use the team seeds to get the right historical probabilities
-        let bestSeed = min(game.team1Seed, game.team2Seed)
-        let worstSeed = max(game.team1Seed, game.team2Seed)
-        let bestSeedProbabilities = dict!.object(forKey: "\(bestSeed)") as! NSDictionary
-        let gameProbability = bestSeedProbabilities.object(forKey: "\(worstSeed)") as! NSNumber
-        
-        return gameProbability.floatValue
-    }
-    
+    // MARK: Other functions    
     func randomShootingHandProbability(_ probability: inout Float) -> Bool {
         var hand: Bool
         // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
@@ -118,7 +98,7 @@ class ShootModeViewController: UIViewController {
     func getShootingHands() {
         var team1Probability, team2Probability: Float
         // Get the game's probability (historical win rate for better seed)
-        let gameProbability = getGameProbability()
+        let gameProbability = ProbabilityHelper.getGameProbability(game)
         // Set team's individual probabilities for use in random number function
         if game.team1Seed < game.team2Seed { // Team 1 is better seed
             team1Probability = gameProbability

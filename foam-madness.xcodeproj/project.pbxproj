@@ -12,6 +12,8 @@
 		7A10A5F524383F970070302F /* SelectTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F424383F970070302F /* SelectTournamentViewController.swift */; };
 		7A10A5F7243847B10070302F /* TourneyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10A5F6243847B10070302F /* TourneyHelper.swift */; };
 		7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */; };
+		7A2D2E3F262E7FBE00AB5935 /* SimHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D2E3E262E7FBE00AB5935 /* SimHelper.swift */; };
+		7A2D2E42262E81DB00AB5935 /* ProbabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D2E41262E81DB00AB5935 /* ProbabilityHelper.swift */; };
 		7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEE8242EDE920065E369 /* AppDelegate.swift */; };
 		7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */; };
 		7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ECEEC242EDE920065E369 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		7A10A5F424383F970070302F /* SelectTournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTournamentViewController.swift; sourceTree = "<group>"; };
 		7A10A5F6243847B10070302F /* TourneyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyHelper.swift; sourceTree = "<group>"; };
 		7A1B9C9C245A9A22005B40D3 /* historicalProbabilitiesWomen.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = historicalProbabilitiesWomen.plist; sourceTree = "<group>"; };
+		7A2D2E3E262E7FBE00AB5935 /* SimHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimHelper.swift; sourceTree = "<group>"; };
+		7A2D2E41262E81DB00AB5935 /* ProbabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityHelper.swift; sourceTree = "<group>"; };
 		7A2ECEE5242EDE920065E369 /* foam-madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "foam-madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2ECEE8242EDE920065E369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A2ECEEA242EDE920065E369 /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A2D2E3C262E78A000AB5935 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7AF31A852431267400DF1605 /* GameHelper.swift */,
+				7A10A5F6243847B10070302F /* TourneyHelper.swift */,
+				7A2D2E3E262E7FBE00AB5935 /* SimHelper.swift */,
+				7A2D2E41262E81DB00AB5935 /* ProbabilityHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7A2ECEDC242EDE920065E369 = {
 			isa = PBXGroup;
 			children = (
@@ -157,9 +172,8 @@
 				7A62CB7C242EFC0300880B33 /* ShootModeViewController.swift */,
 				7A62CB7E242EFC5000880B33 /* GameScoreViewController.swift */,
 				7A62CB80242EFC9100880B33 /* GameStatsViewController.swift */,
-				7AF31A852431267400DF1605 /* GameHelper.swift */,
+				7A2D2E3C262E78A000AB5935 /* Helpers */,
 				7A86CDE5243432F600315752 /* SelectScreenViewController.swift */,
-				7A10A5F6243847B10070302F /* TourneyHelper.swift */,
 				7A86CDE724343AF600315752 /* SelectTeamsViewController.swift */,
 				7AE130E9243591B900D30A21 /* SelectInitialBracketViewController.swift */,
 				7AE130EB2435A1B800D30A21 /* BracketCreationViewController.swift */,
@@ -280,6 +294,7 @@
 				7ACBCB37250EC73900EBA5B1 /* APIClient.swift in Sources */,
 				7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */,
 				7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */,
+				7A2D2E42262E81DB00AB5935 /* ProbabilityHelper.swift in Sources */,
 				7A62CB81242EFC9100880B33 /* GameStatsViewController.swift in Sources */,
 				7ACBCB39250EC7DA00EBA5B1 /* LiveGamesResponse.swift in Sources */,
 				7AE130EC2435A1B800D30A21 /* BracketCreationViewController.swift in Sources */,
@@ -291,6 +306,7 @@
 				7A86CDE824343AF600315752 /* SelectTeamsViewController.swift in Sources */,
 				7A62CB7D242EFC0300880B33 /* ShootModeViewController.swift in Sources */,
 				7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */,
+				7A2D2E3F262E7FBE00AB5935 /* SimHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
