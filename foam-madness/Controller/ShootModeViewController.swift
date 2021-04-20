@@ -71,16 +71,10 @@ class ShootModeViewController: UIViewController {
     // MARK: Other functions    
     func randomShootingHandProbability(_ probability: inout Float) -> Bool {
         var hand: Bool
-        // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
-        if probability == 1 {
-            probability -= 0.007 // hard-coded probability
-        } else if probability == 0 {
-            probability += 0.007 // hard-coded probability
-        }
-        // Adjust probability to be out of 1000
-        let adjustedProbability = Int(probability * 1000)
-        // Thanks https://stackoverflow.com/questions/26092977/swift-probability-of-random-number-being-selected
-        let randomNumber = Int(arc4random_uniform(1000))
+        // Adjust probability to avoid perfection and be out of 1000
+        let adjustedProbability = ProbabilityHelper.adjustProbability(&probability)
+        // Get a random number up to 1000 to compare to
+        let randomNumber = ProbabilityHelper.randomNumberToOneThousand()
         if adjustedProbability >= randomNumber {
             hand = true // true corresponds to right hand
         } else {

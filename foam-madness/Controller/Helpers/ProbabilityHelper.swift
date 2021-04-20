@@ -28,4 +28,21 @@ class ProbabilityHelper {
         
         return gameProbability.floatValue
     }
+    
+    static func adjustProbability(_ probability: inout Float) -> Int {
+        // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
+        if probability == 1 {
+            probability -= 0.007 // hard-coded probability
+        } else if probability == 0 {
+            probability += 0.007 // hard-coded probability
+        }
+        // Adjust probability to be out of 1000
+        return Int(probability * 1000)
+    }
+    
+    static func randomNumberToOneThousand() -> Int {
+        // Get a random number up to 1000
+        // Thanks https://stackoverflow.com/questions/26092977/swift-probability-of-random-number-being-selected
+        return Int(arc4random_uniform(1000))
+    }
 }
