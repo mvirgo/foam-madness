@@ -20,4 +20,43 @@ class TourneyHelper {
         
         return results
     }
+    
+    static func addNextGame(_ dataController: DataController, _ tournament: Tournament,
+                            _ game: Game, _ winner: Team, _ winningSeed: Int16) {
+        // Add the next game, if applicable
+        if game.nextGame == -1 {
+            // Championship game - the tournament is over!
+            tournament.completion = true
+            tournament.completionDate = Date()
+        } else {
+            // Get the next game object
+            // Thanks https://stackoverflow.com/questions/35265420/multiple-nspredicates-for-nsfetchrequest-in-swift
+            let idPredicate = NSPredicate(format: "tourneyGameId == %@", NSNumber(value: game.nextGame))
+            let tourneyPredicate = NSPredicate(format: "tournament == %@", tournament)
+            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [idPredicate, tourneyPredicate])
+            let results = TourneyHelper.fetchData(dataController, andPredicate, "Game")
+            let nextGame = results[0] as! Game
+            // Set team id in next game based on its count
+            if nextGame.teams!.count == 0 {
+                nextGame.team1Id = winner.id
+                nextGame.team1Seed = winningSeed
+            } else {
+                nextGame.team2Id = winner.id
+                nextGame.team2Seed = winningSeed
+            }
+            // Then add the team to the game object
+            winner.addToGames(nextGame)
+        }
+        // Make sure to save
+        saveData(dataController)
+    }
+    
+    class func saveData(_ dataController: DataController) {
+        // Save the view context
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            print("Failed to save tournament data.")
+        }
+    }
 }
