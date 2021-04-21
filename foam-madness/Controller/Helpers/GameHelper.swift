@@ -55,6 +55,28 @@ class GameHelper {
         return [team1, team2]
     }
     
+    static func completeGame(_ dataController: DataController, _ game: Game,
+                             _ team1: Team, _ team2: Team) -> Team {
+        // Set game to complete
+        game.completion = true
+        // Get the winner of this game
+        let winner: Team
+        let winningSeed: Int16
+        if game.team1Score > game.team2Score {
+            winner = team1
+            winningSeed = game.team1Seed
+        } else {
+            winner = team2
+            winningSeed = game.team2Seed
+        }
+        // Add the next tourney game, if applicable
+        if let tournament = game.tournament {
+            TourneyHelper.addNextGame(dataController, tournament, game, winner, winningSeed)
+        }
+        
+        return winner;
+    }
+    
     static func createGameExportData(_ game: Game) -> [String: [String: String]] {
         // Create export dictionary for a single game
         var singleGame = [String: String]()

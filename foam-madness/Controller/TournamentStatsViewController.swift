@@ -54,10 +54,12 @@ class TournamentStatsViewController: UIViewController, MFMailComposeViewControll
     
     // MARK: Other functions
     func getCompletedGames() {
-        // Get all completed games in this tournament
+        // Get all completed (non-simulated) games in this tournament
         let completionPredicate = NSPredicate(format: "completion == YES")
+        let simulatedPredicate = NSPredicate(format: "isSimulated == NO")
         let tourneyPredicate = NSPredicate(format: "tournament == %@", tournament)
-        let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [completionPredicate, tourneyPredicate])
+        let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and,
+                                               subpredicates: [completionPredicate, simulatedPredicate, tourneyPredicate])
         games = TourneyHelper.fetchData(dataController, andPredicate, "Game") as! [Game]
     }
     

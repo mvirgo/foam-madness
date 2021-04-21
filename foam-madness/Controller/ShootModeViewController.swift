@@ -23,6 +23,7 @@ class ShootModeViewController: UIViewController {
     var game: Game!
     var team1: Team!
     var team2: Team!
+    var isSimulated: Bool!
     var teamFlag = true // True = Team 1 shooting, False = Team 2 shooting
     var overtimeFlag = false
     var scoreMultiplier: Int16 = 1 // Increment by 1 per shot type
@@ -38,21 +39,21 @@ class ShootModeViewController: UIViewController {
         }
         
         // Make sure score and OT stats zeroed out
-        game.team1Score = 0
-        game.team2Score = 0
-        game.team1OTMade = 0
-        game.team1OTTaken = 0
-        game.team2OTMade = 0
-        game.team2OTTaken = 0
-        
-        // Get shooting hand for each team based on historical results
-        getShootingHands()
+        resetStatistics()
         
         // Add game date
         game.datePlayed = Date()
         
-        // Start the gameplay round
-        playRound()
+        // Simulate or play game
+        if isSimulated {
+            // Simulate the game
+            simGame()
+        } else {
+            // Get shooting hand for each team based on historical results
+            getShootingHands()
+            // Start the gameplay round
+            playRound()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,7 +69,25 @@ class ShootModeViewController: UIViewController {
         }
     }
     
-    // MARK: Other functions    
+    // MARK: Other functions
+    func resetStatistics() {
+        // Make sure all game stats are zeroed out
+        game.team1Score = 0
+        game.team1Ones = 0
+        game.team1Twos = 0
+        game.team1Threes = 0
+        game.team1Fours = 0
+        game.team1OTMade = 0
+        game.team1OTTaken = 0
+        game.team2Score = 0
+        game.team2Ones = 0
+        game.team2Twos = 0
+        game.team2Threes = 0
+        game.team2Fours = 0
+        game.team2OTMade = 0
+        game.team2OTTaken = 0
+    }
+    
     func randomShootingHandProbability(_ probability: inout Float) -> Bool {
         var hand: Bool
         // Adjust probability to avoid perfection and be out of 1000
@@ -164,7 +183,7 @@ class ShootModeViewController: UIViewController {
         do {
             try dataController.viewContext.save()
         } catch {
-            print("Failed to save round score.")
+            print("Failed to save score.")
         }
     }
     
@@ -258,26 +277,21 @@ class ShootModeViewController: UIViewController {
                 message = "\(winner.name!) wins the tournament!"
             }
         }
+        // Add an addendum if simulated
+        if isSimulated {
+            message += " (Sim)"
+        }
         alertUser(title: title, message: message, endGame: true)
     }
     
+    func simGame() {
+        SimHelper.simSingleGame(dataController, game, team1, team2)
+        saveData()
+        completeGame()
+    }
+    
     func completeGame() {
-        // Set game to complete
-        game.completion = true
-        // Get the winner of this game
-        let winner: Team
-        let winningSeed: Int16
-        if game.team1Score > game.team2Score {
-            winner = team1
-            winningSeed = game.team1Seed
-        } else {
-            winner = team2
-            winningSeed = game.team2Seed
-        }
-        // Add the next tourney game, if applicable
-        if let tournament = game.tournament {
-            TourneyHelper.addNextGame(dataController, tournament, game, winner, winningSeed)
-        }
+        let winner = GameHelper.completeGame(dataController, game, team1, team2)
         // Let the user know the winner
         endGameAlert(winner)
     }

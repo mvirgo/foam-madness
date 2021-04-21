@@ -16,6 +16,7 @@ class PlayGameViewController: UIViewController {
     @IBOutlet weak var team2: UILabel!
     @IBOutlet weak var region: UILabel!
     @IBOutlet weak var round: UILabel!
+    @IBOutlet weak var simGameButton: UIButton!
     
     // MARK: Other variables
     var dataController: DataController!
@@ -28,6 +29,7 @@ class PlayGameViewController: UIViewController {
         setTeamNames()
         setRegion()
         setRound()
+        setSimAvailability()
     }
     
     // MARK: Other functions
@@ -56,24 +58,45 @@ class PlayGameViewController: UIViewController {
     func setRound() {
         round.text = GameHelper.getRoundString(game.round)
     }
+    
+    func setSimAvailability() {
+        // Hide or show sim button depending on if in a tournament
+        // Currently hides for non-tourney game, since considered equivalent
+        //   when playing a single game
+        if let _ = game.tournament {
+            simGameButton.isHidden = false
+        } else {
+            simGameButton.isHidden = true
+        }
+    }
 
     // MARK: IBActions
     @IBAction func playGamePressed(_ sender: Any) {
         performSegue(withIdentifier: "playGame", sender: nil)
     }
     
+    @IBAction func simGamePressed(_ sender: Any) {
+        performSegue(withIdentifier: "simGame", sender: nil)
+    }
+    
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Change navbar text during game to "Exit Game" instead of "Back"
-        // Thanks https://stackoverflow.com/questions/28471164/how-to-set-back-button-text-in-swift/52968625
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "Exit Game", style: .plain, target: nil, action: nil)
         // Send data controller to ShootModeViewController
         if let vc = segue.destination as? ShootModeViewController {
             vc.dataController = dataController
             vc.game = game
             vc.team1 = teams[0]
             vc.team2 = teams[1]
+            // Set simulated and menu bar based on which segue selected
+            if segue.identifier == "playGame" {
+                vc.isSimulated = false;
+                // Change navbar text during game to "Exit Game" instead of "Back"
+                // Thanks https://stackoverflow.com/questions/28471164/how-to-set-back-button-text-in-swift/52968625
+                navigationItem.backBarButtonItem = UIBarButtonItem(
+                    title: "Exit Game", style: .plain, target: nil, action: nil)
+            } else if segue.identifier == "simGame" {
+                vc.isSimulated = true;
+            }
         }
     }
     

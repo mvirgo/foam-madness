@@ -112,6 +112,11 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
                     cell.textLabel?.text = (cell.textLabel?.text)! + " - OT"
                 }
                 cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.3)
+                // Add simulated note, if applicable (and use lighter green)
+                if game.isSimulated {
+                    cell.textLabel?.text = (cell.textLabel?.text)! + " (Sim)"
+                    cell.backgroundColor = UIColor.init(red: 0, green: 1.0, blue: 0, alpha: 0.2)
+                }
             } else { // Game is ready to play
                 cell.textLabel?.text = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
                 if #available(iOS 13, *) {
