@@ -52,6 +52,10 @@ class SelectScreenViewController: UIViewController {
         performSegue(withIdentifier: "selectBracket", sender: sender)
     }
     
+    @IBAction func simulateTournamentButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "selectSimulation", sender: sender)
+    }
+    
     @IBAction func viewCompletedTournamentButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "chooseCompletedTournament", sender: sender)
     }
@@ -72,6 +76,11 @@ class SelectScreenViewController: UIViewController {
             case "selectBracket":
                 let vc = segue.destination as! SelectInitialBracketViewController
                 vc.dataController = dataController
+                vc.isSimulated = false
+            case "selectSimulation":
+                let vc = segue.destination as! SelectInitialBracketViewController
+                vc.dataController = dataController
+                vc.isSimulated = true
             case "chooseExistingTournament":
                 let vc = segue.destination as! SelectTournamentViewController
                 vc.dataController = dataController

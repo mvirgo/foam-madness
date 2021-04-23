@@ -44,6 +44,7 @@
         <attribute name="completion" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="completionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isSimulated" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isWomens" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="tournament" inverseEntity="Game"/>
@@ -51,6 +52,6 @@
     <elements>
         <element name="Game" positionX="-328.8125" positionY="-220.640625" width="128" height="509"/>
         <element name="Team" positionX="-104.3984375" positionY="0.80859375" width="128" height="105"/>
-        <element name="Tournament" positionX="-550.69921875" positionY="27.625" width="128" height="135"/>
+        <element name="Tournament" positionX="-550.69921875" positionY="27.625" width="128" height="134"/>
     </elements>
 </model>

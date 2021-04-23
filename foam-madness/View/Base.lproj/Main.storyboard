@@ -35,10 +35,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-xi-yUf">
-                                <rect key="frame" x="0.0" y="126.5" width="375" height="458"/>
+                                <rect key="frame" x="0.0" y="98.5" width="375" height="514"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7nd-DQ-ZUW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OX-Pg-wNU">
                                                 <rect key="frame" x="70" y="0.0" width="235" height="46"/>
@@ -70,8 +70,20 @@
                                                     <action selector="newTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="MKt-TZ-9zj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-Rh-44N">
                                                 <rect key="frame" x="17.5" y="168" width="340" height="46"/>
+                                                <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                                <state key="normal" title="Quick Sim Tournament">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="simulateTournamentButtonPressed:" destination="VEB-mH-mmc" eventType="touchUpInside" id="WT8-sy-jbd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-4O-vdX">
+                                                <rect key="frame" x="17.5" y="224" width="340" height="46"/>
                                                 <color key="backgroundColor" red="0.090196078430000007" green="0.25098039220000001" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
@@ -87,13 +99,14 @@
                                             <constraint firstItem="jC6-MF-EAQ" firstAttribute="width" secondItem="HSH-Ya-D6N" secondAttribute="width" id="6g8-fc-Vl0"/>
                                             <constraint firstItem="b4e-4O-vdX" firstAttribute="width" secondItem="HSH-Ya-D6N" secondAttribute="width" id="8cc-2e-vVI"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b4e-4O-vdX" secondAttribute="trailing" constant="10" id="UOU-33-fb2"/>
+                                            <constraint firstItem="Peh-Rh-44N" firstAttribute="width" secondItem="jC6-MF-EAQ" secondAttribute="width" id="i1e-43-RfD"/>
                                             <constraint firstItem="HSH-Ya-D6N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7nd-DQ-ZUW" secondAttribute="leading" constant="10" id="kC2-PS-VT1"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HSH-Ya-D6N" secondAttribute="trailing" constant="10" id="mrx-nb-Cez"/>
                                             <constraint firstItem="b4e-4O-vdX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7nd-DQ-ZUW" secondAttribute="leading" constant="10" id="ydz-ME-4AR"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Saf-Vc-bqt">
-                                        <rect key="frame" x="0.0" y="234" width="375" height="102"/>
+                                        <rect key="frame" x="0.0" y="290" width="375" height="102"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL2-Zh-fSz">
                                                 <rect key="frame" x="105.5" y="0.0" width="164" height="46"/>
@@ -116,7 +129,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E6W-CP-9MA">
-                                        <rect key="frame" x="0.0" y="356" width="375" height="102"/>
+                                        <rect key="frame" x="0.0" y="412" width="375" height="102"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRg-qm-V97">
                                                 <rect key="frame" x="113.5" y="0.0" width="148.5" height="46"/>
@@ -165,6 +178,7 @@
                         <segue destination="sE1-qN-DJt" kind="show" identifier="selectBracket" id="dr9-6Q-Daj"/>
                         <segue destination="vL1-LW-sxu" kind="show" identifier="chooseExistingTournament" id="rJY-3v-B6B"/>
                         <segue destination="vL1-LW-sxu" kind="show" identifier="chooseCompletedTournament" id="ncl-rA-kNL"/>
+                        <segue destination="sE1-qN-DJt" kind="show" identifier="selectSimulation" id="P4z-L2-YiO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWz-rY-0rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,6 +251,7 @@
                             <outlet property="delegate" destination="sE1-qN-DJt" id="VDM-io-nzj"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="dwM-ms-CQe"/>
                     <connections>
                         <segue destination="8kk-Cf-pJQ" kind="show" identifier="createBracket" id="R5V-wg-rT4"/>
                     </connections>
@@ -319,6 +334,7 @@
                             <constraint firstItem="Kwy-0H-Mw4" firstAttribute="centerY" secondItem="UYx-AB-yzz" secondAttribute="centerY" id="X0K-GQ-MkK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tSk-KD-PIZ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="SYl-YZ-6uo" id="33v-UR-qBE"/>
                         <outlet property="createTournamentButton" destination="5zQ-gk-GRI" id="h97-YK-JqE"/>
@@ -411,6 +427,7 @@
                             <constraint firstItem="jbc-2A-atw" firstAttribute="centerX" secondItem="7de-Vz-Nu6" secondAttribute="centerX" id="ujX-eN-CP7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ggg-9h-gJv"/>
                     <connections>
                         <outlet property="gameTableView" destination="jbc-2A-atw" id="pvt-Cd-nDr"/>
                         <outlet property="roundLabel" destination="H7s-9G-d7j" id="E9q-jk-ZTn"/>
@@ -613,6 +630,7 @@
                             <constraint firstItem="2xi-Y8-QZj" firstAttribute="centerY" secondItem="g0T-TY-Rnk" secondAttribute="centerY" id="xmr-16-TUC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="H2I-Lc-YrX"/>
                     <connections>
                         <outlet property="gamesVsOppLabel" destination="n7L-uR-mQO" id="rTG-P6-71G"/>
                         <outlet property="gamesVsSameLabel" destination="C6j-xa-R7K" id="JSl-is-j9R"/>
@@ -944,6 +962,7 @@
                             <constraint firstItem="rJo-50-wyo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="x2z-FN-eMn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QKo-iF-sW0"/>
                     <connections>
                         <outlet property="region" destination="ziC-SG-f8W" id="R4e-TY-Cgy"/>
                         <outlet property="round" destination="vRF-py-4X5" id="6RJ-qd-xLd"/>
@@ -1567,6 +1586,7 @@
         <segue reference="FBW-d3-wiS"/>
         <segue reference="ncl-rA-kNL"/>
         <segue reference="3mw-OV-SCx"/>
+        <segue reference="P4z-L2-YiO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="basketball-gray" width="60" height="60"/>

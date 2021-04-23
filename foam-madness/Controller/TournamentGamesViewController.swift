@@ -35,13 +35,8 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Add a page title
-        navigationItem.title = "\(tournament.name!) Games"
-        // Hide original back button to make one that only goes to Main Menu
-        navigationItem.hidesBackButton = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(self.backToMainMenu))
-        // Add right stats button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stats", style: .plain, target: self, action: #selector(self.statsButtonPressed))
+        // Set the navigation bar
+        setNavigationBar()
         // Set delegate and datasource for the game table view
         self.gameTableView.delegate = self
         self.gameTableView.dataSource = self
@@ -58,6 +53,18 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     // MARK: Other functions
+    func setNavigationBar() {
+        // Add a page title
+        navigationItem.title = "\(tournament.name!) Games"
+        // Hide original back button to make one that only goes to Main Menu
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Main Menu", style: .plain, target: self, action: #selector(self.backToMainMenu))
+        // Add right stats button, if not simulated
+        if (!tournament.isSimulated) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Stats", style: .plain, target: self, action: #selector(self.statsButtonPressed))
+        }
+    }
+    
     func getGamesForRound() {
         // Make sure games is now empty
         games.removeAll(keepingCapacity: true)

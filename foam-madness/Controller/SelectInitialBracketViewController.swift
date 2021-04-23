@@ -12,6 +12,7 @@ import CoreData
 class SelectInitialBracketViewController: UITableViewController {
     // MARK: Variables
     var dataController: DataController!
+    var isSimulated: Bool!
     var chosenBracketFile = ""
     let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020",
                     "2020 Womens - Charlie Creme's Bracketology": "womensBracketology2020",
@@ -55,6 +56,8 @@ class SelectInitialBracketViewController: UITableViewController {
             vc.bracketLocation = chosenBracketFile
             // Send data controller as well
             vc.dataController = dataController
+            // And whether or not simulated
+            vc.isSimulated = isSimulated
         }
     }
 }

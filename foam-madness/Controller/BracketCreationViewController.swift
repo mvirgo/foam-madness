@@ -21,6 +21,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Other variables
     var dataController: DataController!
+    var isSimulated: Bool!
     var context: NSManagedObjectContext!
     var tournament: Tournament!
     var tournamentName: String!
@@ -40,6 +41,8 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         context = dataController.viewContext
         // Set text field delegate so keyboard is handled appropriately
         self.tourneyNameTextField.delegate = self
+        // Set button title & hand switch details
+        setButtonAndHandSwitch()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,6 +58,19 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Other functions
+    func setButtonAndHandSwitch() {
+        // Set button title & hand switch based on whether it is a simulation
+        if isSimulated {
+            createTournamentButton.setTitle("Sim Tournament", for: .normal)
+            dominantHandLabel.isHidden = true
+            handSwitch.isHidden = true
+        } else {
+            createTournamentButton.setTitle("Create Tournament", for: .normal)
+            dominantHandLabel.isHidden = false
+            handSwitch.isHidden = false
+        }
+    }
+    
     func loadBracket() {
         // Update taskLabel for current task
         taskLabel.text = "Loading bracket..."
@@ -123,9 +139,17 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         progressBar.progress += 0.10
     }
     
-    func alertUser(title: String, message: String) {
+    func alertUser(title: String, message: String, _ endTournament: Bool) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        if endTournament {
+            // Segue to table view of all playable games when done
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.segueToGamesTable()
+            }))
+        } else {
+            // Come back to view after
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }
         self.present(alertVC, animated: true, completion: nil)
     }
     
@@ -146,6 +170,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         tournament.name = tournamentName!
         tournament.createdDate = Date()
         tournament.isWomens = isWomens
+        tournament.isSimulated = isSimulated
         // Make sure it is saved
         saveData()
         // Add 5% to progress bar
@@ -290,7 +315,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         
     func createTournamentGames() {
         taskLabel.text = "Creating tournament games..."
-        // Note: This function is essentially hard-coded for 2020 bracket style
+        // Note: This function is essentially hard-coded for current bracket style
         // Create First Four if Men's tournament
         if !isWomens {
             createFirstFour()
@@ -312,6 +337,51 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         return TourneyHelper.fetchData(dataController, predicate, "Tournament").count == 0
     }
     
+    func simulateTournament() {
+        var id: Int16
+        var winner: String = ""
+        taskLabel.text = "Simulating tournament games..."
+        // Get correct starting id (hard-coded for current bracket style)
+        if isWomens {
+            id = 4
+        } else {
+            id = 0
+        }
+        // Loop through and simulate all games
+        while true {
+            let game = tournament.games?.filtered(using: NSPredicate(format: "tourneyGameId == %@", NSNumber(value: id))).first as! Game
+            let gameTeams = game.teams?.allObjects as! [Team]
+            // Ensure proper order of teams
+            let team1, team2 : Team
+            if gameTeams[0].id == game.team1Id {
+                team1 = gameTeams[0]
+                team2 = gameTeams[1]
+            } else {
+                team1 = gameTeams[1]
+                team2 = gameTeams[0]
+            }
+            // Simulate the game
+            SimHelper.simSingleGame(dataController, game, team1, team2)
+            // Complete the game
+            winner = GameHelper.completeGame(dataController, game, team1, team2).name!
+            id += 1
+            // Break if done with tournament
+            if tournament.completion {
+                break
+            }
+        }
+        // Make sure all is saved
+        saveData()
+        // Notify user of winner
+        let title = "Tournament Complete"
+        let message = "\(winner) wins the tournament! (Sim)"
+        alertUser(title: title, message: message, true)
+    }
+    
+    func segueToGamesTable() {
+        performSegue(withIdentifier: "showNewTourneyGames", sender: nil)
+    }
+    
     // MARK: IBActions
     @IBAction func createTournamentButtonPressed(_ sender: Any) {
         // Set the tournament name based on user input
@@ -319,14 +389,17 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         if name != "" {
             if checkExistingNames(name!) { // New tourney name
                 tournamentName = tourneyNameTextField.text
+                if isSimulated {
+                    tournamentName += " (Sim)"
+                }
             } else {
                 // Tell user to find a new name
-                alertUser(title: "Invalid Name", message: "Tournament name already taken.")
+                alertUser(title: "Invalid Name", message: "Tournament name already taken.", false)
                 return
             }
         } else {
             // Tell user to input a name
-            alertUser(title: "Invalid Name", message: "Tournament name cannot be blank.")
+            alertUser(title: "Invalid Name", message: "Tournament name cannot be blank.", false)
             return
         }
         // Hide the text field and button
@@ -352,8 +425,13 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         createTournamentGames()
         // End activity indicator motion
         activityIndicator.stopAnimating()
-        // Segue to table view of all playable games
-        performSegue(withIdentifier: "showNewTourneyGames", sender: nil)
+        // Simulate, if applicable
+        if isSimulated {
+            simulateTournament()
+        } else {
+            // Segue to table view of all playable games
+            segueToGamesTable()
+        }
     }
     
     @IBAction func handSwitchClicked(_ sender: Any) {
