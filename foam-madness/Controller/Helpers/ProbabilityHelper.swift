@@ -9,6 +9,9 @@
 import Foundation
 
 class ProbabilityHelper {
+    
+    static let shiftPerfect: Float = 0.007 // hard-coded probability to avoid 100% chances
+    
     static func getGameProbability(_ game: Game) -> Float {
         // Load appropriate probabilities based on Men or Women
         let filename: String
@@ -30,11 +33,11 @@ class ProbabilityHelper {
     }
     
     static func adjustProbability(_ probability: inout Float) -> Int {
-        // Adjust probability ever so slightly if 1 or 0 (aka 1v16 probability)
+        // Adjust probability ever so slightly if 1 or 0
         if probability == 1 {
-            probability -= 0.007 // hard-coded probability
+            probability -= shiftPerfect
         } else if probability == 0 {
-            probability += 0.007 // hard-coded probability
+            probability += shiftPerfect
         }
         // Adjust probability to be out of 1000
         return Int(probability * 1000)

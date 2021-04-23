@@ -4,68 +4,68 @@
 <dict>
 	<key>Source</key>
 	<dict>
+		<key>Date Accessed</key>
+		<date>2021-04-23T01:00:30Z</date>
 		<key>URL</key>
 		<string>http://mcubed.net/ncaabw/seeds.shtml</string>
-		<key>Date Accessed</key>
-		<date>2020-04-30T05:30:00Z</date>
 	</dict>
 	<key>1</key>
 	<dict>
 		<key>1</key>
 		<real>0.5</real>
 		<key>2</key>
-		<real>0.617</real>
+		<real>0.624</real>
 		<key>3</key>
-		<real>0.744</real>
+		<real>0.733</real>
 		<key>4</key>
-		<real>0.8129999999999999</real>
+		<real>0.806</real>
 		<key>5</key>
-		<real>0.902</real>
+		<real>0.909</real>
 		<key>6</key>
-		<real>0.833</real>
+		<real>0.857</real>
 		<key>7</key>
 		<real>0.8</real>
 		<key>8</key>
-		<real>0.955</real>
+		<real>0.957</real>
 		<key>9</key>
 		<real>0.969</real>
 		<key>10</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>11</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>12</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>13</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
 		<real>0.5</real>
 		<key>16</key>
-		<real>0.99</real>
+		<real>0.991</real>
 	</dict>
 	<key>2</key>
 	<dict>
 		<key>2</key>
 		<real>0.5</real>
 		<key>3</key>
-		<real>0.64</real>
+		<real>0.633</real>
 		<key>4</key>
 		<real>0.467</real>
 		<key>5</key>
 		<real>0.5</real>
 		<key>6</key>
-		<real>0.774</real>
+		<real>0.765</real>
 		<key>7</key>
-		<real>0.846</real>
+		<real>0.852</real>
 		<key>8</key>
-		<real>0.01</real>
+		<integer>0</integer>
 		<key>9</key>
-		<real>0.01</real>
+		<integer>0</integer>
 		<key>10</key>
 		<real>0.898</real>
 		<key>11</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>12</key>
 		<real>0.5</real>
 		<key>13</key>
@@ -73,7 +73,7 @@
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>16</key>
 		<real>0.5</real>
 	</dict>
@@ -82,11 +82,11 @@
 		<key>3</key>
 		<real>0.5</real>
 		<key>4</key>
-		<real>0.636</real>
+		<real>0.667</real>
 		<key>5</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>6</key>
-		<real>0.713</real>
+		<real>0.695</real>
 		<key>7</key>
 		<real>0.462</real>
 		<key>8</key>
@@ -96,13 +96,13 @@
 		<key>10</key>
 		<real>0.6</real>
 		<key>11</key>
-		<real>0.658</real>
+		<real>0.667</real>
 		<key>12</key>
 		<real>0.5</real>
 		<key>13</key>
 		<real>0.5</real>
 		<key>14</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>15</key>
 		<real>0.5</real>
 		<key>16</key>
@@ -113,23 +113,23 @@
 		<key>4</key>
 		<real>0.5</real>
 		<key>5</key>
-		<real>0.675</real>
+		<real>0.664</real>
 		<key>6</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>7</key>
 		<real>0.667</real>
 		<key>8</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>9</key>
-		<real>0.99</real>
+		<integer>1</integer>
 		<key>10</key>
 		<real>0.5</real>
 		<key>11</key>
 		<real>0.5</real>
 		<key>12</key>
-		<real>0.8</real>
+		<real>0.8080000000000001</real>
 		<key>13</key>
-		<real>0.9419999999999999</real>
+		<real>0.9350000000000001</real>
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
@@ -148,15 +148,15 @@
 		<key>8</key>
 		<real>0.5</real>
 		<key>9</key>
-		<real>0.01</real>
+		<integer>0</integer>
 		<key>10</key>
 		<real>0.5</real>
 		<key>11</key>
 		<real>0.5</real>
 		<key>12</key>
-		<real>0.8</real>
+		<real>0.798</real>
 		<key>13</key>
-		<real>0.5</real>
+		<real>0.571</real>
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
@@ -177,7 +177,7 @@
 		<key>10</key>
 		<real>0.5</real>
 		<key>11</key>
-		<real>0.694</real>
+		<real>0.695</real>
 		<key>12</key>
 		<real>0.5</real>
 		<key>13</key>
@@ -198,7 +198,7 @@
 		<key>9</key>
 		<real>0.5</real>
 		<key>10</key>
-		<real>0.64</real>
+		<real>0.65</real>
 		<key>11</key>
 		<real>0.5</real>
 		<key>12</key>
@@ -217,7 +217,7 @@
 		<key>8</key>
 		<real>0.5</real>
 		<key>9</key>
-		<real>0.529</real>
+		<real>0.543</real>
 		<key>10</key>
 		<real>0.5</real>
 		<key>11</key>
@@ -250,7 +250,7 @@
 		<key>15</key>
 		<real>0.5</real>
 		<key>16</key>
-		<real>0.99</real>
+		<integer>1</integer>
 	</dict>
 	<key>10</key>
 	<dict>
