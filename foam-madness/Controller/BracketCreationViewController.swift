@@ -83,8 +83,9 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         regionOrder = [regionIDs["0"], regionIDs["1"], regionIDs["2"], regionIDs["3"]] as! [String]
         // Check if it's a Women's tournament for using correct probabilities
         isWomens = bracketDict.value(forKey: "IsWomens") as! Bool
-        // Get First Four data (if men's)
-        if !isWomens {
+        let year = bracketDict.value(forKey: "Year") as! Int
+        // Get First Four data (if men's or women's 2022 or later)
+        if (!isWomens || year >= 2022) {
             firstFour = bracketDict.value(forKey: "FirstFour") as! Dictionary<String, [String: String]>
         }
         // Update progress bar to 5%
