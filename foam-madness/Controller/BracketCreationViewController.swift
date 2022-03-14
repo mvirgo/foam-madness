@@ -26,6 +26,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
     var tournament: Tournament!
     var tournamentName: String!
     var isWomens = false
+    var hasFirstFour = false
     var bracketLocation: String!
     var regionOrder = [String]()
     var regionSeedTeams = [String: [String: Int16]]()
@@ -83,8 +84,10 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         regionOrder = [regionIDs["0"], regionIDs["1"], regionIDs["2"], regionIDs["3"]] as! [String]
         // Check if it's a Women's tournament for using correct probabilities
         isWomens = bracketDict.value(forKey: "IsWomens") as! Bool
-        // Get First Four data (if men's)
-        if !isWomens {
+        let year = bracketDict.value(forKey: "Year") as! Int
+        hasFirstFour = !isWomens || year >= 2022
+        // Get First Four data (if men's or women's 2022 or later)
+        if (hasFirstFour) {
             firstFour = bracketDict.value(forKey: "FirstFour") as! Dictionary<String, [String: String]>
         }
         // Update progress bar to 5%
@@ -317,7 +320,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         taskLabel.text = "Creating tournament games..."
         // Note: This function is essentially hard-coded for current bracket style
         // Create First Four if Men's tournament
-        if !isWomens {
+        if hasFirstFour {
             createFirstFour()
         }
         progressBar.progress += 0.05
@@ -342,7 +345,7 @@ class BracketCreationViewController: UIViewController, UITextFieldDelegate {
         var winner: String = ""
         taskLabel.text = "Simulating tournament games..."
         // Get correct starting id (hard-coded for current bracket style)
-        if isWomens {
+        if !hasFirstFour {
             id = 4
         } else {
             id = 0

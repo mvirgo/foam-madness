@@ -17,7 +17,9 @@ class SelectInitialBracketViewController: UITableViewController {
     let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020",
                     "2020 Womens - Charlie Creme's Bracketology": "womensBracketology2020",
                     "2021 Men's Bracket": "mensBracket2021",
-                    "2021 Women's Bracket": "womensBracket2021"]
+                    "2021 Women's Bracket": "womensBracket2021",
+                    "2022 Men's Bracket": "mensBracket2022",
+                    "2022 Women's Bracket": "womensBracket2022"]
     
     // MARK: View functions
     override func viewDidLoad() {

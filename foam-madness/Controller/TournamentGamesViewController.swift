@@ -40,8 +40,8 @@ class TournamentGamesViewController: UIViewController, UITableViewDelegate, UITa
         // Set delegate and datasource for the game table view
         self.gameTableView.delegate = self
         self.gameTableView.dataSource = self
-        // Ignore First Four in Women's tournament
-        if tournament.isWomens {
+        // Ignore First Four in Women's tournaments before 2022
+        if tournament.isWomens && tournament.games!.count < 65 {
             roundStepper.value = 1
             roundStepper.minimumValue = 1
         } else {
