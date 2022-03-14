@@ -5,7 +5,7 @@
 	<key>Source</key>
 	<dict>
 		<key>Date Accessed</key>
-		<date>2021-04-23T01:02:00Z</date>
+		<date>2022-03-14T01:24:57Z</date>
 		<key>URL</key>
 		<string>http://mcubed.net/ncaab/seeds.shtml</string>
 	</dict>
@@ -16,7 +16,7 @@
 		<key>2</key>
 		<real>0.539</real>
 		<key>3</key>
-		<real>0.625</real>
+		<real>0.634</real>
 		<key>4</key>
 		<real>0.711</real>
 		<key>5</key>
@@ -26,7 +26,7 @@
 		<key>7</key>
 		<real>0.857</real>
 		<key>8</key>
-		<real>0.8</real>
+		<real>0.798</real>
 		<key>9</key>
 		<real>0.901</real>
 		<key>10</key>
@@ -86,7 +86,7 @@
 		<key>5</key>
 		<real>0.5</real>
 		<key>6</key>
-		<real>0.571</real>
+		<real>0.576</real>
 		<key>7</key>
 		<real>0.611</real>
 		<key>8</key>
@@ -102,7 +102,7 @@
 		<key>13</key>
 		<real>0.5</real>
 		<key>14</key>
-		<real>0.846</real>
+		<real>0.847</real>
 		<key>15</key>
 		<integer>1</integer>
 		<key>16</key>
@@ -171,7 +171,7 @@
 		<key>7</key>
 		<real>0.667</real>
 		<key>8</key>
-		<real>0.2</real>
+		<real>0.25</real>
 		<key>9</key>
 		<real>0.5</real>
 		<key>10</key>
@@ -227,9 +227,9 @@
 		<key>13</key>
 		<integer>1</integer>
 		<key>14</key>
-		<integer>1</integer>
+		<real>0.5</real>
 		<key>15</key>
-		<integer>1</integer>
+		<real>0.5</real>
 		<key>16</key>
 		<real>0.5</real>
 	</dict>
