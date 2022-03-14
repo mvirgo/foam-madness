@@ -42,6 +42,8 @@
 		7AEFD66025146629007BB16B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD65F25146629007BB16B /* AboutViewController.swift */; };
 		7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFD6662514704E007BB16B /* ABOUT.rtf */; };
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
+		D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59E827DED2FE001378F1 /* mensBracket2022.plist */; };
+		D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59EA27DED30F001378F1 /* womensBracket2022.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		7AEFD65F25146629007BB16B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7AEFD6662514704E007BB16B /* ABOUT.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ABOUT.rtf; sourceTree = "<group>"; };
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		D14C59E827DED2FE001378F1 /* mensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2022.plist; sourceTree = "<group>"; };
+		D14C59EA27DED30F001378F1 /* womensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2022.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,8 @@
 		D14C59E627DECEC0001378F1 /* brackets */ = {
 			isa = PBXGroup;
 			children = (
+				D14C59EA27DED30F001378F1 /* womensBracket2022.plist */,
+				D14C59E827DED2FE001378F1 /* mensBracket2022.plist */,
 				7A916BD725EDE5D4007E8714 /* mensBracket2021.plist */,
 				7A916BD625EDE5D4007E8714 /* womensBracket2021.plist */,
 				7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */,
@@ -285,7 +291,9 @@
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,
 				7A916BD925EDE5D5007E8714 /* mensBracket2021.plist in Resources */,
 				7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */,
+				D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */,
 				7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */,
+				D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */,
 				7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */,
 				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
 				7A916BD825EDE5D5007E8714 /* womensBracket2021.plist in Resources */,
@@ -473,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -481,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvirgo.foam-madness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -494,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -502,7 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvirgo.foam-madness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
