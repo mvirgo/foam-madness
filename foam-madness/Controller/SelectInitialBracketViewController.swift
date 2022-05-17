@@ -13,19 +13,18 @@ class SelectInitialBracketViewController: UITableViewController {
     // MARK: Variables
     var dataController: DataController!
     var isSimulated: Bool!
+    var brackets: [Dictionary<String, String>] = []
     var chosenBracketFile = ""
-    let brackets = ["2020 Joe Lunardi's Bracketology": "bracketology2020",
-                    "2020 Womens - Charlie Creme's Bracketology": "womensBracketology2020",
-                    "2021 Men's Bracket": "mensBracket2021",
-                    "2021 Women's Bracket": "womensBracket2021",
-                    "2022 Men's Bracket": "mensBracket2022",
-                    "2022 Women's Bracket": "womensBracket2022"]
+    let bracketIndexFile = "bracketIndex"
     
     // MARK: View functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add a page title
         navigationItem.title = "Choose a Starting Bracket"
+        // Load the bracket index
+        let path = Bundle.main.path(forResource: bracketIndexFile, ofType: "plist")!
+        brackets = NSArray(contentsOfFile: path) as! [Dictionary<String, String>]
     }
     
     // MARK: Table View functionality
@@ -36,17 +35,16 @@ class SelectInitialBracketViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "bracketCell", for: indexPath)
         // Return in reverse sorted order (more recent years first)
-        let bracket = Array(brackets.keys.sorted().reversed())[(indexPath as NSIndexPath).row]
+        let bracketText = brackets.reversed()[(indexPath as NSIndexPath).row].first?.value
         
         // Set the cell details
-        cell.textLabel?.text = bracket
+        cell.textLabel?.text = bracketText
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let bracket = Array(brackets.keys.sorted().reversed())[(indexPath as NSIndexPath).row]
-        chosenBracketFile = brackets[bracket]!
+        chosenBracketFile = brackets.reversed()[(indexPath as NSIndexPath).row].first!.key
         // Segue to bracket creation screen
         performSegue(withIdentifier: "createBracket", sender: nil)
     }

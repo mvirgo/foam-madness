@@ -44,6 +44,7 @@
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
 		D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59E827DED2FE001378F1 /* mensBracket2022.plist */; };
 		D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59EA27DED30F001378F1 /* womensBracket2022.plist */; };
+		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 		D14C59E827DED2FE001378F1 /* mensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2022.plist; sourceTree = "<group>"; };
 		D14C59EA27DED30F001378F1 /* womensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2022.plist; sourceTree = "<group>"; };
+		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				7A916BD625EDE5D4007E8714 /* womensBracket2021.plist */,
 				7AEAB80A2433086C009E7CC1 /* bracketology2020.plist */,
 				7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */,
+				D1E16E1028334BB0007280EC /* bracketIndex.plist */,
 			);
 			path = brackets;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */,
 				7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */,
 				7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */,
 				7A2ECEF3242EDE930065E369 /* LaunchScreen.storyboard in Resources */,

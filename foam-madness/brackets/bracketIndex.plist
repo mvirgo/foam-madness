@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bracketology2020</key>
+		<string>2020 Joe Lunardi&apos;s Bracketology</string>
+	</dict>
+	<dict>
+		<key>womensBracketology2020</key>
+		<string>2020 Womens - Charlie Creme&apos;s Bracketology</string>
+	</dict>
+	<dict>
+		<key>mensBracket2021</key>
+		<string>2021 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2021</key>
+		<string>2021 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>mensBracket2022</key>
+		<string>2022 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2022</key>
+		<string>2022 Women&apos;s Bracket</string>
+	</dict>
+</array>
+</plist>
