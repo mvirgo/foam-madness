@@ -45,6 +45,16 @@
 		D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59E827DED2FE001378F1 /* mensBracket2022.plist */; };
 		D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59EA27DED30F001378F1 /* womensBracket2022.plist */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
+		D1E16E1C283354B0007280EC /* womensBracket2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E12283354B0007280EC /* womensBracket2019.plist */; };
+		D1E16E1D283354B0007280EC /* mensBracket2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E13283354B0007280EC /* mensBracket2016.plist */; };
+		D1E16E1E283354B0007280EC /* mensBracket2017.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E14283354B0007280EC /* mensBracket2017.plist */; };
+		D1E16E1F283354B0007280EC /* womensBracket2017.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E15283354B0007280EC /* womensBracket2017.plist */; };
+		D1E16E20283354B0007280EC /* womensBracket2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E16283354B0007280EC /* womensBracket2015.plist */; };
+		D1E16E21283354B0007280EC /* womensBracket2018.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E17283354B0007280EC /* womensBracket2018.plist */; };
+		D1E16E22283354B0007280EC /* mensBracket2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E18283354B0007280EC /* mensBracket2015.plist */; };
+		D1E16E23283354B0007280EC /* mensBracket2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E19283354B0007280EC /* mensBracket2019.plist */; };
+		D1E16E24283354B0007280EC /* mensBracket2018.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1A283354B0007280EC /* mensBracket2018.plist */; };
+		D1E16E25283354B0007280EC /* womensBracket2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1B283354B0007280EC /* womensBracket2016.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +100,16 @@
 		D14C59E827DED2FE001378F1 /* mensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2022.plist; sourceTree = "<group>"; };
 		D14C59EA27DED30F001378F1 /* womensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2022.plist; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
+		D1E16E12283354B0007280EC /* womensBracket2019.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2019.plist; sourceTree = "<group>"; };
+		D1E16E13283354B0007280EC /* mensBracket2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2016.plist; sourceTree = "<group>"; };
+		D1E16E14283354B0007280EC /* mensBracket2017.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2017.plist; sourceTree = "<group>"; };
+		D1E16E15283354B0007280EC /* womensBracket2017.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2017.plist; sourceTree = "<group>"; };
+		D1E16E16283354B0007280EC /* womensBracket2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2015.plist; sourceTree = "<group>"; };
+		D1E16E17283354B0007280EC /* womensBracket2018.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2018.plist; sourceTree = "<group>"; };
+		D1E16E18283354B0007280EC /* mensBracket2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2015.plist; sourceTree = "<group>"; };
+		D1E16E19283354B0007280EC /* mensBracket2019.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2019.plist; sourceTree = "<group>"; };
+		D1E16E1A283354B0007280EC /* mensBracket2018.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2018.plist; sourceTree = "<group>"; };
+		D1E16E1B283354B0007280EC /* womensBracket2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2016.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +229,16 @@
 		D14C59E627DECEC0001378F1 /* brackets */ = {
 			isa = PBXGroup;
 			children = (
+				D1E16E18283354B0007280EC /* mensBracket2015.plist */,
+				D1E16E13283354B0007280EC /* mensBracket2016.plist */,
+				D1E16E14283354B0007280EC /* mensBracket2017.plist */,
+				D1E16E1A283354B0007280EC /* mensBracket2018.plist */,
+				D1E16E19283354B0007280EC /* mensBracket2019.plist */,
+				D1E16E16283354B0007280EC /* womensBracket2015.plist */,
+				D1E16E1B283354B0007280EC /* womensBracket2016.plist */,
+				D1E16E15283354B0007280EC /* womensBracket2017.plist */,
+				D1E16E17283354B0007280EC /* womensBracket2018.plist */,
+				D1E16E12283354B0007280EC /* womensBracket2019.plist */,
 				D14C59EA27DED30F001378F1 /* womensBracket2022.plist */,
 				D14C59E827DED2FE001378F1 /* mensBracket2022.plist */,
 				7A916BD725EDE5D4007E8714 /* mensBracket2021.plist */,
@@ -287,18 +317,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E16E20283354B0007280EC /* womensBracket2015.plist in Resources */,
 				D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */,
 				7AEAB80B2433086C009E7CC1 /* teams.plist in Resources */,
 				7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */,
 				7A2ECEF3242EDE930065E369 /* LaunchScreen.storyboard in Resources */,
+				D1E16E22283354B0007280EC /* mensBracket2015.plist in Resources */,
+				D1E16E21283354B0007280EC /* womensBracket2018.plist in Resources */,
+				D1E16E25283354B0007280EC /* womensBracket2016.plist in Resources */,
 				7A2ECEF0242EDE930065E369 /* Assets.xcassets in Resources */,
+				D1E16E23283354B0007280EC /* mensBracket2019.plist in Resources */,
 				7AD7BC1324315125006F0AF0 /* historicalProbabilities.plist in Resources */,
 				7A916BD925EDE5D5007E8714 /* mensBracket2021.plist in Resources */,
+				D1E16E1E283354B0007280EC /* mensBracket2017.plist in Resources */,
+				D1E16E1D283354B0007280EC /* mensBracket2016.plist in Resources */,
 				7AEAB80C2433086C009E7CC1 /* bracketology2020.plist in Resources */,
 				D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */,
 				7A2ECEEE242EDE920065E369 /* Main.storyboard in Resources */,
+				D1E16E1C283354B0007280EC /* womensBracket2019.plist in Resources */,
 				D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */,
+				D1E16E1F283354B0007280EC /* womensBracket2017.plist in Resources */,
 				7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */,
+				D1E16E24283354B0007280EC /* mensBracket2018.plist in Resources */,
 				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
 				7A916BD825EDE5D5007E8714 /* womensBracket2021.plist in Resources */,
 			);
@@ -485,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -493,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvirgo.foam-madness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -506,7 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5X3GA242G5;
 				INFOPLIST_FILE = "foam-madness/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -514,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvirgo.foam-madness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

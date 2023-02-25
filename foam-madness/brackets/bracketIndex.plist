@@ -3,6 +3,46 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>mensBracket2015</key>
+		<string>2015 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2015</key>
+		<string>2015 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>mensBracket2016</key>
+		<string>2016 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2016</key>
+		<string>2016 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>mensBracket2017</key>
+		<string>2017 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2017</key>
+		<string>2017 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>mensBracket2018</key>
+		<string>2018 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2018</key>
+		<string>2018 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>mensBracket2019</key>
+		<string>2019 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2019</key>
+		<string>2019 Women&apos;s Bracket</string>
+	</dict>
+	<dict>
 		<key>bracketology2020</key>
 		<string>2020 Joe Lunardi&apos;s Bracketology</string>
 	</dict>
