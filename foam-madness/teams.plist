@@ -651,7 +651,7 @@
 		<key>abbreviation</key>
 		<string>MSMU</string>
 		<key>name</key>
-		<string>Mount St. Mary's</string>
+		<string>Mount St. Mary&apos;s</string>
 	</dict>
 	<key>182</key>
 	<dict>
@@ -889,7 +889,7 @@
 		<key>abbreviation</key>
 		<string>SJU</string>
 		<key>name</key>
-		<string>St Joseph's</string>
+		<string>St Joseph&apos;s</string>
 	</dict>
 	<key>212</key>
 	<dict>
@@ -903,7 +903,7 @@
 		<key>abbreviation</key>
 		<string>SPU</string>
 		<key>name</key>
-		<string>St Peter's</string>
+		<string>St Peter&apos;s</string>
 	</dict>
 	<key>214</key>
 	<dict>
