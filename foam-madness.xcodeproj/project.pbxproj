@@ -44,6 +44,7 @@
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
 		D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59E827DED2FE001378F1 /* mensBracket2022.plist */; };
 		D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59EA27DED30F001378F1 /* womensBracket2022.plist */; };
+		D1A67BE629BD48E200E1D55B /* foam_madness_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
 		D1E16E1C283354B0007280EC /* womensBracket2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E12283354B0007280EC /* womensBracket2019.plist */; };
 		D1E16E1D283354B0007280EC /* mensBracket2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E13283354B0007280EC /* mensBracket2016.plist */; };
@@ -56,6 +57,16 @@
 		D1E16E24283354B0007280EC /* mensBracket2018.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1A283354B0007280EC /* mensBracket2018.plist */; };
 		D1E16E25283354B0007280EC /* womensBracket2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1B283354B0007280EC /* womensBracket2016.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1A67BE729BD48E200E1D55B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A2ECEDD242EDE920065E369 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A2ECEE4242EDE920065E369;
+			remoteInfo = "foam-madness";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7A0A424F2441A1C50096A7D6 /* TournamentStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +110,8 @@
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 		D14C59E827DED2FE001378F1 /* mensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2022.plist; sourceTree = "<group>"; };
 		D14C59EA27DED30F001378F1 /* womensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2022.plist; sourceTree = "<group>"; };
+		D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foam-madness-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_tests.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
 		D1E16E12283354B0007280EC /* womensBracket2019.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2019.plist; sourceTree = "<group>"; };
 		D1E16E13283354B0007280EC /* mensBracket2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2016.plist; sourceTree = "<group>"; };
@@ -114,6 +127,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		7A2ECEE2242EDE920065E369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A67BE029BD48E200E1D55B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7A2ECEE7242EDE920065E369 /* foam-madness */,
+				D1A67BE429BD48E200E1D55B /* foam-madness-tests */,
 				7A2ECEE6242EDE920065E369 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7A2ECEE5242EDE920065E369 /* foam-madness.app */,
+				D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +281,14 @@
 			path = probabilities;
 			sourceTree = "<group>";
 		};
+		D1A67BE429BD48E200E1D55B /* foam-madness-tests */ = {
+			isa = PBXGroup;
+			children = (
+				D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */,
+			);
+			path = "foam-madness-tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,18 +309,40 @@
 			productReference = 7A2ECEE5242EDE920065E369 /* foam-madness.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D1A67BE229BD48E200E1D55B /* foam-madness-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1A67BE929BD48E200E1D55B /* Build configuration list for PBXNativeTarget "foam-madness-tests" */;
+			buildPhases = (
+				D1A67BDF29BD48E200E1D55B /* Sources */,
+				D1A67BE029BD48E200E1D55B /* Frameworks */,
+				D1A67BE129BD48E200E1D55B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1A67BE829BD48E200E1D55B /* PBXTargetDependency */,
+			);
+			name = "foam-madness-tests";
+			productName = "foam-madness-tests";
+			productReference = D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7A2ECEDD242EDE920065E369 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = mvirgo;
 				TargetAttributes = {
 					7A2ECEE4242EDE920065E369 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					D1A67BE229BD48E200E1D55B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 7A2ECEE4242EDE920065E369;
 					};
 				};
 			};
@@ -308,6 +360,7 @@
 			projectRoot = "";
 			targets = (
 				7A2ECEE4242EDE920065E369 /* foam-madness */,
+				D1A67BE229BD48E200E1D55B /* foam-madness-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +394,13 @@
 				D1E16E24283354B0007280EC /* mensBracket2018.plist in Resources */,
 				7A1B9C9D245A9A22005B40D3 /* historicalProbabilitiesWomen.plist in Resources */,
 				7A916BD825EDE5D5007E8714 /* womensBracket2021.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1A67BE129BD48E200E1D55B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +438,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1A67BDF29BD48E200E1D55B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1A67BE629BD48E200E1D55B /* foam_madness_tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D1A67BE829BD48E200E1D55B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A2ECEE4242EDE920065E369 /* foam-madness */;
+			targetProxy = D1A67BE729BD48E200E1D55B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7A2ECEEC242EDE920065E369 /* Main.storyboard */ = {
@@ -562,6 +638,52 @@
 			};
 			name = Release;
 		};
+		D1A67BEA29BD48E200E1D55B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5X3GA242G5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virgo.foam-madness-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foam-madness.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foam-madness";
+			};
+			name = Debug;
+		};
+		D1A67BEB29BD48E200E1D55B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5X3GA242G5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.virgo.foam-madness-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/foam-madness.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/foam-madness";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,6 +701,15 @@
 			buildConfigurations = (
 				7A2ECEF8242EDE930065E369 /* Debug */,
 				7A2ECEF9242EDE930065E369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1A67BE929BD48E200E1D55B /* Build configuration list for PBXNativeTarget "foam-madness-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1A67BEA29BD48E200E1D55B /* Debug */,
+				D1A67BEB29BD48E200E1D55B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
