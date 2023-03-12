@@ -45,6 +45,7 @@
 		D14C59E927DED2FE001378F1 /* mensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59E827DED2FE001378F1 /* mensBracket2022.plist */; };
 		D14C59EB27DED30F001378F1 /* womensBracket2022.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C59EA27DED30F001378F1 /* womensBracket2022.plist */; };
 		D1A67BE629BD48E200E1D55B /* foam_madness_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */; };
+		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
 		D1E16E1C283354B0007280EC /* womensBracket2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E12283354B0007280EC /* womensBracket2019.plist */; };
 		D1E16E1D283354B0007280EC /* mensBracket2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E13283354B0007280EC /* mensBracket2016.plist */; };
@@ -112,6 +113,7 @@
 		D14C59EA27DED30F001378F1 /* womensBracket2022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2022.plist; sourceTree = "<group>"; };
 		D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foam-madness-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_tests.swift; sourceTree = "<group>"; };
+		D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_probability_file_test.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
 		D1E16E12283354B0007280EC /* womensBracket2019.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2019.plist; sourceTree = "<group>"; };
 		D1E16E13283354B0007280EC /* mensBracket2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2016.plist; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		D1A67BE429BD48E200E1D55B /* foam-madness-tests */ = {
 			isa = PBXGroup;
 			children = (
+				D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */,
 				D1A67BE529BD48E200E1D55B /* foam_madness_tests.swift */,
 			);
 			path = "foam-madness-tests";
@@ -442,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */,
 				D1A67BE629BD48E200E1D55B /* foam_madness_tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
