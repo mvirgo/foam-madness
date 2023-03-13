@@ -140,7 +140,7 @@
 		<key>abbreviation</key>
 		<string>ECU</string>
 		<key>name</key>
-		<string>E Carolina</string>
+		<string>East Carolina</string>
 	</dict>
 	<key>116</key>
 	<dict>
@@ -1337,7 +1337,7 @@
 		<key>abbreviation</key>
 		<string>NCST</string>
 		<key>name</key>
-		<string>NC St</string>
+		<string>NC State</string>
 	</dict>
 	<key>270</key>
 	<dict>
@@ -1652,7 +1652,7 @@
 		<key>abbreviation</key>
 		<string>WVU</string>
 		<key>name</key>
-		<string>W Virginia</string>
+		<string>West Virginia</string>
 	</dict>
 	<key>310</key>
 	<dict>
@@ -2198,7 +2198,7 @@
 		<key>abbreviation</key>
 		<string>USC</string>
 		<key>name</key>
-		<string>USC</string>
+		<string>Southern California</string>
 	</dict>
 	<key>66</key>
 	<dict>

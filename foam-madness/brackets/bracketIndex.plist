@@ -66,5 +66,13 @@
 		<key>womensBracket2022</key>
 		<string>2022 Women&apos;s Bracket</string>
 	</dict>
+	<dict>
+		<key>mensBracket2023</key>
+		<string>2023 Men&apos;s Bracket</string>
+	</dict>
+	<dict>
+		<key>womensBracket2023</key>
+		<string>2023 Women&apos;s Bracket</string>
+	</dict>
 </array>
 </plist>
