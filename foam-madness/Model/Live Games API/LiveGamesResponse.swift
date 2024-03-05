@@ -17,9 +17,24 @@ struct League: Codable {
     let abbreviation: String
 }
 
-struct Event: Codable {
+struct Event: Codable, Identifiable {
+    var id = UUID()
+    var league: String
     let competitions: [Competition]
     let status: Status
+    
+    init(league: String, competitions: [Competition], status: Status) {
+        self.league = league
+        self.competitions = competitions
+        self.status = status
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        competitions = try container.decode([Competition].self, forKey: .competitions)
+        status = try container.decode(Status.self, forKey: .status)
+        league = "" // filled in separate request
+    }
 }
 
 struct Competition: Codable {

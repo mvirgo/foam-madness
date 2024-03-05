@@ -34,21 +34,10 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     // Other functions
     func loadTeams() {
         // Load in teams list
-        let path = Bundle.main.path(forResource: "teams", ofType: "plist")!
-        let dict = NSDictionary(contentsOfFile: path)!
-        // Add team name to a temporary array
-        var tempTeams: [String] = [String]()
-        for key in dict.allKeys {
-            let name = (dict.value(forKey: key as! String) as! NSDictionary).value(forKey: "name") as? String
-            tempTeams.append(name!)
-            // Add to reverseTeamDict for lookup of abbreviation/id later
-            let abbreviation = (dict.value(forKey: key as! String) as! NSDictionary).value(forKey: "abbreviation") as? String
-            reverseTeamDict[name!] = ["id": String(describing: key), "abbreviation": abbreviation!]
-        }
-        // Sort the temporary array for easy selection
-        tempTeams.sort()
+        let loadedTeams = TeamHelper.loadTeams()
+        reverseTeamDict = loadedTeams.reverseTeamDict
         // Make into two columns of same names
-        teams = [tempTeams, tempTeams]
+        teams = [loadedTeams.teams, loadedTeams.teams]
     }
     
     func lookupOrCreateTeam(teamName: String, context: NSManagedObjectContext) -> Team {
@@ -107,21 +96,12 @@ class SelectTeamsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // Get view context
         let managedObjectContext = dataController.viewContext
         // Create a game
-        let game = Game(context: managedObjectContext)
-        // Hide the region and round from Play Game view
-        game.region = ""
-        game.round = -1
-        // Lookup or create teams
-        let team1 = lookupOrCreateTeam(teamName: teams[0][pickerView.selectedRow(inComponent: 0)],
-                                       context: managedObjectContext)
-        let team2 = lookupOrCreateTeam(teamName: teams[1][pickerView.selectedRow(inComponent: 1)],
-                                       context: managedObjectContext)
-        // Add team ids to game to ensure proper order of score/stats
-        game.team1Id = team1.id
-        game.team2Id = team2.id
-        // Add teams to game
-        team1.addToGames(game)
-        team2.addToGames(game)
+        let game = GameHelper.prepareSingleGame(
+            teams[0][pickerView.selectedRow(inComponent: 0)],
+            teams[1][pickerView.selectedRow(inComponent: 1)],
+            reverseTeamDict,
+            managedObjectContext
+        )
         // Send data controller to PlayGameViewController
         if let vc = segue.destination as? PlayGameViewController {
             vc.dataController = dataController

@@ -21,6 +21,21 @@ class TourneyHelper {
         return results
     }
     
+    static func fetchDataFromContext(_ context: NSManagedObjectContext, _ predicate: NSPredicate?, _ entity: String, _ sortDescriptors: [NSSortDescriptor]) -> [Any] {
+        // Get tournaments from Core Data
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        if (predicate != nil) {
+            fetchRequest.predicate = predicate
+        }
+        if (sortDescriptors.count > 0) {
+            fetchRequest.sortDescriptors = sortDescriptors
+        }
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        
+        return results
+    }
+    
     static func addNextGame(_ dataController: DataController, _ tournament: Tournament,
                             _ game: Game, _ winner: Team, _ winningSeed: Int16) {
         // Add the next game, if applicable

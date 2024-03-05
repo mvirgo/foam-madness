@@ -14,7 +14,6 @@ class LiveGameCollectionViewController: UICollectionViewController {
     
     // MARK: Other variables
     var liveGames = [Event]()
-    var leagueForGames = [Int: String]()
     
     // MARK: Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +36,10 @@ class LiveGameCollectionViewController: UICollectionViewController {
         
         // Add game data to cell
         let indexInt = (indexPath as NSIndexPath).row
-        cell.sportLabel.text = leagueForGames[indexInt]
         // Note: all arrays except `competitors` have only 1 item
         let game = liveGames[indexInt]
         let teams = game.competitions[0].competitors
+        cell.sportLabel.text = game.league
         cell.team1Label.text = teams[0].team.abbreviation
         cell.score1Label.text = teams[0].score
         cell.team2Label.text = teams[1].team.abbreviation
@@ -69,14 +68,9 @@ class LiveGameCollectionViewController: UICollectionViewController {
             // Add a label to the background
             // Based on https://stackoverflow.com/questions/43772984/how-to-show-a-message-when-collection-view-is-empty
             let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.safeAreaLayoutGuide.layoutFrame.width, height: self.view.safeAreaLayoutGuide.layoutFrame.height))
-            if #available(iOS 13.0, *) {
-                messageLabel.textColor = .label
-            } else {
-                // Fallback on earlier versions
-                messageLabel.textColor = .black
-            }
-            messageLabel.numberOfLines = 0;
-            messageLabel.textAlignment = .center;
+            messageLabel.textColor = .label
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
             messageLabel.font = UIFont.systemFont(ofSize: 30)
             messageLabel.sizeToFit()
 
@@ -107,10 +101,10 @@ class LiveGameCollectionViewController: UICollectionViewController {
             print(error.localizedDescription)
         } else if let response = response {
             // Add events to liveGames array
-            for game in response.events {
+            for (_, var game) in response.events.enumerated() {
                 // Note that there will only be one league in NCAA or (W)NBA APIs
                 // Add game
-                leagueForGames[liveGames.count] = response.leagues[0].abbreviation
+                game.league = response.leagues[0].abbreviation
                 liveGames.append(game)
             }
             DispatchQueue.main.async {

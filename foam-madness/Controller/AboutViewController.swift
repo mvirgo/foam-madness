@@ -17,14 +17,8 @@ class AboutViewController: UIViewController {
             aboutTextView.attributedText = try! NSMutableAttributedString(url: url, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
             
             // Set colors
-            if #available(iOS 13.0, *) {
-                aboutTextView.backgroundColor = .systemBackground
-                aboutTextView.textColor = .label
-            } else {
-                // Fallback on earlier versions
-                aboutTextView.backgroundColor = .white
-                aboutTextView.textColor = .black
-            }
+            aboutTextView.backgroundColor = .systemBackground
+            aboutTextView.textColor = .label
         }
     }
 }
