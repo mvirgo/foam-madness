@@ -36,7 +36,7 @@ class TourneyHelper {
         return results
     }
     
-    static func addNextGame(_ dataController: DataController, _ tournament: Tournament,
+    static func addNextGame(_ viewContext: NSManagedObjectContext, _ tournament: Tournament,
                             _ game: Game, _ winner: Team, _ winningSeed: Int16) {
         // Add the next game, if applicable
         if game.nextGame == -1 {
@@ -49,7 +49,7 @@ class TourneyHelper {
             let idPredicate = NSPredicate(format: "tourneyGameId == %@", NSNumber(value: game.nextGame))
             let tourneyPredicate = NSPredicate(format: "tournament == %@", tournament)
             let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [idPredicate, tourneyPredicate])
-            let results = TourneyHelper.fetchData(dataController, andPredicate, "Game")
+            let results = TourneyHelper.fetchDataFromContext(viewContext, andPredicate, "Game", [])
             let nextGame = results[0] as! Game
             // Set team id in next game based on its count
             if nextGame.teams!.count == 0 {
@@ -63,13 +63,13 @@ class TourneyHelper {
             winner.addToGames(nextGame)
         }
         // Make sure to save
-        saveData(dataController)
+        saveData(viewContext)
     }
     
-    class func saveData(_ dataController: DataController) {
+    class func saveData(_ viewContext: NSManagedObjectContext) {
         // Save the view context
         do {
-            try dataController.viewContext.save()
+            try viewContext.save()
         } catch {
             print("Failed to save tournament data.")
         }

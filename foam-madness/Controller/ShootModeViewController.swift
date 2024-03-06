@@ -285,13 +285,13 @@ class ShootModeViewController: UIViewController {
     }
     
     func simGame() {
-        SimHelper.simSingleGame(dataController, game, team1, team2)
+        SimHelper.simSingleGame(game, team1, team2)
         saveData()
         completeGame()
     }
     
     func completeGame() {
-        let winner = GameHelper.completeGame(dataController, game, team1, team2)
+        let winner = GameHelper.completeGame(dataController.viewContext, game, team1, team2)
         // Let the user know the winner
         endGameAlert(winner)
     }

@@ -60,7 +60,7 @@ class GameHelper {
         return [team1, team2]
     }
     
-    static func completeGame(_ dataController: DataController, _ game: Game,
+    static func completeGame(_ viewContext: NSManagedObjectContext, _ game: Game,
                              _ team1: Team, _ team2: Team) -> Team {
         // Set game to complete
         game.completion = true
@@ -76,7 +76,7 @@ class GameHelper {
         }
         // Add the next tourney game, if applicable
         if let tournament = game.tournament {
-            TourneyHelper.addNextGame(dataController, tournament, game, winner, winningSeed)
+            TourneyHelper.addNextGame(viewContext, tournament, game, winner, winningSeed)
         }
         
         return winner;

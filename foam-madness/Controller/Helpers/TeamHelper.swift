@@ -17,8 +17,7 @@ struct LoadedTeams {
 class TeamHelper {
     static func loadTeams() -> LoadedTeams {
         // Load in teams list
-        let path = Bundle.main.path(forResource: "teams", ofType: "plist")!
-        let dict = NSDictionary(contentsOfFile: path)!
+        let dict = loadTeamsBasicDict()
         // Add team name to a temporary array
         var tempTeams: [String] = [String]()
         var reverseTeamDict = [String: [String: String]]()
@@ -57,5 +56,38 @@ class TeamHelper {
         }
         
         return team
+    }
+    
+    static func fetchTeamById(_ teamIds: [Int16], _ context: NSManagedObjectContext) -> [Any] {
+        // Get both teams from Core Data and add to game
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        let predicate = NSPredicate(format: "id IN %@", teamIds)
+        fetchRequest.predicate = predicate
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        
+        return results
+    }
+    
+    static func getExistingTeams(_ context: NSManagedObjectContext) -> [Int16] {
+        var existingsIds: [Int16] = []
+        // Use a fetch request to get all existing teams
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")
+        // Fetch the results
+        let results = try! context.fetch(fetchRequest)
+        // Add any existing ids to the array
+        for team in results {
+            existingsIds.append((team as! Team).id)
+        }
+        
+        return existingsIds
+    }
+    
+    static func loadTeamsBasicDict() -> NSDictionary {
+        // Load in teams list
+        let path = Bundle.main.path(forResource: "teams", ofType: "plist")!
+        let dict = NSDictionary(contentsOfFile: path)!
+        
+        return dict
     }
 }

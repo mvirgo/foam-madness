@@ -64,7 +64,7 @@ struct GameStatsView: View {
 
             if isTournament {
                 Button("Back to Games", action: {
-                    NavigationUtil.popToTournamentGames(tournamentName: game.tournament?.name ?? "")
+                    NavigationUtil.popToViewByTitle(viewTitle: game.tournament?.name ?? "")
                 })
                 .buttonStyle(PrimaryButtonFullWidthStyle()).padding()
             } else {

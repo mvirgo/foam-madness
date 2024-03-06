@@ -46,14 +46,18 @@ struct NavigationUtil {
         return nil
     }
     
-    static func popToTournamentGames(tournamentName: String, animated: Bool = true) {
+    static func popToViewByTitle(viewTitle: String, animated: Bool = true) {
+        if viewTitle == "" {
+            popToRootView(animated: animated)
+        }
+
         guard let navigationController = findNavigationController(viewController: UIApplication.shared.connectedScenes.flatMap { ($0 as? UIWindowScene)?.windows ?? [] }.first { $0.isKeyWindow }?.rootViewController) else {
             return
         }
 
         for viewController in navigationController.viewControllers {
             if let title = viewController.navigationItem.title {
-                if title == tournamentName {
+                if title == viewTitle {
                     navigationController.popToViewController(viewController, animated: animated)
                 }
             }
