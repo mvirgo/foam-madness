@@ -56,7 +56,7 @@ struct TournamentGamesView: View {
                 })
             }
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink("Stats", destination: TournamentStatsView())
+                NavigationLink("Stats", destination: TournamentStatsView(tournament: tournament))
             }
         }
         .onAppear {

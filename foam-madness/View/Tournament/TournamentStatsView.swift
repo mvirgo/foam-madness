@@ -11,7 +11,13 @@ import SwiftUI
 let titleText = ["Total", "Left Hand", "Right Hand"]
 
 struct TournamentStatsView: View {
-    // TODO: Import tournament
+    @Environment(\.managedObjectContext) private var viewContext
+    @State var tournament: Tournament
+    @State private var statsArrays: [[Int]] = {
+        let statArray = [Int](repeating: 0, count: 11)
+        return [statArray, statArray, statArray]
+    }()
+    @State private var hasOvertimeStats = false
     @State private var selectedHand = 0
 
     var body: some View {
@@ -41,6 +47,9 @@ struct TournamentStatsView: View {
                 Button("Export", action: exportTournament)
             }
         }
+        .onAppear {
+            getStats()
+        }
     }
     
     var labels: some View {
@@ -62,31 +71,38 @@ struct TournamentStatsView: View {
             Text("2 ptr FG%")
             Text("3 ptr FG%")
             Text("4 ptr FG%")
-            // TODO: Conditionally show
-            Text("OT FG%")
+            if hasOvertimeStats {
+                Text("OT FG%")
+            }
         }
     }
     
     var stats: some View {
         VStack(alignment: .trailing) {
-            // TODO: Pull actual stats
-            if (selectedHand == 0) {
-                Text("20")
-                Text("21")
-            } else {
-                Text("22")
-                Text("23")
-                Text("24")
-                Text("25")
+            // Set all stats labels
+            ForEach(0..<statsArrays[selectedHand].count - 1, id: \.self) { i in
+                // Skip the win% and games vs for opp hand if All Hands selected
+                if selectedHand != 0 || (i != 2 && i != 3) {
+                    Text(String(statsArrays[selectedHand][i]))
+                }
             }
-            Text("26")
-            Text("27")
-            Text("28")
-            Text("29")
-            Text("30")
-            Text("31")
-            // TODO: Conditionally show
-            Text("32")
+            if hasOvertimeStats {
+                Text(String(statsArrays[selectedHand][10]))
+            }
+        }
+    }
+    
+    private func getStats() {
+        let tournamentStatsController = TournamentStatsController(context: viewContext)
+        let games = tournamentStatsController.getCompletedGames(tournament)
+        if (games.count > 0) {
+            let stats = tournamentStatsController.calculateAllStats(games)
+            statsArrays = [
+                stats.totalStatsArray,
+                stats.leftStatsArray,
+                stats.rightStatsArray,
+            ]
+            hasOvertimeStats = stats.hasOvertimeStats
         }
     }
     
@@ -98,8 +114,11 @@ struct TournamentStatsView: View {
 
 struct TournamentStatsView_Previews: PreviewProvider {
     static var previews: some View {
+        let viewContext = PreviewDataController.shared.container.viewContext
+        let tournaments = TourneyHelper.fetchDataFromContext(viewContext, nil, "Tournament", []) as! [Tournament]
+
         NavigationView {
-            TournamentStatsView().environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
+            TournamentStatsView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -266,10 +266,8 @@ struct ShootModeView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
         let games = TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
-        let game = games[0]
-        let teams = game.teams?.allObjects as! [Team]
         return NavigationView {
-            ShootModeView(game: game, isSimulated: false).environment(\.managedObjectContext, viewContext)
+            ShootModeView(game: games[0], isSimulated: false).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

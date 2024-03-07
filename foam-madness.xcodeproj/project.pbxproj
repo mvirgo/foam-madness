@@ -70,6 +70,7 @@
 		D1A67BE629BD48E200E1D55B /* foam_madness_bracket_file_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */; };
 		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
 		D1A67BEF29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */; };
+		D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */; };
 		D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
 		D1E16E1C283354B0007280EC /* womensBracket2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E12283354B0007280EC /* womensBracket2019.plist */; };
@@ -163,6 +164,7 @@
 		D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_bracket_file_tests.swift; sourceTree = "<group>"; };
 		D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_probability_file_test.swift; sourceTree = "<group>"; };
 		D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_teams_file_test.swift; sourceTree = "<group>"; };
+		D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsController.swift; sourceTree = "<group>"; };
 		D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationController.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
 		D1E16E12283354B0007280EC /* womensBracket2019.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2019.plist; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 			children = (
 				D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */,
 				D199087A2B996D6200A57746 /* ShootModeController.swift */,
+				D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */,
 			);
 			path = NewControllers;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				D158657C2B574FB9009E486A /* SelectTeamsView.swift in Sources */,
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
 				D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */,
+				D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */,
 				D15865802B5750F9009E486A /* ShootModeView.swift in Sources */,
 				7A2ECEEB242EDE920065E369 /* PlayGameViewController.swift in Sources */,
 				D158657A2B574F94009E486A /* LiveGamesCell.swift in Sources */,
