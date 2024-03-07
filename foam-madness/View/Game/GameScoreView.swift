@@ -9,35 +9,41 @@
 import SwiftUI
 
 struct GameScoreView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State var team1: String?
-    @State var team2: String?
-    @State var team1Score = 0
-    @State var team2Score = 0
     @State var game: Game
-    @State var isTournament = true
+    @State private var gameScoreHeader = "Final Score"
+    @State private var team1Name = ""
+    @State private var team2Name = ""
+    @State private var team1Score = "0"
+    @State private var team2Score = "0"
 
     var body: some View {
         VStack {
             VStack(spacing: 15) {
-                Text("Final Score").font(.title).fontWeight(.bold)
+                Text(gameScoreHeader).font(.title).fontWeight(.bold)
                 HStack {
-                    Text(team1 ?? "").font(.largeTitle)            .minimumScaleFactor(0.5)
+                    Text(team1Name)
+                        .font(.largeTitle)
+                        .minimumScaleFactor(0.5)
                     Spacer()
-                    Text("\(team1Score)").font(.largeTitle)
+                    Text(team1Score).font(.largeTitle)
                 }
                 HStack {
-                    Text(team2 ?? "").font(.largeTitle)            .minimumScaleFactor(0.5)
+                    Text(team2Name)
+                        .font(.largeTitle)
+                        .minimumScaleFactor(0.5)
                     Spacer()
-                    Text("\(team2Score)").font(.largeTitle)
+                    Text(team2Score).font(.largeTitle)
                 }
             }.padding([.leading, .trailing])
             
-            NavigationLink(destination: GameStatsView(game: game)) {
-                Text("See Stats")
-            }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
+            if !game.isSimulated {
+                // Hide stats if simulated - no stats to show
+                NavigationLink(destination: GameStatsView(game: game)) {
+                    Text("See Stats")
+                }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
+            }
             
-            if isTournament {
+            if let _ = game.tournament {
                 Button("Back to Games", action: {
                     NavigationUtil.popToViewByTitle(viewTitle: game.tournament?.name ?? "")
                 })
@@ -49,18 +55,42 @@ struct GameScoreView: View {
                 .buttonStyle(PrimaryButtonFullWidthStyle()).padding()
             }
         }
+        .onAppear {
+            setGameScoreDisplay()
+        }
+        .navigationBarBackButtonHidden()
+    }
+    
+    func setGameScoreDisplay() {
+        let teams = GameHelper.getOrderedTeams(game)
+        // Show seed depending on if game is in a tourney
+        if let _ = game.tournament {
+            team1Name = String(game.team1Seed) + " - " + teams[0].name!
+            team2Name = String(game.team2Seed) + " - " + teams[1].name!
+        } else {
+            team1Name = teams[0].name!
+            team2Name = teams[1].name!
+        }
+        // Show scores
+        team1Score = String(game.team1Score)
+        team2Score = String(game.team2Score)
+        // Add OT or Sim to header, if applicable
+        if game.team1OTTaken > 0 {
+            gameScoreHeader = "Final Score - OT"
+        } else if game.isSimulated {
+            gameScoreHeader = "Final Score - Sim"
+        } else {
+            gameScoreHeader = "Final Score"
+        }
     }
 }
 
 struct GameScoreView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
-        let games =
-        TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
-        let game = games[0]
-
+        let games = TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
         return NavigationView {
-            GameScoreView(team1: "Kansas", team2: "Duke", team1Score: 80, team2Score: 76, game: game).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
+            GameScoreView(game: games[0]).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

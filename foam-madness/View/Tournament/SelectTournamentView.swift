@@ -20,7 +20,7 @@ struct SelectTournamentView: View {
             ForEach(shownTournaments, id: \.self) { tournament in
                 NavigationLink(tournament.name ?? "", destination: TournamentGamesView(tournament: tournament))
             }
-            .onDelete(perform: deleteItems)
+//            .onDelete(perform: deleteItems) TODO: Add back??
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(completedTournaments

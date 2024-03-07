@@ -11,21 +11,31 @@ import SwiftUI
 struct TournamentGamesView: View {
     @State private var round: Int16 = 0
     @State private var roundText = "ROUND"
+    @State private var games: [Game] = []
     @State var tournament: Tournament
-    // TODO: Remove
-    @State var game: Game?
     
     var body: some View {
         VStack {
             RoundLabelView(round: $round)
             // TODO: Add color based on game status
-            // TODO: Add in games list
-            //        List {
-            //            ForEach([], id: \.self) { game in
-            //                Text("Game")
-            //            }
-            //        }
-            NavigationLink("Play", destination: PlayGameView(game: game!))
+            // TODO: Add in games list logic
+            List {
+                ForEach(games.filter({ $0.round == round }), id: \.self) { game in
+                    if game.teams?.count == 2 {
+                        let teams = GameHelper.getOrderedTeams(game)
+                        let team1 = teams[0]
+                        let team2 = teams[1]
+                        let text = "\(team1.name) vs \(team2.name)"
+                        if game.completion == false {
+                            NavigationLink(text, destination: PlayGameView(game: game))
+                        } else {
+                            NavigationLink(text, destination: GameScoreView(game: game))
+                        }
+                    } else {
+                        Text("Pending participants")
+                    }
+                }
+            }
             Text("Change Round")
                 .foregroundColor(commonBlue)
                 .font(.title2)
@@ -34,6 +44,7 @@ struct TournamentGamesView: View {
                 Text("")
             }
                 .labelsHidden()
+                .padding([.bottom])
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -47,6 +58,10 @@ struct TournamentGamesView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink("Stats", destination: TournamentStatsView())
             }
+        }
+        .onAppear {
+            // TODO: Improve this logic
+            games = Array(tournament.games!) as! [Game]
         }
         .tag("TournamentGames")
     }
@@ -67,11 +82,8 @@ struct TournamentGamesView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, nil, "Tournament", []) as! [Tournament]
-        let games =
-        TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
-        let game = games[0]
         return NavigationView {
-            TournamentGamesView(tournament: tournaments[0], game: game).environment(\.managedObjectContext, viewContext)
+            TournamentGamesView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

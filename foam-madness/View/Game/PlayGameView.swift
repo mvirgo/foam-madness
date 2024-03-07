@@ -19,16 +19,20 @@ struct PlayGameView: View {
             VStack(spacing: 15) {
                 Text(game.region ?? "").foregroundColor(commonBlue).font(.title).fontWeight(.bold)
                 Text(GameHelper.getRoundString(game.round)).foregroundColor(commonBlue).font(.title2)
-                Text(team1 ?? "").font(.largeTitle)            .minimumScaleFactor(0.5)
+                Text(team1 ?? "")
+                    .font(.largeTitle)
+                    .minimumScaleFactor(0.5)
                 Text("VS")
-                Text(team2 ?? "").font(.largeTitle)            .minimumScaleFactor(0.5)
+                Text(team2 ?? "")
+                    .font(.largeTitle)
+                    .minimumScaleFactor(0.5)
             }
             
-            NavigationLink(destination: ShootModeView(game: game, teams: teams, isSimulated: false )) {
+            NavigationLink(destination: ShootModeView(game: game, isSimulated: false)) {
                 Text("Play Game")
             }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
             
-            NavigationLink(destination: ShootModeView( game: game, teams: teams, isSimulated: true)) {
+            NavigationLink(destination: ShootModeView(game: game, isSimulated: true)) {
                 Text("Sim Game")
             }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
         }

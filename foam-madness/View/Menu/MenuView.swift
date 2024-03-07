@@ -44,6 +44,7 @@ struct MenuView: View {
                         Text("View Live Scores")}.buttonStyle(PrimaryButtonStyle())
                 }
             }
+            .padding([.bottom])
             .font(.system(size: 36))
             .navigationTitle("Menu")
             .navigationBarTitleDisplayMode(.inline)

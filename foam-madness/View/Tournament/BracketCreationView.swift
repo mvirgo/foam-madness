@@ -9,14 +9,31 @@
 import SwiftUI
 
 struct BracketCreationView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    // Passed from previous
+    @State var isSimulated: Bool
+    @State var chosenBracketFile: String
+    
     @State private var showProgress = false
     @State private var progress = 0.0
     @State private var tournamentName = ""
     @State private var rightHanded = true
     @State private var tournamentReady = false
+    @State private var tournament: Tournament!
     
     var createTournament: Void {
-        // TODO: Create the bracket
+        // TODO: Check if name already exists
+        let tournamentOutput = BracketCreationController(context: viewContext)
+            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded)
+        if (isSimulated) {
+            // TODO: Use winner for alert
+            let _ = BracketCreationController(context: viewContext)
+                .simulateTournament(
+                    tournament: tournamentOutput.tournament,
+                    hasFirstFour: tournamentOutput.hasFirstFour
+                )
+        }
+        tournament = tournamentOutput.tournament
         tournamentReady = true
         return
     }
@@ -37,7 +54,7 @@ struct BracketCreationView: View {
                 .font(.title2)
             
             if (tournamentReady) {
-//                NavigationLink("", destination: TournamentGamesView(), isActive: $tournamentReady)
+                NavigationLink("", destination: TournamentGamesView(tournament: tournament), isActive: $tournamentReady)
             } else {
                 Button("Create Tournament", action: { createTournament })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
@@ -54,7 +71,9 @@ struct BracketCreationView: View {
 struct BracketCreationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            BracketCreationView().environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
+            BracketCreationView(
+                isSimulated: true, chosenBracketFile: "mensBracket2023"
+            ).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

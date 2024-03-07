@@ -17,8 +17,15 @@ struct SelectInitialBracketView: View {
     var body: some View {
         List {
             ForEach(brackets.reversed(), id: \.self) { bracket in
-                NavigationLink(destination: BracketCreationView()) {
-                    Text(bracket.first?.value ?? "")}
+                NavigationLink(
+                    destination:
+                        BracketCreationView(
+                            isSimulated: isSimulated,
+                            chosenBracketFile: chosenBracketFile ?? ""
+                        )
+                ) {
+                    Text(bracket.first?.value ?? "")
+                }
                 .buttonStyle(.plain)
             }
         }

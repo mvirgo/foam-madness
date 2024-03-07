@@ -286,11 +286,6 @@ class BracketCreationController {
     }
     
     private func saveData() {
-        // Save the view context
-        do {
-            try context.save()
-        } catch {
-            print("Failed to save.")
-        }
+        SaveHelper.saveData(context, "BracketCreationController")
     }
 }
