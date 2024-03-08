@@ -63,15 +63,6 @@ class TourneyHelper {
             winner.addToGames(nextGame)
         }
         // Make sure to save
-        saveData(viewContext)
-    }
-    
-    class func saveData(_ viewContext: NSManagedObjectContext) {
-        // Save the view context
-        do {
-            try viewContext.save()
-        } catch {
-            print("Failed to save tournament data.")
-        }
+        SaveHelper.saveData(viewContext, "TourneyHelper")
     }
 }

@@ -26,7 +26,7 @@ struct PreviewDataController {
         loadMockData()
     }
     
-    private func makeMockGame() {
+    private func makeMockGame(isComplete: Bool) {
         let context = container.viewContext
         let team1 = Team(context: context)
         let team2 = Team(context: context)
@@ -40,6 +40,23 @@ struct PreviewDataController {
         game.teams = [team1, team2]
         game.team1Id = team1.id
         game.team2Id = team2.id
+        if (isComplete) {
+            game.team1Ones = 1
+            game.team1Twos = 0
+            game.team1Threes = 0
+            game.team1Fours = 0
+            game.team1OTTaken = 0
+            game.team1OTMade = 0
+            game.team1Score = 1
+            game.team2Ones = 0
+            game.team2Twos = 0
+            game.team2Threes = 0
+            game.team2Fours = 0
+            game.team2OTTaken = 0
+            game.team2OTMade = 0
+            game.team2Score = 0
+            game.completion = true
+        }
     }
     
     private func makeMockTournaments() {
@@ -55,7 +72,8 @@ struct PreviewDataController {
     private func loadMockData() {
         // TODO: Add mocks
         let context = container.viewContext
-        makeMockGame()
+        makeMockGame(isComplete: false)
+        makeMockGame(isComplete: true)
         makeMockTournaments()
         do {
             try context.save()

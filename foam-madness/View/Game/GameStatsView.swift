@@ -9,60 +9,21 @@
 import SwiftUI
 
 struct GameStatsView: View {
-    @State var team1: String?
-    @State var team2: String?
-    @State var team1Score = 0
-    @State var team2Score = 0
     @State var game: Game
-    @State var isTournament = false
-    @State var directFromTournament = false
-
+    @State private var hasOvertimeStats = false
+    @State private var statsArrays: [[String]] = [[], []]
+    
     var body: some View {
         VStack {
             HStack(spacing: 5) {
-                VStack {
-                    Text("X").font(.largeTitle).opacity(0)
-                    Text("Hand")
-                    Text("Total FG%")
-                    Text("1 PT%")
-                    Text("2 PT%")
-                    Text("3 PT%")
-                    Text("4 PT%")
-                    // TODO: Conditionally show
-                    Text("OT PTS")
-                    Text("OT FG%")
-                }.font(.title)
+                labels
                 Spacer()
-                VStack {
-                    // TODO: Replace all below w/ game vars
-                    Text(team1 ?? "").font(.largeTitle)
-                    Text("Hand")
-                    Text("Total FG%")
-                    Text("1 PT%")
-                    Text("2 PT%")
-                    Text("3 PT%")
-                    Text("4 PT%")
-                    // TODO: Conditionally show
-                    Text("OT PTS")
-                    Text("OT FG%")
-                }.font(.title)
+                getStatsText(teamIndex: 0)
                 Spacer()
-                VStack {
-                    // TODO: Replace all below w/ game vars
-                    Text(team2 ?? "").font(.largeTitle)
-                    Text("Hand")
-                    Text("Total FG%")
-                    Text("1 PT%")
-                    Text("2 PT%")
-                    Text("3 PT%")
-                    Text("4 PT%")
-                    // TODO: Conditionally show
-                    Text("OT PTS")
-                    Text("OT FG%")
-                }.font(.title)
+                getStatsText(teamIndex: 1)
             }.padding([.leading, .trailing]).font(.title).lineLimit(1)
 
-            if isTournament {
+            if let _ = game.tournament {
                 Button("Back to Games", action: {
                     NavigationUtil.popToViewByTitle(viewTitle: game.tournament?.name ?? "")
                 })
@@ -74,18 +35,56 @@ struct GameStatsView: View {
                 .buttonStyle(PrimaryButtonFullWidthStyle()).padding()
             }
         }
+        .onAppear {
+            getStats()
+        }
+    }
+    
+    var labels: some View {
+        VStack(alignment: .leading) {
+            Text("X").font(.largeTitle).opacity(0)
+            Text("Hand")
+            Text("Points")
+            Text("Total FG%")
+            Text("1 PT%")
+            Text("2 PT%")
+            Text("3 PT%")
+            Text("4 PT%")
+            if hasOvertimeStats {
+                Text("OT PTS")
+                Text("OT FG%")
+            }
+        }.font(.title)
+    }
+    
+    private func getStatsText(teamIndex: Int) -> some View {
+        return VStack {
+            ForEach(0..<statsArrays[teamIndex].count, id: \.self) { i in
+                if i == 0 {
+                    Text(String(statsArrays[teamIndex][i])).font(.largeTitle)
+                } else {
+                    Text(String(statsArrays[teamIndex][i]))
+                }
+            }
+        }.font(.title)
+    }
+    
+    private func getStats() {
+        let stats = GameStatsController().loadStats(game)
+        statsArrays[0] = stats.team1Stats
+        statsArrays[1] = stats.team2Stats
+        hasOvertimeStats = stats.hasOvertimeStats
     }
 }
 
 struct GameStatsView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
-        let games =
-        TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
-        let game = games[0]
+        let predicate = NSPredicate(format: "completion == YES")
+        let games = TourneyHelper.fetchDataFromContext(viewContext, predicate, "Game", []) as! [Game]
 
         return NavigationView {
-            GameStatsView(team1: "KU", team2: "DUKE", team1Score: 80, team2Score: 76, game: game).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
+            GameStatsView(game: games[0]).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

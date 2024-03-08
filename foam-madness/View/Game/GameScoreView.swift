@@ -88,7 +88,8 @@ struct GameScoreView: View {
 struct GameScoreView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
-        let games = TourneyHelper.fetchDataFromContext(viewContext, nil, "Game", []) as! [Game]
+        let predicate = NSPredicate(format: "completion == YES")
+        let games = TourneyHelper.fetchDataFromContext(viewContext, predicate, "Game", []) as! [Game]
         return NavigationView {
             GameScoreView(game: games[0]).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())

@@ -111,7 +111,6 @@ class GameScoreViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Send data controller to GameStatsViewController
         if let vc = segue.destination as? GameStatsViewController {
-            vc.dataController = dataController
             vc.game = game
         }
     }
