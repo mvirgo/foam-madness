@@ -35,21 +35,39 @@ struct LiveGamesView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-        }.navigationTitle("Live Game Scores")
+        }
+        .navigationTitle("Live Game Scores")
+        .onAppear {
+            loadGames()
+        }
+    }
+    
+    private func loadGames() {
+        loading = true
+        APIClient.getScores(url: APIClient.Endpoints.getNCAAMScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getNCAAWScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getNBAScores.url, completion: handleLiveGameScores(response:error:))
+        APIClient.getScores(url: APIClient.Endpoints.getWNBAScores.url, completion: handleLiveGameScores(response:error:))
+    }
+    
+    private func handleLiveGameScores(response: LiveGamesResponse?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+        } else if let response = response {
+            // Add events to liveGames array
+            for (_, var game) in response.events.enumerated() {
+                // Note that there will only be one league in NCAA or (W)NBA APIs
+                // Add game
+                game.league = response.leagues[0].abbreviation
+                liveGames.append(game)
+            }
+        }
+        loading = false
     }
 }
 
 struct LiveGamesView_Previews: PreviewProvider {
     static var previews: some View {
-        var example: Event {
-            let competitor1 = Competitor(team: RealTeam(abbreviation: "Team A"), score: "5")
-            let competitor2 = Competitor(team: RealTeam(abbreviation: "Team B"), score: "3")
-            let competition = Competition(competitors: [competitor1, competitor2])
-            let status = Status(type: Type(shortDetail: "In Progress"))
-            let league = "NCAAM"
-            
-            return Event(league: league, competitions: [competition], status: status)
-        }
-        LiveGamesView(liveGames: [example, example, example, example])
+        LiveGamesView()
     }
 }

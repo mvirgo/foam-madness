@@ -44,7 +44,6 @@ struct MenuView: View {
                         Text("View Live Scores")}.buttonStyle(PrimaryButtonStyle())
                 }
             }
-            .padding([.bottom])
             .font(.system(size: 36))
             .navigationTitle("Menu")
             .navigationBarTitleDisplayMode(.inline)
@@ -55,7 +54,8 @@ struct MenuView: View {
                 ToolbarItem(placement: .topBarTrailing) { NavigationLink("About", destination: AboutView()).font(.system(size: 24))
                 }
             }
-            .minimumScaleFactor(0.5)
+            .minimumScaleFactor(0.8)
+            .padding([.bottom], 40)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
