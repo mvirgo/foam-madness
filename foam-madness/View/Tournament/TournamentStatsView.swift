@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MessageUI
 
 let titleText = ["Total", "Left Hand", "Right Hand"]
 
@@ -107,8 +108,18 @@ struct TournamentStatsView: View {
     }
     
     private func exportTournament() {
-        // TODO: Implement
-        print("Would export here.")
+        // Export all games in the tournament to JSON
+        var exportGames = [String: [String: String]]()
+        for game in tournament.games! {
+            let singleGame = GameHelper.createGameExportData(game as! Game)
+            let key = singleGame.keys.first!
+            exportGames[key] = singleGame[key]
+        }
+        let mailer = MailHandler()
+        mailer.sendTournamentStatsEmail(
+            tournamentName: tournament.name ?? "",
+            exportGames: exportGames
+        )
     }
 }
 

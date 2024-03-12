@@ -71,6 +71,7 @@
 		D1A67BE629BD48E200E1D55B /* foam_madness_bracket_file_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */; };
 		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
 		D1A67BEF29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */; };
+		D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */; };
 		D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */; };
 		D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
@@ -166,6 +167,7 @@
 		D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_bracket_file_tests.swift; sourceTree = "<group>"; };
 		D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_probability_file_test.swift; sourceTree = "<group>"; };
 		D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_teams_file_test.swift; sourceTree = "<group>"; };
+		D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
 		D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsController.swift; sourceTree = "<group>"; };
 		D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationController.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				D14C59E627DECEC0001378F1 /* brackets */,
 				7A2ECEFC242EDED20065E369 /* Controller */,
+				D1A8B19C2B9FD87E00354C9F /* Mail */,
 				7A2ECEFA242EDEB00065E369 /* Model */,
 				D1386BDA2B9292DA006C676C /* Navigation */,
 				7A2ECEFB242EDEBF0065E369 /* View */,
@@ -426,6 +429,14 @@
 			path = "foam-madness-tests";
 			sourceTree = "<group>";
 		};
+		D1A8B19C2B9FD87E00354C9F /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
 		D1D4F9C12B97E471004B9C18 /* NewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +578,7 @@
 				7AEFD66025146629007BB16B /* AboutViewController.swift in Sources */,
 				7A10A5F3243838D80070302F /* TournamentGamesViewController.swift in Sources */,
 				D15865762B574D61009E486A /* AboutView.swift in Sources */,
+				D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */,
 				D15865922B5751CE009E486A /* TournamentStatsView.swift in Sources */,
 				D158657C2B574FB9009E486A /* SelectTeamsView.swift in Sources */,
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
