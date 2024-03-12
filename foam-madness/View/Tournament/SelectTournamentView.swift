@@ -20,7 +20,7 @@ struct SelectTournamentView: View {
             ForEach(shownTournaments, id: \.self) { tournament in
                 NavigationLink(tournament.name ?? "", destination: TournamentGamesView(tournament: tournament))
             }
-//            .onDelete(perform: deleteItems) TODO: Add back??
+            .onDelete(perform: deleteItems)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(completedTournaments
@@ -39,7 +39,6 @@ struct SelectTournamentView: View {
     }
     
     private func deleteItems(offsets: IndexSet) {
-        // TODO: Test this works in real case
         withAnimation {
             offsets.map { tournaments[$0] }.forEach(viewContext.delete)
             do {

@@ -16,23 +16,25 @@ struct TournamentGamesView: View {
     
     var body: some View {
         VStack {
-            RoundLabelView(round: $round)
-            // TODO: Add color based on game status
-            // TODO: Add in games list logic
+            Text(GameHelper.getRoundString(round))
+                .foregroundColor(commonBlue)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+
             List {
-                ForEach(games.filter({ $0.round == round }), id: \.self) { game in
+                ForEach(games.filter({ $0.round == round }), id: \.id) { game in
                     if game.teams?.count == 2 {
-                        let teams = GameHelper.getOrderedTeams(game)
-                        let team1 = teams[0]
-                        let team2 = teams[1]
-                        let text = "\(team1.name) vs \(team2.name)"
+                        let text = getGameText(game: game)
                         if game.completion == false {
                             NavigationLink(text, destination: PlayGameView(game: game))
                         } else {
                             NavigationLink(text, destination: GameScoreView(game: game))
+                                .background(Color.green.opacity(
+                                    game.isSimulated ? 0.2 : 0.3
+                                ))
                         }
                     } else {
-                        Text("Pending participants")
+                        Text("Pending participants").listRowBackground(Color.gray)
                     }
                 }
             }
@@ -60,21 +62,41 @@ struct TournamentGamesView: View {
             }
         }
         .onAppear {
-            // TODO: Improve this logic
-            games = Array(tournament.games!) as! [Game]
+            getSortedGames()
         }
         .tag("TournamentGames")
     }
-}
-
-struct RoundLabelView: View {
-    @Binding var round: Int16
-
-    var body: some View {
-        Text(GameHelper.getRoundString(round))
-            .foregroundColor(commonBlue)
-            .font(.largeTitle)
-            .fontWeight(.bold)
+    
+    func getGameText(game: Game) -> String {
+        let teams = GameHelper.getOrderedTeams(game)
+        let team1 = teams[0]
+        let team2 = teams[1]
+        var gameText = ""
+        if game.completion { // game over, show score
+            // Make sure winner is shown first
+            if game.team1Score > game.team2Score {
+                gameText = "\(game.team1Seed) \(team1.name!):  \(game.team1Score), \(game.team2Seed) \(team2.name!):  \(game.team2Score)"
+            } else {
+                gameText = "\(game.team2Seed) \(team2.name!):  \(game.team2Score), \(game.team1Seed) \(team1.name!):  \(game.team1Score)"
+            }
+            // Add OT note, if applicable
+            if game.team1OTTaken > 0 {
+                gameText += " - OT"
+            }
+            // Add simulated note, if applicable
+            if game.isSimulated {
+                gameText += " (Sim)"
+            }
+        } else { // Game is ready to play
+            gameText = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
+        }
+        
+        return gameText
+    }
+    
+    func getSortedGames() {
+        games = Array(tournament.games!) as! [Game]
+        games = games.sorted() { $0.tourneyGameId < $1.tourneyGameId }
     }
 }
 
