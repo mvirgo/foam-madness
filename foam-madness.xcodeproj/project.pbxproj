@@ -72,6 +72,7 @@
 		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
 		D1A67BEF29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */; };
 		D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */; };
+		D1A8B1A02B9FF03100354C9F /* TournamentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8B19F2B9FF03100354C9F /* TournamentGameCell.swift */; };
 		D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */; };
 		D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
@@ -168,6 +169,7 @@
 		D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_probability_file_test.swift; sourceTree = "<group>"; };
 		D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_teams_file_test.swift; sourceTree = "<group>"; };
 		D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
+		D1A8B19F2B9FF03100354C9F /* TournamentGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGameCell.swift; sourceTree = "<group>"; };
 		D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsController.swift; sourceTree = "<group>"; };
 		D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationController.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			children = (
 				D15865872B575176009E486A /* SelectInitialBracketView.swift */,
 				D15865892B575185009E486A /* BracketCreationView.swift */,
+				D1A8B19F2B9FF03100354C9F /* TournamentGameCell.swift */,
 				D158658B2B575197009E486A /* TournamentGamesView.swift */,
 				D158658F2B5751BE009E486A /* SelectTournamentView.swift */,
 				D15865912B5751CE009E486A /* TournamentStatsView.swift */,
@@ -594,6 +597,7 @@
 				7ACBCB37250EC73900EBA5B1 /* APIClient.swift in Sources */,
 				7A771E5D250DA571009FE9EA /* LiveGameCollectionViewController.swift in Sources */,
 				D15865732B574D4D009E486A /* MenuView.swift in Sources */,
+				D1A8B1A02B9FF03100354C9F /* TournamentGameCell.swift in Sources */,
 				D15865902B5751BE009E486A /* SelectTournamentView.swift in Sources */,
 				7A86CDE6243432F600315752 /* SelectScreenViewController.swift in Sources */,
 				D15865782B574F58009E486A /* LiveGamesView.swift in Sources */,

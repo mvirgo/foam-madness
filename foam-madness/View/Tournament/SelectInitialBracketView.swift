@@ -21,7 +21,7 @@ struct SelectInitialBracketView: View {
                     destination:
                         BracketCreationView(
                             isSimulated: isSimulated,
-                            chosenBracketFile: chosenBracketFile ?? ""
+                            chosenBracketFile: bracket.first?.key ?? ""
                         )
                 ) {
                     Text(bracket.first?.value ?? "")

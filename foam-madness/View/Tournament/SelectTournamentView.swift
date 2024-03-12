@@ -17,7 +17,7 @@ struct SelectTournamentView: View {
 
     var body: some View {
         List {
-            ForEach(shownTournaments, id: \.self) { tournament in
+            ForEach(shownTournaments, id: \.id) { tournament in
                 NavigationLink(tournament.name ?? "", destination: TournamentGamesView(tournament: tournament))
             }
             .onDelete(perform: deleteItems)
@@ -40,9 +40,10 @@ struct SelectTournamentView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { tournaments[$0] }.forEach(viewContext.delete)
+            offsets.map { shownTournaments[$0] }.forEach(viewContext.delete)
             do {
                 try viewContext.save()
+                shownTournaments.remove(atOffsets: offsets)
             } catch {
                 print("Failed to save on tournament deletion.")
             }

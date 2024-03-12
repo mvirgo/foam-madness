@@ -65,4 +65,31 @@ class TourneyHelper {
         // Make sure to save
         SaveHelper.saveData(viewContext, "TourneyHelper")
     }
+    
+    static func getTourneyGameText(game: Game) -> String {
+        let teams = GameHelper.getOrderedTeams(game)
+        let team1 = teams[0]
+        let team2 = teams[1]
+        var gameText = ""
+        if game.completion { // game over, show score
+            // Make sure winner is shown first
+            if game.team1Score > game.team2Score {
+                gameText = "\(game.team1Seed) \(team1.name!):  \(game.team1Score), \(game.team2Seed) \(team2.name!):  \(game.team2Score)"
+            } else {
+                gameText = "\(game.team2Seed) \(team2.name!):  \(game.team2Score), \(game.team1Seed) \(team1.name!):  \(game.team1Score)"
+            }
+            // Add OT note, if applicable
+            if game.team1OTTaken > 0 {
+                gameText += " - OT"
+            }
+            // Add simulated note, if applicable
+            if game.isSimulated {
+                gameText += " (Sim)"
+            }
+        } else { // Game is ready to play
+            gameText = "\(game.team1Seed) \(team1.name!) vs. \(game.team2Seed) \(team2.name!)"
+        }
+        
+        return gameText
+    }
 }
