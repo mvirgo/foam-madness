@@ -6,6 +6,7 @@
 //  Copyright © 2020 mvirgo. All rights reserved.
 //
 
+import CoreData
 import Foundation
 
 class GameHelper {
@@ -32,6 +33,10 @@ class GameHelper {
             out = "Sweet Sixteen"
         case 4:
             out = "Elite Eight"
+        case 5:
+            out = "Final Four"
+        case 6:
+            out = "Championship"
         default:
             out = ""
         }
@@ -55,7 +60,7 @@ class GameHelper {
         return [team1, team2]
     }
     
-    static func completeGame(_ dataController: DataController, _ game: Game,
+    static func completeGame(_ viewContext: NSManagedObjectContext, _ game: Game,
                              _ team1: Team, _ team2: Team) -> Team {
         // Set game to complete
         game.completion = true
@@ -71,7 +76,7 @@ class GameHelper {
         }
         // Add the next tourney game, if applicable
         if let tournament = game.tournament {
-            TourneyHelper.addNextGame(dataController, tournament, game, winner, winningSeed)
+            TourneyHelper.addNextGame(viewContext, tournament, game, winner, winningSeed)
         }
         
         return winner;
@@ -113,5 +118,29 @@ class GameHelper {
         }
         
         return [String(game.tourneyGameId): singleGame]
+    }
+    
+    static func prepareSingleGame(
+        _ team1Name: String,
+        _ team2Name: String,
+        _ reverseTeamDict: [String: [String: String]],
+        _ context: NSManagedObjectContext
+    ) -> Game {
+        // Create a game
+        let game = Game(context: context)
+        // Hide the region and round from Play Game view
+        game.region = ""
+        game.round = -1
+        // Lookup or create teams
+        let team1 = TeamHelper.lookupOrCreateTeam(teamName: team1Name, reverseTeamDict: reverseTeamDict, context: context)
+        let team2 = TeamHelper.lookupOrCreateTeam(teamName: team2Name, reverseTeamDict: reverseTeamDict, context: context)
+        // Add team ids to game to ensure proper order of score/stats
+        game.team1Id = team1.id
+        game.team2Id = team2.id
+        // Add teams to game
+        team1.addToGames(game)
+        team2.addToGames(game)
+        
+        return game
     }
 }

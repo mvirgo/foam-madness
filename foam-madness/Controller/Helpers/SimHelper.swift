@@ -9,8 +9,7 @@
 import Foundation
 
 class SimHelper {
-    static func simSingleGame(_ dataController: DataController, _ game: Game,
-                              _ team1: Team, _ team2: Team) {
+    static func simSingleGame(_ game: Game, _ team1: Team, _ team2: Team) {
         // Get the game's probability (historical win rate for better seed)
         var gameProbability = ProbabilityHelper.getGameProbability(game)
         // Adjust the probability to be up to 1000
