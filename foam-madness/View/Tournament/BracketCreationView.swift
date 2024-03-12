@@ -20,23 +20,6 @@ struct BracketCreationView: View {
     @State private var rightHanded = true
     @State private var tournamentReady = false
     @State private var tournament: Tournament!
-    
-    var createTournament: Void {
-        // TODO: Check if name already exists
-        let tournamentOutput = BracketCreationController(context: viewContext)
-            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded)
-        if (isSimulated) {
-            // TODO: Use winner for alert
-            let _ = BracketCreationController(context: viewContext)
-                .simulateTournament(
-                    tournament: tournamentOutput.tournament,
-                    hasFirstFour: tournamentOutput.hasFirstFour
-                )
-        }
-        tournament = tournamentOutput.tournament
-        tournamentReady = true
-        return
-    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -56,7 +39,7 @@ struct BracketCreationView: View {
             if (tournamentReady) {
                 NavigationLink("", destination: TournamentGamesView(tournament: tournament), isActive: $tournamentReady)
             } else {
-                Button("Create Tournament", action: { createTournament })
+                Button("Create Tournament", action: { createTournament() })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
             }
             
@@ -66,13 +49,71 @@ struct BracketCreationView: View {
         }
         .padding()
     }
+    
+    private func createTournament() {
+        if !isValidName() {
+            return
+        }
+        let tournamentOutput = BracketCreationController(context: viewContext)
+            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded)
+        tournament = tournamentOutput.tournament
+        if (isSimulated) {
+            let winner = BracketCreationController(context: viewContext)
+                .simulateTournament(
+                    tournament: tournamentOutput.tournament,
+                    hasFirstFour: tournamentOutput.hasFirstFour
+                )
+            // Notify user of winner
+            let title = "Tournament Complete"
+            let message = "\(winner) wins the tournament! (Sim)"
+            alertUser(title: title, message: message, true)
+        } else {
+            tournamentReady = true
+        }
+    }
+    
+    private func isValidName() -> Bool {
+        if tournamentName != "" {
+            if isSimulated {
+                tournamentName += " (Sim)"
+            }
+            if BracketCreationController(context: viewContext).checkExistingNames(tournamentName) {
+                // New tourney name
+                return true
+            } else {
+                // Tell user to find a new name
+                alertUser(title: "Invalid Name", message: "Tournament name already taken.", false)
+                return false
+            }
+        } else {
+            // Tell user to input a name
+            alertUser(title: "Invalid Name", message: "Tournament name cannot be blank.", false)
+            return false
+        }
+    }
+    
+    private func alertUser(title: String, message: String, _ endTournament: Bool) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if endTournament {
+            // Segue to table view of all playable games when done
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                tournamentReady = true
+            }))
+        } else {
+            // Come back to view after
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }
+        
+        let viewController = UIApplication.shared.windows.first!.rootViewController!
+        viewController.present(alertVC, animated: true, completion: nil)
+    }
 }
 
 struct BracketCreationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             BracketCreationView(
-                isSimulated: true, chosenBracketFile: "mensBracket2023"
+                isSimulated: false, chosenBracketFile: "mensBracket2023"
             ).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
