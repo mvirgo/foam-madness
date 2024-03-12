@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         dataController.load()
         // Set data controller to initial selection screen
-        let navController = window?.rootViewController as! UINavigationController
-        let selectScreenViewController = navController.topViewController as! SelectScreenViewController
-        selectScreenViewController.dataController = dataController
+        let menuView = MenuView().environment(\.managedObjectContext, dataController.viewContext)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UIHostingController(rootView: menuView)
+        window?.makeKeyAndVisible()
         
         return true
     }
