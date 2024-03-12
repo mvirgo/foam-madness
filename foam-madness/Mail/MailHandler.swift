@@ -9,6 +9,8 @@
 import MessageUI
 
 class MailHandler: NSObject, MFMailComposeViewControllerDelegate {
+    static let shared = MailHandler()
+    
     func sendTournamentStatsEmail(tournamentName: String, exportGames: [String: [String: String]]) {
         // Export all games in the tournament to JSON
         // Thanks https://stackoverflow.com/questions/28325268/convert-array-to-json-string-in-swift
@@ -19,7 +21,7 @@ class MailHandler: NSObject, MFMailComposeViewControllerDelegate {
             if MFMailComposeViewController.canSendMail() {
                 let viewController = UIApplication.shared.windows.first!.rootViewController!
                 let composeVC = MFMailComposeViewController()
-                composeVC.mailComposeDelegate = self
+                composeVC.mailComposeDelegate = MailHandler.shared
                 
                 // Configure the fields of the interface.
                 composeVC.addAttachmentData(jsonExport, mimeType: "application/json", fileName: "\(tournamentName)-export.json")
@@ -46,6 +48,6 @@ class MailHandler: NSObject, MFMailComposeViewControllerDelegate {
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
+        controller.dismiss(animated: true)
     }
 }

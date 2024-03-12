@@ -115,8 +115,7 @@ struct TournamentStatsView: View {
             let key = singleGame.keys.first!
             exportGames[key] = singleGame[key]
         }
-        let mailer = MailHandler()
-        mailer.sendTournamentStatsEmail(
+        MailHandler.shared.sendTournamentStatsEmail(
             tournamentName: tournament.name ?? "",
             exportGames: exportGames
         )
