@@ -32,14 +32,16 @@ struct BracketCreationView: View {
                 .font(.title2)
                 .border(Color(UIColor.secondarySystemBackground))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Toggle("\(rightHanded ? "Right" : "Left")-Hand Dominant", isOn: $rightHanded)
-                .toggleStyle(SwitchToggleStyle(tint: commonBlue))
-                .font(.title2)
+            if (!isSimulated) {
+                Toggle("\(rightHanded ? "Right" : "Left")-Hand Dominant", isOn: $rightHanded)
+                    .toggleStyle(SwitchToggleStyle(tint: commonBlue))
+                    .font(.title2)
+            }
             
             if (tournamentReady) {
                 NavigationLink("", destination: TournamentGamesView(tournament: tournament), isActive: $tournamentReady)
             } else {
-                Button("Create Tournament", action: { createTournament() })
+                Button("\(isSimulated ? "Sim" : "Create") Tournament", action: { createTournament() })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
             }
             

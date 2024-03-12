@@ -32,16 +32,18 @@ struct PlayGameView: View {
                 Text("Play Game")
             }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
             
-            NavigationLink(destination: ShootModeView(game: game, isSimulated: true)) {
-                Text("Sim Game")
-            }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
+            if let _ = game.tournament {
+                NavigationLink(destination: ShootModeView(game: game, isSimulated: true)) {
+                    Text("Sim Game")
+                }.buttonStyle(PrimaryButtonFullWidthStyle()).padding()
+            }
         }
         .onAppear {
             setTeamNames()
         }
     }
     
-    func setTeamNames() {
+    private func setTeamNames() {
         let gameTeams = game.teams?.allObjects as! [Team]
         // Ensure proper order of teams
         if gameTeams[0].id == game.team1Id {

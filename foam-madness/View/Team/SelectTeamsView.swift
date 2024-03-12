@@ -65,9 +65,21 @@ struct SelectTeamsView: View {
         }
     }
     
-    func createGame() -> Void {
+    private func createGame() -> Void {
+        if $team1.wrappedValue == $team2.wrappedValue {
+            alertUser(title: "Invalid Teams", message: "Selected teams must be different.")
+            return
+        }
         createdGame = GameHelper.prepareSingleGame(team1!, team2!, reverseTeamDict, viewContext)
         progressToGame = true
+    }
+    
+    private func alertUser(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let viewController = UIApplication.shared.windows.first!.rootViewController!
+        viewController.present(alertVC, animated: true, completion: nil)
     }
 }
 

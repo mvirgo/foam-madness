@@ -255,7 +255,10 @@
 		7A2ECEFC242EDED20065E369 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1D4F9C12B97E471004B9C18 /* NewControllers */,
+				D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */,
+				D199087A2B996D6200A57746 /* ShootModeController.swift */,
+				D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */,
+				D158B32C2B9A96720002D2F6 /* GameStatsController.swift */,
 				7A771E59250D9B81009FE9EA /* Live Games */,
 				7A2ECEE8242EDE920065E369 /* AppDelegate.swift */,
 				7A2D2E3C262E78A000AB5935 /* Helpers */,
@@ -399,17 +402,6 @@
 				D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */,
 			);
 			path = Mail;
-			sourceTree = "<group>";
-		};
-		D1D4F9C12B97E471004B9C18 /* NewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */,
-				D199087A2B996D6200A57746 /* ShootModeController.swift */,
-				D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */,
-				D158B32C2B9A96720002D2F6 /* GameStatsController.swift */,
-			);
-			path = NewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
