@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TournamentGamesView: View {
     @State private var initialRound: Int16 = 0
+    @State private var finalRound: Int16 = 6
     @State private var roundStepper: Int16 = 0
     @State private var roundText = "ROUND"
     @State private var games: [Game] = []
@@ -31,7 +32,7 @@ struct TournamentGamesView: View {
                 .foregroundColor(commonBlue)
                 .font(.title2)
                 .fontWeight(.bold)
-            Stepper(value: $roundStepper, in: initialRound...6) {
+            Stepper(value: $roundStepper, in: initialRound...finalRound) {
                 Text("")
             }
                 .labelsHidden()
@@ -62,11 +63,10 @@ struct TournamentGamesView: View {
         let gamesArray = Array(tournament.games!) as! [Game]
         games = gamesArray.sorted() { $0.tourneyGameId < $1.tourneyGameId }
         
-        if games.filter({ $0.round == 0}).count == 0 {
-            // skip first four
-            initialRound = 1
-            roundStepper = 1
-        }
+        let minRound = games.min(by: { $0.round < $1.round })?.round ?? 0
+        finalRound = games.max(by: { $0.round < $1.round })?.round ?? 6
+        initialRound = minRound
+        roundStepper = minRound
     }
 }
 
