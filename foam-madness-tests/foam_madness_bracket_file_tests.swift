@@ -7,11 +7,12 @@
 //
 
 import XCTest
+@testable import foam_madness
 
 final class foam_madness_bracket_file_tests: XCTestCase {
     let bracketIndexFile = "bracketIndex"
     
-    var brackets: [Dictionary<String, String>] = []
+    var brackets: [BracketItem] = []
     var currentBracketName: String = ""
     var hasFirstFour = false
     var regions = [String: [String: Int16]]()
@@ -24,13 +25,12 @@ final class foam_madness_bracket_file_tests: XCTestCase {
     
     func loadBrackets() {
         // Load the bracket index
-        let path = Bundle.main.path(forResource: bracketIndexFile, ofType: "plist")!
-        brackets = NSArray(contentsOfFile: path) as! [Dictionary<String, String>]
+        brackets = BracketHelper.loadBrackets()
     }
     
-    func loadSingleBracket(bracket: Dictionary<String, String>) {
-        currentBracketName = bracket.first!.value;
-        let bracketLocation = bracket.first!.key;
+    func loadSingleBracket(bracket: BracketItem) {
+        currentBracketName = bracket.name
+        let bracketLocation = bracket.file
         // Load the given bracket
         let bracketPath = Bundle.main.path(forResource: bracketLocation, ofType: "plist")!
         let bracketDict = NSDictionary(contentsOfFile: bracketPath)!

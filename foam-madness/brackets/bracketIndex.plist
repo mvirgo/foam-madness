@@ -3,76 +3,184 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>mensBracket2015</key>
+		<key>File</key>
+		<string>mensBracket2015</string>
+		<key>Name</key>
 		<string>2015 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2015</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2015</key>
+		<key>File</key>
+		<string>womensBracket2015</string>
+		<key>Name</key>
 		<string>2015 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2015</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2016</key>
+		<key>File</key>
+		<string>mensBracket2016</string>
+		<key>Name</key>
 		<string>2016 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2016</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2016</key>
+		<key>File</key>
+		<string>womensBracket2016</string>
+		<key>Name</key>
 		<string>2016 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2016</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2017</key>
+		<key>File</key>
+		<string>mensBracket2017</string>
+		<key>Name</key>
 		<string>2017 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2017</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2017</key>
+		<key>File</key>
+		<string>womensBracket2017</string>
+		<key>Name</key>
 		<string>2017 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2017</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2018</key>
+		<key>File</key>
+		<string>mensBracket2018</string>
+		<key>Name</key>
 		<string>2018 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2018</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2018</key>
+		<key>File</key>
+		<string>womensBracket2018</string>
+		<key>Name</key>
 		<string>2018 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2018</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2019</key>
+		<key>File</key>
+		<string>mensBracket2019</string>
+		<key>Name</key>
 		<string>2019 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2019</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2019</key>
+		<key>File</key>
+		<string>womensBracket2019</string>
+		<key>Name</key>
 		<string>2019 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2019</integer>
 	</dict>
 	<dict>
-		<key>bracketology2020</key>
+		<key>File</key>
+		<string>bracketology2020</string>
+		<key>Name</key>
 		<string>2020 Joe Lunardi&apos;s Bracketology</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2020</integer>
 	</dict>
 	<dict>
-		<key>womensBracketology2020</key>
-		<string>2020 Womens - Charlie Creme&apos;s Bracketology</string>
+		<key>File</key>
+		<string>womensBracketology2020</string>
+		<key>Name</key>
+		<string>2020 Women&apos;s - Charlie Creme&apos;s Bracketology</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2020</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2021</key>
+		<key>File</key>
+		<string>mensBracket2021</string>
+		<key>Name</key>
 		<string>2021 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2021</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2021</key>
+		<key>File</key>
+		<string>womensBracket2021</string>
+		<key>Name</key>
 		<string>2021 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2021</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2022</key>
+		<key>File</key>
+		<string>mensBracket2022</string>
+		<key>Name</key>
 		<string>2022 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2022</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2022</key>
+		<key>File</key>
+		<string>womensBracket2022</string>
+		<key>Name</key>
 		<string>2022 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2022</integer>
 	</dict>
 	<dict>
-		<key>mensBracket2023</key>
+		<key>File</key>
+		<string>mensBracket2023</string>
+		<key>Name</key>
 		<string>2023 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2023</integer>
 	</dict>
 	<dict>
-		<key>womensBracket2023</key>
+		<key>File</key>
+		<string>womensBracket2023</string>
+		<key>Name</key>
 		<string>2023 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2023</integer>
 	</dict>
 </array>
 </plist>
