@@ -2,6 +2,104 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>364</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UT</string>
+		<key>name</key>
+		<string>Utah Tech</string>
+	</dict>
+	<key>363</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UST</string>
+		<key>name</key>
+		<string>St. Thomas (Minnesota)</string>
+	</dict>
+	<key>362</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>USI</string>
+		<key>name</key>
+		<string>Southern Indiana</string>
+	</dict>
+	<key>361</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UNA</string>
+		<key>name</key>
+		<string>North Alabama</string>
+	</dict>
+	<key>360</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>UCSD</string>
+		<key>name</key>
+		<string>UC San Diego</string>
+	</dict>
+	<key>359</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TAMC</string>
+		<key>name</key>
+		<string>Texas A&amp;M - Commerce</string>
+	</dict>
+	<key>358</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>TSU</string>
+		<key>name</key>
+		<string>Tarleton</string>
+	</dict>
+	<key>357</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>SC</string>
+		<key>name</key>
+		<string>Stonehill</string>
+	</dict>
+	<key>356</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>QUC</string>
+		<key>name</key>
+		<string>Queens - Charlotte</string>
+	</dict>
+	<key>355</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>MERR</string>
+		<key>name</key>
+		<string>Merrimack</string>
+	</dict>
+	<key>354</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LU</string>
+		<key>name</key>
+		<string>Lindenwood</string>
+	</dict>
+	<key>353</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>LMC</string>
+		<key>name</key>
+		<string>Le Moyne College</string>
+	</dict>
+	<key>352</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>CBU</string>
+		<key>name</key>
+		<string>California Baptist</string>
+	</dict>
+	<key>351</key>
+	<dict>
+		<key>abbreviation</key>
+		<string>BELL</string>
+		<key>name</key>
+		<string>Bellarmine</string>
+	</dict>
 	<key>0</key>
 	<dict>
 		<key>abbreviation</key>
