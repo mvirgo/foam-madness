@@ -36,6 +36,7 @@ struct ShootModeView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
                 Text(shotType ?? "").font(.title)
                 Text(hand ?? "").font(.title2)
             }

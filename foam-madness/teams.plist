@@ -161,7 +161,7 @@
 		<key>abbreviation</key>
 		<string>COBA</string>
 		<key>name</key>
-		<string>Columbia-Barnard</string>
+		<string>Columbia - Barnard</string>
 	</dict>
 	<key>106</key>
 	<dict>
@@ -245,21 +245,21 @@
 		<key>abbreviation</key>
 		<string>EIU</string>
 		<key>name</key>
-		<string>E Illinois</string>
+		<string>Eastern Illinois</string>
 	</dict>
 	<key>117</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>EKU</string>
 		<key>name</key>
-		<string>E Kentucky</string>
+		<string>Eastern Kentucky</string>
 	</dict>
 	<key>118</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>EMU</string>
 		<key>name</key>
-		<string>E Michigan</string>
+		<string>Eastern Michigan</string>
 	</dict>
 	<key>119</key>
 	<dict>
@@ -315,7 +315,7 @@
 		<key>abbreviation</key>
 		<string>FIU</string>
 		<key>name</key>
-		<string>Florida Intl</string>
+		<string>Florida International</string>
 	</dict>
 	<key>126</key>
 	<dict>
@@ -432,9 +432,9 @@
 	<key>140</key>
 	<dict>
 		<key>abbreviation</key>
-		<string>HBU</string>
+		<string>HCU</string>
 		<key>name</key>
-		<string>Houston Baptist</string>
+		<string>Houston Christian</string>
 	</dict>
 	<key>141</key>
 	<dict>
@@ -504,7 +504,7 @@
 		<key>abbreviation</key>
 		<string>NDSU</string>
 		<key>name</key>
-		<string>N Dakota St</string>
+		<string>North Dakota St</string>
 	</dict>
 	<key>150</key>
 	<dict>
@@ -623,14 +623,14 @@
 		<key>abbreviation</key>
 		<string>LUC</string>
 		<key>name</key>
-		<string>Loyola-Chicago</string>
+		<string>Loyola - Chicago</string>
 	</dict>
 	<key>166</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>LUM</string>
 		<key>name</key>
-		<string>Loyola-Maryland</string>
+		<string>Loyola - Maryland</string>
 	</dict>
 	<key>167</key>
 	<dict>
@@ -679,14 +679,14 @@
 		<key>abbreviation</key>
 		<string>MIA-OH</string>
 		<key>name</key>
-		<string>Miami-Ohio</string>
+		<string>Miami - Ohio</string>
 	</dict>
 	<key>173</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>MTSU</string>
 		<key>name</key>
-		<string>Mid Tennessee St</string>
+		<string>Middle Tennessee St</string>
 	</dict>
 	<key>174</key>
 	<dict>
@@ -826,7 +826,7 @@
 		<key>abbreviation</key>
 		<string>NSU</string>
 		<key>name</key>
-		<string>Northwestern St</string>
+		<string>Northwestern St (Louisiana)</string>
 	</dict>
 	<key>192</key>
 	<dict>
@@ -931,7 +931,7 @@
 		<key>abbreviation</key>
 		<string>IPFW</string>
 		<key>name</key>
-		<string>Purdue-Ft Wayne</string>
+		<string>Purdue - Fort Wayne</string>
 	</dict>
 	<key>205</key>
 	<dict>
@@ -980,28 +980,28 @@
 		<key>abbreviation</key>
 		<string>SFU</string>
 		<key>name</key>
-		<string>St Francis-Penn</string>
+		<string>Saint Francis - Penn</string>
 	</dict>
 	<key>211</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SJU</string>
 		<key>name</key>
-		<string>St Joseph&apos;s</string>
+		<string>Saint Joseph&apos;s</string>
 	</dict>
 	<key>212</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SLU</string>
 		<key>name</key>
-		<string>St Louis</string>
+		<string>Saint Louis</string>
 	</dict>
 	<key>213</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SPU</string>
 		<key>name</key>
-		<string>St Peter&apos;s</string>
+		<string>Saint Peter&apos;s</string>
 	</dict>
 	<key>214</key>
 	<dict>
@@ -1071,42 +1071,42 @@
 		<key>abbreviation</key>
 		<string>SEMO</string>
 		<key>name</key>
-		<string>SE Missouri St</string>
+		<string>Southeast Missouri St</string>
 	</dict>
 	<key>223</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SELA</string>
 		<key>name</key>
-		<string>SE Louisiana</string>
+		<string>Southeastern Louisiana</string>
 	</dict>
 	<key>224</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SIUC</string>
 		<key>name</key>
-		<string>S Illinois-Carbondale</string>
+		<string>Southern Illinois Carbondale</string>
 	</dict>
 	<key>225</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SIUE</string>
 		<key>name</key>
-		<string>S Illinois-Edwardsville</string>
+		<string>Southern Illinois Edwardsville</string>
 	</dict>
 	<key>226</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SMU</string>
 		<key>name</key>
-		<string>Southern Methodist</string>
+		<string>Southern Methodist (SMU)</string>
 	</dict>
 	<key>227</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SUBR</string>
 		<key>name</key>
-		<string>Southern-Baton Rouge</string>
+		<string>Southern - Baton Rouge</string>
 	</dict>
 	<key>228</key>
 	<dict>
@@ -1134,14 +1134,14 @@
 		<key>abbreviation</key>
 		<string>SFC</string>
 		<key>name</key>
-		<string>St. Francis-Brooklyn</string>
+		<string>St. Francis College-Brooklyn</string>
 	</dict>
 	<key>231</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>SJU</string>
 		<key>name</key>
-		<string>St. John’s-NY</string>
+		<string>St. John’s - New York</string>
 	</dict>
 	<key>232</key>
 	<dict>
@@ -1162,7 +1162,7 @@
 		<key>abbreviation</key>
 		<string>STON</string>
 		<key>name</key>
-		<string>Stony Brook</string>
+		<string>SUNY Stony Brook</string>
 	</dict>
 	<key>235</key>
 	<dict>
@@ -1211,14 +1211,14 @@
 		<key>abbreviation</key>
 		<string>TAMCC</string>
 		<key>name</key>
-		<string>Texas A&amp;M-Corpus Christi</string>
+		<string>Texas A&amp;M - Corpus Christi</string>
 	</dict>
 	<key>241</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>TCU</string>
 		<key>name</key>
-		<string>Texas Christian</string>
+		<string>Texas Christian (TCU)</string>
 	</dict>
 	<key>242</key>
 	<dict>
@@ -1246,28 +1246,28 @@
 		<key>abbreviation</key>
 		<string>UNCC</string>
 		<key>name</key>
-		<string>N Carolina-Charlotte</string>
+		<string>North Carolina - Charlotte</string>
 	</dict>
 	<key>246</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>UNCG</string>
 		<key>name</key>
-		<string>N Carolina-Greensboro</string>
+		<string>North Carolina - Greensboro</string>
 	</dict>
 	<key>247</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>USM</string>
 		<key>name</key>
-		<string>Southern Miss</string>
+		<string>Southern Mississippi</string>
 	</dict>
 	<key>248</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>URTGV</string>
 		<key>name</key>
-		<string>Texas-Rio Grande</string>
+		<string>Texas - Rio Grande</string>
 	</dict>
 	<key>249</key>
 	<dict>
@@ -1379,7 +1379,7 @@
 		<key>abbreviation</key>
 		<string>CAL</string>
 		<key>name</key>
-		<string>California</string>
+		<string>California (Berkeley)</string>
 	</dict>
 	<key>263</key>
 	<dict>
@@ -1421,7 +1421,7 @@
 		<key>abbreviation</key>
 		<string>UCONN</string>
 		<key>name</key>
-		<string>Connecticut</string>
+		<string>Connecticut (UCONN)</string>
 	</dict>
 	<key>269</key>
 	<dict>
@@ -1526,14 +1526,14 @@
 		<key>abbreviation</key>
 		<string>UMES</string>
 		<key>name</key>
-		<string>Maryland-E Shore</string>
+		<string>Maryland-Eastern Shore</string>
 	</dict>
 	<key>282</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>UMBC</string>
 		<key>name</key>
-		<string>Maryland-BC</string>
+		<string>Maryland-Baltimore County</string>
 	</dict>
 	<key>283</key>
 	<dict>
@@ -1624,7 +1624,7 @@
 		<key>abbreviation</key>
 		<string>UNLV</string>
 		<key>name</key>
-		<string>Nevada-Las Vegas</string>
+		<string>Nevada-Las Vegas (UNLV)</string>
 	</dict>
 	<key>295</key>
 	<dict>
@@ -1785,7 +1785,7 @@
 		<key>abbreviation</key>
 		<string>USCU</string>
 		<key>name</key>
-		<string>S Carolina-Upstate</string>
+		<string>South Carolina-Upstate</string>
 	</dict>
 	<key>315</key>
 	<dict>
@@ -1904,7 +1904,7 @@
 		<key>abbreviation</key>
 		<string>FSU</string>
 		<key>name</key>
-		<string>Florida St</string>
+		<string>Florida State</string>
 	</dict>
 	<key>330</key>
 	<dict>
@@ -1946,14 +1946,14 @@
 		<key>abbreviation</key>
 		<string>VCU</string>
 		<key>name</key>
-		<string>VCU</string>
+		<string>Virginia Commonwealth (VCU)</string>
 	</dict>
 	<key>336</key>
 	<dict>
 		<key>abbreviation</key>
 		<string>VMI</string>
 		<key>name</key>
-		<string>Virginia Military</string>
+		<string>Virginia Military (VMI)</string>
 	</dict>
 	<key>337</key>
 	<dict>
@@ -1981,7 +1981,7 @@
 		<key>abbreviation</key>
 		<string>NKU</string>
 		<key>name</key>
-		<string>N Kentucky</string>
+		<string>Northern Kentucky</string>
 	</dict>
 	<key>340</key>
 	<dict>
@@ -2086,7 +2086,7 @@
 		<key>abbreviation</key>
 		<string>LSU</string>
 		<key>name</key>
-		<string>LSU</string>
+		<string>LSU (Louisiana State)</string>
 	</dict>
 	<key>39</key>
 	<dict>
@@ -2156,7 +2156,7 @@
 		<key>abbreviation</key>
 		<string>EWU</string>
 		<key>name</key>
-		<string>E Washington</string>
+		<string>Eastern Washington</string>
 	</dict>
 	<key>48</key>
 	<dict>
@@ -2184,7 +2184,7 @@
 		<key>abbreviation</key>
 		<string>SDSU</string>
 		<key>name</key>
-		<string>San Diego St</string>
+		<string>San Diego State</string>
 	</dict>
 	<key>51</key>
 	<dict>
@@ -2212,7 +2212,7 @@
 		<key>abbreviation</key>
 		<string>STM</string>
 		<key>name</key>
-		<string>St Mary’s</string>
+		<string>Saint Mary’s</string>
 	</dict>
 	<key>55</key>
 	<dict>
@@ -2226,7 +2226,7 @@
 		<key>abbreviation</key>
 		<string>OSU</string>
 		<key>name</key>
-		<string>Ohio St</string>
+		<string>Ohio State</string>
 	</dict>
 	<key>57</key>
 	<dict>
@@ -2296,7 +2296,7 @@
 		<key>abbreviation</key>
 		<string>USC</string>
 		<key>name</key>
-		<string>Southern California</string>
+		<string>Southern California (USC)</string>
 	</dict>
 	<key>66</key>
 	<dict>
@@ -2310,7 +2310,7 @@
 		<key>abbreviation</key>
 		<string>UALR</string>
 		<key>name</key>
-		<string>Little Rock</string>
+		<string>Arkansas - Little Rock</string>
 	</dict>
 	<key>68</key>
 	<dict>
@@ -2331,7 +2331,7 @@
 		<key>abbreviation</key>
 		<string>UNT</string>
 		<key>name</key>
-		<string>N Texas</string>
+		<string>North Texas</string>
 	</dict>
 	<key>70</key>
 	<dict>
@@ -2352,7 +2352,7 @@
 		<key>abbreviation</key>
 		<string>AMER</string>
 		<key>name</key>
-		<string>American Univ</string>
+		<string>American University</string>
 	</dict>
 	<key>73</key>
 	<dict>
@@ -2380,7 +2380,7 @@
 		<key>abbreviation</key>
 		<string>BALL</string>
 		<key>name</key>
-		<string>Ball St</string>
+		<string>Ball State</string>
 	</dict>
 	<key>77</key>
 	<dict>
@@ -2394,7 +2394,7 @@
 		<key>abbreviation</key>
 		<string>SUNYB</string>
 		<key>name</key>
-		<string>Binghamton</string>
+		<string>SUNY Binghamton</string>
 	</dict>
 	<key>79</key>
 	<dict>
@@ -2485,7 +2485,7 @@
 		<key>abbreviation</key>
 		<string>ETST</string>
 		<key>name</key>
-		<string>E Tennessee St</string>
+		<string>East Tennessee St</string>
 	</dict>
 	<key>90</key>
 	<dict>
@@ -2513,7 +2513,7 @@
 		<key>abbreviation</key>
 		<string>CCSU</string>
 		<key>name</key>
-		<string>C Connecticut St</string>
+		<string>Central Connecticut St</string>
 	</dict>
 	<key>94</key>
 	<dict>
