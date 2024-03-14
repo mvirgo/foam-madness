@@ -127,7 +127,7 @@ struct SelectInitialBracketView: View {
 struct SelectInitialBracketView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SelectInitialBracketView(isSimulated: false).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext).preferredColorScheme(.dark)
+            SelectInitialBracketView(isSimulated: false).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

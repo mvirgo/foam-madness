@@ -50,6 +50,8 @@
 		D15865922B5751CE009E486A /* TournamentStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15865912B5751CE009E486A /* TournamentStatsView.swift */; };
 		D15865952B575ECE009E486A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15865942B575ECE009E486A /* PrimaryButtonStyle.swift */; };
 		D158B32D2B9A96720002D2F6 /* GameStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D158B32C2B9A96720002D2F6 /* GameStatsController.swift */; };
+		D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FF6002BA140DA00149D63 /* SearchTeamView.swift */; };
+		D17FF6052BA1454900149D63 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FF6042BA1454900149D63 /* SearchBar.swift */; };
 		D18D756E29BEA5AC00DE609B /* mensBracket2023.plist in Resources */ = {isa = PBXBuildFile; fileRef = D18D756D29BEA5AC00DE609B /* mensBracket2023.plist */; };
 		D18D757029BEA5B500DE609B /* womensBracket2023.plist in Resources */ = {isa = PBXBuildFile; fileRef = D18D756F29BEA5B500DE609B /* womensBracket2023.plist */; };
 		D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199087A2B996D6200A57746 /* ShootModeController.swift */; };
@@ -133,6 +135,8 @@
 		D15865912B5751CE009E486A /* TournamentStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsView.swift; sourceTree = "<group>"; };
 		D15865942B575ECE009E486A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		D158B32C2B9A96720002D2F6 /* GameStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsController.swift; sourceTree = "<group>"; };
+		D17FF6002BA140DA00149D63 /* SearchTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamView.swift; sourceTree = "<group>"; };
+		D17FF6042BA1454900149D63 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D18D756D29BEA5AC00DE609B /* mensBracket2023.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2023.plist; sourceTree = "<group>"; };
 		D18D756F29BEA5B500DE609B /* womensBracket2023.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2023.plist; sourceTree = "<group>"; };
 		D199087A2B996D6200A57746 /* ShootModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootModeController.swift; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				D158657B2B574FB9009E486A /* SelectTeamsView.swift */,
+				D17FF6002BA140DA00149D63 /* SearchTeamView.swift */,
+				D17FF6042BA1454900149D63 /* SearchBar.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 				D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */,
 				D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */,
 				D15865802B5750F9009E486A /* ShootModeView.swift in Sources */,
+				D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */,
 				D158657A2B574F94009E486A /* LiveGamesCell.swift in Sources */,
 				7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */,
 				D15865882B575176009E486A /* SelectInitialBracketView.swift in Sources */,
@@ -564,6 +571,7 @@
 				D15865952B575ECE009E486A /* PrimaryButtonStyle.swift in Sources */,
 				7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */,
 				D158658C2B575197009E486A /* TournamentGamesView.swift in Sources */,
+				D17FF6052BA1454900149D63 /* SearchBar.swift in Sources */,
 				7A2D2E3F262E7FBE00AB5935 /* SimHelper.swift in Sources */,
 				D15865822B57510D009E486A /* GameScoreView.swift in Sources */,
 			);

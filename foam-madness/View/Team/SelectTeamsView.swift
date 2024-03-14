@@ -15,8 +15,10 @@ struct SelectTeamsView: View {
     @State private var teams: [String] = []
     @State private var reverseTeamDict: [String: [String: String]] = [:]
 
-    @State private var team1: String?
-    @State private var team2: String?
+    @State private var team1: String = ""
+    @State private var team2: String = ""
+    @State private var showButton1 = false
+    @State private var showButton2 = false
     
     @State private var progressToGame = false
     @State private var createdGame: Game?
@@ -25,52 +27,39 @@ struct SelectTeamsView: View {
         VStack {
             Text("Select Teams").foregroundColor(commonBlue).font(.largeTitle).fontWeight(.bold)
             
-            VStack {
-                VStack {
-                    Text("Team 1").font(.title2).fontWeight(.bold)
-                    Picker("First Picker", selection: $team1) {
-                        ForEach(teams, id: \.self) { team in
-                            Text(team).tag(String?.some(team))
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                }
-                
-                VStack {
-                    Text("Team 2").font(.title2).fontWeight(.bold)
-                    Picker("Second Picker", selection: $team2) {
-                        ForEach(teams, id: \.self) { team in
-                            Text(team).tag(String?.some(team))
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                }
-            }.padding([.top, .bottom])
+            VStack() {
+                SearchTeamView(teamName: $team1, showParentButton: $showButton1, label: "Team 1", teams: teams)
+                SearchTeamView(teamName: $team2, showParentButton: $showButton2, label: "Team 2", teams: teams)
+            }
             
-            if (progressToGame) {
-                NavigationLink("", destination: PlayGameView(game: createdGame!), isActive: $progressToGame)
-            } else {
-                Button("Continue") {
-                    createGame()
+            if (showButton1 && showButton2) {
+                if (progressToGame) {
+                    NavigationLink("", destination: PlayGameView(game: createdGame!), isActive: $progressToGame)
+                } else {
+                    Button("Continue") {
+                        createGame()
+                    }
+                    .buttonStyle(PrimaryButtonFullWidthStyle())
+                    .padding()
                 }
-                .buttonStyle(PrimaryButtonFullWidthStyle())
-                .padding()
             }
         }
         .onAppear {
             teams = loadedTeams.teams
             reverseTeamDict = loadedTeams.reverseTeamDict
-            team1 = teams[0]
-            team2 = teams[0]
         }
     }
     
     private func createGame() -> Void {
+        if team1.isEmpty || team2.isEmpty {
+            alertUser(title: "Please Select Teams", message: "Both teams need to be selected.")
+            return
+        }
         if $team1.wrappedValue == $team2.wrappedValue {
             alertUser(title: "Invalid Teams", message: "Selected teams must be different.")
             return
         }
-        createdGame = GameHelper.prepareSingleGame(team1!, team2!, reverseTeamDict, viewContext)
+        createdGame = GameHelper.prepareSingleGame(team1, team2, reverseTeamDict, viewContext)
         progressToGame = true
     }
     
