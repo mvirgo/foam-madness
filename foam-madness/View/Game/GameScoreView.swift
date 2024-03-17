@@ -24,6 +24,7 @@ struct GameScoreView: View {
                     Text(team1Name)
                         .font(.largeTitle)
                         .minimumScaleFactor(0.5)
+                        .lineLimit(1)
                     Spacer()
                     Text(team1Score).font(.largeTitle)
                 }
@@ -31,6 +32,7 @@ struct GameScoreView: View {
                     Text(team2Name)
                         .font(.largeTitle)
                         .minimumScaleFactor(0.5)
+                        .lineLimit(1)
                     Spacer()
                     Text(team2Score).font(.largeTitle)
                 }
