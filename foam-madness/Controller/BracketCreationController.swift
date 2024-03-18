@@ -30,13 +30,18 @@ class BracketCreationController {
     }
     
     // MARK: Public methods
-    func createBracket(bracketLocation: String, tournamentName: String, isSimulated: Bool, useLeft: Bool) -> TournamentOutput {
+    func createBracket(bracketLocation: String, tournamentName: String, isSimulated: Bool, useLeft: Bool, shotsPerRound: Int) -> TournamentOutput {
         // Load the bracket
         let loadedBracket = loadBracket(bracketLocation: bracketLocation)
         // Create any teams that aren't created yet
         createAnyNewTeams()
         // Create the tournament
-        let tournament = createTournamentObject(tournamentName: tournamentName, isSimulated: isSimulated, isWomens: loadedBracket.isWomens)
+        let tournament = createTournamentObject(
+            tournamentName: tournamentName,
+            isSimulated: isSimulated,
+            isWomens: loadedBracket.isWomens,
+            shotsPerRound: shotsPerRound
+        )
         // Create all games and add to tourney
         createTournamentGames(loadedBracket: loadedBracket, tournament: tournament, useLeft: useLeft)
         
@@ -135,13 +140,14 @@ class BracketCreationController {
         }
     }
     
-    private func createTournamentObject(tournamentName: String, isSimulated: Bool, isWomens: Bool) -> Tournament {
+    private func createTournamentObject(tournamentName: String, isSimulated: Bool, isWomens: Bool, shotsPerRound: Int) -> Tournament {
         // Create the tournament
         let tournament = Tournament(context: context)
         tournament.name = tournamentName
         tournament.createdDate = Date()
         tournament.isWomens = isWomens
         tournament.isSimulated = isSimulated
+        tournament.shotsPerRound = Int16(shotsPerRound)
         // Make sure it is saved
         saveData()
         
@@ -180,6 +186,7 @@ class BracketCreationController {
             game.region = gameInfo["Region"]
             game.useLeft = useLeft
             game.isWomens = isWomens
+            game.shotsPerRound = tournament.shotsPerRound
             // Add both team ids and seeds
             game.team1Seed = Int16(gameInfo["Seed"]!)!
             game.team2Seed = Int16(gameInfo["Seed"]!)!
@@ -214,6 +221,7 @@ class BracketCreationController {
                 game.region = region
                 game.useLeft = useLeft
                 game.isWomens = isWomens
+                game.shotsPerRound = tournament.shotsPerRound
                 game.team1Seed = Int16(i)
                 game.team2Seed = Int16(17-i)
                 // Team 2 may not actually exist yet due to First Four
@@ -252,6 +260,7 @@ class BracketCreationController {
                         game.region = region
                         game.useLeft = useLeft
                         game.isWomens = isWomens
+                        game.shotsPerRound = tournament.shotsPerRound
                         // Set tourney game id and next game
                         game.tourneyGameId = Int16(gameId)
                         game.nextGame = Int16((gameId / 2) + 34)
@@ -268,6 +277,7 @@ class BracketCreationController {
                     game.round = Int16(i)
                     game.useLeft = useLeft
                     game.isWomens = isWomens
+                    game.shotsPerRound = tournament.shotsPerRound
                     if i == 5 {
                         game.region = "Final Four"
                         game.tourneyGameId = Int16(63 + j)

@@ -18,8 +18,10 @@ struct ShootModeView: View {
     @State private var currentTeam: String?
     @State private var shotType: String?
     @State private var hand: String?
-    @State private var grid: [[Bool]] = Array(repeating: Array(repeating: false, count: 5), count: 2)
+    @State private var grid: [[Bool]]
     @State private var madeShots: Int16 = 0
+    let maxShotsPerRow: Int = 5 // hard-coded bball images per row
+    var numColsArray: [Int]
 
     // MARK: Other variables
     @State private var teamFlag = true // True = Team 1 shooting, False = Team 2 shooting
@@ -27,47 +29,78 @@ struct ShootModeView: View {
     @State private var isFinished = false
     @State private var scoreMultiplier: Int16 = 1 // Increment by 1 per shot type
     @State private var shootModeController: ShootModeController!
-    let overtimeShots: Int16 = 10 // hard-coded number of shots per OT
+    let shotsPerRound: Int16
+    
+    init(game: Game, isSimulated: Bool) {
+        self.game = game
+        self.isSimulated = isSimulated
+        self.shotsPerRound = game.shotsPerRound
+        
+        // Prepare the grid
+        numColsArray = []
+        var remainingShots = Int(shotsPerRound)
+        while remainingShots > 0 {
+            if (remainingShots > maxShotsPerRow) {
+                numColsArray.append(maxShotsPerRow)
+                remainingShots -= maxShotsPerRow
+            } else {
+                numColsArray.append(remainingShots)
+                remainingShots = 0
+            }
+        }
+        
+        grid = Array(
+            repeating: Array(repeating: false, count: maxShotsPerRow),
+            count: numColsArray.count
+        )
+    }
 
     var body: some View {
-        VStack {
-            VStack(spacing: 10) {
-                Text(currentTeam ?? "")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.center)
-                Text(shotType ?? "").font(.title)
-                Text(hand ?? "").font(.title2)
-            }
-            
+        GeometryReader { geometry in
             VStack {
-                ForEach(0..<2) { row in
-                    HStack {
-                        ForEach(0..<5) { column in
-                            Button(action: {
-                                grid[row][column].toggle()
-                                madeShots += grid[row][column] ? 1 : -1
-                            }) {
-                                let num = column + (5 * row) + 1
-                                ZStack {
-                                    Image(grid[row][column] ? "basketball" : "basketball-gray")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                    Text("\(num)").foregroundColor(.primary).fontWeight(.bold).font(.system(size: getBasketballFontSize()))
+                VStack(spacing: 10) {
+                    Text(currentTeam ?? "")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .minimumScaleFactor(0.5)
+                        .multilineTextAlignment(.center)
+                    Text(shotType ?? "").font(.title)
+                    Text(hand ?? "").font(.title2)
+                }
+                
+                VStack {
+                    ForEach(0..<numColsArray.count, id: \.self) { row in
+                        HStack {
+                            ForEach(0..<numColsArray[row], id: \.self) { column in
+                                Button(action: {
+                                    grid[row][column].toggle()
+                                    madeShots += grid[row][column] ? 1 : -1
+                                }) {
+                                    let num = column + (5 * row) + 1
+                                    ZStack {
+                                        Image(grid[row][column] ? "basketball" : "basketball-gray")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                        Text("\(num)").foregroundColor(.primary).fontWeight(.bold).font(.system(size: getBasketballFontSize()))
+                                    }
+                                    .frame(maxWidth: geometry.size.width * 0.18)
                                 }
                             }
                         }
                     }
                 }
+                
+                Button("Finished", action: { finishedButtonPressed() })
+                    .buttonStyle(PrimaryButtonFullWidthStyle()).padding()
+                NavigationLink(
+                    "",
+                    destination: GameScoreView(game: game),
+                    isActive: $isFinished
+                )
             }
-            
-            Button("Finished", action: { finishedButtonPressed() })
-                .buttonStyle(PrimaryButtonFullWidthStyle()).padding()
-            NavigationLink(
-                "",
-                destination: GameScoreView(game: game),
-                isActive: $isFinished
+            .frame(
+                width: geometry.frame(in: .global).width,
+                height: geometry.frame(in: .global).height
             )
         }
         .onAppear {
@@ -201,11 +234,11 @@ struct ShootModeView: View {
         if teamFlag {
             game.team1Score += madeShots
             game.team1OTMade += madeShots
-            game.team1OTTaken += overtimeShots
+            game.team1OTTaken += shotsPerRound
         } else {
             game.team2Score += madeShots
             game.team2OTMade += madeShots
-            game.team2OTTaken += overtimeShots
+            game.team2OTTaken += shotsPerRound
             if !shootModeController.overtimeCheck(game) { // End the game if no longer tied
                 saveData()
                 completeGame()

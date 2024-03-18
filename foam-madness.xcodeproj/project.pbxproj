@@ -62,6 +62,7 @@
 		D1A67BEF29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */; };
 		D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */; };
 		D1A8B1A02B9FF03100354C9F /* TournamentGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8B19F2B9FF03100354C9F /* TournamentGameCell.swift */; };
+		D1BF49392BA805AA00A00669 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF49382BA805AA00A00669 /* AppConstants.swift */; };
 		D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */; };
 		D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */; };
 		D1E16E1128334BB0007280EC /* bracketIndex.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E16E1028334BB0007280EC /* bracketIndex.plist */; };
@@ -148,6 +149,8 @@
 		D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_teams_file_test.swift; sourceTree = "<group>"; };
 		D1A8B19D2B9FD8A500354C9F /* MailHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHandler.swift; sourceTree = "<group>"; };
 		D1A8B19F2B9FF03100354C9F /* TournamentGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGameCell.swift; sourceTree = "<group>"; };
+		D1BF49372BA7FFC100A00669 /* foam-madness-v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "foam-madness-v4.xcdatamodel"; sourceTree = "<group>"; };
+		D1BF49382BA805AA00A00669 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D1C757A02B9A62C500817E1A /* TournamentStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatsController.swift; sourceTree = "<group>"; };
 		D1D4F9C22B97E4D0004B9C18 /* BracketCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketCreationController.swift; sourceTree = "<group>"; };
 		D1E16E1028334BB0007280EC /* bracketIndex.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bracketIndex.plist; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 				D158B32C2B9A96720002D2F6 /* GameStatsController.swift */,
 				7A2ECEE8242EDE920065E369 /* AppDelegate.swift */,
 				7A2D2E3C262E78A000AB5935 /* Helpers */,
+				D1BF49382BA805AA00A00669 /* AppConstants.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,6 +542,7 @@
 				D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */,
 				D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */,
 				D15865802B5750F9009E486A /* ShootModeView.swift in Sources */,
+				D1BF49392BA805AA00A00669 /* AppConstants.swift in Sources */,
 				D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */,
 				D158657A2B574F94009E486A /* LiveGamesCell.swift in Sources */,
 				7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */,
@@ -849,11 +854,12 @@
 		7A494BC1243041C20042173A /* foam-madness.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D1BF49372BA7FFC100A00669 /* foam-madness-v4.xcdatamodel */,
 				7ABF40392456A55600A18B3F /* foam-madness-v3.xcdatamodel */,
 				7A73579E243ED4A800691B26 /* foam-madness-v2.xcdatamodel */,
 				7A494BC2243041C20042173A /* foam-madness.xcdatamodel */,
 			);
-			currentVersion = 7ABF40392456A55600A18B3F /* foam-madness-v3.xcdatamodel */;
+			currentVersion = D1BF49372BA7FFC100A00669 /* foam-madness-v4.xcdatamodel */;
 			path = "foam-madness.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

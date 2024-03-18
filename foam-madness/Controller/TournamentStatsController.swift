@@ -159,7 +159,7 @@ class TournamentStatsController {
         leftOTTaken += Int(game.team2OTTaken)
     }
     
-    private func setTotalStatsArray(_ games: [Game]) {
+    private func setTotalStatsArray(_ games: [Game], _ shotsPerRound: Int) {
         totalStatsArray[0] = games.count // Total games
         totalStatsArray[1] = totalUpsets // Total upsets
         // Note: 2 and 3 are skipped - only relate to hands
@@ -169,16 +169,16 @@ class TournamentStatsController {
         let totalRightMade = rightOnesMade + rightTwosMade + rightThreesMade + rightFoursMade + rightOTMade
         let totalTaken = (games.count * 2 * 40) + leftOTTaken + rightOTTaken
         totalStatsArray[5] = Int((Float(totalLeftMade + totalRightMade) / Float(totalTaken)) * 100) // Total FG%
-        totalStatsArray[6] = Int((Float(leftOnesMade + rightOnesMade) / Float(games.count * 2 * 10)) * 100) // 1pt%
-        totalStatsArray[7] = Int((Float(leftTwosMade + rightTwosMade) / Float(games.count * 2 * 10)) * 100) // 2pt%
-        totalStatsArray[8] = Int((Float(leftThreesMade + rightThreesMade) / Float(games.count * 2 * 10)) * 100) // 3pt%
-        totalStatsArray[9] = Int((Float(leftFoursMade + rightFoursMade) / Float(games.count * 2 * 10)) * 100) // 4pt%
+        totalStatsArray[6] = Int((Float(leftOnesMade + rightOnesMade) / Float(games.count * 2 * shotsPerRound)) * 100) // 1pt%
+        totalStatsArray[7] = Int((Float(leftTwosMade + rightTwosMade) / Float(games.count * 2 * shotsPerRound)) * 100) // 2pt%
+        totalStatsArray[8] = Int((Float(leftThreesMade + rightThreesMade) / Float(games.count * 2 * shotsPerRound)) * 100) // 3pt%
+        totalStatsArray[9] = Int((Float(leftFoursMade + rightFoursMade) / Float(games.count * 2 * shotsPerRound)) * 100) // 4pt%
         if leftOTTaken + rightOTTaken > 0 { // avoid division by zero
             totalStatsArray[10] = Int((Float(leftOTMade + rightOTMade) / Float(leftOTTaken + rightOTTaken)) * 100) // OT%
         }
     }
     
-    private func setLeftStatsArray() {
+    private func setLeftStatsArray(_ shotsPerRound: Int) {
         let leftGames = leftVsRight + (2 * leftVsLeft)
         if leftGames == 0 {return} // No need to calculate
         leftStatsArray[0] = leftVsRight // Games vs. Opposite
@@ -192,16 +192,16 @@ class TournamentStatsController {
         let totalLeftMade = leftOnesMade + leftTwosMade + leftThreesMade + leftFoursMade + leftOTMade
         let totalTaken = (leftGames * 40) + leftOTTaken
         leftStatsArray[5] = Int((Float(totalLeftMade) / Float(totalTaken)) * 100) // Total FG%
-        leftStatsArray[6] = Int((Float(leftOnesMade) / Float(leftGames * 10)) * 100) // 1pt%
-        leftStatsArray[7] = Int((Float(leftTwosMade) / Float(leftGames * 10)) * 100) // 2pt%
-        leftStatsArray[8] = Int((Float(leftThreesMade) / Float(leftGames * 10)) * 100) // 3pt%
-        leftStatsArray[9] = Int((Float(leftFoursMade) / Float(leftGames * 10)) * 100) // 4pt%
+        leftStatsArray[6] = Int((Float(leftOnesMade) / Float(leftGames * shotsPerRound)) * 100) // 1pt%
+        leftStatsArray[7] = Int((Float(leftTwosMade) / Float(leftGames * shotsPerRound)) * 100) // 2pt%
+        leftStatsArray[8] = Int((Float(leftThreesMade) / Float(leftGames * shotsPerRound)) * 100) // 3pt%
+        leftStatsArray[9] = Int((Float(leftFoursMade) / Float(leftGames * shotsPerRound)) * 100) // 4pt%
         if leftOTTaken > 0 { // avoid division by zero
             leftStatsArray[10] = Int((Float(leftOTMade) / Float(leftOTTaken)) * 100) // OT%
         }
     }
     
-    private func setRightStatsArray() {
+    private func setRightStatsArray(_ shotsPerRound: Int) {
         let rightGames = leftVsRight + (2 * rightVsRight)
         if rightGames == 0 {return} // No need to calculate
         rightStatsArray[0] = leftVsRight // Games vs. Opposite
@@ -215,19 +215,20 @@ class TournamentStatsController {
         let totalRightMade = rightOnesMade + rightTwosMade + rightThreesMade + rightFoursMade + rightOTMade
         let totalTaken = (rightGames * 40) + rightOTTaken
         rightStatsArray[5] = Int((Float(totalRightMade) / Float(totalTaken)) * 100) // Total FG%
-        rightStatsArray[6] = Int((Float(rightOnesMade) / Float(rightGames * 10)) * 100) // 1pt%
-        rightStatsArray[7] = Int((Float(rightTwosMade) / Float(rightGames * 10)) * 100) // 2pt%
-        rightStatsArray[8] = Int((Float(rightThreesMade) / Float(rightGames * 10)) * 100) // 3pt%
-        rightStatsArray[9] = Int((Float(rightFoursMade) / Float(rightGames * 10)) * 100) // 4pt%
+        rightStatsArray[6] = Int((Float(rightOnesMade) / Float(rightGames * shotsPerRound)) * 100) // 1pt%
+        rightStatsArray[7] = Int((Float(rightTwosMade) / Float(rightGames * shotsPerRound)) * 100) // 2pt%
+        rightStatsArray[8] = Int((Float(rightThreesMade) / Float(rightGames * shotsPerRound)) * 100) // 3pt%
+        rightStatsArray[9] = Int((Float(rightFoursMade) / Float(rightGames * shotsPerRound)) * 100) // 4pt%
         if rightOTTaken > 0 { // avoid division by zero
             rightStatsArray[10] = Int((Float(rightOTMade) / Float(rightOTTaken)) * 100) // OT%
         }
     }
     
     private func setStatsArrays(_ games: [Game]) {
+        let shotsPerRound = Int(games[0].shotsPerRound)
         // Set all three stats arrays
-        setTotalStatsArray(games)
-        setLeftStatsArray()
-        setRightStatsArray()
+        setTotalStatsArray(games, shotsPerRound)
+        setLeftStatsArray(shotsPerRound)
+        setRightStatsArray(shotsPerRound)
     }
 }

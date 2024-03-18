@@ -31,13 +31,13 @@ class GameStatsController {
             game.team1Twos,
             game.team1Threes,
             game.team1Fours
-        ])
+        ], game.shotsPerRound)
         team2Stats += calcFGPercent([
             game.team2Ones,
             game.team2Twos,
             game.team2Threes,
             game.team2Fours
-        ])
+        ], game.shotsPerRound)
 
         
         // Add overtime stats if necessary, or else hide
@@ -51,19 +51,18 @@ class GameStatsController {
         return GameStatsArrays(team1Stats: team1Stats, team2Stats: team2Stats, hasOvertimeStats: hasOvertimeStats)
     }
     
-    private func calcFGPercent(_ shotCounts: [Int16]) -> [String] {
+    private func calcFGPercent(_ shotCounts: [Int16], _ shotsPerRound: Int16) -> [String] {
         var out: [String] = []
-        let shots: Int16 = 10 // hard-coded number of shots per round
         var totalMade: Int16 = 0 // counter for total FG%
         
         // Loop through shotCounts and calculate related FG%
         for shotType in shotCounts {
             totalMade += shotType
-            out.append(shotPercentageString(shotsMade: shotType, shotsTaken: shots))
+            out.append(shotPercentageString(shotsMade: shotType, shotsTaken: shotsPerRound))
         }
         
         // Add total FG% at start of out array
-        out = [shotPercentageString(shotsMade: totalMade, shotsTaken: (shots * 4))] + out
+        out = [shotPercentageString(shotsMade: totalMade, shotsTaken: (shotsPerRound * 4))] + out
         
         return out
     }

@@ -16,6 +16,7 @@ struct BracketCreationView: View {
     
     @State private var showProgress = false
     @State private var progress = 0.0
+    @State private var shotsPerRound = AppConstants.defaultShotsPerRound
     @State private var tournamentName = ""
     @State private var rightHanded = true
     @State private var tournamentReady = false
@@ -36,6 +37,11 @@ struct BracketCreationView: View {
                 Toggle("\(rightHanded ? "Right" : "Left")-Hand Dominant", isOn: $rightHanded)
                     .toggleStyle(SwitchToggleStyle(tint: commonBlue))
                     .font(.title2)
+                Stepper("Shots per round: \(shotsPerRound)", value: $shotsPerRound, in: 3...15)
+                    .font(.title2)
+                Text("Shots per round controls how many 1 point, 2 point, etc., shot attempts per team each game.")
+                    .font(.callout)
+                    .foregroundColor(.secondary)
             }
             
             if (tournamentReady) {
@@ -57,7 +63,7 @@ struct BracketCreationView: View {
             return
         }
         let tournamentOutput = BracketCreationController(context: viewContext)
-            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded)
+            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
         tournament = tournamentOutput.tournament
         if (isSimulated) {
             let winner = BracketCreationController(context: viewContext)

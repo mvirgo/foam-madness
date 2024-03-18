@@ -123,11 +123,13 @@ class GameHelper {
     static func prepareSingleGame(
         _ team1Name: String,
         _ team2Name: String,
+        _ shotsPerRound: Int,
         _ reverseTeamDict: [String: [String: String]],
         _ context: NSManagedObjectContext
     ) -> Game {
         // Create a game
         let game = Game(context: context)
+        game.shotsPerRound = Int16(shotsPerRound)
         // Hide the region and round from Play Game view
         game.region = ""
         game.round = -1
