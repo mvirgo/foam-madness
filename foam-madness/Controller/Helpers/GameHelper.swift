@@ -26,9 +26,9 @@ class GameHelper {
         case 0:
             out = "First Four"
         case 1:
-            out = "First Round"
+            out = "Round of 64"
         case 2:
-            out = "Second Round"
+            out = "Round of 32"
         case 3:
             out = "Sweet Sixteen"
         case 4:

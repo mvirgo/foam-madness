@@ -22,11 +22,13 @@ struct PlayGameView: View {
                 Text(team1 ?? "")
                     .font(.largeTitle)
                     .minimumScaleFactor(0.5)
+                    .multilineTextAlignment(.center)
                 Text("VS")
                 Text(team2 ?? "")
                     .font(.largeTitle)
                     .minimumScaleFactor(0.5)
-            }
+                    .multilineTextAlignment(.center)
+            }.padding([.leading, .trailing])
             
             NavigationLink(destination: ShootModeView(game: game, isSimulated: false)) {
                 Text("Play Game")

@@ -16,6 +16,7 @@ struct LiveGamesCell: View {
             VStack {
                 let teams = game.competitions[0].competitors
                 Text(game.league)
+                    .padding(2)
                 HStack() {
                     Text(teams[0].team.abbreviation)
                     Spacer()
@@ -27,6 +28,9 @@ struct LiveGamesCell: View {
                     Text(teams[1].score)
                 }.padding([.leading, .trailing])
                 Text(game.status.type.shortDetail).lineLimit(1)
+                    .padding(2)
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
             }.minimumScaleFactor(0.5)
         )
     }
