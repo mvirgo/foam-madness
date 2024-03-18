@@ -131,9 +131,9 @@
 	<key>101</key>
 	<dict>
 		<key>abbreviation</key>
-		<string>CSUSC</string>
+		<string>COFC</string>
 		<key>name</key>
-		<string>Charleston S.C.</string>
+		<string>College of Charleston</string>
 	</dict>
 	<key>102</key>
 	<dict>
@@ -1351,7 +1351,7 @@
 		<key>abbreviation</key>
 		<string>UAB</string>
 		<key>name</key>
-		<string>Alabama-Birmingham</string>
+		<string>Alabama-Birmingham (UAB)</string>
 	</dict>
 	<key>26</key>
 	<dict>
@@ -1575,7 +1575,7 @@
 		<key>abbreviation</key>
 		<string>MISS</string>
 		<key>name</key>
-		<string>Mississippi</string>
+		<string>Mississippi (Ole Miss)</string>
 	</dict>
 	<key>289</key>
 	<dict>
