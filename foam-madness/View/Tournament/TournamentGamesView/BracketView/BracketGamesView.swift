@@ -21,10 +21,7 @@ struct BracketGamesView: View {
     
     let gridPadding = 10.0
     let baseBracketSpacing: CGFloat = 20.0
-
-    // TODO: Store bracket vs list view
-    // TODO: Store last viewed region (or ""), and use
-    // TODO: Store last viewed round (or 0), and use in other view
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack {
@@ -110,10 +107,23 @@ struct BracketGamesView: View {
             }
         }
         .onAppear {
-            getRegions()
-            // TODO: Use a stored region?
-            getSortedGames(region: regions[0])
+            setupView()
         }
+        .onDisappear {
+            tournament.lastRegionViewed = chosenRegion
+        }
+    }
+    
+    private func setupView() {
+        getRegions()
+        let lastRegionViewed = tournament.lastRegionViewed
+        if lastRegionViewed == "" {
+            chosenRegion = regions[0]
+            tournament.lastRegionViewed = regions[0]
+        } else {
+            chosenRegion = lastRegionViewed ?? regions[0]
+        }
+        getSortedGames(region: chosenRegion)
     }
     
     private func getRegions() {
@@ -135,13 +145,13 @@ struct BracketGamesView: View {
     }
     
     private func getSortedGames(region: String) {
-        chosenRegion = region
+        chosenRegion = region // Update selected box
         let gamesArray = Array(tournament.games!) as! [Game]
         let maxRound = gamesArray.max(by: { $0.round < $1.round })?.round ?? 6
         
         let filteredGames: [Game]
         if (region == "") {
-            // TODO: Remove once default region set
+            // Shouldn't happen, but just in case
             filteredGames = gamesArray
         } else if (region == "First Four") {
             filteredGames = gamesArray.filter({ $0.round == 0 })

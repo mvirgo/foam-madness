@@ -73,6 +73,9 @@ struct TournamentListGamesView: View {
         .onAppear {
             getSortedGames()
         }
+        .onDisappear {
+            tournament.lastRoundViewed = roundStepper
+        }
     }
     
     func getSortedGames() {
@@ -82,7 +85,14 @@ struct TournamentListGamesView: View {
         let minRound = games.min(by: { $0.round < $1.round })?.round ?? 0
         finalRound = games.max(by: { $0.round < $1.round })?.round ?? 6
         initialRound = minRound
-        roundStepper = minRound
+        
+        let lastRoundViewed = tournament.lastRoundViewed
+        if minRound > lastRoundViewed {
+            roundStepper = minRound
+            tournament.lastRoundViewed = minRound
+        } else {
+            roundStepper = lastRoundViewed
+        }
     }
     
     func useBracketView() {

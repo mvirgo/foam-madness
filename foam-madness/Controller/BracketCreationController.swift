@@ -23,6 +23,8 @@ struct TournamentOutput {
 }
 
 class BracketCreationController {
+    @AppStorage("useBracketView") var useBracketView = AppConstants.defaultUseBracketView
+    
     var context: NSManagedObjectContext!
     
     init(context: NSManagedObjectContext!) {
@@ -148,6 +150,7 @@ class BracketCreationController {
         tournament.isWomens = isWomens
         tournament.isSimulated = isSimulated
         tournament.shotsPerRound = Int16(shotsPerRound)
+        tournament.useBracketView = useBracketView
         // Make sure it is saved
         saveData()
         

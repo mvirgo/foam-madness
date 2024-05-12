@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TournamentGamesView: View {
-    @State private var showBracketView = false
+    @State var showBracketView: Bool
     @State var tournament: Tournament
     
     var body: some View {
@@ -21,10 +21,10 @@ struct TournamentGamesView: View {
             }
         }
         .onAppear {
-            // TODO: Get the view preferences from the tournament
+            showBracketView = tournament.useBracketView
         }
         .onDisappear {
-            // TODO: Store the view preferences on the tournament
+            tournament.useBracketView = showBracketView
         }
         .tag("TournamentGames")
     }
@@ -35,7 +35,10 @@ struct TournamentGamesView_Previews: PreviewProvider {
         let viewContext = PreviewDataController.shared.container.viewContext
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, nil, "Tournament", []) as! [Tournament]
         return NavigationView {
-            TournamentGamesView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
+            TournamentGamesView(
+                showBracketView: tournaments[0].useBracketView,
+                tournament: tournaments[0]).environment(\.managedObjectContext, viewContext
+                )
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

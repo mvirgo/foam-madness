@@ -45,7 +45,10 @@ struct BracketCreationView: View {
             }
             
             if (tournamentReady) {
-                NavigationLink("", destination: TournamentGamesView(tournament: tournament), isActive: $tournamentReady)
+                NavigationLink("", destination: TournamentGamesView(
+                    showBracketView: tournament.useBracketView,
+                    tournament: tournament
+                ), isActive: $tournamentReady)
             } else {
                 Button("\(isSimulated ? "Sim" : "Create") Tournament", action: { createTournament() })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
