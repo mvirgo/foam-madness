@@ -52,7 +52,12 @@ struct MenuView: View {
                     ToolbarItem(placement: .principal) {
                         Text("Main Menu").font(.system(size: 24)).fontWeight(.bold)
                     }
-                    ToolbarItem(placement: .topBarTrailing) { NavigationLink("About", destination: AboutView()).font(.system(size: 24))
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Label("Settings", systemImage: "gearshape")
+                        }
                     }
                 }
                 .minimumScaleFactor(0.8)

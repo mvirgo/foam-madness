@@ -36,13 +36,8 @@ struct AboutView: View {
                     }
                 }
             }
-            .navigationTitle("About")
+            .navigationTitle("About This App")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                 ToolbarItem(placement: .principal) {
-                    Text("About This App").font(.system(size: 24)).fontWeight(.bold)
-                }
-            }
         }
     }
 }

@@ -27,6 +27,8 @@
 		7AECF9C8245E779E0037E126 /* womensBracketology2020.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */; };
 		7AEFD6672514704E007BB16B /* ABOUT.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AEFD6662514704E007BB16B /* ABOUT.rtf */; };
 		7AF31A862431267400DF1605 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31A852431267400DF1605 /* GameHelper.swift */; };
+		D1074A982BF13D4200569080 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074A972BF13D4200569080 /* SettingsView.swift */; };
+		D1074A9B2BF13E9300569080 /* SettingBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1074A9A2BF13E9300569080 /* SettingBracketView.swift */; };
 		D113300D2BE5952B00F6DF30 /* BracketGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D113300C2BE5952B00F6DF30 /* BracketGameCell.swift */; };
 		D11E4F8F2BA7410100CA9FDD /* womensBracket2024.plist in Resources */ = {isa = PBXBuildFile; fileRef = D11E4F8D2BA7410100CA9FDD /* womensBracket2024.plist */; };
 		D11E4F902BA7410100CA9FDD /* mensBracket2024.plist in Resources */ = {isa = PBXBuildFile; fileRef = D11E4F8E2BA7410100CA9FDD /* mensBracket2024.plist */; };
@@ -118,6 +120,8 @@
 		7AECF9C7245E779E0037E126 /* womensBracketology2020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracketology2020.plist; sourceTree = "<group>"; };
 		7AEFD6662514704E007BB16B /* ABOUT.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ABOUT.rtf; sourceTree = "<group>"; };
 		7AF31A852431267400DF1605 /* GameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		D1074A972BF13D4200569080 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D1074A9A2BF13E9300569080 /* SettingBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBracketView.swift; sourceTree = "<group>"; };
 		D113300C2BE5952B00F6DF30 /* BracketGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketGameCell.swift; sourceTree = "<group>"; };
 		D11E4F8D2BA7410100CA9FDD /* womensBracket2024.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2024.plist; sourceTree = "<group>"; };
 		D11E4F8E2BA7410100CA9FDD /* mensBracket2024.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2024.plist; sourceTree = "<group>"; };
@@ -293,6 +297,16 @@
 			path = "Live Games API";
 			sourceTree = "<group>";
 		};
+		D1074A992BF13E5500569080 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				D15865752B574D61009E486A /* AboutView.swift */,
+				D1074A972BF13D4200569080 /* SettingsView.swift */,
+				D1074A9A2BF13E9300569080 /* SettingBracketView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		D1386BDA2B9292DA006C676C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,8 +365,8 @@
 		D158656D2B574CFC009E486A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				D15865752B574D61009E486A /* AboutView.swift */,
 				D15865722B574D4D009E486A /* MenuView.swift */,
+				D1074A992BF13E5500569080 /* SettingsView */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -585,6 +599,7 @@
 				D1BF49392BA805AA00A00669 /* AppConstants.swift in Sources */,
 				D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */,
 				D158657A2B574F94009E486A /* LiveGamesCell.swift in Sources */,
+				D1074A9B2BF13E9300569080 /* SettingBracketView.swift in Sources */,
 				7ACBCB3B250EC7FC00EBA5B1 /* ErrorResponse.swift in Sources */,
 				D15865882B575176009E486A /* SelectInitialBracketView.swift in Sources */,
 				D158B32D2B9A96720002D2F6 /* GameStatsController.swift in Sources */,
@@ -601,6 +616,7 @@
 				D181D2872BB529340067B4F1 /* BracketIcon.swift in Sources */,
 				7A10A5F7243847B10070302F /* TourneyHelper.swift in Sources */,
 				D147201A2B60D6FC00453304 /* TeamHelper.swift in Sources */,
+				D1074A982BF13D4200569080 /* SettingsView.swift in Sources */,
 				D199087D2B99703500A57746 /* SaveHelper.swift in Sources */,
 				D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */,
 				D158657E2B5750E7009E486A /* PlayGameView.swift in Sources */,
