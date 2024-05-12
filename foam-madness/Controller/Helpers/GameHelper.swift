@@ -145,4 +145,23 @@ class GameHelper {
         
         return game
     }
+    
+    static func getGameWinnerAbbreviation(_ game: Game) -> String {
+        if !game.completion {
+            return ""
+        }
+        let winningId = game.team1Score > game.team2Score ? game.team1Id : game.team2Id
+        let winningTeam = (game.teams?.allObjects as! [Team]).filter({ $0.id == winningId }).first
+        return winningTeam?.abbreviation ?? ""
+    }
+    
+    static func getTeamIdsForGame(_ game: Game) -> [Int16] {
+        var output: [Int16] = []
+        if let teams = game.teams {
+            for team in teams {
+                output.append((team as! Team).id)
+            }
+        }
+        return output
+    }
 }

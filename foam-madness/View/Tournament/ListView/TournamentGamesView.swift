@@ -14,6 +14,7 @@ struct TournamentGamesView: View {
     @State private var roundStepper: Int16 = 0
     @State private var roundText = "ROUND"
     @State private var games: [Game] = []
+    @State private var bracketView = false
     @State var tournament: Tournament
     
     var body: some View {
@@ -28,15 +29,38 @@ struct TournamentGamesView: View {
                     TournamentGameCell(game: game)
                 }
             }
-            Text("Change Round")
-                .foregroundColor(commonBlue)
-                .font(.title2)
-                .fontWeight(.bold)
-            Stepper(value: $roundStepper, in: initialRound...finalRound) {
-                Text("")
-            }
-                .labelsHidden()
-                .padding([.bottom])
+            
+            HStack {
+                // Hide below to keep spacing
+                BracketIcon()
+                    .scaleEffect(CGSize(width: 0.15, height: 0.15))
+                    .hidden()
+                    .disabled(true)
+                Spacer()
+                VStack {
+                    Text("Change Round")
+                        .foregroundColor(commonBlue)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Stepper(value: $roundStepper, in: initialRound...finalRound) {
+                        Text("")
+                    }
+                    .labelsHidden()
+                    .padding([.bottom])
+                }
+                Spacer()
+                Button(action: { useBracketView() }) {
+                    BracketIcon()
+                        .scaleEffect(CGSize(width: 0.15, height: 0.15))
+                    NavigationLink(
+                        "",
+                        destination: BracketGamesView(
+                            tournament: tournament
+                        ),
+                        isActive: $bracketView
+                    )
+                }
+            }.padding([.leading, .trailing])
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -67,6 +91,10 @@ struct TournamentGamesView: View {
         finalRound = games.max(by: { $0.round < $1.round })?.round ?? 6
         initialRound = minRound
         roundStepper = minRound
+    }
+    
+    func useBracketView() {
+        bracketView = true
     }
 }
 
