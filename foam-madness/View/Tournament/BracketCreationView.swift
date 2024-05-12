@@ -19,6 +19,7 @@ struct BracketCreationView: View {
     @State private var shotsPerRound = AppConstants.defaultShotsPerRound
     @State private var tournamentName = ""
     @State private var rightHanded = true
+    @State private var showShotsHelper = false
     @State private var tournamentReady = false
     @State private var tournament: Tournament!
 
@@ -37,11 +38,21 @@ struct BracketCreationView: View {
                 Toggle("\(rightHanded ? "Right" : "Left")-Hand Dominant", isOn: $rightHanded)
                     .toggleStyle(SwitchToggleStyle(tint: commonBlue))
                     .font(.title2)
-                Stepper("Shots per round: \(shotsPerRound)", value: $shotsPerRound, in: 3...15)
-                    .font(.title2)
-                Text("Shots per round controls how many 1 point, 2 point, etc., shot attempts per team each game.")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
+                HStack {
+                    Text("Shots per round: \(shotsPerRound)")
+                    Button(action: onClickShotsHelper) {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(commonBlue)
+                    }
+                    Spacer()
+                    Stepper("", value: $shotsPerRound, in: 3...15)
+                        .labelsHidden()
+                }.font(.title2)
+                if showShotsHelper {
+                    Text("Shots per round controls how many 1 point, 2 point, etc., shot attempts per team each game.")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                }
             }
             
             if (tournamentReady) {
@@ -101,6 +112,10 @@ struct BracketCreationView: View {
             alertUser(title: "Invalid Name", message: "Tournament name cannot be blank.", false)
             return false
         }
+    }
+    
+    private func onClickShotsHelper() {
+        showShotsHelper = !showShotsHelper
     }
     
     private func alertUser(title: String, message: String, _ endTournament: Bool) {
