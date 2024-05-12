@@ -1,5 +1,5 @@
 //
-//  TournamentGamesView.swift
+//  TournamentListGamesView.swift
 //  foam-madness
 //
 //  Created by Michael Virgo on 1/16/24.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct TournamentGamesView: View {
+struct TournamentListGamesView: View {
     @State private var initialRound: Int16 = 0
     @State private var finalRound: Int16 = 6
     @State private var roundStepper: Int16 = 0
     @State private var roundText = "ROUND"
     @State private var games: [Game] = []
-    @State private var bracketView = false
     @State var tournament: Tournament
+    @Binding var bracketView: Bool
     
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct TournamentGamesView: View {
 
             List {
                 ForEach(games.filter({ $0.round == roundStepper }), id: \.id) { game in
-                    TournamentGameCell(game: game)
+                    TournamentListGameCell(game: game)
                 }
             }
             
@@ -52,13 +52,6 @@ struct TournamentGamesView: View {
                 Button(action: { useBracketView() }) {
                     BracketIcon()
                         .scaleEffect(CGSize(width: 0.15, height: 0.15))
-                    NavigationLink(
-                        "",
-                        destination: BracketGamesView(
-                            tournament: tournament
-                        ),
-                        isActive: $bracketView
-                    )
                 }
             }.padding([.leading, .trailing])
         }
@@ -80,7 +73,6 @@ struct TournamentGamesView: View {
         .onAppear {
             getSortedGames()
         }
-        .tag("TournamentGames")
     }
     
     func getSortedGames() {
@@ -98,12 +90,12 @@ struct TournamentGamesView: View {
     }
 }
 
-struct TournamentGamesView_Previews: PreviewProvider {
+struct TournamentListGamesView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, nil, "Tournament", []) as! [Tournament]
         return NavigationView {
-            TournamentGamesView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
+            TournamentListGamesView(tournament: tournaments[0], bracketView: .constant(false)).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

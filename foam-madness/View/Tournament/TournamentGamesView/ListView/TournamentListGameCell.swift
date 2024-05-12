@@ -1,5 +1,5 @@
 //
-//  TournamentGameCell.swift
+//  TournamentListGameCell.swift
 //  foam-madness
 //
 //  Created by Michael Virgo on 3/11/24.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct TournamentGameCell: View {
+struct TournamentListGameCell: View {
     @StateObject var game: Game
     
     var body: some View {
@@ -42,13 +42,13 @@ struct TournamentGameCell: View {
     }
 }
 
-struct TournamentGameCell_Previews: PreviewProvider {
+struct TournamentListGameCell_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PreviewDataController.shared.container.viewContext
         let predicate = NSPredicate(format: "completion == YES")
         let games = TourneyHelper.fetchDataFromContext(viewContext, predicate, "Game", []) as! [Game]
         return NavigationView {
-            TournamentGameCell(game: games[0]).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
+            TournamentListGameCell(game: games[0]).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -17,13 +17,14 @@ struct BracketGamesView: View {
     @State private var maxRoundForRegion: Int = 0
     @State private var minRoundForRegion: Int = 0
     @State private var regions: [String] = []
+    @Binding var hideListView: Bool
+    
     let gridPadding = 10.0
     let baseBracketSpacing: CGFloat = 20.0
 
     // TODO: Store bracket vs list view
     // TODO: Store last viewed region (or ""), and use
     // TODO: Store last viewed round (or 0), and use in other view
-    // TODO: Parent view to better handle navigating to or back to?
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack {
@@ -82,7 +83,7 @@ struct BracketGamesView: View {
                 
                 HStack(spacing: 10) {
                     Button("List", action: {
-                        presentationMode.wrappedValue.dismiss()
+                        hideListView = false
                     })
                     .padding(gridPadding)
                     .foregroundColor(Color.white)
@@ -113,7 +114,6 @@ struct BracketGamesView: View {
             // TODO: Use a stored region?
             getSortedGames(region: regions[0])
         }
-        .tag("BracketGames") // TODO: Keep same name??
     }
     
     private func getRegions() {
@@ -182,7 +182,7 @@ struct BracketGamesView_Previews: PreviewProvider {
         let viewContext = PreviewDataController.shared.container.viewContext
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, nil, "Tournament", []) as! [Tournament]
         return NavigationView {
-            BracketGamesView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
+            BracketGamesView(tournament: tournaments[0], hideListView: .constant(true)).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
