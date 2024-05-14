@@ -67,6 +67,13 @@ class TourneyHelper {
     }
     
     static func getTourneyGameText(game: Game) -> String {
+        if (game.teams?.count == 0) {
+            return "Pending participants"
+        } else if (game.teams?.count == 1) {
+            let team = (game.teams?.allObjects as! [Team])[0]
+            let seed = game.team1Id == team.id ? game.team1Seed : game.team2Seed
+            return "\(seed) \(team.name ?? "") vs. Pending participant"
+        }
         let teams = GameHelper.getOrderedTeams(game)
         let team1 = teams[0]
         let team2 = teams[1]

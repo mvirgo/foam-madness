@@ -29,7 +29,7 @@ struct TournamentListGameCell: View {
                 ))
             }
         } else {
-            Text("Pending participants").listRowBackground(Color.gray)
+            getLinkLabel.listRowBackground(Color.gray)
         }
     }
     

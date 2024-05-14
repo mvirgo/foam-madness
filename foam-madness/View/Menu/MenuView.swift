@@ -56,8 +56,9 @@ struct MenuView: View {
                         NavigationLink {
                             SettingsView()
                         } label: {
-                            Label("Settings", systemImage: "gearshape")
-                        }
+                            Label("Settings", systemImage: "gearshape.fill")
+                                .foregroundColor(commonBlue)
+                        }.buttonStyle(.plain)
                     }
                 }
                 .minimumScaleFactor(0.8)
