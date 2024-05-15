@@ -11,7 +11,10 @@ import SwiftUI
 struct BracketCreationView: View {
     @Environment(\.managedObjectContext) private var viewContext
     // Passed from previous
+    @State var isCustom: Bool
     @State var isSimulated: Bool
+    @State var isWomens: Bool
+    @State var numTeams: Int // ignored if non-custom
     @State var chosenBracketFile: String
     
     @State private var showProgress = false
@@ -76,8 +79,13 @@ struct BracketCreationView: View {
         if !isValidName() {
             return
         }
-        tournament = BracketCreationController(context: viewContext)
-            .createBracketFromFile(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
+        if (isCustom) {
+            tournament = BracketCreationController(context: viewContext)
+                .createCustomBracket(numTeams: numTeams, isWomens: isWomens, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
+        } else {
+            tournament = BracketCreationController(context: viewContext)
+                .createBracketFromFile(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
+        }
         if (isSimulated) {
             let winner = BracketCreationController(context: viewContext)
                 .simulateTournament(tournament: tournament)
@@ -135,7 +143,7 @@ struct BracketCreationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             BracketCreationView(
-                isSimulated: false, chosenBracketFile: "mensBracket2023"
+                isCustom: false, isSimulated: false, isWomens: false, numTeams: 0, chosenBracketFile: "mensBracket2023"
             ).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }

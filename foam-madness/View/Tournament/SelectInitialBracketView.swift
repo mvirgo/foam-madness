@@ -8,44 +8,33 @@
 
 import SwiftUI
 
+let numTeamsArray = [64, 32, 16, 8, 4]
+
 struct SelectInitialBracketView: View {
     @State var isSimulated: Bool
     @State private var chosenBracketFile: String?
     @State private var chosenBracketName: String?
     @State private var chosenYear: String?
+    @State private var isCustom = false
     @State private var isWomens = false
+    @State private var numTeams = 64
     @State private var yearsArray: [String] = []
     @State private var brackets: [BracketItem] = []
     let gridPadding = 10.0
 
     var body: some View {
         GeometryReader { geometry in
-            VStack(spacing: geometry.size.height * 0.03) {
+            VStack(spacing: geometry.size.height * 0.02) {
                 Spacer()
                 
                 VStack {
-                    Text("Choose a Year").font(.title2)
-                    LazyVGrid(columns: [
-                        GridItem(.flexible()),
-                        GridItem(.flexible()),
-                        GridItem(.flexible()),
-                        GridItem(.flexible())
-                    ], spacing: gridPadding) {
-                        ForEach(yearsArray, id: \.self) { year in
-                            Button(action: {
-                                chosenYear = year
-                            }) {
-                                Text(year)
-                                    .lineLimit(1)
-                                    .font(.headline)
-                                    .foregroundColor(chosenYear == year ? Color.white : Color.primary)
-                                    .padding()
-                            }
-                            .frame(maxWidth: .infinity)
-                            .background(chosenYear == year ? commonBlue : Color.secondary)
-                            .cornerRadius(5.0)
-                        }
-                    }.padding(gridPadding)
+                    Text("Existing or Custom?").font(.title2)
+                    Picker("", selection: $isCustom) {
+                        Text("Existing").tag(false)
+                        Text("Custom").tag(true)
+                    }
+                    .pickerStyle(.segmented)
+                    .padding([.leading, .trailing], 30)
                 }
                 
                 VStack {
@@ -56,6 +45,59 @@ struct SelectInitialBracketView: View {
                     }
                     .pickerStyle(.segmented)
                     .padding([.leading, .trailing], 30)
+                }
+                
+                if isCustom {
+                    VStack {
+                        Text("Number of Teams").font(.title2)
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: gridPadding) {
+                            ForEach(numTeamsArray, id: \.self) { teams in
+                                Button(action: {
+                                    numTeams = teams
+                                }) {
+                                    Text("\(teams)")
+                                        .lineLimit(1)
+                                        .font(.headline)
+                                        .foregroundColor(numTeams == teams ? Color.white : Color.primary)
+                                        .padding()
+                                }
+                                .frame(maxWidth: .infinity)
+                                .background(numTeams == teams ? commonBlue : Color.secondary)
+                                .cornerRadius(5.0)
+                            }
+                        }.padding(gridPadding)
+                    }
+                } else {
+                    VStack {
+                        Text("Choose a Year").font(.title2)
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: gridPadding) {
+                            ForEach(yearsArray, id: \.self) { year in
+                                Button(action: {
+                                    chosenYear = year
+                                }) {
+                                    Text(year)
+                                        .lineLimit(1)
+                                        .font(.headline)
+                                        .foregroundColor(chosenYear == year ? Color.white : Color.primary)
+                                        .padding()
+                                }
+                                .frame(maxWidth: .infinity)
+                                .background(chosenYear == year ? commonBlue : Color.secondary)
+                                .cornerRadius(5.0)
+                            }
+                        }.padding(gridPadding)
+                    }
                 }
                 
                 VStack(spacing: 10) {
@@ -72,7 +114,10 @@ struct SelectInitialBracketView: View {
                     "Continue",
                     destination:
                         BracketCreationView(
+                            isCustom: isCustom,
                             isSimulated: isSimulated,
+                            isWomens: isWomens,
+                            numTeams: numTeams, // unused if not custom
                             chosenBracketFile: chosenBracketFile ?? ""
                         )
                 )
@@ -93,7 +138,13 @@ struct SelectInitialBracketView: View {
             .onChange(of: chosenYear) { _ in
                 getChosenBracket()
             }
+            .onChange(of: isCustom) { _ in
+                getChosenBracket()
+            }
             .onChange(of: isWomens) { _ in
+                getChosenBracket()
+            }
+            .onChange(of: numTeams) { _ in
                 getChosenBracket()
             }
         }
@@ -116,10 +167,13 @@ struct SelectInitialBracketView: View {
     }
     
     private func getChosenBracket() {
-        if (chosenYear != nil && brackets.count > 0) {
+        if (chosenYear != nil && brackets.count > 0 && !isCustom) {
             let chosenBracket = brackets.filter({ $0.year == Int(chosenYear ?? "") && $0.isWomens == isWomens})[0]
             chosenBracketFile = chosenBracket.file
             chosenBracketName = chosenBracket.name
+        } else if (isCustom) {
+            chosenBracketFile = "custom"
+            chosenBracketName = "Custom Bracket - \(numTeams) teams \n(\(isWomens ? "Women's" : "Men's") probabilities)"
         }
     }
 }
