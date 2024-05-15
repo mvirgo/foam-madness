@@ -17,10 +17,14 @@ struct LoadedBracketOutput {
     var firstFour: [String: [String: String]]
 }
 
-struct TournamentOutput {
-    var tournament: Tournament
-    var hasFirstFour: Bool
-}
+let startingRoundByNumTeams = [
+    68: 0,
+    64: 1,
+    32: 2,
+    16: 3,
+    8: 4,
+    4: 5
+]
 
 class BracketCreationController {
     @AppStorage("useBracketView") var useBracketView = AppConstants.defaultUseBracketView
@@ -32,7 +36,7 @@ class BracketCreationController {
     }
     
     // MARK: Public methods
-    func createBracket(bracketLocation: String, tournamentName: String, isSimulated: Bool, useLeft: Bool, shotsPerRound: Int) -> TournamentOutput {
+    func createBracketFromFile(bracketLocation: String, tournamentName: String, isSimulated: Bool, useLeft: Bool, shotsPerRound: Int) -> Tournament {
         // Load the bracket
         let loadedBracket = loadBracket(bracketLocation: bracketLocation)
         // Create any teams that aren't created yet
@@ -45,9 +49,30 @@ class BracketCreationController {
             shotsPerRound: shotsPerRound
         )
         // Create all games and add to tourney
-        createTournamentGames(loadedBracket: loadedBracket, tournament: tournament, useLeft: useLeft)
+        let hasFirstFour = loadedBracket.hasFirstFour
+        let startingRound = hasFirstFour ? 0 : 1
+        createTournamentGames(loadedBracket: loadedBracket, tournament: tournament, useLeft: useLeft, startingRound: startingRound)
         
-        return TournamentOutput(tournament: tournament, hasFirstFour: loadedBracket.hasFirstFour)
+        return tournament
+    }
+    
+    func createCustomBracket(numTeams: Int, isWomens: Bool, tournamentName: String, isSimulated: Bool, useLeft: Bool, shotsPerRound: Int) -> Tournament {
+        // Mock the bracket
+        let hasFirstFour = numTeams == 68
+        let mockBracket = mockBracket(isWomens: isWomens, hasFirstFour: hasFirstFour)
+        // Create any teams that aren't created yet
+        createAnyNewTeams()
+        // Create the tournament
+        let tournament = createTournamentObject(
+            tournamentName: tournamentName,
+            isSimulated: isSimulated,
+            isWomens: isWomens,
+            shotsPerRound: shotsPerRound
+        )
+        // Create all games and add to tourney
+        createTournamentGames(loadedBracket: mockBracket, tournament: tournament, useLeft: useLeft, startingRound: startingRoundByNumTeams[numTeams]!)
+        
+        return tournament
     }
     
     func checkExistingNames(_ name: String) -> Bool {
@@ -56,15 +81,10 @@ class BracketCreationController {
         return TourneyHelper.fetchDataFromContext(context, predicate, "Tournament", []).count == 0
     }
     
-    func simulateTournament(tournament: Tournament, hasFirstFour: Bool) -> String {
-        var id: Int16
+    func simulateTournament(tournament: Tournament) -> String {
         var winner: String = ""
-        // Get correct starting id (hard-coded for current bracket style)
-        if !hasFirstFour {
-            id = 4
-        } else {
-            id = 0
-        }
+        // Get correct starting id (minimum tourneyGameId)
+        var id = (tournament.games as! Set<Game>).min(by: { $0.tourneyGameId < $1.tourneyGameId })?.tourneyGameId ?? 0
         // Loop through and simulate all games
         while true {
             let game = tournament.games?.filtered(using: NSPredicate(format: "tourneyGameId == %@", NSNumber(value: id))).first as! Game
@@ -122,6 +142,17 @@ class BracketCreationController {
         )
     }
     
+    // For mocking custom loaded bracket
+    private func mockBracket(isWomens: Bool, hasFirstFour: Bool) -> LoadedBracketOutput {
+        return LoadedBracketOutput(
+            hasFirstFour: hasFirstFour,
+            isWomens: isWomens,
+            regionOrder: ["Region 1", "Region 2", "Region 3", "Region 4"],
+            regionSeedTeams: [:],
+            firstFour: [:]
+        )
+    }
+    
     private func createAnyNewTeams() {
         // Start by getting all existing team ids
         let existingIds = TeamHelper.getExistingTeams(context)
@@ -160,22 +191,24 @@ class BracketCreationController {
     private func createTournamentGames(
         loadedBracket: LoadedBracketOutput,
         tournament: Tournament,
-        useLeft: Bool
+        useLeft: Bool,
+        startingRound: Int
     ) {
         let regionOrder = loadedBracket.regionOrder
         let firstFour = loadedBracket.firstFour
         let regionSeedTeams = loadedBracket.regionSeedTeams
-        let hasFirstFour = loadedBracket.hasFirstFour
         let isWomens = loadedBracket.isWomens
         // Note: This function is essentially hard-coded for current bracket style
-        // Create First Four if Men's tournament
-        if hasFirstFour {
+        if startingRound == 0 {
+            // Create First Four if included
             createFirstFour(tournament: tournament, firstFour: firstFour, regionSeedTeams: regionSeedTeams, isWomens: isWomens, useLeft: useLeft)
         }
-        // Create Round 1 with initial teams
-        createFirstRound(tournament: tournament, regionOrder: regionOrder, regionSeedTeams: regionSeedTeams, isWomens: isWomens, useLeft: useLeft)
-        // Create Round 2-Championship with no teams
-        createLaterRounds(tournament: tournament, regionOrder: regionOrder, isWomens: isWomens, useLeft: useLeft)
+        if startingRound <= 1 {
+            // Create Round 1 with initial teams
+            createFirstRound(tournament: tournament, regionOrder: regionOrder, regionSeedTeams: regionSeedTeams, isWomens: isWomens, useLeft: useLeft)
+        }
+        // Create Round 2 (or higher) to Championship with no teams
+        createLaterRounds(tournament: tournament, regionOrder: regionOrder, isWomens: isWomens, useLeft: useLeft, startingRound: startingRound)
         // Save the data
         saveData()
     }
@@ -227,19 +260,21 @@ class BracketCreationController {
                 game.shotsPerRound = tournament.shotsPerRound
                 game.team1Seed = Int16(i)
                 game.team2Seed = Int16(17-i)
-                // Team 2 may not actually exist yet due to First Four
-                game.team1Id = regionSeedTeams[region]![String(i)] ?? -1
-                game.team2Id = regionSeedTeams[region]![String(17-i)] ?? -1
+                if regionSeedTeams.count > 0 { // not a custom bracket, set teams
+                    // Team 2 may not actually exist yet due to First Four
+                    game.team1Id = regionSeedTeams[region]![String(i)] ?? -1
+                    game.team2Id = regionSeedTeams[region]![String(17-i)] ?? -1
+                    // Fetch the teams by id
+                    let results = TeamHelper.fetchTeamById([game.team1Id, game.team2Id], context)
+                    // Add teams to the game
+                    for team in results {
+                        (team as! Team).addToGames(game)
+                    }
+                }
                 // Set tourney game id and next game
                 game.tourneyGameId = Int16(gameId)
                 game.nextGame = Int16((gameId / 2) + 34)
                 gameId += 1
-                // Fetch the teams by id
-                let results = TeamHelper.fetchTeamById([game.team1Id, game.team2Id], context)
-                // Add teams to the game
-                for team in results {
-                    (team as! Team).addToGames(game)
-                }
                 // Add the game to the tournament
                 tournament.addToGames(game)
                 // Save the data
@@ -248,12 +283,14 @@ class BracketCreationController {
         }
     }
     
-    private func createLaterRounds(tournament: Tournament, regionOrder: [String], isWomens: Bool, useLeft: Bool) {
+    private func createLaterRounds(tournament: Tournament, regionOrder: [String], isWomens: Bool, useLeft: Bool, startingRound: Int) {
         let gamesPerRoundPerRegion = [4, 2, 1, 2, 1]
         // Make counter for tourney game id (start at 36 to avoid early rounds)
         var gameId = 36
+        // Start the loop at a min of round 2 for later rounds, or higher if input (e.g. 16 team tourney)
+        let adjustedStartRound = startingRound < 2 ? 2 : startingRound
         // Loop through rounds
-        for i in 2...6 {
+        for i in adjustedStartRound...6 {
             if i < 5 { // Before final four
                 // Loop through regions
                 for region in regionOrder {

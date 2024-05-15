@@ -76,15 +76,11 @@ struct BracketCreationView: View {
         if !isValidName() {
             return
         }
-        let tournamentOutput = BracketCreationController(context: viewContext)
-            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
-        tournament = tournamentOutput.tournament
+        tournament = BracketCreationController(context: viewContext)
+            .createBracketFromFile(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
         if (isSimulated) {
             let winner = BracketCreationController(context: viewContext)
-                .simulateTournament(
-                    tournament: tournamentOutput.tournament,
-                    hasFirstFour: tournamentOutput.hasFirstFour
-                )
+                .simulateTournament(tournament: tournament)
             // Notify user of winner
             let title = "Tournament Complete"
             let message = "\(winner) wins the tournament! (Sim)"

@@ -62,7 +62,7 @@ struct PreviewDataController {
     private func makeMockTournaments() {
         let context = container.viewContext
         let _ = BracketCreationController(context: context)
-            .createBracket(
+            .createBracketFromFile(
                 bracketLocation: "mensBracket2023",
                 tournamentName: "Example Tournament 1",
                 isSimulated: false,
