@@ -55,21 +55,6 @@ struct TournamentListGamesView: View {
                 }
             }.padding([.leading, .trailing])
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle(tournament.name ?? "Tournament Games")
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button("Main Menu", action: {
-                    NavigationUtil.popToRootView()
-                })
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                if !tournament.isSimulated {
-                    NavigationLink("Stats", destination: TournamentStatsView(tournament: tournament))
-                }
-            }
-        }
         .onAppear {
             getSortedGames()
         }

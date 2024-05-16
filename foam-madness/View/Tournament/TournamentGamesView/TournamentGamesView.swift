@@ -14,10 +14,29 @@ struct TournamentGamesView: View {
     
     var body: some View {
         Group {
-            if showBracketView {
-                BracketGamesView(tournament: tournament, hideListView: $showBracketView)
+            if tournament.ready {
+                if showBracketView {
+                    BracketGamesView(tournament: tournament, hideListView: $showBracketView)
+                } else {
+                    TournamentListGamesView(tournament: tournament, bracketView: $showBracketView)
+                }
             } else {
-                TournamentListGamesView(tournament: tournament, bracketView: $showBracketView)
+                CreateCustomView(tournament: tournament)
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationTitle(tournament.name ?? "Tournament Games")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Main Menu", action: {
+                    NavigationUtil.popToRootView()
+                })
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                if !tournament.isSimulated && tournament.ready {
+                    NavigationLink("Stats", destination: TournamentStatsView(tournament: tournament))
+                }
             }
         }
         .onAppear {

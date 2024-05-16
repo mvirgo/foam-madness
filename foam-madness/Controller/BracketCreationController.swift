@@ -52,6 +52,7 @@ class BracketCreationController {
         let hasFirstFour = loadedBracket.hasFirstFour
         let startingRound = hasFirstFour ? 0 : 1
         createTournamentGames(loadedBracket: loadedBracket, tournament: tournament, useLeft: useLeft, startingRound: startingRound)
+        tournament.ready = true
         
         return tournament
     }
@@ -71,6 +72,7 @@ class BracketCreationController {
         )
         // Create all games and add to tourney
         createTournamentGames(loadedBracket: mockBracket, tournament: tournament, useLeft: useLeft, startingRound: startingRoundByNumTeams[numTeams]!)
+        tournament.ready = false
         
         return tournament
     }

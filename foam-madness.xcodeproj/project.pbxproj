@@ -63,6 +63,9 @@
 		D18D757029BEA5B500DE609B /* womensBracket2023.plist in Resources */ = {isa = PBXBuildFile; fileRef = D18D756F29BEA5B500DE609B /* womensBracket2023.plist */; };
 		D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199087A2B996D6200A57746 /* ShootModeController.swift */; };
 		D199087D2B99703500A57746 /* SaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199087C2B99703500A57746 /* SaveHelper.swift */; };
+		D19AF8AC2BF69808003A1273 /* CreateCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */; };
+		D19AF8B02BF69F7D003A1273 /* CustomTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */; };
+		D19AF8B22BF69FFE003A1273 /* SelectCustomTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */; };
 		D1A3E0092B76F94D001E461A /* BracketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3E0082B76F94D001E461A /* BracketHelper.swift */; };
 		D1A67BE629BD48E200E1D55B /* foam_madness_bracket_file_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */; };
 		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
@@ -156,6 +159,9 @@
 		D18D756F29BEA5B500DE609B /* womensBracket2023.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = womensBracket2023.plist; sourceTree = "<group>"; };
 		D199087A2B996D6200A57746 /* ShootModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootModeController.swift; sourceTree = "<group>"; };
 		D199087C2B99703500A57746 /* SaveHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveHelper.swift; sourceTree = "<group>"; };
+		D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomView.swift; sourceTree = "<group>"; };
+		D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypeView.swift; sourceTree = "<group>"; };
+		D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCustomTeamsView.swift; sourceTree = "<group>"; };
 		D1A3E0082B76F94D001E461A /* BracketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketHelper.swift; sourceTree = "<group>"; };
 		D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foam-madness-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_bracket_file_tests.swift; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 		D1472C1E2BF0861500EECAFF /* TournamentGamesView */ = {
 			isa = PBXGroup;
 			children = (
+				D19AF8AA2BF697ED003A1273 /* CreateCustomView */,
 				D181D2882BB537BC0067B4F1 /* BracketView */,
 				D181D2852BB529140067B4F1 /* ListView */,
 				D1472C1F2BF086CC00EECAFF /* TournamentGamesView.swift */,
@@ -439,6 +446,16 @@
 				D16485712BE9D7AB006BB362 /* BracketWinnerLine.swift */,
 			);
 			path = BracketView;
+			sourceTree = "<group>";
+		};
+		D19AF8AA2BF697ED003A1273 /* CreateCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */,
+				D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */,
+				D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */,
+			);
+			path = CreateCustomView;
 			sourceTree = "<group>";
 		};
 		D1A67BE429BD48E200E1D55B /* foam-madness-tests */ = {
@@ -588,10 +605,12 @@
 				7A494BC5243046A50042173A /* DataController.swift in Sources */,
 				D14720182B60D22500453304 /* PreviewDataController.swift in Sources */,
 				D15865762B574D61009E486A /* AboutView.swift in Sources */,
+				D19AF8B22BF69FFE003A1273 /* SelectCustomTeamsView.swift in Sources */,
 				D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */,
 				D15865922B5751CE009E486A /* TournamentStatsView.swift in Sources */,
 				D158657C2B574FB9009E486A /* SelectTeamsView.swift in Sources */,
 				7A494BC3243041C20042173A /* foam-madness.xcdatamodeld in Sources */,
+				D19AF8B02BF69F7D003A1273 /* CustomTypeView.swift in Sources */,
 				D199087B2B996D6200A57746 /* ShootModeController.swift in Sources */,
 				D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */,
 				D15865802B5750F9009E486A /* ShootModeView.swift in Sources */,
@@ -618,6 +637,7 @@
 				D147201A2B60D6FC00453304 /* TeamHelper.swift in Sources */,
 				D1074A982BF13D4200569080 /* SettingsView.swift in Sources */,
 				D199087D2B99703500A57746 /* SaveHelper.swift in Sources */,
+				D19AF8AC2BF69808003A1273 /* CreateCustomView.swift in Sources */,
 				D1D4F9C32B97E4D0004B9C18 /* BracketCreationController.swift in Sources */,
 				D158657E2B5750E7009E486A /* PlayGameView.swift in Sources */,
 				7AF31A862431267400DF1605 /* GameHelper.swift in Sources */,

@@ -24,28 +24,30 @@ struct SelectInitialBracketView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            VStack(spacing: geometry.size.height * 0.02) {
+            VStack(spacing: geometry.size.height * 0.03) {
                 Spacer()
                 
-                VStack {
-                    Text("Existing or Custom?").font(.title2)
+                HStack {
+                    Text("Existing/Custom")
+                        .font(.title2)
+                        .lineLimit(1)
                     Picker("", selection: $isCustom) {
                         Text("Existing").tag(false)
                         Text("Custom").tag(true)
                     }
                     .pickerStyle(.segmented)
-                    .padding([.leading, .trailing], 30)
-                }
+                }.padding([.leading, .trailing], 10)
                 
-                VStack {
-                    Text("Men's or Women's?").font(.title2)
+                HStack(spacing: 10) {
+                    Text("Men's/Women's")
+                        .font(.title2)
+                        .lineLimit(1)
                     Picker("", selection: $isWomens) {
-                        Text("Men's").tag(false)
-                        Text("Women's").tag(true)
+                        Text("Men").tag(false)
+                        Text("Women").tag(true)
                     }
                     .pickerStyle(.segmented)
-                    .padding([.leading, .trailing], 30)
-                }
+                }.padding([.leading, .trailing], 10)
                 
                 if isCustom {
                     VStack {

@@ -64,7 +64,10 @@ struct BracketCreationView: View {
                     tournament: tournament
                 ), isActive: $tournamentReady)
             } else {
-                Button("\(isSimulated ? "Sim" : "Create") Tournament", action: { createTournament() })
+                let buttonText = isCustom
+                    ? "Continue"
+                    : "\(isSimulated ? "Sim" : "Create") Tournament"
+                Button(buttonText, action: { createTournament() })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
             }
             
@@ -86,7 +89,7 @@ struct BracketCreationView: View {
             tournament = BracketCreationController(context: viewContext)
                 .createBracketFromFile(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
         }
-        if (isSimulated) {
+        if (isSimulated && !isCustom) {
             let winner = BracketCreationController(context: viewContext)
                 .simulateTournament(tournament: tournament)
             // Notify user of winner

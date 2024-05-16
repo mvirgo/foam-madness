@@ -9,18 +9,6 @@
 import CoreData
 
 class TourneyHelper {
-    static func fetchData(_ dataController: DataController, _ predicate: NSPredicate, _ entity: String) -> [Any] {
-        // Get view context
-        let context = dataController.viewContext
-        // Get tournaments from Core Data
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.predicate = predicate
-        // Fetch the results
-        let results = try! context.fetch(fetchRequest)
-        
-        return results
-    }
-    
     static func fetchDataFromContext(_ context: NSManagedObjectContext, _ predicate: NSPredicate?, _ entity: String, _ sortDescriptors: [NSSortDescriptor]) -> [Any] {
         // Get tournaments from Core Data
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
