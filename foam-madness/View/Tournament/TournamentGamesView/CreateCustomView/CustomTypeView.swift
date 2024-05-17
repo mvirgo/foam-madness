@@ -15,6 +15,7 @@ enum CustomType {
 }
 
 struct CustomTypeView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State var tournament: Tournament
     @State var customType = CustomType.random
     @State private var numTeams: Int = 0
@@ -67,7 +68,9 @@ struct CustomTypeView: View {
     }
     
     func handleContinue() {
-        // TODO: Logic to randomly add teams, if selected
+        if customType == CustomType.random {
+            BracketCreationController(context: viewContext).fillTournamentWithRandomTeams(tournament)
+        }
         // TODO: Logic to use existing bracket, if selected
         showGames = true
     }

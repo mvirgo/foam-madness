@@ -97,6 +97,11 @@ class TourneyHelper {
         
         if let tournament = game.tournament {
             let previousGames = tournament.games!.filtered(using: NSPredicate(format: "nextGame == %i", game.tourneyGameId)) as! Set<Game>
+            if (previousGames.isEmpty) {
+                // May not have previous games for custom brackets with <64 games
+                let teams = GameHelper.getOrderedTeams(game)
+                return [teams[0].id, teams[1].id]
+            }
             let firstPreviousGame = previousGames.min(by: { $0.tourneyGameId < $1.tourneyGameId })!
             
             if game.teams?.count == 1 {

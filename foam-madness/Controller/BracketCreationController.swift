@@ -116,6 +116,36 @@ class BracketCreationController {
         return winner
     }
     
+    // For randomly filling custom brackets
+    func fillTournamentWithRandomTeams(_ tournament: Tournament) {
+        let games = tournament.games?.allObjects as! [Game]
+        let initialRound = games.min(by: { $0.round < $1.round })!.round
+        let gamesInInitialRound = games.filter({ $0.round == initialRound })
+        
+        // Load all teams
+        let teams = TeamHelper.loadTeams()
+        
+        // Add teams to each game, avoiding duplicates
+        var teamIds: Set<Int16> = []
+        for game in gamesInInitialRound {
+            while game.teams?.count != 2 {
+                let teamId = Int16(getRandomTeamId(teams))!
+                if !teamIds.contains(teamId) {
+                    teamIds.insert(teamId)
+                    if game.teams?.count == 0 {
+                        game.team1Id = teamId
+                    } else {
+                        game.team2Id = teamId
+                    }
+                    let team = TeamHelper.fetchTeamById([teamId], context).first as! Team
+                    team.addToGames(game)
+                }
+            }
+        }
+        
+        saveData()
+    }
+    
     // MARK: Private methods
     private func loadBracket(bracketLocation: String) -> LoadedBracketOutput {
         // Load in bracket
@@ -296,13 +326,17 @@ class BracketCreationController {
             if i < 5 { // Before final four
                 // Loop through regions
                 for region in regionOrder {
-                    for _ in 1...gamesPerRoundPerRegion[i-2] {
+                    for j in 1...gamesPerRoundPerRegion[i-2] {
                         let game = Game(context: context)
                         game.round = Int16(i)
                         game.region = region
                         game.useLeft = useLeft
                         game.isWomens = isWomens
                         game.shotsPerRound = tournament.shotsPerRound
+                        if startingRound == i {
+                            // Add seeds for custom bracket
+                            setCustomSeeds(game: game, index: j, gamesPerRegion: gamesPerRoundPerRegion[i-2])
+                        }
                         // Set tourney game id and next game
                         game.tourneyGameId = Int16(gameId)
                         game.nextGame = Int16((gameId / 2) + 34)
@@ -324,6 +358,10 @@ class BracketCreationController {
                         game.region = "Final Four"
                         game.tourneyGameId = Int16(63 + j)
                         game.nextGame = 66
+                        if startingRound == i {
+                            // Add seeds for custom bracket
+                            setCustomSeeds(game: game, index: j, gamesPerRegion: gamesPerRoundPerRegion[i-2])
+                        }
                     } else {
                         game.region = "Championship"
                         game.tourneyGameId = 66
@@ -337,6 +375,29 @@ class BracketCreationController {
         }
     }
     
+    // This could maybe be improved, but given at most 64 teams allowed,
+    // and 350 teams, this should never get stuck too long
+    private func getRandomTeamId(_ teams: LoadedTeams) -> String {
+        let teamName = teams.teams.randomElement()!
+        return teams.reverseTeamDict[teamName]!["id"]!
+    }
+    
+    private func setCustomSeeds(game: Game, index: Int, gamesPerRegion: Int) {
+        let seed1: Int16
+        if game.round == 2 && (index == 2 || index == 4) {
+            // Hard-coded for 32 team custom brackets
+            // (Puts two seed at bottom of region)
+            seed1 = index == 2 ? 4 : 2
+        } else {
+            seed1 = Int16(index)
+        }
+        
+        let maxSeed = gamesPerRegion * 2
+        game.team1Seed = seed1
+        game.team2Seed = Int16(maxSeed) - seed1 + 1 // 1-indexed for w/e reason
+    }
+    
+    // MARK: Utility
     private func saveData() {
         SaveHelper.saveData(context, "BracketCreationController")
     }
