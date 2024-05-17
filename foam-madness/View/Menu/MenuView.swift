@@ -23,9 +23,9 @@ struct MenuView: View {
                             NavigationLink(destination: SelectTournamentView(completedTournaments: false, tournaments: Array(tournaments))) {
                                 Text("Resume Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
                         }
-                        NavigationLink(destination: SelectInitialBracketView(isSimulated: false)) {
+                        NavigationLink(destination: SelectInitialBracketShellView(isSimulated: false)) {
                             Text("New Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
-                        NavigationLink(destination: SelectInitialBracketView(isSimulated: true)) {
+                        NavigationLink(destination: SelectInitialBracketShellView(isSimulated: true)) {
                             Text("Quick Sim Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
                         if (hasCompletedTournaments()) {
                             NavigationLink(destination: SelectTournamentView(completedTournaments: true, tournaments: Array(tournaments))) {

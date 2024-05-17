@@ -146,6 +146,43 @@ class BracketCreationController {
         saveData()
     }
     
+    // For filling custom bracket from existing base
+    func fillTournamentFromExistingCustom(_ tournament: Tournament, _ bracketLocation: String) {
+        // Load the bracket
+        let loadedBracket = loadBracket(bracketLocation: bracketLocation)
+        let regionSeedTeams = loadedBracket.regionSeedTeams
+        let games = tournament.games?.allObjects as! [Game]
+        
+        // Replace region names
+        for game in games {
+            useRegionNameExistingCustom(game, loadedBracket.regionOrder)
+        }
+        
+        // Fill in teams
+        let minRound = games.min(by: { $0.round < $1.round })?.round ?? 0
+        let initialRoundGames = games.filter({ $0.round == minRound })
+        for game in initialRoundGames {
+            game.team1Id = regionSeedTeams[game.region ?? ""]![String(game.team1Seed)] ?? -1
+            game.team2Id = regionSeedTeams[game.region ?? ""]![String(game.team2Seed)] ?? -1
+            if (game.team2Id == -1) {
+                // Team 2 may not actually exist yet due to First Four, randomly pull one
+                let team2Seed = String(game.team2Seed)
+                var firstFourTeams: [Int16] = []
+                firstFourTeams.append(regionSeedTeams[game.region ?? ""]![team2Seed + "1"]!)
+                firstFourTeams.append(regionSeedTeams[game.region ?? ""]![team2Seed + "2"]!)
+                game.team2Id = firstFourTeams.randomElement() ?? -1
+            }
+            // Fetch the teams by id
+            let results = TeamHelper.fetchTeamById([game.team1Id, game.team2Id], context)
+            // Add teams to the game
+            for team in results {
+                (team as! Team).addToGames(game)
+            }
+        }
+        
+        saveData()
+    }
+    
     // MARK: Private methods
     private func loadBracket(bracketLocation: String) -> LoadedBracketOutput {
         // Load in bracket
@@ -395,6 +432,14 @@ class BracketCreationController {
         let maxSeed = gamesPerRegion * 2
         game.team1Seed = seed1
         game.team2Seed = Int16(maxSeed) - seed1 + 1 // 1-indexed for w/e reason
+    }
+    
+    // Replace the region name on a custom bracket using existing base (e.g. "Region 1" replaced by `regionOrder[0]`)
+    private func useRegionNameExistingCustom(_ game: Game, _ regionOrder: [String]) {
+        if let regionNumber = Int(game.region?.replacingOccurrences(of: "Region ", with: "") ?? "0"),
+           regionNumber > 0, regionNumber <= regionOrder.count {
+            game.region = regionOrder[regionNumber - 1]
+        }
     }
     
     // MARK: Utility
