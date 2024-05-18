@@ -164,4 +164,38 @@ class GameHelper {
         }
         return output
     }
+    
+    static func updateTeamsInGame(
+        _ team1Name: String,
+        _ team2Name: String,
+        _ game: Game,
+        _ reverseTeamDict: [String: [String: String]],
+        _ context: NSManagedObjectContext
+    ) {
+        // Remove existing teams
+        if game.teams?.count ?? 0 > 0 {
+            for teamAny in game.teams!.allObjects {
+                let team = teamAny as! Team
+                team.removeFromGames(game)
+            }
+        }
+        
+        if team1Name != "" {
+            let team1 = TeamHelper.lookupOrCreateTeam(teamName: team1Name, reverseTeamDict: reverseTeamDict, context: context)
+            game.team1Id = team1.id
+            team1.addToGames(game)
+        } else {
+            game.team1Id = -1
+        }
+        
+        if team2Name != "" {
+            let team2 = TeamHelper.lookupOrCreateTeam(teamName: team2Name, reverseTeamDict: reverseTeamDict, context: context)
+            game.team2Id = team2.id
+            team2.addToGames(game)
+        } else {
+            game.team2Id = -1
+        }
+
+        SaveHelper.saveData(context, "updateTeamsInGame")
+    }
 }

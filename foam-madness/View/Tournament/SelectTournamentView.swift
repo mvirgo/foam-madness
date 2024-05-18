@@ -25,6 +25,7 @@ struct SelectTournamentView: View {
             }
             .onDelete(perform: deleteItems)
         }
+        .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(completedTournaments
             ? "Choose a Completed Tournament"

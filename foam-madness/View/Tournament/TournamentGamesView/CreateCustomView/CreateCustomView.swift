@@ -17,7 +17,7 @@ struct CreateCustomView: View {
             if !showGames {
                 CustomTypeView(tournament: tournament, showGames: $showGames)
             } else {
-                SelectCustomTeamsView(tournament: tournament)
+                ListCustomTeamsView(tournament: tournament)
             }
         }
         .onAppear {

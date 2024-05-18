@@ -12,6 +12,7 @@ import Foundation
 struct LoadedTeams {
     var teams: [String]
     var reverseTeamDict: [String: [String: String]]
+    var teamsNamesByIdDict: [String: String]
 }
 
 class TeamHelper {
@@ -21,17 +22,20 @@ class TeamHelper {
         // Add team name to a temporary array
         var tempTeams: [String] = [String]()
         var reverseTeamDict = [String: [String: String]]()
+        var teamNamesByIdDict = [String: String]() // avoids bug due to name lengthening in v1.9
         for key in dict.allKeys {
             let name = (dict.value(forKey: key as! String) as! NSDictionary).value(forKey: "name") as? String
             tempTeams.append(name!)
             // Add to reverseTeamDict for lookup of abbreviation/id later
             let abbreviation = (dict.value(forKey: key as! String) as! NSDictionary).value(forKey: "abbreviation") as? String
-            reverseTeamDict[name!] = ["id": String(describing: key), "abbreviation": abbreviation!]
+            let id = String(describing: key)
+            reverseTeamDict[name!] = ["id": id, "abbreviation": abbreviation!]
+            teamNamesByIdDict[id] = name
         }
         // Sort the temporary array for easy selection
         tempTeams.sort()
         
-        let loadedTeams = LoadedTeams(teams: tempTeams, reverseTeamDict: reverseTeamDict)
+        let loadedTeams = LoadedTeams(teams: tempTeams, reverseTeamDict: reverseTeamDict, teamsNamesByIdDict: teamNamesByIdDict)
         
         return loadedTeams
     }

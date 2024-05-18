@@ -28,7 +28,7 @@ struct TournamentListGamesView: View {
                 ForEach(games.filter({ $0.round == roundStepper }), id: \.id) { game in
                     TournamentListGameCell(game: game)
                 }
-            }
+            }.listStyle(.plain)
             
             HStack {
                 // Hide below to keep spacing

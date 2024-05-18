@@ -10,9 +10,10 @@ import SwiftUI
 
 struct TournamentListGameCell: View {
     @StateObject var game: Game
+    @State var allowSelection = false
     
     var body: some View {
-        if game.teams?.count == 2 {
+        if game.teams?.count == 2 && !allowSelection {
             if game.completion == false {
                 NavigationLink {
                     PlayGameView(game: game)
@@ -29,7 +30,22 @@ struct TournamentListGameCell: View {
                 ))
             }
         } else {
-            getLinkLabel.listRowBackground(Color.gray)
+            Group {
+                if allowSelection {
+                    HStack {
+                        NavigationLink {
+                            SelectCustomTeamsView(
+                                game: game,
+                                tournament: game.tournament!
+                            )
+                        } label: {
+                            getLinkLabel
+                        }
+                    }
+                } else {
+                    getLinkLabel
+                }
+            }.listRowBackground(Color.gray)
         }
     }
     

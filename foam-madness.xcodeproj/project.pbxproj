@@ -34,6 +34,8 @@
 		D11E4F902BA7410100CA9FDD /* mensBracket2024.plist in Resources */ = {isa = PBXBuildFile; fileRef = D11E4F8E2BA7410100CA9FDD /* mensBracket2024.plist */; };
 		D12027002BF79FFF00A10EA7 /* SelectNumTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12026FF2BF79FFF00A10EA7 /* SelectNumTeamsView.swift */; };
 		D12027022BF7A00B00A10EA7 /* SelectYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12027012BF7A00B00A10EA7 /* SelectYearView.swift */; };
+		D137201D2BF940C00057EA8D /* SelectCustomTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */; };
+		D137201F2BF948290057EA8D /* SeedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137201E2BF948290057EA8D /* SeedSelector.swift */; };
 		D1386BDE2B929752006C676C /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1386BDD2B929752006C676C /* NavigationUtil.swift */; };
 		D14720182B60D22500453304 /* PreviewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14720172B60D22500453304 /* PreviewDataController.swift */; };
 		D147201A2B60D6FC00453304 /* TeamHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14720192B60D6FC00453304 /* TeamHelper.swift */; };
@@ -68,7 +70,7 @@
 		D199087D2B99703500A57746 /* SaveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D199087C2B99703500A57746 /* SaveHelper.swift */; };
 		D19AF8AC2BF69808003A1273 /* CreateCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */; };
 		D19AF8B02BF69F7D003A1273 /* CustomTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */; };
-		D19AF8B22BF69FFE003A1273 /* SelectCustomTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */; };
+		D19AF8B22BF69FFE003A1273 /* ListCustomTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19AF8B12BF69FFE003A1273 /* ListCustomTeamsView.swift */; };
 		D1A3E0092B76F94D001E461A /* BracketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3E0082B76F94D001E461A /* BracketHelper.swift */; };
 		D1A67BE629BD48E200E1D55B /* foam_madness_bracket_file_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */; };
 		D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */; };
@@ -133,6 +135,8 @@
 		D11E4F8E2BA7410100CA9FDD /* mensBracket2024.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mensBracket2024.plist; sourceTree = "<group>"; };
 		D12026FF2BF79FFF00A10EA7 /* SelectNumTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNumTeamsView.swift; sourceTree = "<group>"; };
 		D12027012BF7A00B00A10EA7 /* SelectYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectYearView.swift; sourceTree = "<group>"; };
+		D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCustomTeamsView.swift; sourceTree = "<group>"; };
+		D137201E2BF948290057EA8D /* SeedSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedSelector.swift; sourceTree = "<group>"; };
 		D1386BDD2B929752006C676C /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		D14720172B60D22500453304 /* PreviewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataController.swift; sourceTree = "<group>"; };
 		D14720192B60D6FC00453304 /* TeamHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamHelper.swift; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		D199087C2B99703500A57746 /* SaveHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveHelper.swift; sourceTree = "<group>"; };
 		D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomView.swift; sourceTree = "<group>"; };
 		D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypeView.swift; sourceTree = "<group>"; };
-		D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCustomTeamsView.swift; sourceTree = "<group>"; };
+		D19AF8B12BF69FFE003A1273 /* ListCustomTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomTeamsView.swift; sourceTree = "<group>"; };
 		D1A3E0082B76F94D001E461A /* BracketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketHelper.swift; sourceTree = "<group>"; };
 		D1A67BE329BD48E200E1D55B /* foam-madness-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foam-madness-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_bracket_file_tests.swift; sourceTree = "<group>"; };
@@ -470,7 +474,9 @@
 			children = (
 				D19AF8AB2BF69808003A1273 /* CreateCustomView.swift */,
 				D19AF8AF2BF69F7D003A1273 /* CustomTypeView.swift */,
-				D19AF8B12BF69FFE003A1273 /* SelectCustomTeamsView.swift */,
+				D19AF8B12BF69FFE003A1273 /* ListCustomTeamsView.swift */,
+				D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */,
+				D137201E2BF948290057EA8D /* SeedSelector.swift */,
 			);
 			path = CreateCustomView;
 			sourceTree = "<group>";
@@ -622,7 +628,7 @@
 				7A494BC5243046A50042173A /* DataController.swift in Sources */,
 				D14720182B60D22500453304 /* PreviewDataController.swift in Sources */,
 				D15865762B574D61009E486A /* AboutView.swift in Sources */,
-				D19AF8B22BF69FFE003A1273 /* SelectCustomTeamsView.swift in Sources */,
+				D19AF8B22BF69FFE003A1273 /* ListCustomTeamsView.swift in Sources */,
 				D1A8B19E2B9FD8A500354C9F /* MailHandler.swift in Sources */,
 				D15865922B5751CE009E486A /* TournamentStatsView.swift in Sources */,
 				D158657C2B574FB9009E486A /* SelectTeamsView.swift in Sources */,
@@ -648,6 +654,7 @@
 				D15865902B5751BE009E486A /* SelectTournamentView.swift in Sources */,
 				D15865782B574F58009E486A /* LiveGamesView.swift in Sources */,
 				7A2D2E42262E81DB00AB5935 /* ProbabilityHelper.swift in Sources */,
+				D137201D2BF940C00057EA8D /* SelectCustomTeamsView.swift in Sources */,
 				D158658A2B575185009E486A /* BracketCreationView.swift in Sources */,
 				7ACBCB39250EC7DA00EBA5B1 /* LiveGamesResponse.swift in Sources */,
 				D1A3E0092B76F94D001E461A /* BracketHelper.swift in Sources */,
@@ -667,6 +674,7 @@
 				D15865952B575ECE009E486A /* PrimaryButtonStyle.swift in Sources */,
 				7A2ECEE9242EDE920065E369 /* AppDelegate.swift in Sources */,
 				D158658C2B575197009E486A /* TournamentListGamesView.swift in Sources */,
+				D137201F2BF948290057EA8D /* SeedSelector.swift in Sources */,
 				D16485722BE9D7AC006BB362 /* BracketWinnerLine.swift in Sources */,
 				D17FF6052BA1454900149D63 /* SearchBar.swift in Sources */,
 				7A2D2E3F262E7FBE00AB5935 /* SimHelper.swift in Sources */,
