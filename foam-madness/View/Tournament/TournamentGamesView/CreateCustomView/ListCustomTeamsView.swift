@@ -22,7 +22,7 @@ struct ListCustomTeamsView: View {
         VStack(spacing: 10) {
             HStack {
                 Text(showReadyGames ? "Ready Games" : "Select Teams")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.bold)
                 Button(action: { showHelper = !showHelper }) {
                     Image(systemName: "info.circle")
@@ -46,6 +46,7 @@ struct ListCustomTeamsView: View {
                     : $0.teams?.count != 2
                 }), id: \.id) { game in
                     TournamentListGameCell(game: game, allowSelection: true)
+                        .listRowBackground(showReadyGames ? Color.green.opacity(0.2) : Color.gray)
                 }
             }.listStyle(.plain)
             
@@ -58,10 +59,17 @@ struct ListCustomTeamsView: View {
             Text("\(readyTotal) / \(games.count) games ready")
                 .font(.headline)
             
+            if games.count > 2 {
+                // Final Four can't change
+                NavigationLink("Change Region Names", destination: UpdateRegionsView(games: tournament.games!))
+            }
+            
             if readyTotal == games.count {
                 Button("\(tournament.isSimulated ? "Sim" : "Create") Tournament") {
                     handleContinue()
-                }.buttonStyle(PrimaryButtonFullWidthStyle())
+                }
+                .buttonStyle(PrimaryButtonFullWidthStyle())
+                .scaleEffect(0.8)
             }
         }
         .padding()

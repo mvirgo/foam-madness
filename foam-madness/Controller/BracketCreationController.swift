@@ -193,6 +193,15 @@ class BracketCreationController {
         saveData()
     }
     
+    func updateRegionNameForGames(originalName: String, newName: String, gamesSet: NSSet) {
+        let games = Array(gamesSet) as! [Game]
+        let regionGames = games.filter({ $0.region == originalName })
+        for game in regionGames {
+            game.region = newName
+        }
+        saveData()
+    }
+    
     func finalizeCustomBracket(_ tournament: Tournament) {
         tournament.ready = true
         saveData()

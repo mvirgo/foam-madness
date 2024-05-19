@@ -197,7 +197,6 @@ struct SelectCustomTeamsView: View {
     
     private func alertUser(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        // TODO: Potentially remove duplicate team from other spot if they click okay, and add a cancel?
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         let viewController = UIApplication.shared.windows.first!.rootViewController!

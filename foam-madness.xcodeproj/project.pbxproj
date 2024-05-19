@@ -37,6 +37,7 @@
 		D137201D2BF940C00057EA8D /* SelectCustomTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */; };
 		D137201F2BF948290057EA8D /* SeedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137201E2BF948290057EA8D /* SeedSelector.swift */; };
 		D1386BDE2B929752006C676C /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1386BDD2B929752006C676C /* NavigationUtil.swift */; };
+		D13EEA582BF9903B00F61B51 /* UpdateRegionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13EEA572BF9903B00F61B51 /* UpdateRegionsView.swift */; };
 		D14720182B60D22500453304 /* PreviewDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14720172B60D22500453304 /* PreviewDataController.swift */; };
 		D147201A2B60D6FC00453304 /* TeamHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14720192B60D6FC00453304 /* TeamHelper.swift */; };
 		D1472C202BF086CC00EECAFF /* TournamentGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1472C1F2BF086CC00EECAFF /* TournamentGamesView.swift */; };
@@ -138,6 +139,7 @@
 		D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCustomTeamsView.swift; sourceTree = "<group>"; };
 		D137201E2BF948290057EA8D /* SeedSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedSelector.swift; sourceTree = "<group>"; };
 		D1386BDD2B929752006C676C /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
+		D13EEA572BF9903B00F61B51 /* UpdateRegionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRegionsView.swift; sourceTree = "<group>"; };
 		D14720172B60D22500453304 /* PreviewDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDataController.swift; sourceTree = "<group>"; };
 		D14720192B60D6FC00453304 /* TeamHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamHelper.swift; sourceTree = "<group>"; };
 		D1472C1F2BF086CC00EECAFF /* TournamentGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGamesView.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				D19AF8B12BF69FFE003A1273 /* ListCustomTeamsView.swift */,
 				D137201C2BF940C00057EA8D /* SelectCustomTeamsView.swift */,
 				D137201E2BF948290057EA8D /* SeedSelector.swift */,
+				D13EEA572BF9903B00F61B51 /* UpdateRegionsView.swift */,
 			);
 			path = CreateCustomView;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				D1C757A12B9A62C500817E1A /* TournamentStatsController.swift in Sources */,
 				D15865802B5750F9009E486A /* ShootModeView.swift in Sources */,
 				D113300D2BE5952B00F6DF30 /* BracketGameCell.swift in Sources */,
+				D13EEA582BF9903B00F61B51 /* UpdateRegionsView.swift in Sources */,
 				D1BF49392BA805AA00A00669 /* AppConstants.swift in Sources */,
 				D12027002BF79FFF00A10EA7 /* SelectNumTeamsView.swift in Sources */,
 				D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */,

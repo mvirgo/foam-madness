@@ -44,8 +44,9 @@ struct TournamentListGameCell: View {
                     }
                 } else {
                     getLinkLabel
+                        .listRowBackground(Color.gray)
                 }
-            }.listRowBackground(Color.gray)
+            }
         }
     }
     
