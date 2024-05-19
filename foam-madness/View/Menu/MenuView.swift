@@ -23,9 +23,9 @@ struct MenuView: View {
                             NavigationLink(destination: SelectTournamentView(completedTournaments: false, tournaments: Array(tournaments))) {
                                 Text("Resume Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
                         }
-                        NavigationLink(destination: SelectInitialBracketView(isSimulated: false)) {
+                        NavigationLink(destination: SelectInitialBracketShellView(isSimulated: false)) {
                             Text("New Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
-                        NavigationLink(destination: SelectInitialBracketView(isSimulated: true)) {
+                        NavigationLink(destination: SelectInitialBracketShellView(isSimulated: true)) {
                             Text("Quick Sim Tournament") }.buttonStyle(PrimaryButtonFullWidthStyle())
                         if (hasCompletedTournaments()) {
                             NavigationLink(destination: SelectTournamentView(completedTournaments: true, tournaments: Array(tournaments))) {
@@ -52,7 +52,13 @@ struct MenuView: View {
                     ToolbarItem(placement: .principal) {
                         Text("Main Menu").font(.system(size: 24)).fontWeight(.bold)
                     }
-                    ToolbarItem(placement: .topBarTrailing) { NavigationLink("About", destination: AboutView()).font(.system(size: 24))
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Label("Settings", systemImage: "gearshape.fill")
+                                .foregroundColor(commonBlue)
+                        }.buttonStyle(.plain)
                     }
                 }
                 .minimumScaleFactor(0.8)

@@ -11,6 +11,7 @@ import SwiftUI
 struct SearchTeamView: View {
     @State private var searchText = ""
     @State private var shownTeamName = ""
+    @Binding var isTyping: Bool
     @Binding var teamName: String
     @Binding var showParentButton: Bool
     var label: String
@@ -31,16 +32,18 @@ struct SearchTeamView: View {
             if (searchResults.count > 0 && shownTeamName == "") {
                 List {
                     ForEach(searchResults, id: \.self) { team in
-                        Button(team, action: {
-                            teamName = team // update for parent
-                            showParentButton = true // update for parent
-                            shownTeamName = team // hide the list
-                            searchText = team // show user the selected team
-                        })
-                        .tag(String?.some(team))
+                        Button(team, action: { setFields(team) })
+                            .tag(String?.some(team))
                     }
                 }
                 .listStyle(.plain)
+            }
+        }
+        .onAppear {
+            // Custom games selector may have an existing team
+            if teamName != "" {
+                searchText = teamName
+                shownTeamName = teamName
             }
         }
         .onChange(of: searchText) { _ in
@@ -52,12 +55,34 @@ struct SearchTeamView: View {
                 clearFields()
             }
         }
+        .onChange(of: searchResults + [shownTeamName, searchText]) { _ in
+            if searchResults.count > 0 && shownTeamName != searchText {
+                isTyping = true
+            } else {
+                isTyping = false
+            }
+        }
     }
     
     func clearFields() {
         shownTeamName = "" // allow list to show again
         teamName = "" // update for parent
         showParentButton = false // update for parent
+    }
+    
+    func setFields(_ team: String) {
+        teamName = team // update for parent
+        showParentButton = true // update for parent
+        shownTeamName = team // hide the list
+        searchText = team // show user the selected team
+        UIApplication.shared.endEditing()
+    }
+}
+
+// Hide the keyboard
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
@@ -66,6 +91,12 @@ struct SearchTeamView_Previews: PreviewProvider {
 
     static var previews: some View {
         let teams = TeamHelper.loadTeams().teams
-        return SearchTeamView(teamName: .constant(""), showParentButton: .constant(false), label: "Team 1", teams: teams).environment(\.managedObjectContext, viewContext)
+        return SearchTeamView(
+            isTyping: .constant(false),
+            teamName: .constant(""),
+            showParentButton: .constant(false),
+            label: "Team 1",
+            teams: teams
+        ).environment(\.managedObjectContext, viewContext)
     }
 }

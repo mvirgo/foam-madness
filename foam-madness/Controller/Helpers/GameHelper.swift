@@ -123,11 +123,13 @@ class GameHelper {
     static func prepareSingleGame(
         _ team1Name: String,
         _ team2Name: String,
+        _ shotsPerRound: Int,
         _ reverseTeamDict: [String: [String: String]],
         _ context: NSManagedObjectContext
     ) -> Game {
         // Create a game
         let game = Game(context: context)
+        game.shotsPerRound = Int16(shotsPerRound)
         // Hide the region and round from Play Game view
         game.region = ""
         game.round = -1
@@ -142,5 +144,58 @@ class GameHelper {
         team2.addToGames(game)
         
         return game
+    }
+    
+    static func getGameWinnerAbbreviation(_ game: Game) -> String {
+        if !game.completion {
+            return ""
+        }
+        let winningId = game.team1Score > game.team2Score ? game.team1Id : game.team2Id
+        let winningTeam = (game.teams?.allObjects as! [Team]).filter({ $0.id == winningId }).first
+        return winningTeam?.abbreviation ?? ""
+    }
+    
+    static func getTeamIdsForGame(_ game: Game) -> [Int16] {
+        var output: [Int16] = []
+        if let teams = game.teams {
+            for team in teams {
+                output.append((team as! Team).id)
+            }
+        }
+        return output
+    }
+    
+    static func updateTeamsInGame(
+        _ team1Name: String,
+        _ team2Name: String,
+        _ game: Game,
+        _ reverseTeamDict: [String: [String: String]],
+        _ context: NSManagedObjectContext
+    ) {
+        // Remove existing teams
+        if game.teams?.count ?? 0 > 0 {
+            for teamAny in game.teams!.allObjects {
+                let team = teamAny as! Team
+                team.removeFromGames(game)
+            }
+        }
+        
+        if team1Name != "" {
+            let team1 = TeamHelper.lookupOrCreateTeam(teamName: team1Name, reverseTeamDict: reverseTeamDict, context: context)
+            game.team1Id = team1.id
+            team1.addToGames(game)
+        } else {
+            game.team1Id = -1
+        }
+        
+        if team2Name != "" {
+            let team2 = TeamHelper.lookupOrCreateTeam(teamName: team2Name, reverseTeamDict: reverseTeamDict, context: context)
+            game.team2Id = team2.id
+            team2.addToGames(game)
+        } else {
+            game.team2Id = -1
+        }
+
+        SaveHelper.saveData(context, "updateTeamsInGame")
     }
 }

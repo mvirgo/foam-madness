@@ -11,13 +11,18 @@ import SwiftUI
 struct BracketCreationView: View {
     @Environment(\.managedObjectContext) private var viewContext
     // Passed from previous
+    @State var isCustom: Bool
     @State var isSimulated: Bool
+    @State var isWomens: Bool
+    @State var numTeams: Int // ignored if non-custom
     @State var chosenBracketFile: String
     
     @State private var showProgress = false
     @State private var progress = 0.0
+    @State private var shotsPerRound = AppConstants.defaultShotsPerRound
     @State private var tournamentName = ""
     @State private var rightHanded = true
+    @State private var showShotsHelper = false
     @State private var tournamentReady = false
     @State private var tournament: Tournament!
 
@@ -36,12 +41,33 @@ struct BracketCreationView: View {
                 Toggle("\(rightHanded ? "Right" : "Left")-Hand Dominant", isOn: $rightHanded)
                     .toggleStyle(SwitchToggleStyle(tint: commonBlue))
                     .font(.title2)
+                HStack {
+                    Text("Shots per round: \(shotsPerRound)")
+                    Button(action: onClickShotsHelper) {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(commonBlue)
+                    }
+                    Spacer()
+                    Stepper("", value: $shotsPerRound, in: 3...15)
+                        .labelsHidden()
+                }.font(.title2)
+                if showShotsHelper {
+                    Text("Shots per round controls how many 1 point, 2 point, etc., shot attempts per team each game.")
+                        .font(.callout)
+                        .foregroundColor(.secondary)
+                }
             }
             
             if (tournamentReady) {
-                NavigationLink("", destination: TournamentGamesView(tournament: tournament), isActive: $tournamentReady)
+                NavigationLink("", destination: TournamentGamesView(
+                    showBracketView: tournament.useBracketView,
+                    tournament: tournament
+                ), isActive: $tournamentReady)
             } else {
-                Button("\(isSimulated ? "Sim" : "Create") Tournament", action: { createTournament() })
+                let buttonText = isCustom
+                    ? "Continue"
+                    : "\(isSimulated ? "Sim" : "Create") Tournament"
+                Button(buttonText, action: { createTournament() })
                     .buttonStyle(PrimaryButtonFullWidthStyle())
             }
             
@@ -56,15 +82,16 @@ struct BracketCreationView: View {
         if !isValidName() {
             return
         }
-        let tournamentOutput = BracketCreationController(context: viewContext)
-            .createBracket(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded)
-        tournament = tournamentOutput.tournament
-        if (isSimulated) {
+        if (isCustom) {
+            tournament = BracketCreationController(context: viewContext)
+                .createCustomBracket(numTeams: numTeams, isWomens: isWomens, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
+        } else {
+            tournament = BracketCreationController(context: viewContext)
+                .createBracketFromFile(bracketLocation: chosenBracketFile, tournamentName: tournamentName, isSimulated: isSimulated, useLeft: !rightHanded, shotsPerRound: shotsPerRound)
+        }
+        if (isSimulated && !isCustom) {
             let winner = BracketCreationController(context: viewContext)
-                .simulateTournament(
-                    tournament: tournamentOutput.tournament,
-                    hasFirstFour: tournamentOutput.hasFirstFour
-                )
+                .simulateTournament(tournament: tournament)
             // Notify user of winner
             let title = "Tournament Complete"
             let message = "\(winner) wins the tournament! (Sim)"
@@ -94,6 +121,10 @@ struct BracketCreationView: View {
         }
     }
     
+    private func onClickShotsHelper() {
+        showShotsHelper = !showShotsHelper
+    }
+    
     private func alertUser(title: String, message: String, _ endTournament: Bool) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if endTournament {
@@ -115,7 +146,7 @@ struct BracketCreationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             BracketCreationView(
-                isSimulated: false, chosenBracketFile: "mensBracket2023"
+                isCustom: false, isSimulated: false, isWomens: false, numTeams: 0, chosenBracketFile: "mensBracket2023"
             ).environment(\.managedObjectContext, PreviewDataController.shared.container.viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }

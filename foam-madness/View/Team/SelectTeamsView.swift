@@ -19,28 +19,50 @@ struct SelectTeamsView: View {
     @State private var team2: String = ""
     @State private var showButton1 = false
     @State private var showButton2 = false
+    @State private var shotsPerRound = AppConstants.defaultShotsPerRound
     
     @State private var progressToGame = false
     @State private var createdGame: Game?
+    
+    @State private var hideTeam1Search = false
+    @State private var hideTeam2Search = false
 
     var body: some View {
         VStack {
             Text("Select Teams").foregroundColor(commonBlue).font(.largeTitle).fontWeight(.bold)
             
             VStack() {
-                SearchTeamView(teamName: $team1, showParentButton: $showButton1, label: "Team 1", teams: teams)
-                SearchTeamView(teamName: $team2, showParentButton: $showButton2, label: "Team 2", teams: teams)
-            }
-            
-            if (showButton1 && showButton2) {
-                if (progressToGame) {
-                    NavigationLink("", destination: PlayGameView(game: createdGame!), isActive: $progressToGame)
-                } else {
-                    Button("Continue") {
-                        createGame()
+                if !hideTeam1Search {
+                    SearchTeamView(
+                        isTyping: $hideTeam2Search,
+                        teamName: $team1,
+                        showParentButton: $showButton1,
+                        label: "Team 1",
+                        teams: teams
+                    )
+                }
+                if !hideTeam2Search {
+                    SearchTeamView(
+                        isTyping: $hideTeam1Search,
+                        teamName: $team2,
+                        showParentButton: $showButton2,
+                        label: "Team 2",
+                        teams: teams
+                    )
+                }
+                
+                if (showButton1 && showButton2) {
+                    Stepper("Shots per round: \(shotsPerRound)", value: $shotsPerRound, in: 3...15)
+                        .padding([.leading, .trailing])
+                    if (progressToGame) {
+                        NavigationLink("", destination: PlayGameView(game: createdGame!), isActive: $progressToGame)
+                    } else {
+                        Button("Continue") {
+                            createGame()
+                        }
+                        .buttonStyle(PrimaryButtonFullWidthStyle())
+                        .padding()
                     }
-                    .buttonStyle(PrimaryButtonFullWidthStyle())
-                    .padding()
                 }
             }
         }
@@ -59,7 +81,7 @@ struct SelectTeamsView: View {
             alertUser(title: "Invalid Teams", message: "Selected teams must be different.")
             return
         }
-        createdGame = GameHelper.prepareSingleGame(team1, team2, reverseTeamDict, viewContext)
+        createdGame = GameHelper.prepareSingleGame(team1, team2, shotsPerRound, reverseTeamDict, viewContext)
         progressToGame = true
     }
     

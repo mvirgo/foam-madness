@@ -18,10 +18,14 @@ struct SelectTournamentView: View {
     var body: some View {
         List {
             ForEach(shownTournaments, id: \.id) { tournament in
-                NavigationLink(tournament.name ?? "", destination: TournamentGamesView(tournament: tournament))
+                NavigationLink(tournament.name ?? "", destination: TournamentGamesView(
+                    showBracketView: tournament.useBracketView,
+                    tournament: tournament
+                ))
             }
             .onDelete(perform: deleteItems)
         }
+        .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(completedTournaments
             ? "Choose a Completed Tournament"

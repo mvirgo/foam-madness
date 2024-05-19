@@ -61,8 +61,25 @@ struct PreviewDataController {
     
     private func makeMockTournaments() {
         let context = container.viewContext
+        // Regular tournament
         let _ = BracketCreationController(context: context)
-            .createBracket(bracketLocation: "mensBracket2023", tournamentName: "Example Tournament 1", isSimulated: false, useLeft: false)
+            .createBracketFromFile(
+                bracketLocation: "mensBracket2023",
+                tournamentName: "Example Tournament 1",
+                isSimulated: false,
+                useLeft: false,
+                shotsPerRound: AppConstants.defaultShotsPerRound
+            )
+        // Custom tournament
+        let _ = BracketCreationController(context: context)
+            .createCustomBracket(
+                numTeams: 64,
+                isWomens: false,
+                tournamentName: "Custom Tournament 1",
+                isSimulated: false,
+                useLeft: false,
+                shotsPerRound: AppConstants.defaultShotsPerRound
+            )
     }
 
     private func loadMockData() {
