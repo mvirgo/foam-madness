@@ -84,7 +84,6 @@ struct ListCustomTeamsView: View {
     
     // TODO: Func to validate + ready tournament; may need to dismiss view?
     // TODO: Alert when continuing that will create or sim
-    // TODO: Helper func to avoid duplicates
 }
 
 struct ListCustomTeamsView_Previews: PreviewProvider {

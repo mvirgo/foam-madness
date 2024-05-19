@@ -8,6 +8,11 @@
 
 import CoreData
 
+struct ExistingTeamData {
+    var region: String
+    var seed: Int16
+}
+
 class TourneyHelper {
     static func fetchDataFromContext(_ context: NSManagedObjectContext, _ predicate: NSPredicate?, _ entity: String, _ sortDescriptors: [NSSortDescriptor]) -> [Any] {
         // Get tournaments from Core Data
@@ -181,5 +186,25 @@ class TourneyHelper {
         }
         
         return output
+    }
+    
+    // Used with updating teams in custom tournaments
+    static func checkForDuplicateTeamInTournament(_ tournament: Tournament, currentGameId: Int16, teamId: Int16) -> ExistingTeamData? {
+        let games = tournament.games?.allObjects as! [Game]
+        let filteredGames = games.filter({ $0.teams?.count ?? 0 > 0 && $0.tourneyGameId != currentGameId })
+        
+        for game in filteredGames {
+            if game.team1Id == teamId {
+                return ExistingTeamData(region: game.region ?? "", seed: game.team1Seed)
+            } else if game.team2Id == teamId {
+                return ExistingTeamData(region: game.region ?? "", seed: game.team2Seed)
+            }
+        }
+        
+        return nil
+    }
+    
+    static func duplicateTeamAlertMessage(_ teamName: String, _ existingTeamData: ExistingTeamData?) -> String {
+        return "\(teamName) is already seed #\(existingTeamData!.seed) in the \(existingTeamData!.region) region. Please choose another team, or remove them from the other game first."
     }
 }

@@ -30,6 +30,7 @@ struct SelectCustomTeamsView: View {
     
     @State private var team1Searching = false
     @State private var team2Searching = false
+    @State private var isValidating = false
     
     var body: some View {
         VStack(spacing: 5) {
@@ -81,6 +82,7 @@ struct SelectCustomTeamsView: View {
                 Button("Confirm Changes") {
                     handleConfirmChanges()
                 }
+                .disabled(isValidating)
                 .buttonStyle(PrimaryButtonFullWidthStyle())
                 .scaleEffect(0.75)
                 .padding([.leading, .trailing])
@@ -127,9 +129,63 @@ struct SelectCustomTeamsView: View {
     }
     
     private func handleConfirmChanges() {
-        // TODO: Implement
-        // TODO: Handle duplicates
-        updateTeamsAndSeeds()
+        isValidating = true
+        let isValidated = validateChange()
+        isValidating = false
+        if isValidated {
+            updateTeamsAndSeeds()
+        }
+    }
+    
+    private func validateChange() -> Bool {
+        if selectedTeam1 == "" && selectedTeam2 == "" {
+            return true
+        }
+        
+        if selectedTeam1 == selectedTeam2 {
+            alertUser(title: "Invalid Teams", message: "Selected teams must be different.")
+            return false
+        }
+        
+        if selectedTeam1 != "" && originalTeam1 != selectedTeam1 {
+            let teamId = Int16(reverseTeamDict[selectedTeam1]?["id"] ?? "-1") ?? -1
+            let validation = TourneyHelper.checkForDuplicateTeamInTournament(
+                tournament,
+                currentGameId: game.tourneyGameId,
+                teamId: teamId
+            )
+            if validation != nil {
+                alertUser(
+                    title: "Team Already Chosen",
+                    message: TourneyHelper.duplicateTeamAlertMessage(
+                        selectedTeam1,
+                        validation
+                    )
+                )
+                return false
+            }
+        }
+        
+        if selectedTeam2 != "" && originalTeam2 != selectedTeam2 {
+            let teamId = Int16(reverseTeamDict[selectedTeam2]?["id"] ?? "-1") ?? -1
+            let validation = TourneyHelper.checkForDuplicateTeamInTournament(
+                tournament,
+                currentGameId: game.tourneyGameId,
+                teamId: teamId
+            )
+            if validation != nil {
+                alertUser(
+                    title: "Team Already Chosen",
+                    message: TourneyHelper.duplicateTeamAlertMessage(
+                        selectedTeam2,
+                        validation
+                    )
+                )
+                return false
+            }
+        }
+        
+        return true
     }
     
     private func updateTeamsAndSeeds() {
@@ -139,7 +195,14 @@ struct SelectCustomTeamsView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
-    // TODO: Alert if duplicate team
+    private func alertUser(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        // TODO: Potentially remove duplicate team from other spot if they click okay, and add a cancel?
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let viewController = UIApplication.shared.windows.first!.rootViewController!
+        viewController.present(alertVC, animated: true, completion: nil)
+    }
 }
 
 struct SelectCustomTeamsView_Previews: PreviewProvider {
