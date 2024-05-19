@@ -10,14 +10,15 @@ import SwiftUI
 
 struct CreateCustomView: View {
     @State var tournament: Tournament
-    @State var showGames: Bool = false
+    @State private var showGames: Bool = false
+    @Binding var isReady: Bool
     
     var body: some View {
         VStack {
             if !showGames {
                 CustomTypeView(tournament: tournament, showGames: $showGames)
             } else {
-                ListCustomTeamsView(tournament: tournament)
+                ListCustomTeamsView(tournament: tournament, isReady: $isReady)
             }
         }
         .onAppear {
@@ -37,7 +38,10 @@ struct CreateCustomView_Previews: PreviewProvider {
         let predicate = NSPredicate(format: "ready == NO")
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, predicate, "Tournament", []) as! [Tournament]
         return NavigationView {
-            CreateCustomView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
+            CreateCustomView(
+                tournament: tournaments[0],
+                isReady: .constant(false)
+            ).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

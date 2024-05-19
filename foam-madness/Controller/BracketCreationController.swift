@@ -26,6 +26,16 @@ let startingRoundByNumTeams = [
     4: 5
 ]
 
+// Takes in the "startingRound" for a bracket
+let nextGameStartForLaterRounds = [
+    36, // 68 teams
+    36, // 64 teams
+    36, // 32 teams
+    52, // 16 teams
+    60, // 8 teams
+    64 // 4 teams (doesn't matter, ignored)
+]
+
 class BracketCreationController {
     @AppStorage("useBracketView") var useBracketView = AppConstants.defaultUseBracketView
     
@@ -180,6 +190,11 @@ class BracketCreationController {
             }
         }
         
+        saveData()
+    }
+    
+    func finalizeCustomBracket(_ tournament: Tournament) {
+        tournament.ready = true
         saveData()
     }
     
@@ -355,7 +370,7 @@ class BracketCreationController {
     private func createLaterRounds(tournament: Tournament, regionOrder: [String], isWomens: Bool, useLeft: Bool, startingRound: Int) {
         let gamesPerRoundPerRegion = [4, 2, 1, 2, 1]
         // Make counter for tourney game id (start at 36 to avoid early rounds)
-        var gameId = 36
+        var gameId = nextGameStartForLaterRounds[startingRound]
         // Start the loop at a min of round 2 for later rounds, or higher if input (e.g. 16 team tourney)
         let adjustedStartRound = startingRound < 2 ? 2 : startingRound
         // Loop through rounds

@@ -11,17 +11,19 @@ import SwiftUI
 struct TournamentGamesView: View {
     @State var showBracketView: Bool
     @State var tournament: Tournament
+    // Trigger a view update if custom tournament marked ready
+    @State private var customIsReady = false
     
     var body: some View {
         Group {
-            if tournament.ready {
+            if tournament.ready || customIsReady {
                 if showBracketView {
                     BracketGamesView(tournament: tournament, hideListView: $showBracketView)
                 } else {
                     TournamentListGamesView(tournament: tournament, bracketView: $showBracketView)
                 }
             } else {
-                CreateCustomView(tournament: tournament)
+                CreateCustomView(tournament: tournament, isReady: $customIsReady)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

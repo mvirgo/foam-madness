@@ -9,15 +9,16 @@
 import SwiftUI
 
 struct ListCustomTeamsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @State var tournament: Tournament
+    @Binding var isReady: Bool
     @State private var games: [Game] = []
     @State private var showHelper = false
     @State private var showReadyGames = false
     @State private var readyTotal = 0
     
     var body: some View {
-        // TODO: Logic to verify when can continue
-        // TODO: Logic to update to ready & save; check this changes view
         VStack(spacing: 10) {
             HStack {
                 Text(showReadyGames ? "Ready Games" : "Select Teams")
@@ -57,9 +58,11 @@ struct ListCustomTeamsView: View {
             Text("\(readyTotal) / \(games.count) games ready")
                 .font(.headline)
             
-            Button("Continue") {
-                // TODO: Add continue logic
-            }.buttonStyle(PrimaryButtonFullWidthStyle())
+            if readyTotal == games.count {
+                Button("\(tournament.isSimulated ? "Sim" : "Create") Tournament") {
+                    handleContinue()
+                }.buttonStyle(PrimaryButtonFullWidthStyle())
+            }
         }
         .padding()
         .onAppear {
@@ -67,7 +70,7 @@ struct ListCustomTeamsView: View {
         }
     }
     
-    func getSortedInitialRoundGames() {
+    private func getSortedInitialRoundGames() {
         let gamesArray = Array(tournament.games!) as! [Game]
         let minRound = gamesArray.min(by: { $0.round < $1.round })?.round ?? 0
         let initialRoundGames = gamesArray.filter({ $0.round == minRound })
@@ -82,8 +85,39 @@ struct ListCustomTeamsView: View {
         readyTotal = games.count - gamesWithoutBothTeams.count
     }
     
-    // TODO: Func to validate + ready tournament; may need to dismiss view?
-    // TODO: Alert when continuing that will create or sim
+    private func handleContinue() {
+        alertUser(
+            title: "Locked In",
+            message: "Once you continue, you can no longer make changes to the bracket, and your tournament will be \(tournament.isSimulated ? "simulated" : "created").",
+            isContinueCheck: true
+        )
+    }
+    
+    private func createTournament() {
+        BracketCreationController(context: viewContext).finalizeCustomBracket(tournament)
+        if tournament.isSimulated {
+            let winner = BracketCreationController(context: viewContext)
+                .simulateTournament(tournament: tournament)
+            // Notify user of winner
+            let title = "Tournament Complete"
+            let message = "\(winner) wins the tournament! (Sim)"
+            alertUser(title: title, message: message, isContinueCheck: false)
+        }
+        isReady = true
+    }
+    
+    private func alertUser(title: String, message: String, isContinueCheck: Bool) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            if isContinueCheck {
+                createTournament()
+            }
+        }))
+        
+        let viewController = UIApplication.shared.windows.first!.rootViewController!
+        viewController.present(alertVC, animated: true, completion: nil)
+    }
 }
 
 struct ListCustomTeamsView_Previews: PreviewProvider {
@@ -92,7 +126,10 @@ struct ListCustomTeamsView_Previews: PreviewProvider {
         let predicate = NSPredicate(format: "ready == NO")
         let tournaments = TourneyHelper.fetchDataFromContext(viewContext, predicate, "Tournament", []) as! [Tournament]
         return NavigationView {
-            ListCustomTeamsView(tournament: tournaments[0]).environment(\.managedObjectContext, viewContext)
+            ListCustomTeamsView(
+                tournament: tournaments[0],
+                isReady: .constant(false)
+            ).environment(\.managedObjectContext, viewContext)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
