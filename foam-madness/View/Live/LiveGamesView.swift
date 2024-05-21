@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LiveGamesView: View {
+    @State var filter = ""
     @State var liveGames = [Event]()
     @State var loading = false
     let cellPadding = 4.0
@@ -17,23 +18,33 @@ struct LiveGamesView: View {
     var body: some View {
         GeometryReader { geometry in
             let maxWidth = (geometry.size.width - cellPadding * rowCells) / rowCells
+            let filteredGames = filter == "" ? liveGames : liveGames.filter({ $0.league == filter })
             
-            if (liveGames.count > 0) {
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())], spacing: cellPadding) {
-                        ForEach(liveGames)
-                        { game in
-                            LiveGamesCell(game: game)
-                                .frame(width: maxWidth, height: maxWidth)
-                                .cornerRadius(5)
-                        }
-                    }.padding(cellPadding)
+            VStack {
+                Picker("", selection: $filter) {
+                    Text("All Leagues").tag("")
+                    Text("Mens's NCAA").tag("NCAAM")
+                    Text("Women's NCAA").tag("NCAAW")
+                    Text("NBA").tag("NBA")
+                    Text("WNBA").tag("WNBA")
+                }.accentColor(commonBlue)
+                if (filteredGames.count > 0) {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())], spacing: cellPadding) {
+                            ForEach(filteredGames)
+                            { game in
+                                LiveGamesCell(game: game)
+                                    .frame(width: maxWidth, height: maxWidth)
+                                    .cornerRadius(5)
+                            }
+                        }.padding(cellPadding)
+                    }
+                } else {
+                    VStack {
+                        Text(loading ? "Loading games..." : "No games found.").font(.largeTitle)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-            } else {
-                VStack {
-                    Text(loading ? "Loading games..." : "No games found.").font(.largeTitle)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .navigationTitle("Live Game Scores")
