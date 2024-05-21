@@ -60,6 +60,9 @@
 		D15865952B575ECE009E486A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15865942B575ECE009E486A /* PrimaryButtonStyle.swift */; };
 		D158B32D2B9A96720002D2F6 /* GameStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D158B32C2B9A96720002D2F6 /* GameStatsController.swift */; };
 		D16485722BE9D7AC006BB362 /* BracketWinnerLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16485712BE9D7AB006BB362 /* BracketWinnerLine.swift */; };
+		D168622F2BFC40F700649094 /* foam_madness_sim_existing_bracket_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168622E2BFC40F700649094 /* foam_madness_sim_existing_bracket_test.swift */; };
+		D16862312BFC41F000649094 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16862302BFC41F000649094 /* CoreDataTestStack.swift */; };
+		D16862332BFC450B00649094 /* foam_madness_sim_custom_bracket_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16862322BFC450B00649094 /* foam_madness_sim_custom_bracket_test.swift */; };
 		D16BEEB42BF7E605008D06B0 /* SelectInitialBracketShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BEEB32BF7E605008D06B0 /* SelectInitialBracketShellView.swift */; };
 		D17FF6012BA140DA00149D63 /* SearchTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FF6002BA140DA00149D63 /* SearchTeamView.swift */; };
 		D17FF6052BA1454900149D63 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FF6042BA1454900149D63 /* SearchBar.swift */; };
@@ -162,6 +165,9 @@
 		D15865942B575ECE009E486A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		D158B32C2B9A96720002D2F6 /* GameStatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsController.swift; sourceTree = "<group>"; };
 		D16485712BE9D7AB006BB362 /* BracketWinnerLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketWinnerLine.swift; sourceTree = "<group>"; };
+		D168622E2BFC40F700649094 /* foam_madness_sim_existing_bracket_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_sim_existing_bracket_test.swift; sourceTree = "<group>"; };
+		D16862302BFC41F000649094 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
+		D16862322BFC450B00649094 /* foam_madness_sim_custom_bracket_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foam_madness_sim_custom_bracket_test.swift; sourceTree = "<group>"; };
 		D16BEEB32BF7E605008D06B0 /* SelectInitialBracketShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInitialBracketShellView.swift; sourceTree = "<group>"; };
 		D17FF6002BA140DA00149D63 /* SearchTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamView.swift; sourceTree = "<group>"; };
 		D17FF6042BA1454900149D63 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -490,6 +496,9 @@
 				D1A67BEE29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift */,
 				D1A67BEC29BD631D00E1D55B /* foam_madness_probability_file_test.swift */,
 				D1A67BE529BD48E200E1D55B /* foam_madness_bracket_file_tests.swift */,
+				D168622E2BFC40F700649094 /* foam_madness_sim_existing_bracket_test.swift */,
+				D16862322BFC450B00649094 /* foam_madness_sim_custom_bracket_test.swift */,
+				D16862302BFC41F000649094 /* CoreDataTestStack.swift */,
 			);
 			path = "foam-madness-tests";
 			sourceTree = "<group>";
@@ -690,7 +699,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16862332BFC450B00649094 /* foam_madness_sim_custom_bracket_test.swift in Sources */,
 				D1A67BEF29BD6E4D00E1D55B /* foam_madness_teams_file_test.swift in Sources */,
+				D168622F2BFC40F700649094 /* foam_madness_sim_existing_bracket_test.swift in Sources */,
+				D16862312BFC41F000649094 /* CoreDataTestStack.swift in Sources */,
 				D1A67BED29BD631D00E1D55B /* foam_madness_probability_file_test.swift in Sources */,
 				D1A67BE629BD48E200E1D55B /* foam_madness_bracket_file_tests.swift in Sources */,
 			);
