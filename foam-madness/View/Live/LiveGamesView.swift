@@ -9,16 +9,18 @@
 import SwiftUI
 
 struct LiveGamesView: View {
+    @StateObject private var liveGamesModel = LiveGamesModel()
     @State var filter = ""
-    @State var liveGames = [Event]()
-    @State var loading = false
-    let cellPadding = 4.0
-    let rowCells = 3.0
+    private let cellPadding = 4.0
+    private let rowCells = 3.0
 
     var body: some View {
         GeometryReader { geometry in
             let maxWidth = (geometry.size.width - cellPadding * rowCells) / rowCells
-            let filteredGames = filter == "" ? liveGames : liveGames.filter({ $0.league == filter })
+            let filteredGames =
+                filter == ""
+                    ? liveGamesModel.liveGames
+                    : liveGamesModel.liveGames.filter({ $0.league == filter })
             
             VStack {
                 Picker("", selection: $filter) {
@@ -41,39 +43,21 @@ struct LiveGamesView: View {
                     }
                 } else {
                     VStack {
-                        Text(loading ? "Loading games..." : "No games found.").font(.largeTitle)
+                        Text(liveGamesModel.loading ? "Loading games..." : "No games found.").font(.largeTitle)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
         .navigationTitle("Live Game Scores")
-        .onAppear {
-            loadGames()
-        }
-    }
-    
-    private func loadGames() {
-        loading = true
-        APIClient.getScores(url: APIClient.Endpoints.getNCAAMScores.url, completion: handleLiveGameScores(response:error:))
-        APIClient.getScores(url: APIClient.Endpoints.getNCAAWScores.url, completion: handleLiveGameScores(response:error:))
-        APIClient.getScores(url: APIClient.Endpoints.getNBAScores.url, completion: handleLiveGameScores(response:error:))
-        APIClient.getScores(url: APIClient.Endpoints.getWNBAScores.url, completion: handleLiveGameScores(response:error:))
-    }
-    
-    private func handleLiveGameScores(response: LiveGamesResponse?, error: Error?) {
-        if let error = error {
-            print(error.localizedDescription)
-        } else if let response = response {
-            // Add events to liveGames array
-            for (_, var game) in response.events.enumerated() {
-                // Note that there will only be one league in NCAA or (W)NBA APIs
-                // Add game
-                game.league = response.leagues[0].abbreviation
-                liveGames.append(game)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: { liveGamesModel.refreshData() }, label: {
+                    Label("Refresh", systemImage: "arrow.clockwise")
+                })
             }
         }
-        loading = false
     }
 }
 
