@@ -46,13 +46,9 @@ struct BracketGameCell: View {
     var getLinkLabel: some View {
         return ZStack(alignment: .center) {
             VStack(alignment: .leading, spacing: 1) {
-                Text(team1Text)
-                    .frame(minWidth: 140, alignment: .leading)
-                    .padding([.leading, .trailing])
-                Text(team2Text)
-                    .frame(minWidth: 140, alignment: .leading)
+                getTeamTextStyle(team1Text)
+                getTeamTextStyle(team2Text)
                     .padding([.top], spacing)
-                    .padding([.leading, .trailing])
                     .padding([.bottom], 5)
                     .border(width: 5, edges: [.top, .bottom, .trailing], color: commonBlue)
             }
@@ -65,6 +61,13 @@ struct BracketGameCell: View {
                     .foregroundColor(.secondary)
             }
         }
+    }
+    
+    private func getTeamTextStyle(_ teamText: String) -> some View {
+        Text(teamText)
+            .foregroundColor(teamText == "Pending" ? .secondary : .primary)
+            .frame(minWidth: 140, alignment: .leading)
+            .padding([.leading, .trailing])
     }
 }
 

@@ -13,12 +13,15 @@ struct BracketWinnerLine: View {
     @Binding var maxRoundForRegion: Int
 
     var body: some View {
+        let isPending = winnerName == ""
+        
         VStack {
             // Skip for First Four
             if maxRoundForRegion == 0 {
                 EmptyView()
             } else {
-                Text(winnerName == "" ? "Pending" : winnerName)
+                Text(isPending ? "Pending" : winnerName)
+                    .foregroundColor(isPending ? .secondary : .primary)
                     .frame(minWidth: 140, alignment: .leading)
                     .padding([.leading, .trailing])
                     .padding([.bottom], 5)
