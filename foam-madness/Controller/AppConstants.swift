@@ -9,4 +9,5 @@
 struct AppConstants {
     static let defaultShotsPerRound = 10
     static let defaultUseBracketView = false
+    static let refreshDebounceSeconds: Double = 20.0
 }
