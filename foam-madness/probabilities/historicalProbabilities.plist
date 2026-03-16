@@ -5,7 +5,7 @@
 	<key>Source</key>
 	<dict>
 		<key>Date Accessed</key>
-		<date>2024-05-19T15:52:11Z</date>
+		<date>2026-03-14T22:18:02Z</date>
 		<key>URL</key>
 		<string>http://mcubed.net/ncaab/seeds.shtml</string>
 	</dict>
@@ -14,21 +14,21 @@
 		<key>1</key>
 		<real>0.5</real>
 		<key>2</key>
-		<real>0.551</real>
+		<real>0.5679999999999999</real>
 		<key>3</key>
-		<real>0.643</real>
+		<real>0.651</real>
 		<key>4</key>
-		<real>0.6909999999999999</real>
+		<real>0.702</real>
 		<key>5</key>
-		<real>0.803</real>
+		<real>0.806</real>
 		<key>6</key>
 		<real>0.706</real>
 		<key>7</key>
 		<real>0.857</real>
 		<key>8</key>
-		<real>0.787</real>
+		<real>0.792</real>
 		<key>9</key>
-		<real>0.909</real>
+		<real>0.911</real>
 		<key>10</key>
 		<real>0.875</real>
 		<key>11</key>
@@ -42,28 +42,28 @@
 		<key>15</key>
 		<real>0.5</real>
 		<key>16</key>
-		<real>0.987</real>
+		<real>0.988</real>
 	</dict>
 	<key>2</key>
 	<dict>
 		<key>2</key>
 		<real>0.5</real>
 		<key>3</key>
-		<real>0.603</real>
+		<real>0.608</real>
 		<key>4</key>
 		<real>0.5</real>
 		<key>5</key>
 		<real>0.25</real>
 		<key>6</key>
-		<real>0.703</real>
+		<real>0.718</real>
 		<key>7</key>
-		<real>0.705</real>
+		<real>0.71</real>
 		<key>8</key>
 		<real>0.4</real>
 		<key>9</key>
 		<real>0.667</real>
 		<key>10</key>
-		<real>0.646</real>
+		<real>0.642</real>
 		<key>11</key>
 		<real>0.8</real>
 		<key>12</key>
@@ -73,7 +73,7 @@
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
-		<real>0.929</real>
+		<real>0.931</real>
 		<key>16</key>
 		<real>0.5</real>
 	</dict>
@@ -86,7 +86,7 @@
 		<key>5</key>
 		<real>0.5</real>
 		<key>6</key>
-		<real>0.577</real>
+		<real>0.57</real>
 		<key>7</key>
 		<real>0.632</real>
 		<key>8</key>
@@ -94,15 +94,15 @@
 		<key>9</key>
 		<real>0.75</real>
 		<key>10</key>
-		<real>0.6919999999999999</real>
+		<real>0.714</real>
 		<key>11</key>
-		<real>0.677</real>
+		<real>0.6830000000000001</real>
 		<key>12</key>
 		<real>0.5</real>
 		<key>13</key>
 		<real>0.5</real>
 		<key>14</key>
-		<real>0.853</real>
+		<real>0.856</real>
 		<key>15</key>
 		<real>0.667</real>
 		<key>16</key>
@@ -113,7 +113,7 @@
 		<key>4</key>
 		<real>0.5</real>
 		<key>5</key>
-		<real>0.5669999999999999</real>
+		<real>0.5659999999999999</real>
 		<key>6</key>
 		<real>0.429</real>
 		<key>7</key>
@@ -127,9 +127,9 @@
 		<key>11</key>
 		<integer>0</integer>
 		<key>12</key>
-		<real>0.717</real>
+		<real>0.729</real>
 		<key>13</key>
-		<real>0.788</real>
+		<real>0.794</real>
 		<key>14</key>
 		<real>0.5</real>
 		<key>15</key>
@@ -154,7 +154,7 @@
 		<key>11</key>
 		<real>0.5</real>
 		<key>12</key>
-		<real>0.67</real>
+		<real>0.667</real>
 		<key>13</key>
 		<real>0.857</real>
 		<key>14</key>
@@ -177,7 +177,7 @@
 		<key>10</key>
 		<real>0.6</real>
 		<key>11</key>
-		<real>0.619</real>
+		<real>0.622</real>
 		<key>12</key>
 		<real>0.5</real>
 		<key>13</key>
@@ -198,7 +198,7 @@
 		<key>9</key>
 		<real>0.5</real>
 		<key>10</key>
-		<real>0.609</real>
+		<real>0.607</real>
 		<key>11</key>
 		<integer>0</integer>
 		<key>12</key>
@@ -217,7 +217,7 @@
 		<key>8</key>
 		<real>0.5</real>
 		<key>9</key>
-		<real>0.506</real>
+		<real>0.505</real>
 		<key>10</key>
 		<real>0.5</real>
 		<key>11</key>
