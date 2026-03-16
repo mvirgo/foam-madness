@@ -4,6 +4,26 @@
 <array>
 	<dict>
 		<key>File</key>
+		<string>mensBracket2026</string>
+		<key>Name</key>
+		<string>2026 Men&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<false/>
+		<key>Year</key>
+		<integer>2026</integer>
+	</dict>
+	<dict>
+		<key>File</key>
+		<string>womensBracket2026</string>
+		<key>Name</key>
+		<string>2026 Women&apos;s Bracket</string>
+		<key>IsWomens</key>
+		<true/>
+		<key>Year</key>
+		<integer>2026</integer>
+	</dict>
+	<dict>
+		<key>File</key>
 		<string>mensBracket2025</string>
 		<key>Name</key>
 		<string>2025 Men&apos;s Bracket</string>
